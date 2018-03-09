@@ -155,8 +155,13 @@ const registerCtrl = {
         telephone: ''
     },
     signup(event) {
+        const registerForm=document.forms['register-form'];
+        [this.user.email , this.user.password, this.user.name, this.user.surename, this.user.telephone]=
+        [registerForm.email,registerForm.password,registerForm.name,registerForm.surename, registerForm.telephone];
+        console.log(this.user);
         event.preventDefault();
         console.log("Heheszki");
+
         /*authServies.register(this.user).then(msg => {
             //$state.go('login');
             console.log(`Registration msg ${msg}`);
@@ -164,4 +169,40 @@ const registerCtrl = {
             //fails
         });*/
     }
+}
+
+
+const loginCtrl = {
+    user: {
+        email: '',
+        password: ''
+    },
+    register() { $state.go('register'); },
+    login() {
+        AuthService.login(this.user).then(function(msg) {
+            // $rootScope.noshowlogin=true;
+            //$scope.getInfo();
+        }, function(errMsg) {
+            // $scope.error=true;
+            //$scope.errorMsg=errMsg.msg;
+            // if (errMsg.wrongpassword==true) {$scope.errorpassword=true;}
+        });
+    },
+    destrySession() { authServies.logout(); },
+    getInfo() {
+        fetch(`${API_ENDPOINT}/memberinfo`, 'GET').then(function(result) {
+            if (result.data.success) {
+ 
+            }
+        });
+
+    },
+    logout() {
+        authServies.logout();
+        //$rootScope.noshowlogin=false;
+        //$state.go('login');
+        //$rootScope.memberinfo2=undefined;
+        //$scope.memberinfo=undefined;
+    }
+
 }
