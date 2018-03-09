@@ -147,7 +147,7 @@ const orderCtrl = {
 
 const registerCtrl = {
     user: {
-        email: document.forms['register-form'].email,
+        email: '',
         password: '',
         name: '',
         surename: '',
