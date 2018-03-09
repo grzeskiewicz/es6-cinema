@@ -146,13 +146,13 @@ const orderCtrl = {
 
 
 const registerCtrl = {
-    user: {
+   /* user: {
         email: '',
         password: '',
         name: '',
         surename: '',
         telephone: ''
-    },
+    },*/
     signup(event) {
         event.preventDefault();
         //console.log(this.user);
