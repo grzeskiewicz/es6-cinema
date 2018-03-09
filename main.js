@@ -157,10 +157,14 @@ const registerCtrl = {
         event.preventDefault();
         //console.log(this.user);
         const registerForm=document.forms['register-form'];
-       // console.log(registerForm.email.value);
-        //console.log(registerForm.password.value);
-        [this.user.email , this.user.password, this.user.name, this.user.surename, this.user.telephone]=[registerForm.email.value,registerForm.password.value,registerForm.name.value,registerForm.surename.value, registerForm.telephone.value];
-        
+        const user={
+            email:registerForm.email.value,
+            password:registerForm.password.value,
+            name:registerForm.name.value,
+            surename: registerForm.surename.value, 
+            telephone:registerForm.telephone.value
+        };
+        console.log(user);
       
         
 
