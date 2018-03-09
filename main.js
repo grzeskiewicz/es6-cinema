@@ -157,8 +157,7 @@ const registerCtrl = {
         event.preventDefault();
         alert("Heheszki");
         const registerForm=document.forms['register-form'];
-        [this.user.email , this.user.password, this.user.name, this.user.surename, this.user.telephone]=
-        [registerForm.email,registerForm.password,registerForm.name,registerForm.surename, registerForm.telephone];
+        [this.user.email , this.user.password, this.user.name, this.user.surename, this.user.telephone]=[registerForm.email,registerForm.password,registerForm.name,registerForm.surename, registerForm.telephone];
         console.log(this.user);
       
         
