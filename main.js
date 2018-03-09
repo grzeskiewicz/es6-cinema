@@ -158,7 +158,7 @@ const registerCtrl = {
         alert(this.user);
         const registerForm=document.forms['register-form'];
         console.log(registerForm);
-        [this.user.email , this.user.password, this.user.name, this.user.surename, this.user.telephone]=[registerForm.email,registerForm.password,registerForm.name,registerForm.surename, registerForm.telephone];
+       // [this.user.email , this.user.password, this.user.name, this.user.surename, this.user.telephone]=[registerForm.email,registerForm.password,registerForm.name,registerForm.surename, registerForm.telephone];
         console.log(this.user);
       
         
