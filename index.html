@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang='en'>
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='description' content='Cinema reservation'>
+    <title>Cinema</title>
+    <link rel='stylesheet' href='styles.css'>
+    <script src='main.js' type='module'></script>
+    <script type='text/javascript' src='handlebars-v4.0.11.js'></script>
+</head>
+
+<body>
+    <script id="entry-template" type="text/x-handlebars-template">
+        {{#each showings}}
+        <a href="" data-seats={{seats}} data-showing-id={{id}}>
+            <div id={{id}} class="showing">
+                <p>{{id}}</p>
+                <p>{{title}}</p>
+                <p>{{genre}}</p>
+                <p>Price normal: {{normal}}</p>
+                <p>Price discount: {{discount}}</p>
+                <p>Seats: {{seats}}</p>
+                <p>Room: {{room}}</p>
+            </div>
+            <div class="poster"></div>
+        </a>{{/each}}
+        </div>
+    </script>
+    <script id="entry-template-seats" type="text/x-handlebars-template">
+        <div>
+            {{#for 1 seats}}
+            <button class="seat">{{this}}</button>
+            {{/for}}
+        </div>
+        <button id="ordx" type="submit">Next</button>
+    </script>
+    <script id="entry-template-order" type="text/x-handlebars-template">
+        <div id="selected-showing">
+            <p>{{showing.id}}</p>
+            <p>{{showing.title}}</p>
+            <p>{{showing.genre}}</p>
+            <p>Price normal: {{showing.normal}}</p>
+            <p>Price discount: {{showing.discount}}</p>
+            <p>Seats: {{showing.seats}}</p>
+            <p>Room: {{showing.room}}</p>
+            <p> Selected seats: {{seatsSelected}}
+        </div>
+        <button>Register</button>
+        <button>Login</button>
+    </script>
+    <script id="entry-template-login" type="text/x-handlebars-template">
+        <form id='login-form'>
+            <label for='username'>Username:
+                <input type='text' id='username' name='username' autofocus placeholder='Your username' maxlength=32>
+            </label>
+            <label for='password'>Password:
+                <input type='password' id='username' name='password' maxlength=32>
+            </label>
+            <button type='submit'>Submit</button>
+        </form>
+    </script>
+    <script id="entry-template-register" type="text/x-handlebars-template">
+        <form id='register-form'>
+            <input type="text" placeholder="Email">
+            <input type="password" placeholder="Password">
+            <input type="text" placeholder="Name">
+            <input type="text" placeholder="Surename">
+            <input type="text" placeholder="Telephone">
+            <button type='submit'>Register</button>
+        </form>
+    </script>
+    <div id="showings"></div>
+    <div id="seats"></div>
+    <div id="order"></div>
+    <div id="login"></div>
+    <div id="register"></div>
+    
+</body>
+
+</html>
