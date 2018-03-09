@@ -155,11 +155,11 @@ const registerCtrl = {
     },
     signup(event) {
         event.preventDefault();
-        console.log(this.user);
+        //console.log(this.user);
         const registerForm=document.forms['register-form'];
-        console.log(registerForm.email.value);
-        console.log(registerForm.password.value);
-       // [this.user.email , this.user.password, this.user.name, this.user.surename, this.user.telephone]=[registerForm.email,registerForm.password,registerForm.name,registerForm.surename, registerForm.telephone];
+       // console.log(registerForm.email.value);
+        //console.log(registerForm.password.value);
+        [this.user.email , this.user.password, this.user.name, this.user.surename, this.user.telephone]=[registerForm.email.value,registerForm.password.value,registerForm.name.value,registerForm.surename.value, registerForm.telephone.value];
         
       
         
