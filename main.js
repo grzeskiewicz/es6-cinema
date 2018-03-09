@@ -136,10 +136,9 @@ const orderCtrl = {
             view.renderContent("entry-template-order",obj,"order");
             view.renderContent("entry-template-login",obj,"login");
             view.renderContent("entry-template-register",obj,"register");
-            const loginForm=document.forms['login-form'];
-            loginForm.addEventListener('submit',login,false);
+            //const loginForm=document.forms['login-form'];
+           // loginForm.addEventListener('submit',login,false);
             const registerForm=document.forms['register-form'];
-            console.log("Log");
             registerForm.addEventListener('submit',registerCtrl.signup,false);
         });
     }
@@ -156,7 +155,7 @@ const registerCtrl = {
     },
     signup(event) {
         event.preventDefault();
-        console.log("Heheszki");
+        alert("Heheszki");
         const registerForm=document.forms['register-form'];
         [this.user.email , this.user.password, this.user.name, this.user.surename, this.user.telephone]=
         [registerForm.email,registerForm.password,registerForm.name,registerForm.surename, registerForm.telephone];
