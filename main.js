@@ -44,10 +44,8 @@ const showingsService = Object.create(listService);
 
 
 
-//1: const API_URL = 'https://api.myjson.com/bins/17jq6h';
-//const API_URL='https://api.myjson.com/bins/vidvd';
-const API_URL = 'https://api.myjson.com/bins/w7wup';
-//const API_URL = 'https://api.myjson.com/bins/5yuh5';
+const API_URL='https://cinemadb.000webhostapp.com/hehe/index.php/';
+//const API_URL = 'https://api.myjson.com/bins/w7wup';
 //const API_URL = 'http://localhost:8000';
 //const API_URL = 'http://localhost:3000/showings';
 const headers = new Headers({
@@ -64,7 +62,7 @@ function request(url, method, data) {
     });
 }
 
-fetch(request(API_URL, 'GET'))
+fetch(request(API_URL+'showings', 'GET'))
     .then(res => res.json())
     .then(showings => {
         showingsCtrl.list(showings);
