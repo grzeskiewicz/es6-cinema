@@ -65,8 +65,7 @@ function request(url, method, data) {
 fetch(request(API_URL+'showings', 'GET'))
     .then(res => res.json())
     .then(showings => {
-console.log(typeof showings);
-        showingsCtrl.list(showings);
+        showingsCtrl.list([...showings]);
         seatsCtrl.toggleListener();
         showingsService.add(showings);
     });
