@@ -1,3 +1,4 @@
+import { API_URL, request } from './apiconnection.js';
 /*const seatServices = {
     pickedSeats: { //testable
         pickedSeats: [],
