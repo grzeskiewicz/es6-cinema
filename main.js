@@ -21,12 +21,12 @@ const listService = { //same object like picedSeats, maybe Object.create(pattern
 
     },
     selectById(id) {
-    this.selectedElem = this.elemArray[0].showings.find(element => element.id === Number(id));
+        this.selectedElem = this.elemArray[0].showings.find(element => element.id === Number(id));
     },
     list() { return this.elemArray; },
     first() { return this.elemArray[0] },
     remove() { this.elemArray = []; },
-    getSelected(){ return this.selectedElem}
+    getSelected() { return this.selectedElem }
 }
 const showingsService = Object.create(listService);
 
@@ -44,7 +44,7 @@ const showingsService = Object.create(listService);
 
 
 
-const API_URL='https://cinemadb.000webhostapp.com/hehe/index.php/';
+const API_URL = 'https://cinemadb.000webhostapp.com/hehe/index.php/';
 //const API_URL = 'https://api.myjson.com/bins/w7wup';
 //const API_URL = 'http://localhost:8000';
 //const API_URL = 'http://localhost:3000/showings';
@@ -62,10 +62,11 @@ function request(url, method, data) {
     });
 }
 
-fetch(request(API_URL+'showings', 'GET'))
+fetch(request(API_URL + 'showings', 'GET'))
     .then(res => res.json())
     .then(showings => {
-        showingsCtrl.list([...showings]);
+        console.log(showings);
+        showingsCtrl.list(showings);
         seatsCtrl.toggleListener();
         showingsService.add(showings);
     });
@@ -91,7 +92,7 @@ const showingsCtrl = {
                 event.preventDefault();
                 view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
                 seatsCtrl.selectedSeats = [];
-                document.getElementById("order").innerHTML="";
+                document.getElementById("order").innerHTML = "";
                 seatsCtrl.toggleListener();
                 orderCtrl.orderListener();
                 console.log(event.currentTarget.dataset.showingId);
@@ -130,41 +131,41 @@ const orderCtrl = {
         orderBtn.addEventListener('click', event => {
             console.log(seatsCtrl.selectedSeats);
             console.log(showingsService.getSelected());
-            const obj={showing:showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats};
-            view.renderContent("entry-template-order",obj,"order");
-            view.renderContent("entry-template-login",obj,"login");
-            view.renderContent("entry-template-register",obj,"register");
+            const obj = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
+            view.renderContent("entry-template-order", obj, "order");
+            view.renderContent("entry-template-login", obj, "login");
+            view.renderContent("entry-template-register", obj, "register");
             //const loginForm=document.forms['login-form'];
-           // loginForm.addEventListener('submit',login,false);
-            const registerForm=document.forms['register-form'];
-            registerForm.addEventListener('submit',registerCtrl.signup,false);
+            // loginForm.addEventListener('submit',login,false);
+            const registerForm = document.forms['register-form'];
+            registerForm.addEventListener('submit', registerCtrl.signup, false);
         });
     }
 }
 
 
 const registerCtrl = {
-   /* user: {
-        email: '',
-        password: '',
-        name: '',
-        surename: '',
-        telephone: ''
-    },*/
+    /* user: {
+         email: '',
+         password: '',
+         name: '',
+         surename: '',
+         telephone: ''
+     },*/
     signup(event) {
         event.preventDefault();
         //console.log(this.user);
-        const registerForm=document.forms['register-form'];
-        const user={
-            email:registerForm.email.value,
-            password:registerForm.password.value,
-            name:registerForm.name.value,
-            surename: registerForm.surename.value, 
-            telephone:registerForm.telephone.value
+        const registerForm = document.forms['register-form'];
+        const user = {
+            email: registerForm.email.value,
+            password: registerForm.password.value,
+            name: registerForm.name.value,
+            surename: registerForm.surename.value,
+            telephone: registerForm.telephone.value
         };
         console.log(user);
-      
-        
+
+
 
         /*authServies.register(this.user).then(msg => {
             //$state.go('login');
@@ -196,7 +197,7 @@ const loginCtrl = {
     getInfo() {
         fetch(`${API_ENDPOINT}/memberinfo`, 'GET').then(function(result) {
             if (result.data.success) {
- 
+
             }
         });
 
