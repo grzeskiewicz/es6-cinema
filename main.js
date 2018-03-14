@@ -1,5 +1,5 @@
 import { authServices } from './services.js';
-import { request } from './apiconnection.js';
+import { API_URL, request } from './apiconnection.js';
 
 Handlebars.registerHelper('for', function(from, to, block) {
     var accum = '';
