@@ -165,16 +165,14 @@ const registerCtrl = {
             surename: registerForm.surename.value,
             telephone: registerForm.telephone.value
         };
-        console.log(user);
 
 
-
-        /*authServies.register(this.user).then(msg => {
+        authServies.register(this.user).then(msg => {
             //$state.go('login');
             console.log(`Registration msg ${msg}`);
         }, errMsg => {
             //fails
-        });*/
+        });
     }
 }
 
