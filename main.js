@@ -167,7 +167,7 @@ const registerCtrl = {
         };
 
 
-        authServies.register(this.user).then(msg => {
+        authServices.register(this.user).then(msg => {
             //$state.go('login');
             console.log(`Registration msg ${msg}`);
         }, errMsg => {
