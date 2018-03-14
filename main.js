@@ -21,6 +21,7 @@ const listService = { //same object like picedSeats, maybe Object.create(pattern
 
     },
     selectById(id) {
+        console.log(this.elemArray);
         this.selectedElem = this.elemArray[0].showings.find(element => element.id === Number(id));
     },
     list() { return this.elemArray; },
@@ -66,7 +67,6 @@ fetch(request(API_URL + 'showings', 'GET'))
     .then(res => res.json())
     .then(showings => {
         let shows= `{ "showings": ${JSON.stringify(showings)}}`;
-       // console.log(JSON.parse(shows));
         showingsCtrl.list(JSON.parse(shows));
         seatsCtrl.toggleListener();
         showingsService.add(showings);
