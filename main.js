@@ -21,6 +21,7 @@ const listService = { //same object like picedSeats, maybe Object.create(pattern
 
     },
     selectById(id) {
+        console.log(this.elemArray);
         this.selectedElem = this.elemArray[0].find(element => element.id === Number(id));
     },
     list() { return this.elemArray; },
