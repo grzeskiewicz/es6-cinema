@@ -87,7 +87,7 @@ export const authServices = {
                     return result.data.msg;
                 }
                 return Promise.reject(Error('error'))
-            }).catch(error => Promise.reject(Error(error.message)));
+            }).catch(error => Promise.reject(Error('error.message')));
 
 
         /*  return $q(function(resolve, reject) {
