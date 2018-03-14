@@ -66,7 +66,7 @@ fetch(request(API_URL + 'showings', 'GET'))
     .then(res => res.json())
     .then(showings => {
         let shows= `{ "showings": ${JSON.stringify(showings)}}`;
-        console.log(shows);
+        console.log(JSON.parse(shows));
         showingsCtrl.list(showings);
         seatsCtrl.toggleListener();
         showingsService.add(showings);
