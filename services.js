@@ -80,9 +80,10 @@ export const authServices = {
     },
 
     register(user) {
+        console.log(user);
         fetch(request(`${API_URL}signUp`, 'POST', user))
             .then(res => {
-                console.log(res);
+                console.log(res.body);
                 console.log(res.json());
                 //res.json();
             })
