@@ -92,8 +92,7 @@ export const authServices = {
             }).catch(error => console.log(error)); //Promise.reject(new Error(error)) */
 
 
-             fetch(request(`${API_URL}signUp`, 'POST', user)).then(
-console.log("CHUJ");
+             fetch(request(`${API_URL}signUp`, 'POST', user)).then(()=>console.log("CHUJ");
                 );
 
 
