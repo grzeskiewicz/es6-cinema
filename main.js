@@ -140,7 +140,6 @@ const registerCtrl = {
      },*/
     signup(event) {
         event.preventDefault();
-        //console.log(this.user);
         const registerForm = document.forms['register-form'];
         const user = {
             email: registerForm.email.value,
@@ -150,7 +149,7 @@ const registerCtrl = {
             telephone: registerForm.telephone.value
         };
 
-        authServices.register(this.user);
+        authServices.register(user);
         
         /*authServices.register(this.user).then(msg => {
             //$state.go('login');
