@@ -150,13 +150,15 @@ const registerCtrl = {
             telephone: registerForm.telephone.value
         };
 
-
-        authServices.register(this.user).then(msg => {
+        authServices.register(this.user);
+        
+        /*authServices.register(this.user).then(msg => {
             //$state.go('login');
             console.log(`Registration msg ${msg}`);
         }, errMsg => {
             //fails
-        });
+        });*/
+
     }
 }
 
