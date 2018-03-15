@@ -148,7 +148,7 @@ const registerCtrl = {
             surename: registerForm.surename.value,
             telephone: registerForm.telephone.value
         };
-
+user=JSON.stringify(user);
         authServices.register(user);
         
         /*authServices.register(this.user).then(msg => {
