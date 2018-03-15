@@ -84,7 +84,7 @@ export const authServices = {
             .then(res => {
                 console.log(res);
                 console.log(res.json());
-                res.json();
+                //res.json();
             })
             .then(result => {
                 console.log(result);
