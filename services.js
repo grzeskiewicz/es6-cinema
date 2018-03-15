@@ -92,7 +92,7 @@ export const authServices = {
                     return result.data.msg;
                 }
                 return Promise.reject(new Error('error'))
-            }).catch(error => Promise.reject(new Error(error)));
+            }).catch(error => console.log(error)); //Promise.reject(new Error(error))
 
 
         /*  return $q(function(resolve, reject) {
