@@ -141,7 +141,7 @@ const registerCtrl = {
     signup(event) {
         event.preventDefault();
         const registerForm = document.forms['register-form'];
-        const user = {
+        let user = {
             email: registerForm.email.value,
             password: registerForm.password.value,
             name: registerForm.name.value,
