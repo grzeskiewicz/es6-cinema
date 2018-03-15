@@ -83,6 +83,7 @@ export const authServices = {
         fetch(request(`${API_URL}signUp`, 'POST', user))
             .then(res => res.json())
             .then(result => {
+                console.log(result);
                 if (result.data.success) { // result.ok?
                     return result.data.msg;
                 }
