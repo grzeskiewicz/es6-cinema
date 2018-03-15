@@ -81,7 +81,7 @@ export const authServices = {
 
     register(user) {
         console.log(user);
-        /*fetch(request(`${API_URL}signUp`, 'POST', user))
+        fetch(request(`${API_URL}signUp`, 'POST', user))
             .then(res => {console.log(res); return res.json();})
             .then(result => {
                 console.log(result);
@@ -89,10 +89,10 @@ export const authServices = {
                     return result.data.msg;
                 }
                 return Promise.reject(new Error('error'))
-            }).catch(error => console.log(error)); //Promise.reject(new Error(error)) */
+            }).catch(error => console.log(error)); //Promise.reject(new Error(error)) 
 
 
-             fetch(request(`${API_URL}signUp`, 'POST', user)).then(res=>console.log(res));
+             //fetch(request(`${API_URL}signUp`, 'POST', user)).then(res=>console.log(res));
 
 
         /*  return $q(function(resolve, reject) {
