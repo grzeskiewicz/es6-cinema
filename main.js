@@ -23,7 +23,7 @@ const listService = { //same object like picedSeats, maybe Object.create(pattern
     selectById(id) {
         
         this.selectedElem = this.elemArray[0].find(element => Number(element.id) === Number(id));
-        console.log(this.selectedElem);
+       // console.log(this.selectedElem);
     },
     list() { return this.elemArray; },
     first() { return this.elemArray[0] },
@@ -81,7 +81,7 @@ const showingsCtrl = {
                 document.getElementById("order").innerHTML = "";
                 seatsCtrl.toggleListener();
                 orderCtrl.orderListener();
-                console.log(event.currentTarget.dataset.showingId);
+                //console.log(event.currentTarget.dataset.showingId);
                 showingsService.selectById(event.currentTarget.dataset.showingId);
             }, false);
         });
@@ -115,8 +115,8 @@ const orderCtrl = {
     orderListener() {
         const orderBtn = document.getElementById("ordx");
         orderBtn.addEventListener('click', event => {
-            console.log(seatsCtrl.selectedSeats);
-            console.log(showingsService.getSelected());
+            //console.log(seatsCtrl.selectedSeats);
+            //console.log(showingsService.getSelected());
             const obj = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
             view.renderContent("entry-template-order", obj, "order");
             view.renderContent("entry-template-login", obj, "login");
