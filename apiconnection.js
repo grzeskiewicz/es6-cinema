@@ -14,6 +14,6 @@ export function request(url, method, dataset) {
         header: headers,
         body: JSON.stringify(dataset)
     });
-    console.log(req);
+    console.log(req.json());
     return req;
 }
