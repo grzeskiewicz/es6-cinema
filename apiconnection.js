@@ -13,7 +13,7 @@ export function request(url, method, dataset) {
         method: method,
         mode: 'cors',
         header: headers,
-        body: JSON.stringify(dataset);
+        body: JSON.stringify(dataset)
     });
     console.log(req.body);
     return req;
