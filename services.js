@@ -93,7 +93,8 @@ export const authServices = {
         const url = `${API_URL}signUp`;
         const headerss = new Headers({
             'Accept': 'application/json',
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*'
         });
 
         const requestt = new Request(url, {
