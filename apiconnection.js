@@ -9,11 +9,9 @@ const headers = new Headers({
 
 
 export function request(url, method, dataset) {
-    let req= new Request(url, {
+return new Request(url, {
         method: method,
         header: headers,
         body: JSON.stringify(dataset)
     });
-    console.log(req.json());
-    return req;
 }
