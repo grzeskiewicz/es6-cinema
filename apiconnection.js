@@ -8,13 +8,13 @@ const headers = new Headers({
 });
 
 
-export function request(url, method, data) {
+export function request(url, method, dataset) {
     let req= new Request(url, {
         method: method,
         mode: 'cors',
         header: headers,
-        body: data
+        body: JSON.stringify(dataset);
     });
-    console.log(req);
+    console.log(req.body);
     return req;
 }
