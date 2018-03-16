@@ -100,7 +100,7 @@ export const authServices = {
             method: 'POST',
             mode: 'cors',
             header: headerss,
-            body: JSON.stringify(task)
+            body: JSON.stringify(user)
         })
 
         fetch(request)
