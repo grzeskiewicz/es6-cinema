@@ -149,7 +149,7 @@ const registerCtrl = {
             telephone: registerForm.telephone.value
         };
 //user=JSON.stringify(user);
-        authServices.register(user);
+        authServices.register({ foo:'bar', goo:'gar'});
         
         /*authServices.register(this.user).then(msg => {
             //$state.go('login');
