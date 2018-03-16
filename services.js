@@ -103,7 +103,7 @@ export const authServices = {
             body: JSON.stringify(user)
         })
 
-        fetch(request)
+        fetch(requestt)
             .then(response => response.json())
             .then(data => console.log(data))
             .catch(error => console.log('There was an error:', error));
