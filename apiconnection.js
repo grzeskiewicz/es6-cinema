@@ -9,10 +9,12 @@ const headers = new Headers({
 
 
 export function request(url, method, data) {
-    return new Request(url, {
+    let req= new Request(url, {
         method: method,
         mode: 'cors',
         header: headers,
         body: data
     });
+    console.log(req);
+    return req;
 }
