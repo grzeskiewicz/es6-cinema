@@ -3,7 +3,7 @@ export const API_URL = 'https://cinemadb.000webhostapp.com/hehe/index.php/';
 //const API_URL = 'http://localhost:8000';
 //const API_URL = 'http://localhost:3000/showings';
 const headers = new Headers({
-    'Access-Control-Allow-Origin': '*',
+    //'Access-Control-Allow-Origin': '*',
     'Content-Type': 'application/x-www-form-urlencoded'
 });
 
