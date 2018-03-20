@@ -99,7 +99,7 @@ export const authServices = {
 
         const requestt = new Request(url, {
             method: 'POST',
-            mode: 'cors',
+            //mode: 'cors',
             header: headerss,
             body: JSON.stringify(user)
         })
