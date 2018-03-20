@@ -92,8 +92,8 @@ export const authServices = {
             }).catch(error => console.log(error)); //Promise.reject(new Error(error)) */
         const url = `${API_URL}signUp`;
         const headerss = new Headers({
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
+            'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
+            'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
             'Access-Control-Allow-Origin': '*'
         });
 
