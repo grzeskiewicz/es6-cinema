@@ -1,5 +1,5 @@
 //export const API_URL = 'https://cinemadb.000webhostapp.com/hehe/index.php/'; PHP server
-export const API_URL='http://cinemanode.azurewebsites.net/';
+export const API_URL='https://cinemanode.azurewebsites.net/';
 //const API_URL = 'https://api.myjson.com/bins/w7wup';
 
 const headers = new Headers({
