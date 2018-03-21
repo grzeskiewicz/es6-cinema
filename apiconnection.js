@@ -3,7 +3,7 @@ export const API_URL='https://cinemanode.azurewebsites.net/';
 //const API_URL = 'https://api.myjson.com/bins/w7wup';
 
 const headers = new Headers({
-    //'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Origin': '*',
     'Content-Type': 'application/x-www-form-urlencoded'
 });
 
