@@ -80,8 +80,7 @@ export const authServices = {
     },
 
     register(user) {
-        console.log(user);
-        /*fetch(request(`${API_URL}signUp`, 'POST', user))
+        fetch(request(`${API_URL}registertest`, 'POST', user))
             .then(res => { return res.json();})
             .then(result => {
                 console.log(result);
@@ -89,7 +88,7 @@ export const authServices = {
                     return result.data.msg;
                 }
                 return Promise.reject(new Error('error'))
-            }).catch(error => console.log(error)); //Promise.reject(new Error(error)) */
+            }).catch(error => console.log(error)); //Promise.reject(new Error(error)) 
         const url = `${API_URL}signUp`;
         const headerss = new Headers({
             'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
