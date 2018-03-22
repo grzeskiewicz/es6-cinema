@@ -85,30 +85,12 @@ export const authServices = {
             .then(res => { return res.json();})
             .then(result => {
                 console.log(result);
-                if (result.data.success) { // result.ok?
-                    return result.data.msg;
+                if (result.success) { // result.ok?
+                    return result.msg;
                 }
                 return Promise.reject(new Error('error'))
             }).catch(error => console.log(error)); //Promise.reject(new Error(error)) 
-      /*  const url = `${API_URL}signUp`;
-        const headerss = new Headers({
-            'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
-            'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
-            'Access-Control-Allow-Origin': '*'
-        });
-
-        const requestt = new Request(url, {
-            method: 'POST',
-            //mode: 'cors',
-            header: headerss,
-            body: JSON.stringify(user)
-        })
-
-        fetch(requestt)
-            .then(response => response.json())
-            .then(data => console.log(data))
-            .catch(error => console.log('There was an error:', error));*/
-
+ 
 
         //fetch(request(`${API_URL}signUp`, 'POST', user)).then(res=>console.log(res));
 
