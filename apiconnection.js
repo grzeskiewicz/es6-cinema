@@ -11,6 +11,6 @@ return new Request(url, {
         method: method,
         headers: headers,
         mode: 'cors',
-        body: JSON.stringify(dataset)
+        body: dataset
     });
 }
