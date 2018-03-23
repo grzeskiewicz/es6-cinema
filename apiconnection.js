@@ -14,7 +14,7 @@ export function request(url, method, dataset) {
     return new Request(url, {
         method: method,
         headers: headers,
-        //mode: 'cors',
+        mode: 'cors',
         body: JSON.stringify(dataset)
     });
 }
