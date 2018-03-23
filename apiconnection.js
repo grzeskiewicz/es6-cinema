@@ -4,9 +4,9 @@ export const API_URL='https://cinemanode-cinemanode.193b.starter-ca-central-1.op
 //const API_URL = 'https://api.myjson.com/bins/w7wup';
 
 const headers = new Headers({
-    'Accept': 'application/json',
-    'Content-Type': 'application/json',
-    "Access-Control-Allow-Origin":"*"
+   // 'Accept': 'application/json',
+    //'Content-Type': 'application/json',
+   // "Access-Control-Allow-Origin":"*"
 });
 
 
