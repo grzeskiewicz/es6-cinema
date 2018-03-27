@@ -11,10 +11,10 @@ const headers = new Headers({
 });
 
 
-export function request(url, method, dataset) {
+export function request(url, method, dataset,headerz) {
     return new Request(url, {
         method: method,
-        headers: headers,
+        headers: headerz || headers,
         mode: 'cors',
         body: JSON.stringify(dataset)
     });

@@ -1,4 +1,4 @@
-import { API_URL, request} from './apiconnection.js'; //request
+import { API_URL, request } from './apiconnection.js'; //request
 /*const seatServices = {
     pickedSeats: { //testable
         pickedSeats: [],
@@ -80,9 +80,18 @@ export const authServices = {
     },
 
     register(user) {
+
+        const headerz = new Headers({
+            'Accept': 'application/json',
+            //'Content-Type': 'application/json',
+            "Access-Control-Allow-Origin": "*"
+        });
+
+
+
         console.log(user);
-        fetch(request(`${API_URL}registertest`, 'POST', user))
-            .then(res => { return res.json();})
+        fetch(request(`${API_URL}registertest`, 'POST', user, headerz))
+            .then(res => { return res.json(); })
             .then(result => {
                 console.log(result);
                 if (result.success) { // result.ok?
@@ -90,7 +99,7 @@ export const authServices = {
                 }
                 return Promise.reject(new Error('error'))
             }).catch(error => console.log(error)); //Promise.reject(new Error(error)) 
- 
+
 
         //fetch(request(`${API_URL}signUp`, 'POST', user)).then(res=>console.log(res));
 
