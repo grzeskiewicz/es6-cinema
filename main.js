@@ -148,8 +148,9 @@ const registerCtrl = {
             surename: registerForm.surename.value,
             telephone: registerForm.telephone.value
         };
-
-        if (authServices.register(user)) {
+let register=authServices.register(user);
+console.log(register);
+        if (register) {
             console.log("hehe");
             view.hide(registerForm);
         }
