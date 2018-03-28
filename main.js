@@ -132,13 +132,6 @@ const orderCtrl = {
 
 
 const registerCtrl = {
-    /* user: {
-         email: '',
-         password: '',
-         name: '',
-         surename: '',
-         telephone: ''
-     },*/
     signup(event) {
         event.preventDefault();
         const registerForm = document.forms['register-form'];
@@ -149,15 +142,14 @@ const registerCtrl = {
             surename: registerForm.surename.value,
             telephone: registerForm.telephone.value
         };
-//user=JSON.stringify(user);
-        authServices.register(user);
+       // authServices.register(user);
         
-        /*authServices.register(this.user).then(msg => {
+        authServices.register(user).then(msg => {
             //$state.go('login');
             console.log(`Registration msg ${msg}`);
         }, errMsg => {
             //fails
-        });*/
+        });
 
     }
 }

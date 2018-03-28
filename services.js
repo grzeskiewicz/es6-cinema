@@ -99,21 +99,6 @@ export const authServices = {
                 }
                 return Promise.reject(new Error('error'))
             }).catch(error => console.log(error)); //Promise.reject(new Error(error)) 
-
-
-        //fetch(request(`${API_URL}signUp`, 'POST', user)).then(res=>console.log(res));
-
-
-        /*  return $q(function(resolve, reject) {
-              $http.post(`${{API_URL}}/signUp`, user).then(function(result) {
-                  console.log(result);
-                  if (result.data.success) {
-                      resolve(result.data.msg);
-                  } else {
-                      reject(result.data.msg);
-                  }
-              });
-          });*/
     },
 
     login(user) { //token? JWT!
