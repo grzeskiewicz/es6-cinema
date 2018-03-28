@@ -89,7 +89,7 @@ export const authServices = {
 
 
 
-        console.log(user);
+        console.log(JSON.stringify(user));
         fetch(request(`${API_URL}registertest`, 'POST', user))
             .then(res => { return res.json(); })
             .then(result => {
