@@ -21,9 +21,9 @@ const listService = { //same object like picedSeats, maybe Object.create(pattern
 
     },
     selectById(id) {
-        
+
         this.selectedElem = this.elemArray[0].find(element => Number(element.id) === Number(id));
-       // console.log(this.selectedElem);
+        // console.log(this.selectedElem);
     },
     list() { return this.elemArray; },
     first() { return this.elemArray[0] },
@@ -52,7 +52,7 @@ fetch(request(API_URL + 'showings', 'GET'))
     .then(res => res.json())
     .then(showings => {
         console.log(showings);
-        let shows= `{ "showings": ${JSON.stringify(showings)}}`;
+        let shows = `{ "showings": ${JSON.stringify(showings)}}`;
         showingsCtrl.list(JSON.parse(shows));
         seatsCtrl.toggleListener();
         showingsService.add(showings);
@@ -66,6 +66,12 @@ const view = {
         let template = Handlebars.compile(sourceElem);
         let html = template(context);
         document.getElementById(output).innerHTML = html;
+    },
+    show(element) {
+        element.style.display = 'block';
+    },
+    hide(element) {
+        element.style.display = 'none';
     }
 }
 
@@ -142,14 +148,17 @@ const registerCtrl = {
             surename: registerForm.surename.value,
             telephone: registerForm.telephone.value
         };
-       // authServices.register(user);
-        
-        authServices.register(user).then(msg => {
+
+        if (authServices.register(user)) {
+            view.hide(registerForm);
+        }
+
+        /*authServices.register(this.user).then(msg => {
             //$state.go('login');
             console.log(`Registration msg ${msg}`);
         }, errMsg => {
             //fails
-        });
+        });*/
 
     }
 }

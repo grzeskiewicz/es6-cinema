@@ -95,7 +95,7 @@ export const authServices = {
             .then(result => {
                 console.log(result);
                 if (result.success) { // result.ok?
-                    return result.msg;
+                    return result.success;
                 }
                 return Promise.reject(new Error('error'))
             }).catch(error => console.log(error)); //Promise.reject(new Error(error)) 
