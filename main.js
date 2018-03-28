@@ -150,6 +150,7 @@ const registerCtrl = {
         };
 
         if (authServices.register(user)) {
+            console.log("hehe");
             view.hide(registerForm);
         }
 
