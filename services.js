@@ -83,7 +83,7 @@ export const authServices = {
 
         const headerz = new Headers({
             'Accept': 'application/json',
-            //'Content-Type': 'application/json',
+            'Content-Type': 'application/json',
           //  "Access-Control-Allow-Origin": "*"
         });
 
