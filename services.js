@@ -99,6 +99,7 @@ export const authServices = {
                 }
                 return Promise.reject(new Error('error'))
             }).catch(error => console.log(error)); //Promise.reject(new Error(error)) 
+            console.log("jestem tu");
     },
 
     login(user) { //token? JWT!
