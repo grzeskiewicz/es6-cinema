@@ -155,7 +155,7 @@ const registerCtrl = {
             view.hide(registerForm);
         }*/
 
-        authServices.register(this.user).then(msg => {
+        authServices.register(user).then(msg => {
             console.log(`Registration msg ${msg}`);
         }, errMsg => {
             //fails
