@@ -79,6 +79,11 @@ a:active {
     left:50vw;
     top:50vw;    
 }  
+
+
+#message {
+    border-style:solid;
+    color:red;
 }
 
 #ordx {
