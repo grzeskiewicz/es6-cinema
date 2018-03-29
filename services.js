@@ -96,7 +96,7 @@ export const authServices = {
                 if (result.success) {
                     return result;
                 } else {
-                    Promise.reject("lawl").then({return result;},{return result;});
+                    Promise.reject("lawl").then({return result},{return result});
                 }
 
             })
