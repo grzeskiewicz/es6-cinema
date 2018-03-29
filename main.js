@@ -148,16 +148,22 @@ const registerCtrl = {
             surename: registerForm.surename.value,
             telephone: registerForm.telephone.value
         };
-/*let register = authServices.register(user);
-        console.log(register);
-        if (register) {
-            console.log("hehe");
-            view.hide(registerForm);
-        }*/
+        /*let register = authServices.register(user);
+                console.log(register);
+                if (register) {
+                    console.log("hehe");
+                    view.hide(registerForm);
+                }*/
 
         authServices.register(user)
-        .then(msg => console.log(msg))
-        .catch(errMsg => console.log(errMsg));
+            .then(res => {
+                if (res.success) {
+                    view.hide(reisterForm);
+                } else {
+                    console.log(res.msg);
+                }
+
+            });
     }
 }
 
