@@ -160,7 +160,7 @@ const registerCtrl = {
                 if (res.success) {
                     view.hide(registerForm);
                 } else {
-                    registerForm['message'].innerHTML=res.msg;
+                    console.log(registerForm['message']);
                     console.log(res.msg);
                 }
 
