@@ -148,19 +148,18 @@ const registerCtrl = {
             surename: registerForm.surename.value,
             telephone: registerForm.telephone.value
         };
-        let register = authServices.register(user);
+/*let register = authServices.register(user);
         console.log(register);
         if (register) {
             console.log("hehe");
             view.hide(registerForm);
-        }
+        }*/
 
-        /*authServices.register(this.user).then(msg => {
-            //$state.go('login');
+        .register(this.user).then(msg => {
             console.log(`Registration msg ${msg}`);
         }, errMsg => {
             //fails
-        });*/
+        });
 
     }
 }
