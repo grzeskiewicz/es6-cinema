@@ -91,7 +91,7 @@ export const authServices = {
 
         console.log(JSON.stringify(user));
        return fetch(request(`${API_URL}registertest`, 'POST', user,headerz))
-            .then(res =>  res.json();)
+            .then(res =>  res.json())
             .then(result => result)
             .catch(error => Promise.reject(new Error(error))); //Promise.reject(new Error(error))       
     },
