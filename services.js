@@ -91,15 +91,9 @@ export const authServices = {
 
         console.log(JSON.stringify(user));
        return fetch(request(`${API_URL}registertest`, 'POST', user,headerz))
-            .then(res => { return res.json(); })
-            .then(result => {
-                console.log(result);
-                if (result.success) { // result.ok?
-                    return result.success;
-                }
-                return Promise.reject(new Error('error'))
-            }).catch(error => console.log(error)); //Promise.reject(new Error(error)) 
-            console.log("jestem tu");
+            .then(res =>  res.json();)
+            .then(result => result)
+            .catch(error => Promise.reject(new Error(error))); //Promise.reject(new Error(error))       
     },
 
     login(user) { //token? JWT!

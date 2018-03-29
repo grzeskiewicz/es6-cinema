@@ -158,7 +158,7 @@ const registerCtrl = {
         authServices.register(user).then(msg => {
             console.log(`Registration msg ${msg}`);
         }, errMsg => {
-            //fails
+            console.log(errMsg);
         });
 
     }
