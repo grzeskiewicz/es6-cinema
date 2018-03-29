@@ -155,7 +155,9 @@ const registerCtrl = {
             view.hide(registerForm);
         }*/
 
-        authServices.register(user).then(msg => console.log(msg)).catch(errMsg => console.log(errMsg));
+        authServices.register(user)
+        .then(msg => console.log(msg))
+        .catch(errMsg => console.log(errMsg));
     }
 }
 
