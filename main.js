@@ -158,7 +158,7 @@ const registerCtrl = {
         authServices.register(user)
             .then(res => {
                 if (res.success) {
-                    view.hide(reisterForm);
+                    view.hide(registerForm);
                 } else {
                     console.log(res.msg);
                 }
