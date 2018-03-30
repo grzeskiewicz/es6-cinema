@@ -128,8 +128,6 @@ const orderCtrl = {
             view.renderContent("entry-template-order", obj, "order");
             view.renderContent("entry-template-login", obj, "login");
             view.renderContent("entry-template-register", obj, "register");
-            //const loginForm=document.forms['login-form'];
-            // loginForm.addEventListener('submit',login,false);
             const registerForm = document.forms['register-form'];
             registerForm.addEventListener('submit', registerCtrl.signup, false);
             const loginForm = document.forms['login-form'];
@@ -181,7 +179,8 @@ const loginCtrl = {
         password: ''
     },
     register() { $state.go('register'); },
-    login() {
+    login(event) {
+        event.preventDefault();
         const loginStatus = document.querySelector('#login-status');
         let user = {
             email: '',
