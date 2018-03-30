@@ -186,8 +186,12 @@ const loginCtrl = {
         authServices.login(user)
             .then(res => {
                 if (res.success) {
+                    loginStatus.classList.add('success');
+                    loginStatus.innerHTML=res.msg;
                     console.log(res);
                 } else {
+                    loginStatus.classList.add('error');
+                    loginStatus.innerHTML=res.msg;
                     console.log(res);
                 }
                 // $rootScope.noshowlogin=true;
