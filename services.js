@@ -97,7 +97,7 @@ export const authServices = {
             .then(res => res.json())
             .then(result => {
                 if (result.success) { // result.ok?
-                    storeUserCredentials(result.token);
+                    this.storeUserCredentials(result.token);
                     console.log(result);
                     return result.msg;
                 }
