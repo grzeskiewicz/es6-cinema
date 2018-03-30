@@ -141,7 +141,7 @@ const registerCtrl = {
     signup(event) {
         event.preventDefault();
         const registerForm = document.forms['register-form'];
-        const registerStatus=document.querySelector('#register-status');
+        const registerStatus = document.querySelector('#register-status');
         let user = {
             email: registerForm.email.value,
             password: registerForm.password.value,
@@ -159,11 +159,11 @@ const registerCtrl = {
         authServices.register(user)
             .then(res => {
                 if (res.success) {
-                    registerStatus.innerHTML=res.msg;
+                    registerStatus.innerHTML = res.msg;
                     registerStatus.classList.add('success');
                     view.hide(registerForm);
                 } else {
-                    registerStatus.innerHTML=res.msg;
+                    registerStatus.innerHTML = res.msg;
                     registerStatus.classList.add('error');
                     console.log(res.msg);
                 }
@@ -180,14 +180,25 @@ const loginCtrl = {
     },
     register() { $state.go('register'); },
     login() {
-        AuthService.login(this.user).then(function(msg) {
-            // $rootScope.noshowlogin=true;
-            //$scope.getInfo();
-        }, function(errMsg) {
-            // $scope.error=true;
-            //$scope.errorMsg=errMsg.msg;
-            // if (errMsg.wrongpassword==true) {$scope.errorpassword=true;}
-        });
+        const loginStatus = document.querySelector('#login-status');
+        let user = {
+            email: '',
+            password: ''
+        };
+        AuthService.login(user)
+            .then(res => {
+                if (res.success) {
+                    console.log(res);
+                } else {
+                    console.log(res);
+                }
+                // $rootScope.noshowlogin=true;
+                //$scope.getInfo();
+
+                // $scope.error=true;
+                //$scope.errorMsg=errMsg.msg;
+                // if (errMsg.wrongpassword==true) {$scope.errorpassword=true;}
+            });
     },
     destrySession() { authServies.logout(); },
     getInfo() {
