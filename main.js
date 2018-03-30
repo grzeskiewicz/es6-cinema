@@ -132,6 +132,8 @@ const orderCtrl = {
             // loginForm.addEventListener('submit',login,false);
             const registerForm = document.forms['register-form'];
             registerForm.addEventListener('submit', registerCtrl.signup, false);
+            const loginForm = document.forms['login-form'];
+            loginForm.addEventListener('submit', loginCtrl.login, false);
         });
     }
 }
