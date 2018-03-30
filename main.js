@@ -141,6 +141,7 @@ const registerCtrl = {
     signup(event) {
         event.preventDefault();
         const registerForm = document.forms['register-form'];
+        const registerStatus=document.querySelector('#register-status');
         let user = {
             email: registerForm.email.value,
             password: registerForm.password.value,
@@ -158,9 +159,12 @@ const registerCtrl = {
         authServices.register(user)
             .then(res => {
                 if (res.success) {
+                    registerStatus.innerHTML=res.msg;
+                    registerStatus.classList.add('success');
                     view.hide(registerForm);
                 } else {
-                    registerForm.querySelector('#message').innerHTML=res.msg;
+                    registerStatus.innerHTML=res.msg;
+                    registerStatus.classList.add('error');
                     console.log(res.msg);
                 }
 

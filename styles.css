@@ -4,24 +4,23 @@
 
 body {
     background-color: yellow;
-    
 }
 
 a {
-	position: relative;
+    position: relative;
 }
 
 .showing {
     background-color: red;
-    border-style:solid;
-    border-color:blue;
+    border-style: solid;
+    border-color: blue;
 }
 
 #showings {
     width: 40vw;
     position: absolute;
     left: 0;
-    border-style:solid;
+    border-style: solid;
 }
 
 .poster {
@@ -47,45 +46,50 @@ a:active {
     width: 40vw;
     position: absolute;
     left: 50vw;
-    border-style:solid;
+    border-style: solid;
 }
 
 
-.selected{
-	background: red;
+.selected {
+    background: red;
 }
 
 
-#order{
-    border-style:solid;
-    width:40vw;
-    position:absolute;
-    left:50vw;
-    top:10vw;
+#order {
+    border-style: solid;
+    width: 40vw;
+    position: absolute;
+    left: 50vw;
+    top: 10vw;
 }
 
-#login{
-    border-style:solid;
-    width:40vw;
-    position:absolute;
-    left:50vw;
-    top:40vw;    
+#login {
+    border-style: solid;
+    width: 40vw;
+    position: absolute;
+    left: 50vw;
+    top: 40vw;
 }
 
-#register{
-      border-style:solid;
-    width:40vw;
-    position:absolute;
-    left:50vw;
-    top:50vw;    
-}  
+#register {
+    border-style: solid;
+    width: 40vw;
+    position: absolute;
+    left: 50vw;
+    top: 50vw;
+}
 
 
-#message {
-    border-style:solid;
-    color:red;
+.error {
+    border-style: solid;
+    color: red;
+}
+
+.success {
+    border-style: solid;
+    color: green;
 }
 
 #ordx {
-    display:block;
+    display: block;
 }
