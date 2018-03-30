@@ -96,13 +96,14 @@ export const authServices = {
        return fetch(request(`${API_URL}logintest`, 'POST', user))
             .then(res => res.json())
             .then(result => {
+                console.log(result);
                 if (result.data.success) { // result.ok?
                     storeUserCredentials(result.data.token);
                     //console.log(result.data.token);
                     return result.data.msg;
                 }
                 return Promise.reject(Error('error'))
-            }).catch(error => Promise.reject(Error(error.message)));
+            }).catch(error => Promise.reject(new Error(error)));
         /*return $q(function(resolve, reject) {
             $http.post(`${{API_URL}}/login`, user).then(function(result) {
                 if (result.data.success) {
