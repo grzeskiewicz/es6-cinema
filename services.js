@@ -93,7 +93,7 @@ export const authServices = {
     },
 
     login(user) { //token? JWT!
-        fetch(request(`${API_URL}logintest`, 'POST', user))
+       return fetch(request(`${API_URL}logintest`, 'POST', user))
             .then(res => res.json())
             .then(result => {
                 if (result.data.success) { // result.ok?
