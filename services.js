@@ -100,7 +100,7 @@ export const authServices = {
                     this.storeUserCredentials(result.token);
                     console.log(result);
                     return result;
-                }
+                } else {return result;}
             }).catch(error => Promise.reject(new Error(error)));
         /*return $q(function(resolve, reject) {
             $http.post(`${{API_URL}}/login`, user).then(function(result) {
