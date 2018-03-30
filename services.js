@@ -53,30 +53,30 @@ export const authServices = {
     authToken: undefined,
 
     loadUserCredentials() {
-        var token = window.localStorage.getItem(LOCAL_TOKEN_KEY);
+        var token = window.localStorage.getItem(this.LOCAL_TOKEN_KEY);
         if (token) {
-            useCredentials(token);
+            this.useCredentials(token);
         }
     },
 
     storeUserCredentials(token) {
-        window.localStorage.setItem(LOCAL_TOKEN_KEY, token);
-        useCredentials(token);
+        window.localStorage.setItem(this.LOCAL_TOKEN_KEY, token);
+        this.useCredentials(token);
     },
 
     useCredentials(token) {
-        isAuthenticated = true;
-        authToken = token;
+        this.isAuthenticated = true;
+        this.authToken = token;
 
         // Set the token as header for your requests!
         $http.defaults.headers.common.Authorization = authToken;
     },
 
     destroyUserCredentials() {
-        authToken = undefined;
-        isAuthenticated = false;
+        this.authToken = undefined;
+        this.isAuthenticated = false;
         $http.defaults.headers.common.Authorization = undefined; //!!!!
-        window.localStorage.removeItem(LOCAL_TOKEN_KEY);
+        window.localStorage.removeItem(this.LOCAL_TOKEN_KEY);
     },
 
     register(user) {
