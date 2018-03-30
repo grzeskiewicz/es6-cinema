@@ -75,7 +75,7 @@ export const authServices = {
     destroyUserCredentials() {
         this.authToken = undefined;
         this.isAuthenticated = false;
-        $http.defaults.headers.common.Authorization = undefined; //!!!!
+       // $http.defaults.headers.common.Authorization = undefined; //!!!!
         window.localStorage.removeItem(this.LOCAL_TOKEN_KEY);
     },
 
