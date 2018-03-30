@@ -69,7 +69,7 @@ export const authServices = {
         this.authToken = token;
 
         // Set the token as header for your requests!
-        $http.defaults.headers.common.Authorization = authToken;
+        //$http.defaults.headers.common.Authorization = authToken;
     },
 
     destroyUserCredentials() {
