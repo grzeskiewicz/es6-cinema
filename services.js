@@ -99,7 +99,7 @@ export const authServices = {
                 if (result.success) { // result.ok?
                     this.storeUserCredentials(result.token);
                     console.log(result);
-                    return result.msg;
+                    return result;
                 }
             }).catch(error => Promise.reject(new Error(error)));
         /*return $q(function(resolve, reject) {
