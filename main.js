@@ -174,17 +174,14 @@ const registerCtrl = {
 
 
 const loginCtrl = {
-    user: {
-        email: '',
-        password: ''
-    },
     register() { $state.go('register'); },
     login(event) {
         event.preventDefault();
+        const loginForm = document.forms['login-form'];
         const loginStatus = document.querySelector('#login-status');
         let user = {
-            email: '',
-            password: ''
+            email: loginForm.email.value,
+            password: loginForm.password.value,
         };
         authServices.login(user)
             .then(res => {
