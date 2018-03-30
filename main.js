@@ -186,7 +186,7 @@ const loginCtrl = {
             email: '',
             password: ''
         };
-        AuthServices.login(user)
+        authServices.login(user)
             .then(res => {
                 if (res.success) {
                     console.log(res);
