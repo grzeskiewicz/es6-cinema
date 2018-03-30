@@ -93,16 +93,14 @@ export const authServices = {
     },
 
     login(user) { //token? JWT!
-       return fetch(request(`${API_URL}logintest`, 'POST', user))
+        return fetch(request(`${API_URL}logintest`, 'POST', user))
             .then(res => res.json())
             .then(result => {
-                console.log(result);
-                if (result.data.success) { // result.ok?
-                    storeUserCredentials(result.data.token);
-                    //console.log(result.data.token);
-                    return result.data.msg;
+                if (result.success) { // result.ok?
+                    storeUserCredentials(result.token);
+                    console.log(result);
+                    return result.msg;
                 }
-                return Promise.reject(Error('error'))
             }).catch(error => Promise.reject(new Error(error)));
         /*return $q(function(resolve, reject) {
             $http.post(`${{API_URL}}/login`, user).then(function(result) {
