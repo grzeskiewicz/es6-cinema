@@ -51,6 +51,7 @@ const showingsService = Object.create(listService);
 fetch(request(API_URL + 'showings', 'GET'))
     .then(res => res.json())
     .then(showings => {
+        loginCtrl.getInfo();
         console.log(showings);
         let shows = `{ "showings": ${JSON.stringify(showings)}}`;
         showingsCtrl.list(JSON.parse(shows));
