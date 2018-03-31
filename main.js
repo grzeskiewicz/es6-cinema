@@ -177,12 +177,14 @@ const registerCtrl = {
 
 const loginCtrl = {
     getInfo() {
-        const customerInfo = document.querySelector('#customer-info');
+        const customerInfoEmail = document.querySelector('#customer-info-email');
+        const logoutButton=document.querySelector('#logout');
+        logoutButton.addEventListener('click',loginCtrl.logout,false);
         fetch(request(`${API_URL}memberinfo`, 'GET'))
             .then(res => res.json())
             .then(result => {
                 if (result.success) {
-                    customerInfo.innerHTML = result.msg;
+                    customerInfoEmail.innerHTML = result.msg;
                 } else {
 
                 }
