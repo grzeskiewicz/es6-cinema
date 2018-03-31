@@ -60,6 +60,7 @@ export const authServices = {
     },
 
     storeUserCredentials(token) {
+        console.log("HEHE JESTEM TU");
         window.localStorage.setItem(this.LOCAL_TOKEN_KEY, token);
         this.useCredentials(token);
     },
