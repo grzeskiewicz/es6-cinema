@@ -174,25 +174,26 @@ const registerCtrl = {
 
 
 const loginCtrl = {
-    register() { $state.go('register'); },
+    // register() { $state.go('register'); },
     login(event) {
         event.preventDefault();
         const loginForm = document.forms['login-form'];
+        console.log(loginForm);
         const loginStatus = document.querySelector('#login-status');
         let user = {
             email: loginForm.email.value,
-            password: loginForm.password.value,
+            password: loginForm.password.value
         };
         authServices.login(user)
             .then(res => {
                 if (res.success) {
                     loginStatus.classList.add('success');
-                    loginStatus.innerHTML=res.msg;
+                    loginStatus.innerHTML = res.msg;
                     this.getInfo();
                     console.log(res);
                 } else {
                     loginStatus.classList.add('error');
-                    loginStatus.innerHTML=res.msg;
+                    loginStatus.innerHTML = res.msg;
                     console.log(res);
                 }
                 // $rootScope.noshowlogin=true;
@@ -207,7 +208,7 @@ const loginCtrl = {
     getInfo() {
         const customerInfo = document.querySelector('#customer-info');
         fetch(`${API_URL}memberinfo`, 'GET').then(function(result) {
-  console.log(result);
+            console.log(result);
         });
 
     },
