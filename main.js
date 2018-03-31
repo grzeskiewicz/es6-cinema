@@ -176,10 +176,9 @@ const registerCtrl = {
 const loginCtrl = {
         getInfo() {
         const customerInfo = document.querySelector('#customer-info');
-        fetch(`${API_URL}memberinfo`, 'GET').then(function(result) {
-            console.log(result);
-        });
-
+        fetch(`${API_URL}memberinfo`, 'GET')
+        .then(res => res.json())
+        .then(result => {console.log(result)});
     },
     // register() { $state.go('register'); },
     login(event) {
