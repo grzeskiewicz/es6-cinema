@@ -174,11 +174,17 @@ const registerCtrl = {
 
 
 const loginCtrl = {
-        getInfo() {
+    getInfo() {
         const customerInfo = document.querySelector('#customer-info');
         fetch(request(`${API_URL}memberinfo`, 'GET'))
-        .then(res => res.json())
-        .then(result => {console.log(result)});
+            .then(res => res.json())
+            .then(result => {
+                if (result.success) {
+                    customerInfo.innerHTML = result.msg;
+                } else {
+
+                }
+            });
     },
     // register() { $state.go('register'); },
     login(event) {
@@ -195,9 +201,9 @@ const loginCtrl = {
                 if (res.success) {
                     loginStatus.classList.add('success');
                     loginStatus.innerHTML = res.msg;
-                     console.log(this);
-                    this.getInfo();
-                   
+                    console.log(this);
+                    loginCtrl.getInfo();
+
                 } else {
                     loginStatus.classList.add('error');
                     loginStatus.innerHTML = res.msg;

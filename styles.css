@@ -18,6 +18,7 @@ a {
 #customerinfo{
     position:fixed;
     top:0;
+    right:100px;
 }
 #showings {
     width: 40vw;
