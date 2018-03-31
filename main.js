@@ -195,8 +195,9 @@ const loginCtrl = {
                 if (res.success) {
                     loginStatus.classList.add('success');
                     loginStatus.innerHTML = res.msg;
-                    loginCtrl.getInfo();
-                    console.log(res);
+                     console.log(this);
+                    this.getInfo();
+                   
                 } else {
                     loginStatus.classList.add('error');
                     loginStatus.innerHTML = res.msg;
