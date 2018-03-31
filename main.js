@@ -224,7 +224,7 @@ const loginCtrl = {
     destrySession() { authServies.logout(); },
 
     logout() {
-        authServies.logout();
+        authServices.logout();
         //$rootScope.noshowlogin=false;
         //$state.go('login');
         //$rootScope.memberinfo2=undefined;
