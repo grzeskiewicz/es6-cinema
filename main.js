@@ -191,13 +191,12 @@ const loginCtrl = {
             email: loginForm.email.value,
             password: loginForm.password.value
         };
-        const that=this;
         authServices.login(user)
             .then(res => {
                 if (res.success) {
                     loginStatus.classList.add('success');
                     loginStatus.innerHTML = res.msg;
-                    that.getInfo();
+                    this.getInfo();
                     console.log(res);
                 } else {
                     loginStatus.classList.add('error');
