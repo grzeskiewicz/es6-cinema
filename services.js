@@ -80,13 +80,8 @@ export const authServices = {
     },
 
     register(user) {
-        const headerz = new Headers({
-            'Accept': 'application/json',
-            'Content-Type': 'application/json',
-            // "Access-Control-Allow-Origin": "*"
-        });
         console.log(JSON.stringify(user));
-        return fetch(request(`${API_URL}registertest`, 'POST', user, headerz))
+        return fetch(request(`${API_URL}registertest`, 'POST', user))
             .then(res => res.json())
             .then(result => result)
             .catch(error => Promise.reject(new Error(error))); //Promise.reject(new Error(error))       

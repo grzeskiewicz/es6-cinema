@@ -15,7 +15,10 @@ a {
     border-style: solid;
     border-color: blue;
 }
-
+#customerinfo{
+    position:fixed;
+    top:0;
+}
 #showings {
     width: 40vw;
     position: absolute;
