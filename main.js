@@ -179,6 +179,7 @@ const loginCtrl = {
         event.preventDefault();
         const loginForm = document.forms['login-form'];
         const loginStatus = document.querySelector('#login-status');
+        const customerInfo = document.querySelector('#customer-info');
         let user = {
             email: loginForm.email.value,
             password: loginForm.password.value,

@@ -119,66 +119,7 @@ export const authServices = {
 }
 
 
-
-
-
-
 /*
-const loginCtrl = {
-    user: {
-        email: '',
-        password: ''
-    },
-    register() { $state.go('register'); },
-    login() {
-        AuthService.login(this.user).then(function(msg) {
-            // $rootScope.noshowlogin=true;
-            //$scope.getInfo();
-        }, function(errMsg) {
-            // $scope.error=true;
-            //$scope.errorMsg=errMsg.msg;
-            // if (errMsg.wrongpassword==true) {$scope.errorpassword=true;}
-        });
-    },
-    destrySession() { authServies.logout(); },
-    getInfo() {
-        fetch(`${API_ENDPOINT}/memberinfo`, 'GET').then(function(result) {
-            if (result.data.success) {
-                $rootScope.noshowlogin = true;
-                $scope.memberinfo = result.data.msg;
-                $rootScope.memberinfo2 = result.data.msg;
-                $state.go('order');
-            }
-        });
-
-    },
-    logout() {
-        authServies.logout();
-        //$rootScope.noshowlogin=false;
-        //$state.go('login');
-        //$rootScope.memberinfo2=undefined;
-        //$scope.memberinfo=undefined;
-    }
-
-}
-const registerCtrl = {
-    user: {
-        email: '',
-        password: '',
-        name: '',
-        surename: '',
-        telephone: ''
-    },
-    signup() {
-        authServies.register(this.user).then(msg => {
-            //$state.go('login');
-            console.log(`Registration msg ${msg}`);
-        }, errMsg => {
-            //fails
-        });
-    }
-}
-
 
 
 const orderCtrl2 = {
