@@ -174,6 +174,13 @@ const registerCtrl = {
 
 
 const loginCtrl = {
+        getInfo() {
+        const customerInfo = document.querySelector('#customer-info');
+        fetch(`${API_URL}memberinfo`, 'GET').then(function(result) {
+            console.log(result);
+        });
+
+    },
     // register() { $state.go('register'); },
     login(event) {
         event.preventDefault();
@@ -206,13 +213,7 @@ const loginCtrl = {
             });
     },
     destrySession() { authServies.logout(); },
-    getInfo() {
-        const customerInfo = document.querySelector('#customer-info');
-        fetch(`${API_URL}memberinfo`, 'GET').then(function(result) {
-            console.log(result);
-        });
 
-    },
     logout() {
         authServies.logout();
         //$rootScope.noshowlogin=false;
