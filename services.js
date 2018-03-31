@@ -1,4 +1,4 @@
-import { API_URL, request } from './apiconnection.js'; //request
+import { API_URL, request, headers } from './apiconnection.js'; //request
 /*const seatServices = {
     pickedSeats: { //testable
         pickedSeats: [],
@@ -67,7 +67,7 @@ export const authServices = {
     useCredentials(token) {
         this.isAuthenticated = true;
         this.authToken = token;
-
+        headers.append('Authorization', authToken);
         // Set the token as header for your requests!
         //$http.defaults.headers.common.Authorization = authToken;
     },
@@ -75,7 +75,8 @@ export const authServices = {
     destroyUserCredentials() {
         this.authToken = undefined;
         this.isAuthenticated = false;
-       // $http.defaults.headers.common.Authorization = undefined; //!!!!
+        headers.delete('Authorization');
+        // $http.defaults.headers.common.Authorization = undefined; //!!!!
         window.localStorage.removeItem(this.LOCAL_TOKEN_KEY);
     },
 
@@ -95,7 +96,7 @@ export const authServices = {
                     this.storeUserCredentials(result.token);
                     console.log(result);
                     return result;
-                } else {return result;}
+                } else { return result; }
             }).catch(error => Promise.reject(new Error(error)));
         /*return $q(function(resolve, reject) {
             $http.post(`${{API_URL}}/login`, user).then(function(result) {

@@ -179,7 +179,6 @@ const loginCtrl = {
         event.preventDefault();
         const loginForm = document.forms['login-form'];
         const loginStatus = document.querySelector('#login-status');
-        const customerInfo = document.querySelector('#customer-info');
         let user = {
             email: loginForm.email.value,
             password: loginForm.password.value,
@@ -189,6 +188,7 @@ const loginCtrl = {
                 if (res.success) {
                     loginStatus.classList.add('success');
                     loginStatus.innerHTML=res.msg;
+                    this.getInfo();
                     console.log(res);
                 } else {
                     loginStatus.classList.add('error');
@@ -205,10 +205,9 @@ const loginCtrl = {
     },
     destrySession() { authServies.logout(); },
     getInfo() {
-        fetch(`${API_ENDPOINT}/memberinfo`, 'GET').then(function(result) {
-            if (result.data.success) {
-
-            }
+        const customerInfo = document.querySelector('#customer-info');
+        fetch(`${API_URL}memberinfo`, 'GET').then(function(result) {
+  console.log(result);
         });
 
     },

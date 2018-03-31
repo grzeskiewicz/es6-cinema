@@ -4,7 +4,7 @@
 export const API_URL='https://https-cinemanode.193b.starter-ca-central-1.openshiftapps.com/';
 //const API_URL = 'https://api.myjson.com/bins/w7wup';
 
-const headers = new Headers({
+export const headers = new Headers({
     'Accept': 'application/json',
     'Content-Type': 'application/json',
 });
