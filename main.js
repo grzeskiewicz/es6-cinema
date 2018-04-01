@@ -232,6 +232,8 @@ const loginCtrl = {
     logout() {
         const loginDiv = document.querySelector('#login');
         const registerDiv = document.querySelector('#register');
+         const customerInfoEmail = document.querySelector('#customer-info-email');
+         registerStatus.innerHTML="";
         authServices.logout();
         view.show(loginDiv);
         view.show(registerDiv)
