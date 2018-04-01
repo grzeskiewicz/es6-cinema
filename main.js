@@ -177,8 +177,8 @@ const registerCtrl = {
 
 const loginCtrl = {
     getInfo() {
-        const loginDiv = document.getElementById('#login'),
-            const registerDiv = document.getElementById('#register'),
+        const loginDiv = document.getElementById('#login');
+            const registerDiv = document.getElementById('#register');
                 const customerInfoEmail = document.querySelector('#customer-info-email');
         const logoutButton = document.querySelector('#logout');
         logoutButton.addEventListener('click', loginCtrl.logout, false);
@@ -229,8 +229,8 @@ const loginCtrl = {
     destrySession() { authServies.logout(); },
 
     logout() {
-        const loginDiv = document.getElementById('#login'),
-        const registerDiv = document.getElementById('#register'),
+        const loginDiv = document.getElementById('#login');
+        const registerDiv = document.getElementById('#register');
         authServices.logout();
         view.show(loginDiv);
         view.show(registerDiv)
