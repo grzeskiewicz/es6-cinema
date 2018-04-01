@@ -134,10 +134,29 @@ const orderCtrl = {
             registerForm.addEventListener('submit', registerCtrl.signup, false);
             const loginForm = document.forms['login-form'];
             loginForm.addEventListener('submit', loginCtrl.login, false);
+            const orderBtn = document.querySelector('#order-ticket');
+            orderBtn.addEventListener('click', ticketCtrl.order, false);
         });
     }
 }
 
+
+const ticketCtrl = {
+    order() {
+        const ticket = {
+            showing: showingsService.getSelected(),
+            seats: seatsCtrl.selectedSeats,
+            price 30: ,
+            email: loginCtrl.getInfo(),
+        };
+        fetch(request(`${API_URL}newticket`, 'POST', ticket))
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+            }).catch(error => Promise.reject(new Error(error)));
+    }
+
+}
 
 const registerCtrl = {
     signup(event) {
@@ -151,13 +170,6 @@ const registerCtrl = {
             surename: registerForm.surename.value,
             telephone: registerForm.telephone.value
         };
-        /*let register = authServices.register(user);
-                console.log(register);
-                if (register) {
-                    console.log("hehe");
-                    view.hide(registerForm);
-                }*/
-
         authServices.register(user)
             .then(res => {
                 if (res.success) {
@@ -190,7 +202,7 @@ const loginCtrl = {
                     customerInfoEmail.innerHTML = result.msg;
                     view.hide(loginDiv);
                     view.hide(registerDiv);
-
+                    return result.msg;
                 } else {
 
                 }
@@ -232,8 +244,8 @@ const loginCtrl = {
     logout() {
         const loginDiv = document.querySelector('#login');
         const registerDiv = document.querySelector('#register');
-         const customerInfoEmail = document.querySelector('#customer-info-email');
-         customerInfoEmail.innerHTML="";
+        const customerInfoEmail = document.querySelector('#customer-info-email');
+        customerInfoEmail.innerHTML = "";
         authServices.logout();
         view.show(loginDiv);
         view.show(registerDiv);
