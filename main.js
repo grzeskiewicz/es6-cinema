@@ -178,6 +178,7 @@ const registerCtrl = {
 const loginCtrl = {
     getInfo() {
         const loginDiv = document.querySelector('#login');
+        const registerDiv = document.querySelector('#register');
         const customerInfoEmail = document.querySelector('#customer-info-email');
         const logoutButton=document.querySelector('#logout');
         logoutButton.addEventListener('click',loginCtrl.logout,false);
@@ -187,6 +188,8 @@ const loginCtrl = {
                 if (result.success) {
                     customerInfoEmail.innerHTML = result.msg;
                     view.hide(loginDiv);
+                    view.hide(registerDiv);
+
                 } else {
 
                 }
