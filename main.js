@@ -179,7 +179,7 @@ const loginCtrl = {
     loginDiv : document.getElementById('#login'),
     registerDiv : document.getElementById('#register'),
     getInfo() {
-
+console.log(loginDiv);
         const customerInfoEmail = document.querySelector('#customer-info-email');
         const logoutButton = document.querySelector('#logout');
         logoutButton.addEventListener('click', loginCtrl.logout, false);
