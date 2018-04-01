@@ -177,6 +177,7 @@ const registerCtrl = {
 
 const loginCtrl = {
     getInfo() {
+        const loginForm = document.forms['login-form'];
         const customerInfoEmail = document.querySelector('#customer-info-email');
         const logoutButton=document.querySelector('#logout');
         logoutButton.addEventListener('click',loginCtrl.logout,false);
@@ -185,6 +186,7 @@ const loginCtrl = {
             .then(result => {
                 if (result.success) {
                     customerInfoEmail.innerHTML = result.msg;
+                    view.hide(loginForm);
                 } else {
 
                 }
