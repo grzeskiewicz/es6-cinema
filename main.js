@@ -188,8 +188,8 @@ const loginCtrl = {
             .then(result => {
                 if (result.success) {
                     customerInfoEmail.innerHTML = result.msg;
-                    view.hide(this.loginDiv);
-                    view.hide(this.registerDiv);
+                    view.hide(loginDiv);
+                    view.hide(registerDiv);
 
                 } else {
 
