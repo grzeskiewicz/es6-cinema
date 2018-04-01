@@ -176,8 +176,8 @@ const registerCtrl = {
 
 
 const loginCtrl = {
-    loginDiv = document.querySelector('#login'),
-    registerDiv = document.querySelector('#register'),
+    loginDiv : document.querySelector('#login'),
+    registerDiv : document.querySelector('#register'),
     getInfo() {
 
         const customerInfoEmail = document.querySelector('#customer-info-email');
