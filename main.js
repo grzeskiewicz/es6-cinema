@@ -176,10 +176,10 @@ const registerCtrl = {
 
 
 const loginCtrl = {
-    loginDiv : document.getElementById('login'),
-    registerDiv : document.getElementById('register'),
+
     getInfo() {
-console.log(loginDiv);
+        const loginDiv = document.querySelector('#login');
+        const registerDiv = document.querySelector('#register');
         const customerInfoEmail = document.querySelector('#customer-info-email');
         const logoutButton = document.querySelector('#logout');
         logoutButton.addEventListener('click', loginCtrl.logout, false);
@@ -230,9 +230,11 @@ console.log(loginDiv);
     destrySession() { authServies.logout(); },
 
     logout() {
+        const loginDiv = document.querySelector('#login');
+        const registerDiv = document.querySelector('#register');
         authServices.logout();
-        view.show(this.loginDiv);
-        view.show(this.registerDiv)
+        view.show(loginDiv);
+        view.show(registerDiv)
         //$rootScope.noshowlogin=false;
         //$state.go('login');
         //$rootScope.memberinfo2=undefined;
