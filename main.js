@@ -146,7 +146,7 @@ const ticketCtrl = {
         const ticket = {
             showing: showingsService.getSelected(),
             seats: seatsCtrl.selectedSeats,
-            price 30: ,
+            price :30 ,
             email: loginCtrl.getInfo(),
         };
         fetch(request(`${API_URL}newticket`, 'POST', ticket))
