@@ -144,7 +144,7 @@ const orderCtrl = {
 const ticketCtrl = {
     order() {
         const ticket = {
-            showing: showingsService.getSelected(),
+            showing: showingsService.getSelected().id,
             seats: seatsCtrl.selectedSeats,
             price :30 ,
             email: loginCtrl.getInfo(),
