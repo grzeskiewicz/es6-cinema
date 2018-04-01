@@ -176,10 +176,11 @@ const registerCtrl = {
 
 
 const loginCtrl = {
+    loginDiv : document.getElementById('login'),
+    registerDiv : document.getElementById('register'),
     getInfo() {
-        const loginDiv = document.getElementById('#login');
-            const registerDiv = document.getElementById('#register');
-                const customerInfoEmail = document.querySelector('#customer-info-email');
+console.log(loginDiv);
+        const customerInfoEmail = document.querySelector('#customer-info-email');
         const logoutButton = document.querySelector('#logout');
         logoutButton.addEventListener('click', loginCtrl.logout, false);
         fetch(request(`${API_URL}memberinfo`, 'GET'))
@@ -187,8 +188,8 @@ const loginCtrl = {
             .then(result => {
                 if (result.success) {
                     customerInfoEmail.innerHTML = result.msg;
-                    view.hide(loginDiv);
-                    view.hide(registerDiv);
+                    view.hide(this.loginDiv);
+                    view.hide(this.registerDiv);
 
                 } else {
 
@@ -229,11 +230,9 @@ const loginCtrl = {
     destrySession() { authServies.logout(); },
 
     logout() {
-        const loginDiv = document.getElementById('#login');
-        const registerDiv = document.getElementById('#register');
         authServices.logout();
-        view.show(loginDiv);
-        view.show(registerDiv)
+        view.show(this.loginDiv);
+        view.show(this.registerDiv)
         //$rootScope.noshowlogin=false;
         //$state.go('login');
         //$rootScope.memberinfo2=undefined;
