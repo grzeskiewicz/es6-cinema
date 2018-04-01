@@ -236,7 +236,7 @@ const loginCtrl = {
          registerStatus.innerHTML="";
         authServices.logout();
         view.show(loginDiv);
-        view.show(registerDiv)
+        view.show(registerDiv);
         //$rootScope.noshowlogin=false;
         //$state.go('login');
         //$rootScope.memberinfo2=undefined;
