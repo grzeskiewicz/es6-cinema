@@ -205,10 +205,10 @@ const loginCtrl = {
                     customerInfoEmail.innerHTML = result.msg;
                     view.hide(loginDiv);
                     view.hide(registerDiv);
-                    console.log(result);
+                    console.log("FETCH: " +result.msg);
                     return result.msg;
                 } else {
-console.log(result);
+console.log("Lol cos tu" + result);
                 }
             });
     },
