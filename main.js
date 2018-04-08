@@ -143,12 +143,12 @@ const orderCtrl = {
 
 const ticketCtrl = {
     order() {
-        loginCtrl.getInfo().then(res => {
+        loginCtrl.getInfo().then(email => {
             const ticket = {
                 showing: showingsService.getSelected().id,
                 seats: seatsCtrl.selectedSeats,
                 price: 30,
-                email: loginCtrl.getInfo(),
+                email: email,
             };
             console.log(ticket);
             fetch(request(`${API_URL}newticket`, 'POST', ticket))
