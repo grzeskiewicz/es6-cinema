@@ -143,20 +143,21 @@ const orderCtrl = {
 
 const ticketCtrl = {
     order() {
-        let email=loginCtrl.getInfo();
-        console.log(email);
-        const ticket = {
-            showing: showingsService.getSelected().id,
-            seats: seatsCtrl.selectedSeats,
-            price :30 ,
-            email: loginCtrl.getInfo(),
-        };
-        console.log(ticket);
-        fetch(request(`${API_URL}newticket`, 'POST', ticket))
-            .then(res => res.json())
-            .then(result => {
-                console.log(result);
-            }).catch(error => Promise.reject(new Error(error)));
+        loginCtrl.getInfo().then(res => {
+            const ticket = {
+                showing: showingsService.getSelected().id,
+                seats: seatsCtrl.selectedSeats,
+                price: 30,
+                email: loginCtrl.getInfo(),
+            };
+            console.log(ticket);
+            fetch(request(`${API_URL}newticket`, 'POST', ticket))
+                .then(res => res.json())
+                .then(result => {
+                    console.log(result);
+                }).catch(error => Promise.reject(new Error(error)));
+        });
+
     }
 
 }
@@ -198,17 +199,17 @@ const loginCtrl = {
         const customerInfoEmail = document.querySelector('#customer-info-email');
         const logoutButton = document.querySelector('#logout');
         logoutButton.addEventListener('click', loginCtrl.logout, false);
-        fetch(request(`${API_URL}memberinfo`, 'GET'))
+        return fetch(request(`${API_URL}memberinfo`, 'GET'))
             .then(res => res.json())
             .then(result => {
                 if (result.success) {
                     customerInfoEmail.innerHTML = result.msg;
                     view.hide(loginDiv);
                     view.hide(registerDiv);
-                    console.log("FETCH: " +result.msg);
+                    console.log("FETCH: " + result.msg);
                     return result.msg;
                 } else {
-console.log("Lol cos tu" + result);
+                    console.log("Lol cos tu" + result);
                 }
             });
     },
