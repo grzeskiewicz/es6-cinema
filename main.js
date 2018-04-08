@@ -203,9 +203,10 @@ const loginCtrl = {
                     customerInfoEmail.innerHTML = result.msg;
                     view.hide(loginDiv);
                     view.hide(registerDiv);
+                    console.log(result);
                     return result.msg;
                 } else {
-
+console.log(result);
                 }
             });
     },
