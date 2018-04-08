@@ -154,6 +154,8 @@ const ticketCtrl = {
             fetch(request(`${API_URL}newticket`, 'POST', ticket))
                 .then(res => res.json())
                 .then(result => {
+                    const orderBtn = document.querySelector('#order-ticket');
+                    view.hide(orderBtn);
                     console.log(result);
                 }).catch(error => Promise.reject(new Error(error)));
         });
