@@ -149,6 +149,7 @@ const ticketCtrl = {
             price :30 ,
             email: loginCtrl.getInfo(),
         };
+        console.log(ticket);
         fetch(request(`${API_URL}newticket`, 'POST', ticket))
             .then(res => res.json())
             .then(result => {
