@@ -143,6 +143,8 @@ const orderCtrl = {
 
 const ticketCtrl = {
     order() {
+        let email=loginCtrl.getInfo();
+        console.log(email);
         const ticket = {
             showing: showingsService.getSelected().id,
             seats: seatsCtrl.selectedSeats,
