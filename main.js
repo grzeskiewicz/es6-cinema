@@ -107,6 +107,7 @@ const seatsCtrl = {
             seat.addEventListener('click', event => {
                 const nextBtn = document.getElementById("nextBtn");
                 event.target.classList.toggle('selected');
+                view.show(nextBtn);
                 if (event.target.classList.contains('selected')) {
                     this.selectedSeats.push(event.target.firstChild.data);
                     view.show(nextBtn);
