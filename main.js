@@ -101,22 +101,21 @@ const showingsCtrl = {
 
 const seatsCtrl = {
     seats: document.getElementsByClassName("seat"),
+    nextBtn: document.getElementById("nextBtn"),
     selectedSeats: [],
     toggleListener() {
         [...this.seats].forEach(seat => {
             seat.addEventListener('click', event => {
-                const nextBtn = document.getElementById("nextBtn");
                 event.target.classList.toggle('selected');
-                view.show(nextBtn);
                 if (event.target.classList.contains('selected')) {
                     this.selectedSeats.push(event.target.firstChild.data);
-                    view.show(nextBtn);
+                    view.show(this.nextBtn);
                     //console.log(this.selectedSeats);
                 } else {
                     let seatToRemoveIndex = this.selectedSeats.findIndex(element => element === event.target.firstChild.data);
                     this.selectedSeats.splice(seatToRemoveIndex, 1);
 
-                    if (this.selectedSeats.length == 0) { view.hide(nextBtn); }
+                    if (this.selectedSeats.length == 0) { view.hide(this.nextBtn); }
                     //console.log(this.selectedSeats);
                 }
             });
