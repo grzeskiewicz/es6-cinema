@@ -121,10 +121,10 @@ const seatsCtrl = {
         fetch(request(`${API_URL}seatstaken/${showingsService.getSelected().id}`, 'GET'))
             .then(res => res.json())
             .then(seatstaken => {
-               for (const seat of seatstaken){
-                console.log(typeof seat);
-                //set button to disabled
-               }
+                for (const seat of seatstaken) {
+                    document.getElementById(Number(seat)).disabled = true;
+                    //set button to disabled
+                }
 
             });
     }
