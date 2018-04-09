@@ -105,13 +105,17 @@ const seatsCtrl = {
     toggleListener() {
         [...this.seats].forEach(seat => {
             seat.addEventListener('click', event => {
+                const nextBtn = document.getElementById("nextBtn");
                 event.target.classList.toggle('selected');
                 if (event.target.classList.contains('selected')) {
                     this.selectedSeats.push(event.target.firstChild.data);
+                    view.show(nextBtn);
                     //console.log(this.selectedSeats);
                 } else {
                     let seatToRemoveIndex = this.selectedSeats.findIndex(element => element === event.target.firstChild.data);
                     this.selectedSeats.splice(seatToRemoveIndex, 1);
+
+                    if (this.selectedSeats.length == 0) { view.hide(nextBtn); }
                     //console.log(this.selectedSeats);
                 }
             });
@@ -134,8 +138,8 @@ const seatsCtrl = {
 
 const orderCtrl = {
     orderListener() {
-        const orderBtn = document.getElementById("ordx");
-        orderBtn.addEventListener('click', event => {
+        const nextBtn = document.getElementById("nextBtn");
+        nextBtn.addEventListener('click', event => {
             //console.log(seatsCtrl.selectedSeats);
             //console.log(showingsService.getSelected());
             const obj = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
@@ -167,7 +171,7 @@ const ticketCtrl = {
                 .then(res => res.json())
                 .then(result => {
                     const orderBtn = document.querySelector('#order-ticket');
-                    const seatsDiv= document.querySlector('#seats');
+                    const seatsDiv = document.querySlector('#seats');
                     view.hide(orderBtn);
                     view.hide(seatsDiv);
                     console.log(result);
