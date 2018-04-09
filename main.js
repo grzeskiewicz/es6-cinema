@@ -160,11 +160,13 @@ const orderCtrl = {
 
 const ticketCtrl = {
     order() {
+        const priceOption = document.getElementById(price);
+        console.log(priceOption.value);
         loginCtrl.getInfo().then(email => {
             const ticket = {
                 showing: showingsService.getSelected().id,
                 seats: seatsCtrl.selectedSeats,
-                price: 30,
+                price: priceOption.value,
                 email: email,
             };
             console.log(ticket);
