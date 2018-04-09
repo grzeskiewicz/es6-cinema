@@ -82,7 +82,8 @@ const showingsCtrl = {
         view.renderContent("entry-template", showings, "showings");
         [...this.showingsList].forEach(showing => {
             showing.addEventListener('click', event => {
-
+                const nextBtn = document.getElementById("nextBtn");
+                view.hide(nextBtn);
                 event.preventDefault();
                 view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
                 seatsCtrl.selectedSeats = [];
@@ -101,22 +102,21 @@ const showingsCtrl = {
 
 const seatsCtrl = {
     seats: document.getElementsByClassName("seat"),
-    nextBtn: document.getElementById("nextBtn"),
     selectedSeats: [],
     toggleListener() {
-        console.log(this.nextBtn);
         [...this.seats].forEach(seat => {
             seat.addEventListener('click', event => {
+                const nextBtn = document.getElementById("nextBtn");
                 event.target.classList.toggle('selected');
                 if (event.target.classList.contains('selected')) {
                     this.selectedSeats.push(event.target.firstChild.data);
-                    view.show(seatsCtrl.nextBtn);
+                    view.show(nextBtn);
                     //console.log(this.selectedSeats);
                 } else {
                     let seatToRemoveIndex = this.selectedSeats.findIndex(element => element === event.target.firstChild.data);
                     this.selectedSeats.splice(seatToRemoveIndex, 1);
 
-                    if (this.selectedSeats.length == 0) { view.hide(seatsCtrl.nextBtn); }
+                    if (this.selectedSeats.length == 0) { view.hide(nextBtn); }
                     //console.log(this.selectedSeats);
                 }
             });
