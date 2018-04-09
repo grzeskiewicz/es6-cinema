@@ -53,7 +53,6 @@ fetch(request(API_URL + 'showings', 'GET'))
     .then(showings => {
         authServices.loadUserCredentials();
         loginCtrl.getInfo();
-        console.log(showings);
         let shows = `{ "showings": ${JSON.stringify(showings)}}`;
         showingsCtrl.list(JSON.parse(shows));
         seatsCtrl.toggleListener();
@@ -89,9 +88,11 @@ const showingsCtrl = {
                 seatsCtrl.selectedSeats = [];
                 document.getElementById("order").innerHTML = "";
                 seatsCtrl.toggleListener();
+
                 orderCtrl.orderListener();
                 //console.log(event.currentTarget.dataset.showingId);
                 showingsService.selectById(event.currentTarget.dataset.showingId);
+                seatsCtrl.disableListener();
             }, false);
         });
     }
@@ -115,6 +116,13 @@ const seatsCtrl = {
                 }
             });
         })
+    },
+    disableListener() {
+        fetch(request(`${API_URL}seatstaken/${showingsService.getSelected()}`, 'GET'))
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+            });
     }
 }
 
