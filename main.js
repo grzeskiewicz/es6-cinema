@@ -121,7 +121,7 @@ const seatsCtrl = {
         fetch(request(`${API_URL}seatstaken/${showingsService.getSelected().id}`, 'GET'))
             .then(res => res.json())
             .then(result => {
-                console.log(result);
+                console.log(JSON.parse(result));
             });
     }
 }
