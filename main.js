@@ -119,7 +119,10 @@ const seatsCtrl = {
     },
     disableListener() {
         fetch(request(`${API_URL}seatstaken/${showingsService.getSelected().id}`, 'GET'))
-            .then(res => console.log(res));
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+            });
     }
 }
 
