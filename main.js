@@ -104,6 +104,7 @@ const seatsCtrl = {
     nextBtn: document.getElementById("nextBtn"),
     selectedSeats: [],
     toggleListener() {
+        console.log(this.nextBtn);
         [...this.seats].forEach(seat => {
             seat.addEventListener('click', event => {
                 event.target.classList.toggle('selected');
