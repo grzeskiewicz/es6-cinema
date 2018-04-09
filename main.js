@@ -167,8 +167,9 @@ const ticketCtrl = {
                 .then(res => res.json())
                 .then(result => {
                     const orderBtn = document.querySelector('#order-ticket');
+                    const seatsDiv= document.querySlector('#seats');
                     view.hide(orderBtn);
-                    view.hide(document.querySlector('#seats'));
+                    view.hide(seatsDiv);
                     console.log(result);
                 }).catch(error => Promise.reject(new Error(error)));
         });
