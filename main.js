@@ -82,18 +82,18 @@ const showingsCtrl = {
         view.renderContent("entry-template", showings, "showings");
         [...this.showingsList].forEach(showing => {
             showing.addEventListener('click', event => {
-                const nextBtn = document.getElementById("nextBtn");
-                view.hide(nextBtn);
+
                 event.preventDefault();
                 view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
                 seatsCtrl.selectedSeats = [];
                 document.getElementById("order").innerHTML = "";
                 seatsCtrl.toggleListener();
-
                 orderCtrl.orderListener();
                 //console.log(event.currentTarget.dataset.showingId);
                 showingsService.selectById(event.currentTarget.dataset.showingId);
                 seatsCtrl.disableListener();
+                const nextBtn = document.getElementById("nextBtn");
+                view.hide(nextBtn);
             }, false);
         });
     }
