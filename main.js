@@ -160,8 +160,8 @@ const orderCtrl = {
 
 const ticketCtrl = {
     order() {
-        const priceOption = document.getElementById(price);
-        console.log(priceOption.value);
+        const form = document.forms['order-form'];
+        console.log(form.price.value);
         loginCtrl.getInfo().then(email => {
             const ticket = {
                 showing: showingsService.getSelected().id,
