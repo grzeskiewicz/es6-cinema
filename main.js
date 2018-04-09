@@ -109,13 +109,13 @@ const seatsCtrl = {
                 event.target.classList.toggle('selected');
                 if (event.target.classList.contains('selected')) {
                     this.selectedSeats.push(event.target.firstChild.data);
-                    view.show(this.nextBtn);
+                    view.show(seatsCtrl.nextBtn);
                     //console.log(this.selectedSeats);
                 } else {
                     let seatToRemoveIndex = this.selectedSeats.findIndex(element => element === event.target.firstChild.data);
                     this.selectedSeats.splice(seatToRemoveIndex, 1);
 
-                    if (this.selectedSeats.length == 0) { view.hide(this.nextBtn); }
+                    if (this.selectedSeats.length == 0) { view.hide(seatsCtrl.nextBtn); }
                     //console.log(this.selectedSeats);
                 }
             });
