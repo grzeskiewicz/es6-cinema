@@ -133,6 +133,7 @@ const seatsCtrl = {
         fetch(request(`${API_URL}seatstaken/${showingsService.getSelected().id}`, 'GET'))
             .then(res => res.json())
             .then(seatstaken => {
+                console.log(seatstaken);
                 for (const seat of seatstaken) {
                     console.log(Number(seat));
                     document.getElementById(Number(seat)).disabled = true;
