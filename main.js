@@ -82,8 +82,9 @@ const showingsCtrl = {
         view.renderContent("entry-template", showings, "showings");
         [...this.showingsList].forEach(showing => {
             showing.addEventListener('click', event => {
-
                 event.preventDefault();
+                const seatsDiv = document.getElementById('seats')
+                view.show(seatsDiv);
                 view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
                 seatsCtrl.selectedSeats = [];
                 document.getElementById("order").innerHTML = "";
