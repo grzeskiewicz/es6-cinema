@@ -175,7 +175,7 @@ const ticketCtrl = {
             fetch(request(`${API_URL}newticket`, 'POST', ticket))
                 .then(res => res.json())
                 .then(result => {
-                    const seatsDiv = document.getElementById('#seats');
+                    const seatsDiv = document.getElementById('seats');
                     view.hide(orderForm['order-ticket']);
                     view.hide(seatsDiv);
                     console.log(result);
