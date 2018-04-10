@@ -151,17 +151,19 @@ const orderCtrl = {
             registerForm.addEventListener('submit', registerCtrl.signup, false);
             const loginForm = document.forms['login-form'];
             loginForm.addEventListener('submit', loginCtrl.login, false);
-            const orderBtn = document.querySelector('#order-ticket');
-            orderBtn.addEventListener('click', ticketCtrl.order, false);
+            const orderForm = documents.forms['order-form'];
+            orderForm.addEventListener('submit', ticketCtrl.order, false);
+            // const orderBtn = document.querySelector('#order-ticket');
+            // orderBtn.addEventListener('click', ticketCtrl.order, false);
         });
     }
 }
 
 
 const ticketCtrl = {
-    order() {
-        const form = document.forms['order-form'];
-        console.log(form.price.value);
+    order(event) {
+        event.preventDefault();
+        console.log(this);
         loginCtrl.getInfo().then(email => {
             const ticket = {
                 showing: showingsService.getSelected().id,
