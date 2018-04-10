@@ -162,21 +162,21 @@ const orderCtrl = {
 
 const ticketCtrl = {
     order(event) {
+        const orderForm=this;
         event.preventDefault();
         loginCtrl.getInfo().then(email => {
             const ticket = {
                 showing: showingsService.getSelected().id,
                 seats: seatsCtrl.selectedSeats,
-                price: this['price'].value==="normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount,
+                price: orderForm['price'].value==="normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount,
                 email: email,
             };
             console.log(ticket);
             fetch(request(`${API_URL}newticket`, 'POST', ticket))
                 .then(res => res.json())
                 .then(result => {
-                    const orderBtn = document.querySelector('#order-ticket');
                     const seatsDiv = document.querySlector('#seats');
-                    view.hide(orderBtn);
+                    view.hide(orderForm['order-ticket']);
                     view.hide(seatsDiv);
                     console.log(result);
                 }).catch(error => Promise.reject(new Error(error)));
