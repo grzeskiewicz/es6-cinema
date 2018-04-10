@@ -167,7 +167,7 @@ const ticketCtrl = {
             const ticket = {
                 showing: showingsService.getSelected().id,
                 seats: seatsCtrl.selectedSeats,
-                price: this.['price'].value==="normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount,
+                price: this['price'].value==="normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount,
                 email: email,
             };
             console.log(ticket);
