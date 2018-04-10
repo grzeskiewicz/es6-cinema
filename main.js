@@ -134,6 +134,7 @@ const seatsCtrl = {
             .then(res => res.json())
             .then(seatstaken => {
                 for (const seat of seatstaken) {
+                    console.log(Number(seat));
                     document.getElementById(Number(seat)).disabled = true;
                     //set button to disabled
                 }
@@ -171,8 +172,6 @@ const ticketCtrl = {
     order(event) {
         const orderForm = this;
         event.preventDefault();
-        console.log(orderForm['price'].value);
-        console.log(orderForm['order-status']);
         loginCtrl.getInfo().then(email => {
             if (email === undefined) { document.getElementById("order-status").innerHTML = "Please login to order tickets!"; } else {
                 const ticket = {
@@ -219,7 +218,7 @@ const registerCtrl = {
                 } else {
                     registerStatus.innerHTML = res.msg;
                     registerStatus.classList.add('error');
-                    console.log(res.msg);
+                  //  console.log(res.msg);
                 }
 
             });
@@ -244,11 +243,11 @@ const loginCtrl = {
                     view.hide(loginDiv);
                     view.hide(registerDiv);
                     view.show(customerInfo);
-                    console.log("FETCH: " + result.msg);
+                    //console.log("FETCH: " + result.msg);
                     return result.msg;
                 } else {
-                    console.log("Error getInfo:");
-                    console.log(result);
+                   // console.log("Error getInfo:");
+                   // console.log(result);
                 }
             });
     },
@@ -256,7 +255,7 @@ const loginCtrl = {
     login(event) {
         event.preventDefault();
         const loginForm = document.forms['login-form'];
-        console.log(loginForm);
+        //console.log(loginForm);
         const loginStatus = document.querySelector('#login-status');
         let user = {
             email: loginForm.email.value,
@@ -267,13 +266,13 @@ const loginCtrl = {
                 if (res.success) {
                     loginStatus.classList.add('success');
                     loginStatus.innerHTML = res.msg;
-                    console.log(this);
+                    //console.log(this);
                     loginCtrl.getInfo();
 
                 } else {
                     loginStatus.classList.add('error');
                     loginStatus.innerHTML = res.msg;
-                    console.log(res);
+                   //console.log(res);
                 }
                 // $rootScope.noshowlogin=true;
                 //$scope.getInfo();
