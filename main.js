@@ -166,7 +166,7 @@ const ticketCtrl = {
         event.preventDefault();
         console.log(orderForm['price'].value);
         loginCtrl.getInfo().then(email => {
-            if (email === undefined) {orderForm.innerHTML="Please login to order tickets!";} else {
+            if (email === undefined) {orderForm['order-status'].value="Please login to order tickets!";} else {
                 const ticket = {
                     showing: showingsService.getSelected().id,
                     seats: seatsCtrl.selectedSeats,
