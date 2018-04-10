@@ -162,9 +162,9 @@ const orderCtrl = {
 
 const ticketCtrl = {
     order(event) {
-        console.log(orderForm['price'].value);
         const orderForm=this;
         event.preventDefault();
+        console.log(orderForm['price'].value);
         loginCtrl.getInfo().then(email => {
             const ticket = {
                 showing: showingsService.getSelected().id,
