@@ -151,7 +151,7 @@ const orderCtrl = {
             registerForm.addEventListener('submit', registerCtrl.signup, false);
             const loginForm = document.forms['login-form'];
             loginForm.addEventListener('submit', loginCtrl.login, false);
-            const orderForm = documents.forms['order-form'];
+            const orderForm = document.forms['order-form'];
             orderForm.addEventListener('submit', ticketCtrl.order, false);
             // const orderBtn = document.querySelector('#order-ticket');
             // orderBtn.addEventListener('click', ticketCtrl.order, false);
