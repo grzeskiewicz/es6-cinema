@@ -52,11 +52,14 @@ fetch(request(API_URL + 'showings', 'GET'))
     .then(res => res.json())
     .then(showings => {
         authServices.loadUserCredentials();
+        const customerInfo=document.querySelector('#customer-info');
+        view.hide(customerInfo);
         loginCtrl.getInfo();
         let shows = `{ "showings": ${JSON.stringify(showings)}}`;
         showingsCtrl.list(JSON.parse(shows));
         seatsCtrl.toggleListener();
         showingsService.add(showings);
+
     });
 
 
@@ -226,6 +229,7 @@ const loginCtrl = {
         const loginDiv = document.querySelector('#login');
         const registerDiv = document.querySelector('#register');
         const customerInfoEmail = document.querySelector('#customer-info-email');
+        const customerInfo=document.querySelector('#customer-info');
         const logoutButton = document.querySelector('#logout');
         logoutButton.addEventListener('click', loginCtrl.logout, false);
         return fetch(request(`${API_URL}memberinfo`, 'GET'))
@@ -235,6 +239,7 @@ const loginCtrl = {
                     customerInfoEmail.innerHTML = result.msg;
                     view.hide(loginDiv);
                     view.hide(registerDiv);
+                    view.show(customerInfo);
                     console.log("FETCH: " + result.msg);
                     return result.msg;
                 } else {
