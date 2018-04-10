@@ -162,27 +162,28 @@ const orderCtrl = {
 
 const ticketCtrl = {
     order(event) {
-        const orderForm=this;
+        const orderForm = this;
         event.preventDefault();
         console.log(orderForm['price'].value);
         loginCtrl.getInfo().then(email => {
-            console.log(email);
-            const ticket = {
-                showing: showingsService.getSelected().id,
-                seats: seatsCtrl.selectedSeats,
-                price: orderForm['price'].value==="normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount,
-                email: email,
-            };
-            console.log(ticket);
-            fetch(request(`${API_URL}newticket`, 'POST', ticket))
-                .then(res => res.json())
-                .then(result => {
-                    const seatsDiv = document.getElementById('seats');
-                    //view.hide(orderForm);
-                    orderForm.innerHTML=result.msg;
-                    view.hide(seatsDiv);
-                    console.log(result);
-                }).catch(error => Promise.reject(new Error(error)));
+            if (email === undefined) {orderForm.innerHTML="Please login to order tickets!";} else {
+                const ticket = {
+                    showing: showingsService.getSelected().id,
+                    seats: seatsCtrl.selectedSeats,
+                    price: orderForm['price'].value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount,
+                    email: email,
+                };
+                console.log(ticket);
+                fetch(request(`${API_URL}newticket`, 'POST', ticket))
+                    .then(res => res.json())
+                    .then(result => {
+                        const seatsDiv = document.getElementById('seats');
+                        //view.hide(orderForm);
+                        orderForm.innerHTML = result.msg;
+                        view.hide(seatsDiv);
+                        console.log(result);
+                    }).catch(error => Promise.reject(new Error(error)));
+            }
         });
 
     }
