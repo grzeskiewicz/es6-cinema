@@ -166,6 +166,7 @@ const ticketCtrl = {
         event.preventDefault();
         console.log(orderForm['price'].value);
         loginCtrl.getInfo().then(email => {
+            console.log(email);
             const ticket = {
                 showing: showingsService.getSelected().id,
                 seats: seatsCtrl.selectedSeats,
