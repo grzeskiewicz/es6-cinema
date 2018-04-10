@@ -165,7 +165,7 @@ const ticketCtrl = {
         const orderForm = this;
         event.preventDefault();
         console.log(orderForm['price'].value);
-        console.log(orderForm['order-status'].value);
+        console.log(orderForm['order-status']);
         loginCtrl.getInfo().then(email => {
             if (email === undefined) {orderForm['order-status'].value="Please login to order tickets!";} else {
                 const ticket = {
