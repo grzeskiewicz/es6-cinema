@@ -52,7 +52,7 @@ fetch(request(API_URL + 'showings', 'GET'))
     .then(res => res.json())
     .then(showings => {
         authServices.loadUserCredentials();
-        const customerInfo=document.querySelector('#customer-info');
+        const customerInfo = document.querySelector('#customer-info');
         view.hide(customerInfo);
         loginCtrl.getInfo();
         let shows = `{ "showings": ${JSON.stringify(showings)}}`;
@@ -96,8 +96,8 @@ const showingsCtrl = {
                 document.getElementById("order").innerHTML = "";
                 seatsCtrl.toggleListener();
                 orderCtrl.orderListener();
-                
-                view.show(seatsDiv);
+
+
                 const nextBtn = document.getElementById("nextBtn");
                 view.hide(nextBtn);
             }, false);
@@ -108,6 +108,7 @@ const showingsCtrl = {
 
 const seatsCtrl = {
     seats: document.getElementsByClassName("seat"),
+    seatsDiv: document.getElementById('seats'),
     selectedSeats: [],
     toggleListener() {
         [...this.seats].forEach(seat => {
@@ -136,7 +137,7 @@ const seatsCtrl = {
                     document.getElementById(Number(seat)).disabled = true;
                     //set button to disabled
                 }
-
+                console.log(this.seatsDiv);
             });
     }
 }
@@ -173,7 +174,7 @@ const ticketCtrl = {
         console.log(orderForm['price'].value);
         console.log(orderForm['order-status']);
         loginCtrl.getInfo().then(email => {
-            if (email === undefined) {document.getElementById("order-status").innerHTML="Please login to order tickets!";} else {
+            if (email === undefined) { document.getElementById("order-status").innerHTML = "Please login to order tickets!"; } else {
                 const ticket = {
                     showing: showingsService.getSelected().id,
                     seats: seatsCtrl.selectedSeats,
@@ -232,7 +233,7 @@ const loginCtrl = {
         const loginDiv = document.querySelector('#login');
         const registerDiv = document.querySelector('#register');
         const customerInfoEmail = document.querySelector('#customer-info-email');
-        const customerInfo=document.querySelector('#customer-info');
+        const customerInfo = document.querySelector('#customer-info');
         const logoutButton = document.querySelector('#logout');
         logoutButton.addEventListener('click', loginCtrl.logout, false);
         return fetch(request(`${API_URL}memberinfo`, 'GET'))
@@ -287,7 +288,7 @@ const loginCtrl = {
     logout() {
         const loginDiv = document.querySelector('#login');
         const registerDiv = document.querySelector('#register');
-        const customerInfo=document.querySelector('#customer-info');
+        const customerInfo = document.querySelector('#customer-info');
         const customerInfoEmail = document.querySelector('#customer-info-email');
         customerInfoEmail.innerHTML = "";
         view.hide(customerInfo);
