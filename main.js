@@ -137,7 +137,7 @@ const seatsCtrl = {
                     document.getElementById(Number(seat)).disabled = true;
                     //set button to disabled
                 }
-                console.log(this.seatsDiv);
+                view.show(this.seatsDiv);
             });
     }
 }
