@@ -163,7 +163,7 @@ const orderCtrl = {
 const ticketCtrl = {
     order(event) {
         event.preventDefault();
-        console.log(this);
+        console.log(this.price.value);
         loginCtrl.getInfo().then(email => {
             const ticket = {
                 showing: showingsService.getSelected().id,
