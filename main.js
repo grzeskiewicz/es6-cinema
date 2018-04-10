@@ -176,7 +176,8 @@ const ticketCtrl = {
                 .then(res => res.json())
                 .then(result => {
                     const seatsDiv = document.getElementById('seats');
-                    view.hide(orderForm);;
+                    //view.hide(orderForm);
+                    orderForm.innerHTML=result.msg;
                     view.hide(seatsDiv);
                     console.log(result);
                 }).catch(error => Promise.reject(new Error(error)));
