@@ -165,6 +165,7 @@ const ticketCtrl = {
         const orderForm = this;
         event.preventDefault();
         console.log(orderForm['price'].value);
+        console.log(orderForm['order-status'].value);
         loginCtrl.getInfo().then(email => {
             if (email === undefined) {orderForm['order-status'].value="Please login to order tickets!";} else {
                 const ticket = {
@@ -237,7 +238,8 @@ const loginCtrl = {
                     console.log("FETCH: " + result.msg);
                     return result.msg;
                 } else {
-                    console.log("Lol cos tu" + result);
+                    console.log("Error getInfo:");
+                    console.log(result);
                 }
             });
     },
