@@ -163,12 +163,11 @@ const orderCtrl = {
 const ticketCtrl = {
     order(event) {
         event.preventDefault();
-        console.log(this.price.value);
         loginCtrl.getInfo().then(email => {
             const ticket = {
                 showing: showingsService.getSelected().id,
                 seats: seatsCtrl.selectedSeats,
-                price: priceOption.value,
+                price: this.['price'].value==="normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount,
                 email: email,
             };
             console.log(ticket);
