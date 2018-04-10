@@ -88,12 +88,12 @@ const showingsCtrl = {
                 event.preventDefault();
                 const seatsDiv = document.getElementById('seats');
                 view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
+                seatsCtrl.disableListener();
                 seatsCtrl.selectedSeats = [];
                 document.getElementById("order").innerHTML = "";
                 seatsCtrl.toggleListener();
                 orderCtrl.orderListener();
                 showingsService.selectById(event.currentTarget.dataset.showingId);
-                seatsCtrl.disableListener();
                 view.show(seatsDiv);
                 const nextBtn = document.getElementById("nextBtn");
                 view.hide(nextBtn);
