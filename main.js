@@ -86,6 +86,7 @@ const showingsCtrl = {
         [...this.showingsList].forEach(showing => {
             showing.addEventListener('click', event => {
                 event.preventDefault();
+                showingsService.selectById(event.currentTarget.dataset.showingId);
                 const seatsDiv = document.getElementById('seats');
                 view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
                 seatsCtrl.disableListener();
@@ -93,7 +94,7 @@ const showingsCtrl = {
                 document.getElementById("order").innerHTML = "";
                 seatsCtrl.toggleListener();
                 orderCtrl.orderListener();
-                showingsService.selectById(event.currentTarget.dataset.showingId);
+                
                 view.show(seatsDiv);
                 const nextBtn = document.getElementById("nextBtn");
                 view.hide(nextBtn);
