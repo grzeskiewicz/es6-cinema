@@ -175,9 +175,9 @@ const ticketCtrl = {
             fetch(request(`${API_URL}newticket`, 'POST', ticket))
                 .then(res => res.json())
                 .then(result => {
-                    const seatsDiv = document.querySlector('#seats');
+                   // const seatsDiv = document.querySlector('#seats');
                     view.hide(orderForm['order-ticket']);
-                    view.hide(seatsDiv);
+                   // view.hide(seatsDiv);
                     console.log(result);
                 }).catch(error => Promise.reject(new Error(error)));
         });
