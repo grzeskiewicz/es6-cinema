@@ -90,7 +90,6 @@ const showingsCtrl = {
                 document.getElementById("order").innerHTML = "";
                 seatsCtrl.toggleListener();
                 orderCtrl.orderListener();
-                //console.log(event.currentTarget.dataset.showingId);
                 showingsService.selectById(event.currentTarget.dataset.showingId);
                 seatsCtrl.disableListener();
                 const nextBtn = document.getElementById("nextBtn");
@@ -177,7 +176,7 @@ const ticketCtrl = {
                 .then(res => res.json())
                 .then(result => {
                     const seatsDiv = document.getElementById('seats');
-                    view.hide(orderForm['order-ticket']);
+                    view.hide(orderForm);;
                     view.hide(seatsDiv);
                     console.log(result);
                 }).catch(error => Promise.reject(new Error(error)));
