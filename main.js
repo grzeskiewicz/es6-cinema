@@ -80,20 +80,19 @@ const showingsCtrl = {
         const dd = date.getDate();
         const mm = date.getMonth();
         const yyyy=date.getFullYear();
+        return `${dd}.${mm}.${yyyy}`
     },
     dateDisplay(showings) {
         for (const showing of showings) {
-            //console.log(showing);
+            showing.date=this.dateParser(showing.date)
         }
     },
     list(showings) {
-        console.log(showings);
         this.dateDisplay(showings);
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
         [...this.showingsList].forEach(showing => {
             showing.addEventListener('click', event => {
                 event.preventDefault();
-
                 showingsService.selectById(event.currentTarget.dataset.showingId);
                 const seatsDiv = document.getElementById('seats');
                 view.hide(seatsDiv);
