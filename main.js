@@ -82,6 +82,7 @@ const view = {
 const showingsCtrl = {
     showingsList: document.getElementsByTagName("a"),
     list(showings) {
+        console.log(showings);
         view.renderContent("entry-template", showings, "showings");
         [...this.showingsList].forEach(showing => {
             showing.addEventListener('click', event => {
