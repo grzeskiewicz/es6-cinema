@@ -78,7 +78,7 @@ const showingsCtrl = {
     showingsList: document.getElementsByTagName("a"),
     dateParser(stringdate) {
         const date=new Date(stringdate);
-     console.log(moment(date).format("dddd, MMMM Do YYYY, h:mm:ss a"));
+     console.log(moment(date).format("dd, MM YYYY, hh:mm"));
         const dd = date.getDate();
         const mm = date.getMonth();
         const yyyy=date.getFullYear();
