@@ -80,13 +80,12 @@ const showingsCtrl = {
         return moment(stringdate).format("DD.MM.YYYY, hh:mm");
     },
     dateDisplay(showings) {
-  
-        for (const showing of showings) {
-            showing.date = this.dateParser(showing.date);
-        };
-              showings=showings.sort((a,b) => {
+        showings=showings.sort((a,b) => {
             return moment(a.date) -moment(b .date);
         });
+        for (const showing of showings) {
+            showing.date = this.dateParser(showing.date);
+        }
     },
     list(showings) {
         console.log(showings);
