@@ -81,7 +81,7 @@ const showingsCtrl = {
     },
     dateDisplay(showings) {
         showings=showings.sort((a,b) => {
-console.log(a.date + " " + b.date);
+console.log(typeof a.date);
             return a.date -b .date;
         });
         console.log(showings);
