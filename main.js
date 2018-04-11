@@ -96,8 +96,6 @@ const showingsCtrl = {
                 document.getElementById("order").innerHTML = "";
                 seatsCtrl.toggleListener();
                 orderCtrl.orderListener();
-
-
                 const nextBtn = document.getElementById("nextBtn");
                 view.hide(nextBtn);
             }, false);
@@ -133,11 +131,8 @@ const seatsCtrl = {
         fetch(request(`${API_URL}seatstaken/${showingsService.getSelected().id}`, 'GET'))
             .then(res => res.json())
             .then(seatstaken => {
-                console.log(seatstaken);
                 for (const seat of seatstaken) {
-                    const seatElem=document.getElementById(Number(seat));
-                    console.log(seatElem.value);
-                    seatElem.disabled = true;
+                    document.getElementById(Number(seat)).disabled = true;
                     //set button to disabled
                 }
                 view.show(this.seatsDiv);
@@ -220,7 +215,7 @@ const registerCtrl = {
                 } else {
                     registerStatus.innerHTML = res.msg;
                     registerStatus.classList.add('error');
-                  //  console.log(res.msg);
+                    //  console.log(res.msg);
                 }
 
             });
@@ -248,8 +243,8 @@ const loginCtrl = {
                     //console.log("FETCH: " + result.msg);
                     return result.msg;
                 } else {
-                   // console.log("Error getInfo:");
-                   // console.log(result);
+                    // console.log("Error getInfo:");
+                    // console.log(result);
                 }
             });
     },
@@ -274,7 +269,7 @@ const loginCtrl = {
                 } else {
                     loginStatus.classList.add('error');
                     loginStatus.innerHTML = res.msg;
-                   //console.log(res);
+                    //console.log(res);
                 }
                 // $rootScope.noshowlogin=true;
                 //$scope.getInfo();
