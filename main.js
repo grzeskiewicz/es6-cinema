@@ -83,10 +83,11 @@ const showingsCtrl = {
     },
     dateDisplay(showings) {
         for (const showing of showings) {
-            console.log(showing.date);
+            //console.log(showing);
         }
     },
     list(showings) {
+        console.log(showings);
         this.dateDisplay(showings);
         const showingsx  = `{ "showings": ${JSON.stringify(showings)}}`;
         view.renderContent("entry-template", showingsx, "showings");
