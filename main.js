@@ -76,8 +76,8 @@ const view = {
 
 const showingsCtrl = {
     showingsList: document.getElementsByTagName("a"),
-    dateParser(date) {
-        const date=Date(date);
+    dateParser(stringdate) {
+        const date=Date(stringdate);
         const dd = date.getDate();
         const mm = date.getMonth();
         const yyyy=date.getFullYear();
