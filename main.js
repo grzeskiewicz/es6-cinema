@@ -77,7 +77,7 @@ const view = {
 const showingsCtrl = {
     showingsList: document.getElementsByTagName("a"),
     dateParser(stringdate) {
-        return moment(stringdate).format("DD.MM.YYYY, hh:mm");
+        return moment(stringdate).format("DD.MM.YYYY, hh:mm pm");
     },
     dateDisplay(showings) {
         showings=showings.sort((a,b) => {
