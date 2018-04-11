@@ -51,8 +51,7 @@ fetch(request(API_URL + 'showings', 'GET'))
         const customerInfo = document.querySelector('#customer-info');
         view.hide(customerInfo);
         loginCtrl.getInfo();
-        let shows = `{ "showings": ${JSON.stringify(showings)}}`;
-        showingsCtrl.list(JSON.parse(shows));
+        showingsCtrl.list(showings);
         seatsCtrl.toggleListener();
         showingsService.add(showings);
 
@@ -89,6 +88,7 @@ const showingsCtrl = {
     },
     list(showings) {
         this.dateDisplay(showings);
+        showings  = `{ "showings": ${JSON.stringify(showings)}}`;
         view.renderContent("entry-template", showings, "showings");
         [...this.showingsList].forEach(showing => {
             showing.addEventListener('click', event => {
