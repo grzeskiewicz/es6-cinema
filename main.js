@@ -88,8 +88,8 @@ const showingsCtrl = {
     },
     list(showings) {
         this.dateDisplay(showings);
-        showings  = `{ "showings": ${JSON.stringify(showings)}}`;
-        view.renderContent("entry-template", showings, "showings");
+        const showingsx  = `{ "showings": ${JSON.stringify(showings)}}`;
+        view.renderContent("entry-template", showingsx, "showings");
         [...this.showingsList].forEach(showing => {
             showing.addEventListener('click', event => {
                 event.preventDefault();
