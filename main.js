@@ -37,10 +37,6 @@ const showingsService = Object.create(listService);
 
 
 
-
-
-
-
 // MAIN PART =======================================================================================================================================================
 
 
@@ -81,8 +77,18 @@ const view = {
 
 const showingsCtrl = {
     showingsList: document.getElementsByTagName("a"),
+    dateParser(date) {
+        const dd = date.getDate();
+        const mm = date.getMonth();
+        const yyyy=date.getFullYear();
+    },
+    dateDisplay(showings) {
+        for (const showing of showings) {
+            console.log(showing.date);
+        }
+    },
     list(showings) {
-        console.log(showings);
+        this.dateDisplay(showings);
         view.renderContent("entry-template", showings, "showings");
         [...this.showingsList].forEach(showing => {
             showing.addEventListener('click', event => {
