@@ -135,8 +135,9 @@ const seatsCtrl = {
             .then(seatstaken => {
                 console.log(seatstaken);
                 for (const seat of seatstaken) {
-                    console.log(Number(seat));
-                    document.getElementById(Number(seat)).disabled = true;
+                    const seatElem=document.getElementById(Number(seat));
+                    console.log(seatElem);
+                    seatElem.disabled = true;
                     //set button to disabled
                 }
                 view.show(this.seatsDiv);
