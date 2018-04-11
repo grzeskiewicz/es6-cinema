@@ -77,16 +77,11 @@ const view = {
 const showingsCtrl = {
     showingsList: document.getElementsByTagName("a"),
     dateParser(stringdate) {
-        const date=new Date(stringdate);
-     console.log(moment(date).format("DD.MM.YYYY, hh:mm"));
-        const dd = date.getDate();
-        const mm = date.getMonth();
-        const yyyy=date.getFullYear();
-        return `${dd}.${mm}.${yyyy}`
+        return moment(stringdate).format("DD.MM.YYYY, hh:mm");
     },
     dateDisplay(showings) {
         for (const showing of showings) {
-            showing.date=this.dateParser(showing.date)
+            showing.date = this.dateParser(showing.date)
         }
     },
     list(showings) {
