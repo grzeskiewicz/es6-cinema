@@ -84,7 +84,7 @@ const showingsCtrl = {
             return moment(a.date) -moment(b .date);
         });
         for (const showing of showings) {
-            //showing.date = this.dateParser(showing.date);
+            showing.date = this.dateParser(showing.date);
         }
     },
     list(showings) {
