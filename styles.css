@@ -15,6 +15,10 @@ a {
     border-style: solid;
     border-color: blue;
 }
+.showing .active {
+       border-style: solid;
+    border-color: green; 
+}
 #customerinfo{
     position:fixed;
     top:0;
