@@ -97,7 +97,7 @@ const showingsCtrl = {
                 event.preventDefault();
                 console.log(showing);
                 //const showingDiv=showing.querySelector('.showing');
-                //showingDiv.classList.add('active');
+                showing.classList.add('active');
                 //[...this.showingsList].forEach(showing => {
                  //   if (showing.)
                 //});
