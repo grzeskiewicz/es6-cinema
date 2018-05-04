@@ -75,7 +75,7 @@ const view = {
 }
 
 const showingsCtrl = {
-    showingsList: document.querySelector('.showing'),
+    showingsList(){ return document.querySelector('.showing'); },
     dateParser(stringdate) {
         return moment(stringdate).format("DD.MM.YYYY, HH:mm");
     },
@@ -91,8 +91,8 @@ const showingsCtrl = {
         console.log(showings);
         this.dateDisplay(showings);
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
-        console.log(this.showingsList);
-        [...this.showingsList].forEach(showing => {
+        console.log(this.showingsList());
+        [...this.showingsList()].forEach(showing => {
             showing.addEventListener('click', event => {
                 event.preventDefault();
                 console.log(showing);
