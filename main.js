@@ -75,7 +75,7 @@ const view = {
 }
 
 const showingsCtrl = {
-    showingsList(){ return document.querySelector('.showing'); },
+    showingsList(){ return document.querySelectorAll('.showing'); },
     dateParser(stringdate) {
         return moment(stringdate).format("DD.MM.YYYY, HH:mm");
     },
