@@ -15,21 +15,6 @@ a {
     border-style: solid;
     border-color: blue;
 }
-.active {
-       border-style: solid;
-    border-color: green; 
-}
-#customerinfo{
-    position:fixed;
-    top:0;
-    right:100px;
-}
-#showings {
-    width: 40vw;
-    position: absolute;
-    left: 0;
-    border-style: solid;
-}
 
 .poster {
     position: absolute;
@@ -39,6 +24,24 @@ a {
     height: 100%;
     background-color: green;
 }
+
+.active {
+    border-style: solid;
+    border-color: green; 
+}
+
+#customerinfo{
+    position:fixed;
+    top:0;
+    right:100px;
+}
+#showings {
+display:flex
+flex-direction:column;
+    border-style: solid;
+}
+
+
 
 a:visited,
 a:link,

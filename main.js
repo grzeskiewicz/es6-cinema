@@ -102,7 +102,6 @@ const showingsCtrl = {
                     if (elem.classList.contains('active') && elem != showing) {
                         elem.classList.remove('active');
                     }
-                    //if (showing.classList.contains('active') &&  )
                 });
                 showingsService.selectById(event.currentTarget.dataset.showingId);
                 const seatsDiv = document.getElementById('seats');

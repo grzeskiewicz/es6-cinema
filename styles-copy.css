@@ -1,0 +1,107 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: yellow;
+}
+
+a {
+    position: relative;
+}
+
+.showing {
+    background-color: red;
+    border-style: solid;
+    border-color: blue;
+}
+
+.poster {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 20%;
+    height: 100%;
+    background-color: green;
+}
+
+.active {
+    border-style: solid;
+    border-color: green; 
+}
+
+#customerinfo{
+    position:fixed;
+    top:0;
+    right:100px;
+}
+#showings {
+    width: 40vw;
+    position: absolute;
+    left: 0;
+    border-style: solid;
+}
+
+
+
+a:visited,
+a:link,
+a:active {
+    text-decoration: none;
+    cursor: default;
+    color: black;
+}
+
+
+
+#seats {
+    width: 40vw;
+    position: absolute;
+    left: 50vw;
+    border-style: solid;
+}
+
+
+.selected {
+    background: red;
+}
+
+
+#order {
+    border-style: solid;
+    width: 40vw;
+    position: absolute;
+    left: 50vw;
+    top: 10vw;
+}
+
+#login {
+    border-style: solid;
+    width: 40vw;
+    position: absolute;
+    left: 50vw;
+    top: 40vw;
+}
+
+#register {
+    border-style: solid;
+    width: 40vw;
+    position: absolute;
+    left: 50vw;
+    top: 50vw;
+}
+
+
+.error {
+    border-style: solid;
+    color: red;
+}
+
+.success {
+    border-style: solid;
+    color: green;
+}
+
+#ordx {
+    display: block;
+}
