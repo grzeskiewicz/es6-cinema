@@ -11,6 +11,7 @@ a {
 }
 
 .showing {
+    width:40vw;
     background-color: red;
     border-style: solid;
     border-color: blue;
