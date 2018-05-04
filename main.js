@@ -94,8 +94,9 @@ const showingsCtrl = {
         [...this.showingsList].forEach(showing => {
             showing.addEventListener('click', event => {
                 event.preventDefault();
-                console.log(showing.querySelector('.showing'));
-                showing.querySelector('.showing').classList.toggle('active');
+                
+                showing.querySelector('.showing').classList.add('active');
+                console.log(this);
                 showingsService.selectById(event.currentTarget.dataset.showingId);
                 const seatsDiv = document.getElementById('seats');
                 view.hide(seatsDiv);
