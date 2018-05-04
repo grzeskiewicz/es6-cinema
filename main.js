@@ -99,7 +99,9 @@ const showingsCtrl = {
                 //const showingDiv=showing.querySelector('.showing');
                 showing.classList.add('active');
                 [...this.showingsList()].forEach(elem => {
-                    console.log(this);
+                    if (elem.classList.contains('active') && elem != showing) {
+                        elem.classList.remove('active');
+                    }
                     //if (showing.classList.contains('active') &&  )
                 });
                 showingsService.selectById(event.currentTarget.dataset.showingId);
