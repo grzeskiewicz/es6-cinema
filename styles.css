@@ -15,7 +15,7 @@ a {
     border-style: solid;
     border-color: blue;
 }
-.showing .active {
+.active {
        border-style: solid;
     border-color: green; 
 }
