@@ -75,7 +75,7 @@ const view = {
 }
 
 const showingsCtrl = {
-    showingsList: document.getElementsByTagName("a"),
+    showingsList: document.querySelector('.showing'),
     dateParser(stringdate) {
         return moment(stringdate).format("DD.MM.YYYY, HH:mm");
     },
@@ -94,9 +94,12 @@ const showingsCtrl = {
         [...this.showingsList].forEach(showing => {
             showing.addEventListener('click', event => {
                 event.preventDefault();
-                
-                showing.querySelector('.showing').classList.add('active');
-                console.log(this);
+                console.log(showing);
+                //const showingDiv=showing.querySelector('.showing');
+                //showingDiv.classList.add('active');
+                //[...this.showingsList].forEach(showing => {
+                 //   if (showing.)
+                //});
                 showingsService.selectById(event.currentTarget.dataset.showingId);
                 const seatsDiv = document.getElementById('seats');
                 view.hide(seatsDiv);
