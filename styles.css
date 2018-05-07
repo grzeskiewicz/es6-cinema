@@ -40,6 +40,8 @@ a {
 display:flex
 flex-direction:column;
     border-style: solid;
+    width:50vw;
+    justify-content:center;
 }
 
 
