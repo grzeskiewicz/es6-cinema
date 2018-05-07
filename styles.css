@@ -4,6 +4,7 @@
 
 body {
     background-color: yellow;
+    display: flex;
 }
 
 a {
@@ -56,12 +57,13 @@ a:active {
     color: black;
 }
 
-
+#details {
+    width:50vw;
+}
 
 #seats {
-    width: 40vw;
+    width: 40%;
     position: absolute;
-    left: 50vw;
     border-style: solid;
 }
 
@@ -73,26 +75,20 @@ a:active {
 
 #order {
     border-style: solid;
-    width: 40vw;
+    width: 40%;
     position: absolute;
-    left: 50vw;
-    top: 10vw;
 }
 
 #login {
     border-style: solid;
-    width: 40vw;
+    width: 40%;
     position: absolute;
-    left: 50vw;
-    top: 40vw;
 }
 
 #register {
     border-style: solid;
     width: 40vw;
     position: absolute;
-    left: 50vw;
-    top: 50vw;
 }
 
 
