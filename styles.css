@@ -12,19 +12,15 @@ a {
 }
 
 .showing {
-width:80%;
     background-color: red;
     border-style: solid;
     border-color: blue;
-    margin: auto;
 }
 
 .poster {
     position: absolute;
     right: 0;
     top: 0;
-    width: 20%;
-    height: 100%;
     background-color: green;
 }
 
