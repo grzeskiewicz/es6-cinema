@@ -11,10 +11,11 @@ a {
 }
 
 .showing {
-   
+
     background-color: red;
     border-style: solid;
     border-color: blue;
+    margin: auto;
 }
 
 .poster {
@@ -28,20 +29,21 @@ a {
 
 .active {
     border-style: solid;
-    border-color: green; 
+    border-color: green;
 }
 
-#customerinfo{
-    position:fixed;
-    top:0;
-    right:100px;
+#customerinfo {
+    position: fixed;
+    top: 0;
+    right: 100px;
 }
+
 #showings {
-display:flex
-flex-direction:column;
+    display: flex;
+    flex-direction:column;
     border-style: solid;
-    width:50vw;
-    justify-content:center;
+    width: 50vw;
+    justify-content: center;
 }
 
 
