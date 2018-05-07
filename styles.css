@@ -23,6 +23,7 @@ a {
     top: 0;
     background-color: green;
     height:100%;
+    border-style:dotted;
 }
 
 .active {
