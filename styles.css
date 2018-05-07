@@ -11,7 +11,7 @@ a {
 }
 
 .showing {
-    flex-basis:auto;
+   
     background-color: red;
     border-style: solid;
     border-color: blue;
