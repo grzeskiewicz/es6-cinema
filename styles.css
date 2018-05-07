@@ -12,7 +12,7 @@ a {
 }
 
 .showing {
-
+width:100%;
     background-color: red;
     border-style: solid;
     border-color: blue;
