@@ -4,12 +4,16 @@
 
 body {
     background-color: yellow;
-    display: flex;
-    justify-content:center;
+
 }
 
 a {
     position: relative;
+}
+
+#wrapper{
+     display: flex;
+    justify-content:center;   
 }
 
 .showing {
