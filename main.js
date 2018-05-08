@@ -76,6 +76,7 @@ const view = {
 
 const showingsCtrl = {
     showingsList(){ return document.querySelectorAll('.showing'); },
+    details(){ return document.querySelector('#details');},
     dateParser(stringdate) {
         return moment(stringdate).format("DD.MM.YYYY, HH:mm");
     },
@@ -96,6 +97,7 @@ const showingsCtrl = {
             showing.addEventListener('click', event => {
                 event.preventDefault();
                 console.log(showing);
+                details().classList.add('picked');
                 //const showingDiv=showing.querySelector('.showing');
                 showing.classList.add('active');
                 [...this.showingsList()].forEach(elem => {

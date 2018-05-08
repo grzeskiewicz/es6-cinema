@@ -60,7 +60,12 @@ a:active {
 }
 
 #details {
+    display:none;
     width:50vw;
+}
+
+#details .picked{
+    display:block;
 }
 
 #seats {
