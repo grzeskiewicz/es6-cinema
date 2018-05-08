@@ -175,7 +175,7 @@ const orderCtrl = {
             const orderForm = document.forms['order-form'];
             console.log(orderForm['price'].value);
             orderForm['price'].addEventListener('change',function(){
-                console.log(orderForm['price'].value);
+                console.log(orderForm['price'].value*seatsCtrl.selectedSeats.length);
             });
             orderForm.addEventListener('submit', ticketCtrl.order, false);
         });
