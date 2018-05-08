@@ -98,8 +98,7 @@ const showingsCtrl = {
                 event.preventDefault();
                 console.log(showing);
                 const detailsDiv=this.details();
-                console.log(detailsDiv);
-                detailsDiv.classList.add('picked');
+view.show(detailsDiv);
                 //const showingDiv=showing.querySelector('.showing');
                 showing.classList.add('active');
                 [...this.showingsList()].forEach(elem => {
