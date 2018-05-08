@@ -75,7 +75,6 @@ a:active {
 
 
 #seats {
-    width: 40%;
     border-style: solid;
     margin:auto;
 }
@@ -88,19 +87,16 @@ a:active {
 
 #order {
     border-style: solid;
-    width: 40%;
      margin:auto;
 }
 
 #login {
     border-style: solid;
-    width: 40%;
      margin:auto;
 }
 
 #register {
     border-style: solid;
-    width: 40%;
      margin:auto;
 }
 
