@@ -174,6 +174,9 @@ const orderCtrl = {
             loginForm.addEventListener('submit', loginCtrl.login, false);
             const orderForm = document.forms['order-form'];
             console.log(orderForm['price'].value);
+            orderForm['price'].addEventListener('change',function(){
+                console.log(orderForm['price'].value);
+            });
             orderForm.addEventListener('submit', ticketCtrl.order, false);
         });
     }
