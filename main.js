@@ -97,6 +97,8 @@ const showingsCtrl = {
             showing.addEventListener('click', event => {
                 event.preventDefault();
                 console.log(showing);
+                const detailsDiv=details();
+                console.log(detailsDiv);
                 details().classList.add('picked');
                 //const showingDiv=showing.querySelector('.showing');
                 showing.classList.add('active');
