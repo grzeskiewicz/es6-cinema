@@ -11,9 +11,32 @@ a {
     position: relative;
 }
 
+a:visited,
+a:link,
+a:active {
+    text-decoration: none;
+    cursor: default;
+    color: black;
+}
+
+#customerinfo {
+    position: fixed;
+    top: 0;
+    right: 100px;
+}
+
+
 #wrapper{
      display: flex;
     justify-content:center;   
+}
+
+#showings {
+    display: flex;
+    flex-direction:column;
+    border-style: solid;
+    width: 40vw;
+    justify-content: center;
 }
 
 .showing {
@@ -39,33 +62,14 @@ a {
     border-color: green;
 }
 
-#customerinfo {
-    position: fixed;
-    top: 0;
-    right: 100px;
-}
-
-#showings {
-    display: flex;
-    flex-direction:column;
-    border-style: solid;
-    width: 40vw;
-    justify-content: center;
-}
 
 
-
-a:visited,
-a:link,
-a:active {
-    text-decoration: none;
-    cursor: default;
-    color: black;
-}
 
 #details {
     display:none;
     width:40vw;
+    display:flex;
+    justify-content: center;
 }
 
 
