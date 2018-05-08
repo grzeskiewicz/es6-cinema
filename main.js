@@ -173,7 +173,7 @@ const orderCtrl = {
             const loginForm = document.forms['login-form'];
             loginForm.addEventListener('submit', loginCtrl.login, false);
             const orderForm = document.forms['order-form'];
-            console.log(orderForm['price']);
+            console.log(orderForm['price'].value);
             orderForm.addEventListener('submit', ticketCtrl.order, false);
         });
     }
