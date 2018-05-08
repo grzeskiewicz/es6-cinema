@@ -99,7 +99,7 @@ const showingsCtrl = {
                 console.log(showing);
                 const detailsDiv=details();
                 console.log(detailsDiv);
-                details().classList.add('picked');
+                detailsDiv.classList.add('picked');
                 //const showingDiv=showing.querySelector('.showing');
                 showing.classList.add('active');
                 [...this.showingsList()].forEach(elem => {
