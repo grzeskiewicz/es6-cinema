@@ -75,14 +75,14 @@ const view = {
 }
 
 const showingsCtrl = {
-    showingsList(){ return document.querySelectorAll('.showing'); },
-    details(){ return document.querySelector('#details');},
+    showingsList() { return document.querySelectorAll('.showing'); },
+    details() { return document.querySelector('#details'); },
     dateParser(stringdate) {
         return moment(stringdate).format("DD.MM.YYYY, HH:mm");
     },
     dateDisplay(showings) {
-        showings=showings.sort((a,b) => {
-            return moment(a.date) -moment(b .date);
+        showings = showings.sort((a, b) => {
+            return moment(a.date) - moment(b.date);
         });
         for (const showing of showings) {
             showing.date = this.dateParser(showing.date);
@@ -92,14 +92,13 @@ const showingsCtrl = {
         console.log(showings);
         this.dateDisplay(showings);
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
-       
+
         [...this.showingsList()].forEach(showing => {
             showing.addEventListener('click', event => {
                 event.preventDefault();
                 console.log(showing);
-                const detailsDiv=this.details();
-view.show(detailsDiv);
-                //const showingDiv=showing.querySelector('.showing');
+                const detailsDiv = this.details();
+                view.show(detailsDiv);
                 showing.classList.add('active');
                 [...this.showingsList()].forEach(elem => {
                     if (elem.classList.contains('active') && elem != showing) {
