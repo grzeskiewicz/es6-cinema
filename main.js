@@ -170,7 +170,6 @@ const orderCtrl = {
     orderListener() {
         const nextBtn = document.getElementById("nextBtn");
         nextBtn.addEventListener('click', event => {
-
             const obj = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
             view.renderContent("entry-template-order", obj, "order");
             view.renderContent("entry-template-login", obj, "login");
@@ -180,7 +179,7 @@ const orderCtrl = {
             const loginForm = document.forms['login-form'];
             loginForm.addEventListener('submit', loginCtrl.login, false);
             const orderForm = document.forms['order-form'];
-            console.log(orderForm['price'].value);
+            this.pricing();
             orderForm['price'].addEventListener('change', orderCtrl.pricing);
             orderForm.addEventListener('submit', ticketCtrl.order, false);
         });
