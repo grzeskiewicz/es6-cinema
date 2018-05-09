@@ -64,6 +64,7 @@ display:inline-flex;
 }
 
 .poster {
+    right:0;
     display:flex;
     background-color: green;
     min-height:100%;
