@@ -47,7 +47,7 @@ a:active {
 .showing p{
     margin-top:0;
     margin-bottom: 0;
-    overflow:scroll;
+    min-width: 100%;
 }
 
 .title {
