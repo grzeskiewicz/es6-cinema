@@ -182,7 +182,6 @@ const orderCtrl = {
                 p.innerText=priceTotal;
                 const divek=orderDiv();
                 divek.appendChild(p);
-                console.log(price*seatsCtrl.selectedSeats.length);
             });
             orderForm.addEventListener('submit', ticketCtrl.order, false);
         });
