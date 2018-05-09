@@ -163,14 +163,14 @@ const seatsCtrl = {
 const orderCtrl = {
     orderDiv() { return document.querySelector('#order'); },
     pricing() {
-        const price = orderForm['price'].value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount;
+        const price = document.forms['order-form'].price.value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount;
         const priceTotal = price * seatsCtrl.selectedSeats.length;
         document.querySelector('#total-price').innerHTML = priceTotal;
     },
     orderListener() {
         const nextBtn = document.getElementById("nextBtn");
         nextBtn.addEventListener('click', event => {
-            this.pricing();
+
             const obj = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
             view.renderContent("entry-template-order", obj, "order");
             view.renderContent("entry-template-login", obj, "login");
