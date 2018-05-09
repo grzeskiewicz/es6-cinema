@@ -161,7 +161,7 @@ const seatsCtrl = {
 
 
 const orderCtrl = {
-    orderDiv() {return document.querySelector('#order');},
+    orderDiv() { return document.querySelector('#order'); },
     orderListener() {
         const nextBtn = document.getElementById("nextBtn");
         nextBtn.addEventListener('click', event => {
@@ -175,12 +175,10 @@ const orderCtrl = {
             loginForm.addEventListener('submit', loginCtrl.login, false);
             const orderForm = document.forms['order-form'];
             console.log(orderForm['price'].value);
-            orderForm['price'].addEventListener('change',function(){
-                const price=orderForm['price'].value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount;
-                const priceTotal=price*seatsCtrl.selectedSeats.length;
-                const p=document.createElement('p');
-                p.innerText=priceTotal;
-                orderCtrl.orderDiv().appendChild(p);
+            orderForm['price'].addEventListener('change', function() {
+                const price = orderForm['price'].value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount;
+                const priceTotal = price * seatsCtrl.selectedSeats.length;
+                document.querySelector('#total-price').innerHTML = priceTotal;
             });
             orderForm.addEventListener('submit', ticketCtrl.order, false);
         });
