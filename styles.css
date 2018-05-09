@@ -43,6 +43,12 @@ a:active {
     background-color: red;
     border-style: solid;
     border-color: blue;
+    -webkit-transition: width 2s; /* Safari */
+    transition: width 2s;
+}
+
+.showing:hover{
+    transform: scale(1, 1);
 }
 .showing p{
     margin-top:0;
