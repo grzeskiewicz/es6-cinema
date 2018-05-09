@@ -43,6 +43,8 @@ a:active {
 .showing {
     background-color: red;
     border-style: solid;
+        align-items:center;
+
     border-color: blue;
 }
 .showing p{
