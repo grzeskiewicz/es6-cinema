@@ -41,7 +41,7 @@ a:active {
 
 .showing {
     display:flex;
-    
+
     background-color: red;
     border-style: solid;
     border-color: blue;
@@ -50,7 +50,7 @@ a:active {
 }
 
 a:hover{
-    transform: scale(1, 1);
+    transform: scale(1, 4);
 }
 .showing p{
     margin-top:0;
