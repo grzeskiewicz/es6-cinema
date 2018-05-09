@@ -4,7 +4,6 @@
 
 body {
     background-color: yellow;
-
 }
 
 a {
@@ -26,51 +25,53 @@ a:active {
 }
 
 
-#wrapper{
-     display: flex;
-    justify-content:center;   
+#wrapper {
+    display: flex;
+    justify-content: center;
 }
 
 #showings {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     border-style: solid;
     width: 40vw;
     justify-content: center;
 }
 
 .showing {
-display:flex;
+    display: flex;
     background-color: red;
     border-style: solid;
     border-color: blue;
-    -webkit-transition: width 2s, height 2s; /* Safari */
+    -webkit-transition: width 2s, height 2s;
+    /* Safari */
     transition: width 2s, height 2s;
 }
 
-.showing:hover{
-    transform: scale(1.1,1.1);
+.showing:hover {
+    transform: scale(1.1, 1.1);
 }
-.showing p{
-    margin-top:0;
+
+.showing p {
+    margin-top: 0;
     margin-bottom: 0;
     min-width: 100%;
-    flex-basis:auto;
+    flex-basis: auto;
 }
 
 .title {
     font-weight: bold;
-    font-size:1.5rem;
+    font-size: 1.5rem;
 }
 
 .poster {
-    position:fixed;
-    right:0;
-    display:flex;
+    position: fixed;
+    right: 0;
+    display: flex;
     background-color: green;
-    min-height:100%;
-    border-style:dotted;
-    align-items:center;
+    min-height: 100%;
+    border-style: dotted;
+    align-items: center;
     justify-content: center;
 }
 
@@ -83,9 +84,9 @@ display:flex;
 
 
 #details {
-    display:none;
-    width:40vw;
-    display:flex;
+    display: none;
+    width: 40vw;
+    display: flex;
     justify-content: center;
 }
 
@@ -93,7 +94,7 @@ display:flex;
 
 #seats {
     border-style: solid;
-    margin:auto;
+    margin: auto;
 }
 
 
@@ -104,17 +105,17 @@ display:flex;
 
 #order {
     border-style: solid;
-     margin:auto;
+    margin: auto;
 }
 
 #login {
     border-style: solid;
-     margin:auto;
+    margin: auto;
 }
 
 #register {
     border-style: solid;
-     margin:auto;
+    margin: auto;
 }
 
 
