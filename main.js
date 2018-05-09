@@ -175,7 +175,8 @@ const orderCtrl = {
             const orderForm = document.forms['order-form'];
             console.log(orderForm['price'].value);
             orderForm['price'].addEventListener('change',function(){
-                console.log(orderForm['price'].value,seatsCtrl.selectedSeats.length);
+                const price=orderForm['price'].value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount
+                console.log(price*seatsCtrl.selectedSeats.length);
             });
             orderForm.addEventListener('submit', ticketCtrl.order, false);
         });
