@@ -48,7 +48,7 @@ a:active {
 }
 
 .showing:hover{
-    transform: scale(1, 1);
+    transform: scale(1, 2);
 }
 .showing p{
     margin-top:0;
