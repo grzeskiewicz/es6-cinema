@@ -39,13 +39,14 @@ a:active {
 }
 
 .showing {
-    display: flex;
+display: flex;
     background-color: red;
     border-style: solid;
     border-color: blue;
     -webkit-transition: width 2s, height 2s;
     /* Safari */
     transition: width 2s, height 2s;
+    justify-content: center;
 }
 
 .showing:hover {
