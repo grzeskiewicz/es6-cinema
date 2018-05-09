@@ -165,7 +165,7 @@ const orderCtrl = {
     pricing() {
         const price = document.forms['order-form'].price.value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount;
         const priceTotal = price * seatsCtrl.selectedSeats.length;
-        document.querySelector('#total-price').innerHTML = priceTotal;
+        document.querySelector('#total-price').innerHTML = `Total price to pay: ${priceTotal}`;
     },
     orderListener() {
         const nextBtn = document.getElementById("nextBtn");
