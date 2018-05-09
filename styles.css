@@ -47,7 +47,7 @@ a:active {
     transition: width 2s;
 }
 
-.showing:hover{
+a:hover{
     transform: scale(1, 1);
 }
 .showing p{
