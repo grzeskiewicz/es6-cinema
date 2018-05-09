@@ -180,7 +180,7 @@ const orderCtrl = {
                 const priceTotal=price*seatsCtrl.selectedSeats.length;
                 const p=document.createElement('p');
                 p.innerText=priceTotal;
-                const divek=orderDiv();
+                const divek=this.orderDiv();
                 divek.appendChild(p);
             });
             orderForm.addEventListener('submit', ticketCtrl.order, false);
