@@ -162,9 +162,15 @@ const seatsCtrl = {
 
 const orderCtrl = {
     orderDiv() { return document.querySelector('#order'); },
+    pricing() {
+        const price = orderForm['price'].value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount;
+        const priceTotal = price * seatsCtrl.selectedSeats.length;
+        document.querySelector('#total-price').innerHTML = priceTotal;
+    },
     orderListener() {
         const nextBtn = document.getElementById("nextBtn");
         nextBtn.addEventListener('click', event => {
+            this.pricing();
             const obj = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
             view.renderContent("entry-template-order", obj, "order");
             view.renderContent("entry-template-login", obj, "login");
@@ -175,11 +181,7 @@ const orderCtrl = {
             loginForm.addEventListener('submit', loginCtrl.login, false);
             const orderForm = document.forms['order-form'];
             console.log(orderForm['price'].value);
-            orderForm['price'].addEventListener('change', function() {
-                const price = orderForm['price'].value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount;
-                const priceTotal = price * seatsCtrl.selectedSeats.length;
-                document.querySelector('#total-price').innerHTML = priceTotal;
-            });
+            orderForm['price'].addEventListener('change', orderCtrl.pricing);
             orderForm.addEventListener('submit', ticketCtrl.order, false);
         });
     }
