@@ -43,12 +43,12 @@ a:active {
     background-color: red;
     border-style: solid;
     border-color: blue;
-    -webkit-transition: width 2s; /* Safari */
-    transition: width 2s;
+    -webkit-transition: width 2s, height 2s; /* Safari */
+    transition: width 2s, height 2s;
 }
 
 .showing:hover{
-    transform: scale(1, 1.1);
+    transform: scale(2);
 }
 .showing p{
     margin-top:0;
