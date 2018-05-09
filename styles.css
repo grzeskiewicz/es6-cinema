@@ -40,6 +40,7 @@ a:active {
 }
 
 .showing {
+    display: inline-flex;
     background-color: red;
     border-style: solid;
     border-color: blue;
