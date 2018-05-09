@@ -45,6 +45,11 @@ a:active {
     border-color: blue;
 }
 
+.title {
+    font-weight: bold;
+    font-size:2rem;
+}
+
 .poster {
     display:flex;
     position: absolute;
