@@ -94,7 +94,7 @@ width:10vw;
     position:fixed;
  top: 50%;
   left: 80%;
-transform: translate(-50%, -80%);
+transform: translate(-80%, -50%);
 }
 
 #seats {
