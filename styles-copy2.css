@@ -1,0 +1,133 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: yellow;
+}
+
+a {
+    position: relative;
+}
+
+a:visited,
+a:link,
+a:active {
+    text-decoration: none;
+    cursor: default;
+    color: black;
+}
+
+#customerinfo {
+    position: fixed;
+    top: 0;
+    right: 100px;
+}
+
+
+#wrapper {
+    display: flex;
+   
+}
+
+#showings {
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    width: 40vw;
+    
+}
+
+.showing {
+    display: flex;
+    background-color: red;
+    border-style: solid;
+    border-color: blue;
+    -webkit-transition: width 2s, height 2s;
+    /* Safari */
+    transition: width 2s, height 2s;
+    justify-content: space-between;
+}
+
+.showing:hover {
+    transform: scale(1.1, 1.1);
+}
+
+.showing p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+.poster {
+    background-color: green;
+    min-height: 100%;
+    border-style: dotted;
+}
+
+.active {
+    border-style: solid;
+    border-color: green;
+}
+
+
+
+
+
+
+.activeshow {
+    position: fixed;
+    top: 50%;
+    left: 80%;
+    transform: translate(-80%, -50%);
+}
+
+#details {
+    display: flex;
+    flex-direction: column;
+    width: 40vw;
+    max-height: 90vh;
+    border-style: solid;
+    border-color: purple;
+}
+
+#seats {
+    border-style: solid;
+    margin: auto;
+}
+
+
+.selected {
+    background: red;
+}
+
+
+#order {
+    border-style: solid;
+    margin: auto;
+}
+
+#login {
+    border-style: solid;
+    margin: auto;
+}
+
+#register {
+    border-style: solid;
+    margin: auto;
+}
+
+
+.error {
+    border-style: solid;
+    color: red;
+}
+
+.success {
+    border-style: solid;
+    color: green;
+}
