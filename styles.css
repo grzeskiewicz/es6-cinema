@@ -85,6 +85,7 @@ width:10vw;
 }
 #details {
     width: 40vw;
+    max-height:100vw;
 }
 
 #seats {
