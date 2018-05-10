@@ -90,6 +90,7 @@ width:10vw;
     border-style: solid;
     border-color: purple;
     justify-content: center;
+    align-items: center
 }
 
 #seats {
