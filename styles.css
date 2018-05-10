@@ -27,11 +27,12 @@ a:active {
 
 #wrapper {
     display: flex;
-   flex:1;
+  
 }
 
 #showings {
     display: flex;
+     flex:1;
     flex-direction: column;
     border-style: solid;
     width: 40vw;
