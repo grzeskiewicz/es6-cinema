@@ -38,6 +38,7 @@ a:active {
 
 .showing {
     display: flex;
+    width:70%;
     background-color: red;
     border-style: solid;
     border-color: blue;
@@ -65,6 +66,7 @@ a:active {
     background-color: green;
     min-height: 100%;
     border-style: dotted;
+    width:30%;
 }
 
 .active {
