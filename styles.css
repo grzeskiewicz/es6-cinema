@@ -80,8 +80,10 @@ a:active {
 
 
 .activeshow {
-display:inline-flex;
-width:10vw;
+   position:fixed;
+ top: 50%;
+  left: 80%;
+transform: translate(-80%, -50%);
 }
 #details {
     display:flex;
@@ -91,10 +93,7 @@ width:10vw;
     border-style: solid;
     border-color: purple;
 
-    position:fixed;
- top: 50%;
-  left: 80%;
-transform: translate(-80%, -50%);
+ 
 }
 
 #seats {
