@@ -85,7 +85,7 @@ width:10vw;
 }
 #details {
     width: 40vw;
-    max-height:80vw;
+    max-height:100vh;
        border-style: solid;
     border-color: purple;
 }
