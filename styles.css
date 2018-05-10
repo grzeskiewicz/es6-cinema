@@ -86,7 +86,6 @@ width:10vw;
 #details {
     display:flex;
     flex-direction: column;
-        align-items: center;
     width: 40vw;
     max-height:90vh;
     border-style: solid;
