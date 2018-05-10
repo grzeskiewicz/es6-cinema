@@ -47,6 +47,7 @@ display: flex;
     /* Safari */
     transition: width 2s, height 2s;
     justify-content: center;
+    flex-basis:100%;
 }
 
 .showing:hover {
