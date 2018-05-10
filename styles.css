@@ -86,9 +86,9 @@ a:active {
 
 .activeshow {
     position: fixed;
-    top: 50%;
+    top: 0;
     left: 80%;
-    transform: translate(-80%, -50%);
+    transform: translate(-80%, 0%);
 }
 
 #details {
