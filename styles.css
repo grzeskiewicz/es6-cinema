@@ -84,6 +84,7 @@ a:active {
 
 #details .active {
 display:inline-flex;
+width:10vw;
 }
 
 
