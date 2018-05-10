@@ -99,6 +99,7 @@ const showingsCtrl = {
                 console.log(showing);
                 const detailsDiv = this.details();
                 view.show(detailsDiv);
+                detailsDiv.classList.add('active');
                 showing.classList.add('active');
                 [...this.showingsList()].forEach(elem => {
                     if (elem.classList.contains('active') && elem != showing) {
