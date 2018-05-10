@@ -39,7 +39,7 @@ a:active {
 }
 
 .showing {
-display: flex;
+    display: flex;
     background-color: red;
     border-style: solid;
     border-color: blue;
@@ -47,7 +47,6 @@ display: flex;
     /* Safari */
     transition: width 2s, height 2s;
     justify-content: center;
-    
 }
 
 .showing:hover {
@@ -58,7 +57,7 @@ display: flex;
     margin-top: 0;
     margin-bottom: 0;
     min-width: 100%;
-    flex-basis: auto;
+    
 }
 
 .title {
