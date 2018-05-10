@@ -6,9 +6,7 @@ body {
     background-color: yellow;
 }
 
-a {
-    position: relative;
-}
+
 
 a:visited,
 a:link,
@@ -32,10 +30,9 @@ a:active {
 
 #showings {
     display: flex;
-    flex:5;
+
     flex-direction: column;
     border-style: solid;
-    width: 40vw;
     
 }
 
@@ -51,7 +48,7 @@ a:active {
 }
 
 .showing:hover {
-    transform: scale(1.1, 1.1);
+    transform: scale(1, 1);
 }
 
 .showing p {
