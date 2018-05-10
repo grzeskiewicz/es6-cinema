@@ -82,7 +82,7 @@ a:active {
     width: 40vw;
 }
 
-#details .active {
+#details .activeshow {
 display:inline-flex;
 width:10vw;
 }
