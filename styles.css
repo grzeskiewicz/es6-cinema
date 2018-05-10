@@ -45,6 +45,7 @@ a:active {
     /* Safari */
     transition: width 2s, height 2s;
     justify-content: space-between;
+    width:100%;
 }
 
 .showing:hover {
