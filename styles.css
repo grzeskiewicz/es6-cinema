@@ -84,10 +84,12 @@ display:inline-flex;
 width:10vw;
 }
 #details {
+    display:flex;
     width: 40vw;
     max-height:90vh;
-       border-style: solid;
+    border-style: solid;
     border-color: purple;
+    justify-content: center;
 }
 
 #seats {
