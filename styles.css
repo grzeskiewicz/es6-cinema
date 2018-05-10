@@ -67,11 +67,9 @@ display: flex;
 }
 
 .poster {
-
     background-color: green;
     min-height: 100%;
     border-style: dotted;
-  
 }
 
 .active {
