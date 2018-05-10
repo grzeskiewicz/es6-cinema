@@ -99,6 +99,9 @@ const showingsCtrl = {
                 event.preventDefault();
                 console.log(showing);
                 const detailsDiv = this.details();
+                detailsDiv.querySelector('#close').addEventListener('click', function(){
+                    detailsDiv.classList.remove('activeshow');
+                });
                // view.show(detailsDiv);
                 detailsDiv.classList.add('activeshow');
                 showing.classList.add('active');
