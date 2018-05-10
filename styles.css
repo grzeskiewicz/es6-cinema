@@ -94,7 +94,7 @@ a:active {
 #details {
     display: flex;
     flex-direction: column;
-    width: 40vw;
+    width: 100vw;
     max-height: 90vh;
     border-style: solid;
     border-color: purple;
