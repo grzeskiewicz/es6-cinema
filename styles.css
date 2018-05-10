@@ -77,16 +77,16 @@ a:active {
 
 
 
-#details {
-    display: none;
-    width: 40vw;
-}
+
 
 .activeshow {
 display:inline-flex;
 width:10vw;
 }
-
+#details {
+    display: none;
+    width: 40vw;
+}
 
 #seats {
     border-style: solid;
