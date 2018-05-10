@@ -107,8 +107,8 @@ const showingsCtrl = {
                     }
                 });
                 showingsService.selectById(event.currentTarget.dataset.showingId);
-                const seatsDiv = document.getElementById('seats');
-                view.hide(seatsDiv);
+                //const seatsDiv = document.getElementById('seats');
+                //view.hide(seatsDiv);
                 view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
                 seatsCtrl.disableListener();
                 seatsCtrl.selectedSeats = [];
