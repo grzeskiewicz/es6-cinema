@@ -91,10 +91,10 @@ width:10vw;
     border-style: solid;
     border-color: purple;
 
-    position:absolute;
- left:50%;
- top:50%;
-
+    position:fixed;
+ top: 50%;
+  left: 80%;
+transform: translate(-50%, -80%);
 }
 
 #seats {
