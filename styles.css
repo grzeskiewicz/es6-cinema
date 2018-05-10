@@ -82,6 +82,9 @@ a:active {
     width: 40vw;
 }
 
+#details .active {
+display:inline-flex;
+}
 
 
 #seats {
