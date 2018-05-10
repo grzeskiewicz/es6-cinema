@@ -98,7 +98,7 @@ const showingsCtrl = {
                 event.preventDefault();
                 console.log(showing);
                 const detailsDiv = this.details();
-                view.show(detailsDiv);
+               // view.show(detailsDiv);
                 detailsDiv.classList.add('activeshow');
                 showing.classList.add('active');
                 [...this.showingsList()].forEach(elem => {
