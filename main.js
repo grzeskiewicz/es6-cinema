@@ -75,6 +75,7 @@ const view = {
 }
 
 const showingsCtrl = {
+    showingsDiv() { return document.querySelector('#showings');},
     showingsList() { return document.querySelectorAll('.showing'); },
     details() { return document.querySelector('#details'); },
     dateParser(stringdate) {
@@ -106,6 +107,8 @@ const showingsCtrl = {
                         elem.classList.remove('active');
                     }
                 });
+
+                this.showingsDiv().classList.add('blur');
                 showingsService.selectById(event.currentTarget.dataset.showingId);
                 //const seatsDiv = document.getElementById('seats');
                 //view.hide(seatsDiv);
