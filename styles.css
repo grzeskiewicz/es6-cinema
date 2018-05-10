@@ -32,10 +32,10 @@ a:active {
 
 #showings {
     display: flex;
-    
+    flex-direction: column;
     border-style: solid;
     width: 40vw;
-    justify-content: center;
+    
 }
 
 .showing {
