@@ -80,8 +80,6 @@ a:active {
 #details {
     display: none;
     width: 40vw;
-    display: flex;
-    justify-content: center;
 }
 
 
