@@ -80,20 +80,19 @@ a:active {
 
 
 .activeshow {
-   position:absolute;
- top: 50%;
-  left: 80%;
-transform: translate(-80%, -50%);
+    position: fixed;
+    top: 50%;
+    left: 80%;
+    transform: translate(-80%, -50%);
 }
+
 #details {
-    display:flex;
+    display: flex;
     flex-direction: column;
     width: 40vw;
-    max-height:90vh;
+    max-height: 90vh;
     border-style: solid;
     border-color: purple;
-
- 
 }
 
 #seats {
