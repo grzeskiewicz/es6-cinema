@@ -89,8 +89,7 @@ width:10vw;
     max-height:90vh;
     border-style: solid;
     border-color: purple;
-    justify-content: center;
-    align-items: center
+    align-items: center;
 }
 
 #seats {
