@@ -60,11 +60,11 @@ a:active {
 
 .title {
     font-weight: bold;
-    font-size: 2rem;
+    font-size: 4rem;
 }
 
 .showing-details {
-    font-size:1.5rem;
+    font-size:3rem;
     width:70%;
 }
 .poster {
