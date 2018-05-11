@@ -154,7 +154,7 @@ a:active {
     font-size: 2rem;
 }
 
-#login  form, #register form{
+#login  form *, #register form *{
     display:flex;
     flex-direction: column;
     border-style: solid;
