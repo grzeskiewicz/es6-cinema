@@ -106,7 +106,7 @@ a:active {
     display: flex;
     flex-direction: column;
     width: 100vw;
-    max-height: 90vh;
+    max-height: 100vh;
     border-style: solid;
     border-color: purple;
   
