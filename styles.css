@@ -112,7 +112,9 @@ a:active {
   
 }
 #close {
-    float:right;
+    position:absolute;
+    top:5px;
+    right:10px;
 }
 
 #seats {
