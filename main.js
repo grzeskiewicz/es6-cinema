@@ -75,7 +75,7 @@ const view = {
 }
 
 const showingsCtrl = {
-    showingsDiv() { return document.querySelector('#showings');},
+    showingsDiv() { return document.querySelector('#showings'); },
     showingsList() { return document.querySelectorAll('.showing'); },
     details() { return document.querySelector('#details'); },
     dateParser(stringdate) {
@@ -99,11 +99,11 @@ const showingsCtrl = {
                 event.preventDefault();
                 console.log(showing);
                 const detailsDiv = this.details();
-                detailsDiv.querySelector('#close').addEventListener('click', function(){
+                detailsDiv.querySelector('#close').addEventListener('click', function() {
                     detailsDiv.classList.remove('activeshow');
                     showingsCtrl.showingsDiv().classList.remove('blur')
                 });
-               // view.show(detailsDiv);
+                // view.show(detailsDiv);
                 detailsDiv.classList.add('activeshow');
                 showing.classList.add('active');
                 [...this.showingsList()].forEach(elem => {
@@ -200,7 +200,11 @@ const ticketCtrl = {
         const orderForm = this;
         event.preventDefault();
         loginCtrl.getInfo().then(email => {
-            if (email === undefined) { document.getElementById("order-status").innerHTML = "Please login to order tickets!"; } else {
+            if (email === undefined) {
+                document.getElementById("order-status").innerHTML = "Please login to order tickets!";
+                view.hide(document.querySelector('#seats'));
+
+            } else {
                 const ticket = {
                     showing: showingsService.getSelected().id,
                     seats: seatsCtrl.selectedSeats,
