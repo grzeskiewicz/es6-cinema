@@ -156,12 +156,14 @@ a:active {
 
 #login  form{
     display:flex;
+    flex-direction: column;
     border-style: solid;
     margin: auto;
 }
 
 #register form {
     display:flex;
+    flex-direction: column;
     border-style: solid;
     margin: auto;
 }
