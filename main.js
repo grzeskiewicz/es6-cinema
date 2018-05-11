@@ -217,7 +217,7 @@ const ticketCtrl = {
                     .then(result => {
                         const seatsDiv = document.getElementById('seats');
                         //view.hide(orderForm);
-                        document.querySelector('#order').classList.add('ordered');
+                        document.querySelector('#details').classList.add('ordered');
                         orderForm.innerHTML = result.msg;
                         view.hide(seatsDiv);
                         console.log(result);
