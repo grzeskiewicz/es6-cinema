@@ -136,9 +136,10 @@ a:active {
 
 #order {
     border-style: solid;
-    margin: auto;
     width:100%;
     font-size:2rem;
+       margin-top: 0;
+    margin-bottom: 0;
 }
 
 #login {
