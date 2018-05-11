@@ -134,7 +134,7 @@ a:active {
 }
 
 
-#order {
+#order > * {
     border-style: solid;
     width:100%;
     font-size:2rem;
