@@ -119,9 +119,13 @@ a:active {
     right:10px;
 }
 #selected-showing p{
-    font-size:4rem;
+    font-size:3rem;
     margin-top: 0;
     margin-bottom: 0;
+}
+
+#order-form{
+    font-size:3rem;
 }
 #seats {
     border-style: solid;
