@@ -122,7 +122,10 @@ a:active {
 #seats {
     border-style: solid;
     margin: auto;
-    font-size:6rem;
+}
+#seats button {
+    font-size:2rem;
+    padding:16px 32px;
 }
 
 
