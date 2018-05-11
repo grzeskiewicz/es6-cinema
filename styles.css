@@ -20,9 +20,10 @@ a:active {
     position: fixed;
     top: 0;
     right: 100px;
+}
+#customerinfo p{
     font-size:3rem;
 }
-
 
 #wrapper {
     display: flex;
