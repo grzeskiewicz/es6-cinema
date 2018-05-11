@@ -16,12 +16,12 @@ a:active {
     color: black;
 }
 
-#customerinfo {
+#customer-info {
     position: fixed;
     top: 0;
     right: 100px;
 }
-#customerinfo label{
+#customer-info *{
     font-size:3rem;
 }
 
