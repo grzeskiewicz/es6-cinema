@@ -124,7 +124,7 @@ a:active {
     margin-bottom: 0;
 }
 
-#order-form p{
+#order-form *{
     font-size:3rem;
 }
 #seats {
