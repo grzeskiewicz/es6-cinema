@@ -132,7 +132,7 @@ a:active {
     font-size: 3rem;
 }
 
-#order-form .ordered {
+.ordered {
    justify-content: center;
    align-items: center;
 }
