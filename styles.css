@@ -21,7 +21,7 @@ a:active {
     top: 0;
     right: 100px;
 }
-#customerinfo > *{
+#customerinfo *{
     font-size:3rem;
 }
 
