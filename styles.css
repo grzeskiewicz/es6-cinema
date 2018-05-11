@@ -154,19 +154,15 @@ a:active {
     font-size: 2rem;
 }
 
-#login  form{
+#login  form, #register form{
     display:flex;
     flex-direction: column;
     border-style: solid;
     margin: auto;
+    font-size:2rem;
 }
 
-#register form {
-    display:flex;
-    flex-direction: column;
-    border-style: solid;
-    margin: auto;
-}
+
 
 
 .error {
