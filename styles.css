@@ -21,13 +21,14 @@ a:active {
     top: 0;
     right: 100px;
 }
-#customer-info *{
-    font-size:3rem;
+
+#customer-info * {
+    font-size: 3rem;
 }
 
 #wrapper {
     display: flex;
-  flex-direction: column;
+    flex-direction: column;
 }
 
 #showings {
@@ -35,7 +36,6 @@ a:active {
 
     flex-direction: column;
     border-style: solid;
-    
 }
 
 .showing {
@@ -48,7 +48,7 @@ a:active {
     transition: width 2s, height 2s;
     justify-content: space-between;
     height: 30vh;
-    width:100%;
+    width: 100%;
 }
 
 .showing:hover {
@@ -66,15 +66,16 @@ a:active {
 }
 
 .showing-details {
-    font-size:3rem;
-    width:70%;
+    font-size: 3rem;
+    width: 70%;
 }
+
 .poster {
     background-color: green;
     min-height: 100%;
     border-style: dotted;
-    width:30%;
-    font-size:1rem;
+    width: 30%;
+    font-size: 1rem;
 }
 
 .active {
@@ -84,8 +85,8 @@ a:active {
 
 
 
-.blur{
-        -webkit-filter: blur(4px);
+.blur {
+    -webkit-filter: blur(4px);
     -moz-filter: blur(4px);
     -ms-filter: blur(4px);
     -o-filter: blur(4px);
@@ -94,15 +95,15 @@ a:active {
 
 
 .activeshow {
-  position:fixed;
-        padding:0;
-    margin:0;
+    position: fixed;
+    padding: 0;
+    margin: 0;
 
-    top:0;
+    top: 0;
 
     width: 100%;
     height: 100%;
-    background:rgba(255,255,255,0.5);
+    background: rgba(255, 255, 255, 0.5);
 }
 
 #details {
@@ -112,30 +113,33 @@ a:active {
     max-height: 99vh;
     border-style: solid;
     border-color: purple;
-  
 }
+
 #close {
-    font-size:2rem;
-    position:absolute;
-    top:5px;
-    right:10px;
+    font-size: 2rem;
+    position: absolute;
+    top: 5px;
+    right: 10px;
 }
-#selected-showing p{
-    font-size:3rem;
+
+#selected-showing p {
+    font-size: 3rem;
     margin-top: 0;
     margin-bottom: 0;
 }
 
-#order-form *{
-    font-size:3rem;
+#order-form * {
+    font-size: 3rem;
 }
+
 #seats {
     border-style: solid;
     margin: auto;
 }
+
 #seats button {
-    font-size:2rem;
-    padding:16px 32px;
+    font-size: 2rem;
+    padding: 16px 32px;
 }
 
 
@@ -146,17 +150,18 @@ a:active {
 
 #order {
     border-style: solid;
-    width:100%;
-    font-size:2rem;
-
+    width: 100%;
+    font-size: 2rem;
 }
 
 #login {
+    display:flex;
     border-style: solid;
     margin: auto;
 }
 
 #register {
+    display:flex;
     border-style: solid;
     margin: auto;
 }
