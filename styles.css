@@ -60,11 +60,11 @@ a:active {
 
 .title {
     font-weight: bold;
-    font-size: 14px;
+    font-size: 2rem;
 }
 
 .showing-details {
-    font-size:12px;
+    font-size:1.5rem;
     width:70%;
 }
 .poster {
@@ -72,7 +72,7 @@ a:active {
     min-height: 100%;
     border-style: dotted;
     width:30%;
-    font-size:8px;
+    font-size:1rem;
 }
 
 .active {
