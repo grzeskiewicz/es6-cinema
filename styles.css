@@ -26,8 +26,6 @@ a:active {
 #wrapper {
     display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
 }
 
 #showings {
@@ -107,7 +105,7 @@ a:active {
 #details {
     display: flex;
     flex-direction: column;
-    width: 95vw;
+    width: 99vw;
     max-height: 99vh;
     border-style: solid;
     border-color: purple;
