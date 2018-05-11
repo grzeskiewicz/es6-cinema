@@ -111,6 +111,9 @@ a:active {
     border-color: purple;
   
 }
+#close {
+    float:right;
+}
 
 #seats {
     border-style: solid;
