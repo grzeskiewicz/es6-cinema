@@ -154,13 +154,13 @@ a:active {
     font-size: 2rem;
 }
 
-#login {
+#login  form{
     display:flex;
     border-style: solid;
     margin: auto;
 }
 
-#register {
+#register form {
     display:flex;
     border-style: solid;
     margin: auto;
