@@ -137,6 +137,8 @@ a:active {
 #order {
     border-style: solid;
     margin: auto;
+    width:100%;
+    font-size:2rem;
 }
 
 #login {
