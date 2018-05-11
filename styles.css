@@ -45,7 +45,7 @@ a:active {
     /* Safari */
     transition: width 2s, height 2s;
     justify-content: space-between;
-    flex-basis:20vh;
+    height: 20vh;
     width:100%;
 }
 
