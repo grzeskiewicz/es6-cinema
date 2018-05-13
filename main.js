@@ -101,7 +101,8 @@ const showingsCtrl = {
                 const detailsDiv = this.details();
                 detailsDiv.querySelector('#close').addEventListener('click', function() {
                     detailsDiv.classList.remove('activeshow');
-                    showingsCtrl.showingsDiv().classList.remove('blur')
+                    showingsCtrl.showingsDiv().classList.remove('blur');
+                    view.hide(detailsDiv);
                 });
                 // view.show(detailsDiv);
                 detailsDiv.classList.add('activeshow');
