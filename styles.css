@@ -179,3 +179,13 @@ a:active {
     border-style: solid;
     color: green;
 }
+
+
+@media only screen and (min-width: 768px) { 
+#showings {
+    width:70vw;
+}
+.showing-details {
+    font-size: 1rem;
+}
+}
