@@ -28,12 +28,12 @@ a:active {
 
 #wrapper {
     display: flex;
-    flex-direction: column;
+   /* flex-direction: column;*/
 }
 
 #showings {
+    margin:auto;
     display: flex;
-
     flex-direction: column;
     border-style: solid;
 }
@@ -109,8 +109,9 @@ a:active {
 #details {
     display: flex;
     flex-direction: column;
-    width: 99vw;
-    max-height: 99vh;
+    /*width: 99vw;
+    max-height: 99vh;*/
+    margin:auto;
     border-style: solid;
     border-color: purple;
 }
