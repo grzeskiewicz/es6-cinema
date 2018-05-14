@@ -239,4 +239,9 @@ a:active {
 #selected-showing p {
     font-size:1rem;
 }
+
+#order {
+    display:flex;
+    align-items: center;
+}
 }
