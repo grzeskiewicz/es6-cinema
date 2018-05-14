@@ -230,6 +230,7 @@ a:active {
 
   #details{
     width:70vw;
+    display:flex;
   }
 
   #order-form * {
