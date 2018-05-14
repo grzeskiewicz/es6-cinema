@@ -231,6 +231,7 @@ a:active {
   #details{
     width:70vw;
     display:flex;
+    align-items: center;
   }
 
   #order-form * {
