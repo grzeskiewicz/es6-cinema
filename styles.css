@@ -198,7 +198,7 @@ a:active {
 
     #seats {
         display:flex;
-        
+        justify-content: center;
     }
 
     #order-form * {
