@@ -231,4 +231,8 @@ a:active {
   #order-form * {
     font-size: 1rem;
 }
+
+#selected-showing p {
+    font-size:1rem;
+}
 }
