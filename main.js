@@ -67,7 +67,7 @@ const view = {
         document.getElementById(output).innerHTML = html;
     },
     show(element) {
-        element.style.display = 'block';
+        element.style.display = 'flex';
     },
     hide(element) {
         element.style.display = 'none';
