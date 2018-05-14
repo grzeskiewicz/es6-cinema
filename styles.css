@@ -196,12 +196,12 @@ a:active {
         padding: 0;
     }
 
-    #seats {
+    /*#seats {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    }
+    }*/
 
     #order-form * {
         font-size: 1rem;
