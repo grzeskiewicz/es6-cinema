@@ -203,6 +203,10 @@ a:active {
         align-items: center;
     }*/
 
+    #seats {
+        width:50%;
+    }
+
     #order-form * {
         font-size: 1rem;
     }
