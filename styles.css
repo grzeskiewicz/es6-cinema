@@ -223,4 +223,8 @@ a:active {
     #register form>* {
         font-size: 1rem;
     }
+
+    #order > div {
+width:50vw;
+    }
 }
