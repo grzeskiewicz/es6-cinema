@@ -232,7 +232,7 @@ a:active {
     width:70vw;
     display:flex;
     align-items: flex-start;
-justify-content: center;
+justify-content: space-around;
   }
 
   #order-form * {
