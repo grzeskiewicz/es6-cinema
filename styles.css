@@ -196,6 +196,11 @@ a:active {
         padding:0;
     }
 
+    #seats {
+        display:flex;
+        
+    }
+
     #order-form * {
         font-size: 1rem;
     }
