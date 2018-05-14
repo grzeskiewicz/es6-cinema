@@ -133,8 +133,8 @@ a:active {
 }
 
 .ordered {
-   justify-content: center;
-   align-items: center;
+    justify-content: center;
+    align-items: center;
 }
 
 #seats {
@@ -159,12 +159,13 @@ a:active {
     font-size: 2rem;
 }
 
-#login  form > *, #register form > *{
-    display:flex;
+#login form>*,
+#register form>* {
+    display: flex;
     flex-direction: column;
     border-style: solid;
     margin: auto;
-    font-size:4rem;
+    font-size: 4rem;
 }
 
 
@@ -181,11 +182,15 @@ a:active {
 }
 
 
-@media only screen and (min-width: 768px) { 
-#showings {
-    width:70vw;
-}
-.showing-details {
-    font-size: 1rem;
-}
+@media only screen and (min-width: 768px) {
+    #showings {
+        width: 70vw;
+    }
+    .showing-details {
+        font-size: 1rem;
+    }
+
+    .title {
+        font-size: 2rem;
+    }
 }
