@@ -192,23 +192,27 @@ a:active {
     }
 
     #seats button {
-    font-size: 1rem;
-}
+        font-size: 1rem;
+    }
 
-#order-form * { 
-font-size:1rem;
-}
+    #order-form * {
+        font-size: 1rem;
+    }
+
+    #close {
+        font-size: 1rem;
+    }
 
     .title {
         font-size: 2rem;
     }
 
     #customer-info * {
-    font-size: 1rem;
-}
+        font-size: 1rem;
+    }
 
-#login form>*,
-#register form>* {
-    font-size: 1rem;
-}
+    #login form>*,
+    #register form>* {
+        font-size: 1rem;
+    }
 }
