@@ -227,4 +227,8 @@ a:active {
   #details{
     width:70vw;
   }
+
+  #order-form * {
+    font-size: 1rem;
+}
 }
