@@ -23,25 +23,20 @@ a:active {
 }
 
 
-#wrapper {
-    display: flex;
-    flex-direction: column;
-}
+
 
 #showings {
     display: flex;
     border-style: solid;
 }
 
-.showing {
+#showings > * {
 flex: 1 100%;
     background-color: red;
     border-style: solid;
     border-color: blue;
     -webkit-transition: width 2s, height 2s;
     transition: width 2s, height 2s;
-    height: 30vh;
-    width: 100%;
 }
 
 .showing:hover {
@@ -163,7 +158,7 @@ flex: 1 100%;
     color: green;
 }
 
-
+/*
 @media only screen and (min-width: 768px) {
     #wrapper {
         justify-content: center;
@@ -178,12 +173,12 @@ flex: 1 100%;
         padding: 0;
     }
 
-    /*#seats {
+    #seats {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
-    }*/
+    }
 
     #seats {
         width:50%;
@@ -231,4 +226,4 @@ justify-content: space-around;
 justify-content: center;
 align-items: center;    
 }
-}
+}*/
