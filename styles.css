@@ -86,8 +86,13 @@ a:active {
 
 #details {
     display: flex;
+    flex-flow: row wrap;
     border-style: solid;
     border-color: purple;
+}
+
+#details >*{
+        flex: 1 100%;
 }
 
 #close {
@@ -119,7 +124,6 @@ a:active {
 
 #order {
     border-style: solid;
-    width: 100%;
 }
 
 #login form>*,
