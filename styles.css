@@ -107,6 +107,8 @@ display:flex;
 flex-flow: row wrap;
 }
 #order >* {
+         align-items: center;
+        justify-content: center;
 }
 
 
