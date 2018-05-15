@@ -140,7 +140,6 @@ flex: 1 100%;
 #order {
     border-style: solid;
     width: 100%;
-    font-size: 2rem;
 }
 
 #login form>*,
