@@ -43,6 +43,10 @@ a:active {
     transition: width 2s, height 2s;*/
 }
 
+.active:after {
+     content: " heheheheheheh";
+}
+
 .showing:hover {
     transform: scale(1, 1);
 }
