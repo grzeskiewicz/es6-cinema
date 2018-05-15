@@ -52,14 +52,14 @@ flex: 1 100%;
 }
 
 .showing-details {
-    width: 70%;
-}
+    flex-basis:70%;
+  }
 
 .poster {
     background-color: green;
     min-height: 100%;
     border-style: dotted;
-flex: 1 30%;
+flex-basis:30%;
     font-size: 1rem;
 }
 
