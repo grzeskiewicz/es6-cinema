@@ -99,6 +99,7 @@ a:active {
 #details >*{
         flex: 1 100%;
         align-items: center;
+        justify-content: center;
 }
 
 #close {
