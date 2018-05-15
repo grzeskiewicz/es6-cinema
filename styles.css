@@ -44,7 +44,7 @@ a:active {
 }
 
 .active:after {
-     content: " heheheheheheh";
+     content: #details;
 }
 
 .showing:hover {
