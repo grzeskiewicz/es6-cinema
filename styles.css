@@ -114,6 +114,8 @@ a:active {
 
 #seats {
     border-style: solid;
+    display:flex;
+    flex-flow: row wrap;
 }
 
 
