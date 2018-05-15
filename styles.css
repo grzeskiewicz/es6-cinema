@@ -96,11 +96,21 @@ a:active {
     border-color: purple;
 }
 
-#details >*, #order >*{
+#details >*{
         flex: 1 100%;
         align-items: center;
         justify-content: center;
 }
+
+#order { 
+display:flex;
+}
+#order >* {
+         flex: 1 100%;
+        align-items: center;
+        justify-content: center;  
+}
+
 
 #close {
     position: absolute;
@@ -131,9 +141,6 @@ a:active {
 }
 
 
-#order {
-    border-style: solid;
-}
 
 #login form>*,
 #register form>* {
