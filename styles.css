@@ -85,6 +85,7 @@ a:active {
 }
 
 #details {
+    order:1;
     display: flex;
     flex-flow: row wrap;
     border-style: solid;
