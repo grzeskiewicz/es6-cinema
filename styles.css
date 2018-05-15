@@ -22,9 +22,6 @@ a:active {
     right: 100px;
 }
 
-#customer-info * {
-    font-size: 3rem;
-}
 
 #wrapper {
     display: flex;
@@ -58,11 +55,9 @@ flex: 1 100%;
 
 .title {
     font-weight: bold;
-    font-size: 4rem;
 }
 
 .showing-details {
-    font-size: 3rem;
     width: 70%;
 }
 
@@ -112,21 +107,16 @@ flex: 1 100%;
 }
 
 #close {
-    font-size: 3rem;
     position: absolute;
     top: 5px;
     right: 10px;
 }
 
 #selected-showing p {
-    font-size: 3rem;
     margin-top: 0;
     margin-bottom: 0;
 }
 
-#order-form * {
-    font-size: 3rem;
-}
 
 .ordered {
     justify-content: center;
@@ -138,7 +128,6 @@ flex: 1 100%;
 }
 
 #seats button {
-    font-size: 2rem;
     padding: 16px 32px;
 }
 
@@ -160,7 +149,6 @@ flex: 1 100%;
     flex-direction: column;
     border-style: solid;
     margin: auto;
-    font-size: 4rem;
 }
 
 
