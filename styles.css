@@ -51,7 +51,7 @@ flex: 1 100%;
 .title {
     font-weight: bold;
 }
-
+/*
 .showing-details {
     width: 70%;
 }
@@ -78,7 +78,7 @@ flex: 1 100%;
     -o-filter: blur(6px);
     filter: blur(6px);
 }
-/*
+
 
 .activeshow {
     position: fixed;
