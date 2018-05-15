@@ -29,8 +29,9 @@ a:active {
     border-style: solid;
 }
 
-#showings > * {
-flex: 1 100%;
+#showings>* {
+    flex: 1 100%;
+    display: flex;
     background-color: red;
     border-style: solid;
     border-color: blue;
@@ -52,13 +53,13 @@ flex: 1 100%;
 }
 
 .showing-details {
-    flex-basis:70%;
-  }
+    flex-basis: 70%;
+}
 
 .poster {
     background-color: green;
     border-style: dotted;
-flex-basis:30%;
+    flex-basis: 30%;
 }
 
 .active {
@@ -75,6 +76,8 @@ flex-basis:30%;
     -o-filter: blur(6px);
     filter: blur(6px);
 }
+
+
 /*
 
 .activeshow {
@@ -154,6 +157,7 @@ flex-basis:30%;
     border-style: solid;
     color: green;
 } */
+
 
 /*
 @media only screen and (min-width: 768px) {
