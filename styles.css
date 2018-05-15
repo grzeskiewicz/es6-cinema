@@ -112,6 +112,7 @@ flex-flow: row wrap;*/
 }
 
 #selected-showing {
+    display: flex;
       align-items: center;
      justify-content: center;   
 }
