@@ -170,72 +170,13 @@ flex-flow: row wrap;*/
 } 
 
 
-/*
+
 @media only screen and (min-width: 768px) {
-    #wrapper {
-        justify-content: center;
-        align-items: center;
-    }
-    .showing-details {
-        font-size: 1rem;
-    }
-
-    #seats button {
-        font-size: 1rem;
-        padding: 0;
-    }
-
-    #seats {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #seats {
-        width:50%;
-    }
-
-    #order-form * {
-        font-size: 1rem;
-    }
-
-    #close {
-        font-size: 1rem;
-    }
-
-    .title {
-        font-size: 2rem;
-    }
-
-    #customer-info * {
-        font-size: 1rem;
-    }
-
-    #login form>*,
-    #register form>* {
-        font-size: 1rem;
-    }
-
-  #details{
-    width:70vw;
-    display:flex;
-    align-items: flex-start;
-justify-content: space-around;
-  }
-
-  #order-form * {
-    font-size: 1rem;
+   #showings>* {
+    flex: 1 70%;
+}
+#details >*{
+    flex: 1 70%;
 }
 
-#selected-showing p {
-    font-size:1rem;
 }
-
-#order {
-    display:flex;
-    flex-direction: column;
-justify-content: center;
-align-items: center;    
-}
-}*/
