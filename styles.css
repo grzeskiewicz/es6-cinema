@@ -27,6 +27,7 @@ a:active {
 
 #showings {
     display: flex;
+    flex-flow: row wrap;
     border-style: solid;
 }
 
