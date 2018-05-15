@@ -129,8 +129,8 @@ flex-flow: row wrap;
 
 #seats {
     border-style: solid;
-    display:flex;
-    flex-flow: row wrap;
+   /* display:flex;
+    flex-flow: row wrap;*/
 }
 
 
