@@ -97,20 +97,19 @@ a:active {
 }
 
 #details >*{
-        flex: 1 100%;
+    flex: 1 100%;
      align-items: center;
-        justify-content: center;
+     justify-content: center;
 }
 
 #order { 
-display:flex;
-flex-flow: row wrap;
-}
-#order >* {
-    flex: 1 100%;
-margin:auto;
+/*display:flex;
+flex-flow: row wrap;*/
 }
 
+#order-form{
+
+}
 
 #close {
     position: absolute;
