@@ -96,7 +96,7 @@ a:active {
     border-color: purple;
 }
 
-#details >*{
+#details >*, #order >*{
         flex: 1 100%;
         align-items: center;
         justify-content: center;
