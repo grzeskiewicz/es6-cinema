@@ -78,7 +78,7 @@ flex: 1 100%;
     -o-filter: blur(6px);
     filter: blur(6px);
 }
-
+/*
 
 .activeshow {
     position: fixed;
@@ -156,7 +156,7 @@ flex: 1 100%;
 .success {
     border-style: solid;
     color: green;
-}
+} */
 
 /*
 @media only screen and (min-width: 768px) {
