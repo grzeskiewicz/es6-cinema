@@ -96,7 +96,11 @@ a:active {
     border-color: purple;
 }
 
-
+#details >*{
+        flex: 1 100%;
+        align-items: center;
+        justify-content: center;
+}
 
 #order { 
 display:flex;
