@@ -113,7 +113,7 @@ flex-flow: row wrap;*/
 
 #selected-showing {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: column wrap;
       align-items: center;
      justify-content: center;   
 }
