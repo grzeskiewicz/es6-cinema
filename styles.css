@@ -21,9 +21,13 @@ a:active {
     top: 0;
     right: 100px;
 }
-
+#wrapper{
+    display:flex;
+    flex-flow: row wrap;
+}
 
 #showings {
+    order:2;
     display: flex;
     flex-flow: row wrap;
     border-style: solid;
