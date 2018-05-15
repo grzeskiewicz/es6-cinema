@@ -23,8 +23,6 @@ a:active {
 }
 
 
-
-
 #showings {
     display: flex;
     flex-flow: row wrap;
@@ -52,7 +50,7 @@ flex: 1 100%;
 .title {
     font-weight: bold;
 }
-/*
+
 .showing-details {
     width: 70%;
 }
@@ -61,7 +59,7 @@ flex: 1 100%;
     background-color: green;
     min-height: 100%;
     border-style: dotted;
-    width: 30%;
+flex: 1 30%;
     font-size: 1rem;
 }
 
@@ -79,7 +77,7 @@ flex: 1 100%;
     -o-filter: blur(6px);
     filter: blur(6px);
 }
-
+/*
 
 .activeshow {
     position: fixed;
