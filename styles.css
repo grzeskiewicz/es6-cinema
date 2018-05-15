@@ -97,16 +97,17 @@ a:active {
 }
 
 #details >*{
-
+        flex: 1 100%;
+     align-items: center;
+        justify-content: center;
 }
 
 #order { 
 display:flex;
+flex-flow: row wrap;
 }
 #order >* {
-         display:flex;
-        align-items: center;
-        justify-content: center;  
+flex: 1 100%;
 }
 
 
