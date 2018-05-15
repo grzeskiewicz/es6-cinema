@@ -111,6 +111,11 @@ flex-flow: row wrap;*/
 
 }
 
+#selected-showing {
+      align-items: center;
+     justify-content: center;   
+}
+
 #close {
     position: absolute;
     top: 5px;
