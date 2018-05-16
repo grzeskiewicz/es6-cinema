@@ -177,8 +177,10 @@ flex-flow: row wrap;*/
         justify-content: center;
     }
 #showings{
+
    flex-basis:50%;
    order:1;
+   align-items: flex-start;
 }
 #details {
     max-height: 100vh;
