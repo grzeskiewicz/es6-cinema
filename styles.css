@@ -187,7 +187,9 @@ flex-flow: row wrap;*/
         flex:0 30%;
         order: 2;
     }
-
+#selected-showing{
+    align-items: flex-start;
+}
 
     #seats {
         flex-flow: column wrap;
