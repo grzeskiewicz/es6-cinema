@@ -181,6 +181,7 @@ flex-flow: row wrap;*/
    order:1;
 }
 #details {
+    max-height: 100vh;
     flex-basis:50%;
     order:2;
 }
