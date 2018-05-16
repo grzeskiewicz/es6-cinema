@@ -176,13 +176,13 @@ flex-flow: row wrap;*/
         justify-content: center;
     }
 #showings{
-   flex: 1 70%;
+   flex-basis:70%;
 }
-   #showings>* {
+   /*#showings>* {
     flex: 1 70%;
 }
 #details >*{
     flex: 1 70%;
-}
+}*/
 
 }
