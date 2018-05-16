@@ -21,13 +21,14 @@ a:active {
     top: 0;
     right: 100px;
 }
-#wrapper{
-    display:flex;
+
+#wrapper {
+    display: flex;
     flex-flow: row wrap;
 }
 
 #showings {
-    order:2;
+    order: 2;
     display: flex;
     flex-flow: row wrap;
     border-style: solid;
@@ -72,6 +73,7 @@ a:active {
 }
 
 
+
 /*
 .blur {
     -webkit-filter: blur(6px);
@@ -81,15 +83,12 @@ a:active {
     filter: blur(6px);
 }*/
 
-
-
-
 .activeshow {
     background: rgba(255, 255, 255, 0.9);
 }
 
 #details {
-    order:1;
+    order: 1;
     display: flex;
     flex: 1 100%;
     flex-flow: row wrap;
@@ -97,26 +96,24 @@ a:active {
     border-color: purple;
 }
 
-#details >*{
+#details>* {
     flex: 1 100%;
-     align-items: center;
-     justify-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
-#order { 
-/*display:flex;
+#order {
+    /*display:flex;
 flex-flow: row wrap;*/
 }
 
-#order-form{
+#order-form {}
 
-}
-
-#order >* {
+#order>* {
     display: flex;
     flex-flow: column wrap;
-      align-items: center;
-     justify-content: center;   
+    align-items: center;
+    justify-content: center;
 }
 
 #close {
@@ -137,7 +134,7 @@ flex-flow: row wrap;*/
 }
 
 #seats {
-    display:flex;
+    display: flex;
     flex-flow: row wrap;
 }
 
@@ -167,45 +164,42 @@ flex-flow: row wrap;*/
 .success {
     border-style: solid;
     color: green;
-} 
+}
 
 
 
 @media only screen and (min-width: 768px) {
-    #wrapper{
-
+    #wrapper {
+        justify-content: center;
     }
-#showings{
+    #showings {
 
-  flex:1 40vw;
-   order:1;
-
-}
-
-#showings>* {
-    flex: 1 100%;
+        flex-basis: 30%;
+        order: 1;
     }
-#details {
-     align-items: flex-start;
-    max-height: 100vh;
-    flex:1 40vw;
-    order:2;
-}
+
+    #showings>* {
+        flex: 1 100%;
+    }
+    #details {
+        align-items: flex-start;
+        max-height: 100vh;
+        flex-basis: 30%;
+        order: 2;
+    }
 
 
-#seats{
-    flex-flow: column wrap;
-    align-items: center;
-
-}
-#seats div{
-    width:50%;
-}
-   /*#showings>* {
+    #seats {
+        flex-flow: column wrap;
+        align-items: center;
+    }
+    #seats div {
+        width: 50%;
+    }
+    /*#showings>* {
     flex: 1 70%;
 }
 #details >*{
     flex: 1 70%;
 }*/
-
 }
