@@ -176,7 +176,7 @@ flex-flow: row wrap;*/
         justify-content: center;
     }
 #showings{
-   flex-basis:70%;
+   flex-basis:50%;
 }
    /*#showings>* {
     flex: 1 70%;
