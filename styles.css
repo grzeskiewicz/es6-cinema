@@ -180,9 +180,10 @@ flex-flow: row wrap;*/
 
    flex-basis:50%;
    order:1;
-   align-items: flex-start;
+
 }
 #details {
+     align-items: flex-start;
     max-height: 100vh;
     flex-basis:50%;
     order:2;
