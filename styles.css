@@ -188,7 +188,7 @@ flex-flow: row wrap;*/
     flex-basis:50%;
     order:2;
 }
-#seats >*{
+#seats div{
     flex-basis:50%;
 }
    /*#showings>* {
