@@ -179,7 +179,7 @@ flex-flow: row wrap;*/
     }
 
     #showings>* {
-        flex: 1 100%;
+        /*flex: 1 100%;*/
     }
     #details {
         align-items: flex-start;
