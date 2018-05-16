@@ -176,7 +176,7 @@ flex-flow: row wrap;*/
         flex-flow: column wrap;
     }
    #showings>* {
-    flex: 1 70%;
+    flex: 1 100%;
 }
 #details >*{
     flex: 1 70%;
