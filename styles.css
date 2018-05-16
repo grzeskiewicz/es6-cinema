@@ -172,7 +172,9 @@ flex-flow: row wrap;*/
 
 
 @media only screen and (min-width: 768px) {
-
+#showings{
+    flex-basis:70%;
+}
    #showings>* {
     flex: 1 70%;
 }
