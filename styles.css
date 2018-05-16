@@ -196,6 +196,7 @@ flex-flow: row wrap;*/
     align-items: center;
 }
 #seats{
+    flex-flow: column wrap;
     align-items: center;
 }
    /*#showings>* {
