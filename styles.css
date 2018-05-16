@@ -196,6 +196,9 @@ flex-flow: row wrap;*/
 #seats{
     flex-flow: column wrap;
     align-items: center;
+
+}
+#seats div{
     width:50%;
 }
    /*#showings>* {
