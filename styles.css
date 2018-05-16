@@ -191,8 +191,11 @@ flex-flow: row wrap;*/
 #seats div{
     flex-basis:50%;
 }
+#seats * >{
+    flex:1;
+}
 #seats{
-    justify-content: center;
+    align-items: center;
 }
    /*#showings>* {
     flex: 1 70%;
