@@ -174,11 +174,10 @@ flex-flow: row wrap;*/
 @media only screen and (min-width: 768px) {
     #wrapper{
 
-width:50vw;
     }
 #showings{
 
-  flex:1 40vw;
+
    order:1;
 
 }
@@ -189,7 +188,7 @@ width:50vw;
 #details {
      align-items: flex-start;
     max-height: 100vh;
-    flex:1 40vw;
+
     order:2;
 }
 
