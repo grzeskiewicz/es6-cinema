@@ -192,7 +192,7 @@ flex-flow: row wrap;*/
     flex-basis:50%;
 }
 #seats * >{
-    flex:1;
+    flex:1 100%;
 }
 #seats{
     align-items: center;
