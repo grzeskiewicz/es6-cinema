@@ -188,9 +188,7 @@ flex-flow: row wrap;*/
     flex-basis:50%;
     order:2;
 }
-#seats div{
-    flex-basis:50%;
-}
+
 #seats * >{
     flex:1 100%;
     align-items: center;
@@ -198,6 +196,7 @@ flex-flow: row wrap;*/
 #seats{
     flex-flow: column wrap;
     align-items: center;
+    width:50%;
 }
    /*#showings>* {
     flex: 1 70%;
