@@ -170,11 +170,11 @@ flex-flow: row wrap;*/
 
 @media only screen and (min-width: 768px) {
     #wrapper {
-        
+        justify-content: center;
     }
     #showings {
 
-        flex-basis: 30%;
+        flex:0 30%;
         order: 1;
     }
 
@@ -184,7 +184,7 @@ flex-flow: row wrap;*/
     #details {
         align-items: flex-start;
         max-height: 100vh;
-        flex:0 20%;
+        flex:0 30%;
         order: 2;
     }
 
