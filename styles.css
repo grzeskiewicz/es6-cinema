@@ -184,7 +184,7 @@ flex-flow: row wrap;*/
     #details {
         align-items: flex-start;
         max-height: 100vh;
-        flex-basis: 30%;
+        flex:0 20%;
         order: 2;
     }
 
