@@ -173,14 +173,18 @@ flex-flow: row wrap;*/
 
 @media only screen and (min-width: 768px) {
     #wrapper{
+        flex-flow: row nowrap;
         justify-content: center;
     }
 #showings{
    flex-basis:50%;
+   order:1;
 }
 #details {
     flex-basis:50%;
+    order:2;
 }
+
    /*#showings>* {
     flex: 1 70%;
 }
