@@ -193,7 +193,13 @@ flex-flow: row wrap;*/
         padding: 5px 0;
     }
 
+.showing-details{
 
+}
+
+.poster {
+    margin-left: auto
+}
     #details {
         align-items: flex-start;
         max-height: 100vh;
