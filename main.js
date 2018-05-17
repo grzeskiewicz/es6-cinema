@@ -121,9 +121,10 @@ const showingsCtrl = {
                         showingObj.classList.remove('active');
                     }
                     const showingObjDetails = showingObj.querySelector('.showing-details');
-
+const showingObjPoster=showingObj.querySelector('.poster');
                     if (showingObjDetails.style.display === 'block' && showingObjDetails !== showingDetails) {
                         showingObjDetails.style.display = 'none';
+showingObjPoster.style.display='none';
                     }
 
                 });
