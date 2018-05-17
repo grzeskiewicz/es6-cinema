@@ -69,6 +69,9 @@ const view = {
     show(element) {
         element.style.display = 'flex';
     },
+    showBlock(element){
+        element.style.display='block';
+    },
     hide(element) {
         element.style.display = 'none';
     }
@@ -116,8 +119,8 @@ const showingsCtrl = {
                         elem.classList.remove('active');
                     }
                 });
-                view.show(showing.querySelector('.showing-details'));
-                view.show(showing.querySelector('.poster'));
+                view.showBlock(showing.querySelector('.showing-details'));
+                view.showBlock(showing.querySelector('.poster'));
                 this.showingsDiv().classList.add('blur');
                 showingsService.selectById(event.currentTarget.dataset.showingId);
                 //const seatsDiv = document.getElementById('seats');
