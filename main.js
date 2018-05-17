@@ -69,14 +69,11 @@ const view = {
     show(element) {
         element.style.display = 'flex';
     },
-    showBlock(element){
-        element.style.display='block';
-    },
     hide(element) {
         element.style.display = 'none';
     },
     toggle(element){
-        element.style.display= element.style.display === 'none' ? 'block': 'none';
+        element.style.display= element.style.display === 'none' ? 'flex': 'none';
     }
 }
 
