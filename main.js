@@ -76,7 +76,7 @@ const view = {
         element.style.display = 'none';
     },
     toggle(element){
-        element.style.display= element.style.display === 'none' ? 'block': '';
+        element.style.display= element.style.display === 'none' ? 'block': 'none';
     }
 }
 
