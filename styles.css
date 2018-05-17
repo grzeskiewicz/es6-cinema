@@ -182,7 +182,7 @@ flex-flow: row wrap;*/
     .showing {
         display: flex;
         flex-flow:row wrap;
-        justify-content: center;
+        justify-content: flex-start;
     }
     .showing-wrapper {
         display: flex;
