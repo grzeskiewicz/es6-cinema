@@ -113,7 +113,7 @@ const showingsCtrl = {
                 showing.classList.add('active');
                 const showingDetails = showing.querySelector('.showing-details');
                 console.log(showingDetails);
-                const poster=showing.querySelector('.poster');
+                const poster = showing.querySelector('.poster');
                 showingDetails.style.display = 'block';
                 poster.style.display = 'block';
                 [...this.showingsList()].forEach(showingObj => {
@@ -121,10 +121,10 @@ const showingsCtrl = {
                         showingObj.classList.remove('active');
                     }
                     const showingObjDetails = showingObj.querySelector('.showing-details');
-const showingObjPoster=showingObj.querySelector('.poster');
+                    const showingObjPoster = showingObj.querySelector('.poster');
                     if (showingObjDetails.style.display === 'block' && showingObjDetails !== showingDetails) {
                         showingObjDetails.style.display = 'none';
-showingObjPoster.style.display='none';
+                        showingObjPoster.style.display = 'none';
                     }
 
                 });
