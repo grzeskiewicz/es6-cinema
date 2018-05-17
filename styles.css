@@ -176,24 +176,28 @@ flex-flow: row wrap;*/
         justify-content: center;
     }
     #showings {
-
         flex: 0 30%;
         order: 1;
     }
     .showing {
         display: flex;
-        flex-flow: row wrap;
     }
     .showing-wrapper {
         display: flex;
-        flex-flow:row nowrap;
+        justify-content: space-between;
     }
 
     .title {
         flex: 1 100%;
         padding: 5px 0;
     }
+.showing-details{
 
+}
+
+.poster {
+
+}
 
 
     #details {
