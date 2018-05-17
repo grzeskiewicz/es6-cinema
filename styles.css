@@ -94,6 +94,8 @@ a:active {
     flex-flow: row wrap;
     border-style: solid;
     border-color: purple;
+    position:fixed;
+    bottom:5px;
 }
 
 #details>* {
