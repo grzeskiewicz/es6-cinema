@@ -186,7 +186,7 @@ flex-flow: row wrap;*/
         padding: 5px 0;
     }
 
-    .showing-details-visible {
+    .showing-details .showing-details-visible {
         display: block;
     }
 
