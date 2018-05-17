@@ -119,6 +119,7 @@ const showingsCtrl = {
                         elem.classList.remove('active');
                     }
                 });
+                console.log(showing.querySelector('.showing-details'));
                 showing.querySelector('.showing-details').classList.toggle('showing-details-visible');
                 showing.querySelector('.poster').classList.toggle('showing-details-visible');
                 this.showingsDiv().classList.add('blur');
