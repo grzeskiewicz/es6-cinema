@@ -181,6 +181,7 @@ flex-flow: row wrap;*/
     }
     .showing {
         display: flex;
+        flex-flow:row wrap;
     }
     .showing-wrapper {
         display: flex;
