@@ -95,7 +95,8 @@ const showingsCtrl = {
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
 
         [...this.showingsList()].forEach(showing => {
-            console.log(showing);
+            view.hide(showing.querySelector('.showing-details'));
+            view.hide(showing.querySelector('.poster'));
             showing.addEventListener('click', event => {
                 event.preventDefault();
                 console.log(showing);
