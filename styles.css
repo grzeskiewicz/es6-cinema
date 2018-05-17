@@ -94,7 +94,7 @@ a:active {
     flex-flow: row wrap;
     border-style: solid;
     border-color: purple;
-    position:fixed;
+    position:absolute;
     bottom:5px;
 }
 
