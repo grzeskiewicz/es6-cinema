@@ -182,7 +182,7 @@ flex-flow: row wrap;*/
         /*flex: 1 100%;*/
     }
     .title {
-        padding:5px auto;
+        padding:5px 0;
     }
     #details {
         align-items: flex-start;
