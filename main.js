@@ -112,6 +112,7 @@ const showingsCtrl = {
                 detailsDiv.classList.add('activeshow');
                 showing.classList.add('active');
                 const showingDetails = showing.querySelector('.showing-details');
+                console.log(showingDetails);
                 const poster=showing.querySelector('.poster');
                 showingDetails.style.display = 'block';
                 poster.style.display = 'block';
