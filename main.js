@@ -74,6 +74,9 @@ const view = {
     },
     hide(element) {
         element.style.display = 'none';
+    },
+    toggle(element){
+        element.style.display= element.style.display === 'none' ? 'block': '';
     }
 }
 
@@ -119,9 +122,8 @@ const showingsCtrl = {
                         elem.classList.remove('active');
                     }
                 });
-                console.log(showing.querySelector('.showing-details').classList);
-                showing.querySelector('.showing-details').classList.toggle('showing-details-visible');
-                showing.querySelector('.poster').classList.toggle('showing-details-visible');
+                view.toggle(showing.querySelector('.showing-details'));
+                view.toggle(showing.querySelector('.poster'));
                 this.showingsDiv().classList.add('blur');
                 showingsService.selectById(event.currentTarget.dataset.showingId);
                 //const seatsDiv = document.getElementById('seats');
