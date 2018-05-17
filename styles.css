@@ -179,10 +179,12 @@ flex-flow: row wrap;*/
         flex: 0 30%;
         order: 1;
     }
-
+.showing {
+    display:flex;
+    flex-flow:row wrap;
+}
      .showing-wrapper {
 display:flex;
-flex-flow:row wrap;
      }
 
     .title {
