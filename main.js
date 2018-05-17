@@ -107,15 +107,17 @@ const showingsCtrl = {
                     showingsCtrl.showingsDiv().classList.remove('blur');
                     view.hide(detailsDiv);
                 });
-                // view.show(detailsDiv);
+
                 detailsDiv.classList.add('activeshow');
                 showing.classList.add('active');
+
                 [...this.showingsList()].forEach(elem => {
                     if (elem.classList.contains('active') && elem != showing) {
                         elem.classList.remove('active');
                     }
                 });
-
+                view.show(showing.querySelector('.showing-details'));
+                view.show(showing.querySelector('.poster'));
                 this.showingsDiv().classList.add('blur');
                 showingsService.selectById(event.currentTarget.dataset.showingId);
                 //const seatsDiv = document.getElementById('seats');
