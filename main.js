@@ -112,7 +112,9 @@ const showingsCtrl = {
                 detailsDiv.classList.add('activeshow');
                 showing.classList.add('active');
                 const showingDetails = showing.querySelector('.showing-details');
+                const poster=showing.querySelector('.poster');
                 showingDetails.style.display = 'block';
+                poster.style.display = 'block';
                 [...this.showingsList()].forEach(showingObj => {
                     if (showingObj.classList.contains('active') && showingObj !== showing) {
                         showingObj.classList.remove('active');
