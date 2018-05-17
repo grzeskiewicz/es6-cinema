@@ -186,8 +186,9 @@ flex-flow: row wrap;*/
         padding: 5px 0;
     }
 
-    .showing-details .showing-details-visible {
+   .showing-details-visible {
         display: block;
+        background: purple;
     }
 
     #details {
