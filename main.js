@@ -72,8 +72,8 @@ const view = {
     hide(element) {
         element.style.display = 'none';
     },
-    toggle(element){
-        element.style.display= element.style.display === 'none' ? 'flex': 'none';
+    toggle(element) {
+        element.style.display = element.style.display === 'none' ? 'flex' : 'none';
     }
 }
 
@@ -93,7 +93,6 @@ const showingsCtrl = {
         }
     },
     list(showings) {
-        console.log(showings);
         this.dateDisplay(showings);
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
 
@@ -102,7 +101,6 @@ const showingsCtrl = {
             view.hide(showing.querySelector('.poster'));
             showing.addEventListener('click', event => {
                 event.preventDefault();
-                console.log(showing);
                 const detailsDiv = this.details();
                 view.show(detailsDiv);
                 detailsDiv.querySelector('#close').addEventListener('click', function() {
@@ -113,11 +111,18 @@ const showingsCtrl = {
 
                 detailsDiv.classList.add('activeshow');
                 showing.classList.add('active');
-
-                [...this.showingsList()].forEach(elem => {
-                    if (elem.classList.contains('active') && elem != showing) {
-                        elem.classList.remove('active');
+                const showingDetails = showing.querySelector('.showing-details');
+                showingDetails.style.display = 'block';
+                [...this.showingsList()].forEach(showingObj => {
+                    if (showingObj.classList.contains('active') && showingObj !== showing) {
+                        showingObj.classList.remove('active');
                     }
+                    const showingObjDetails = showingObj.querySelector('.showing-details');
+
+                    if (showingObjDetails.style.display === 'block' && showingObjDetails !== showingDetails) {
+                        showingObjDetails.style.display = 'none';
+                    }
+
                 });
                 view.toggle(showing.querySelector('.showing-details'));
                 view.toggle(showing.querySelector('.poster'));
