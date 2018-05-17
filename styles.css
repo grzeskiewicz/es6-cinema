@@ -25,7 +25,6 @@ a:active {
 #wrapper {
     display: flex;
     flex-flow: row wrap;
-    height: 100vh;
 }
 
 #showings {
@@ -33,7 +32,6 @@ a:active {
     display: flex;
     flex-flow: row wrap;
     border-style: solid;
-    overflow: auto;
 }
 
 #showings>* {
@@ -96,7 +94,6 @@ a:active {
     flex-flow: row wrap;
     border-style: solid;
     border-color: purple;
-  
 }
 
 #details>* {
