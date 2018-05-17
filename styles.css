@@ -182,6 +182,7 @@ flex-flow: row wrap;*/
     .showing {
         display: flex;
         flex-flow:row wrap;
+        justify-content: center;
     }
     .showing-wrapper {
         display: flex;
@@ -198,7 +199,7 @@ flex-flow: row wrap;*/
 }
 
 .poster {
-    
+
 }
     #details {
         align-items: flex-start;
