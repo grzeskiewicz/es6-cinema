@@ -76,6 +76,7 @@ a:active {
 
 
 
+
 /*
 .blur {
     -webkit-filter: blur(6px);
@@ -179,13 +180,14 @@ flex-flow: row wrap;*/
         flex: 0 30%;
         order: 1;
     }
-.showing {
-    display:flex;
-    flex-flow:row wrap;
-}
-     .showing-wrapper {
-display:flex;
-     }
+    .showing {
+        display: flex;
+        flex-flow: row wrap;
+    }
+    .showing-wrapper {
+        display: flex;
+        flex-flow:row nowrap;
+    }
 
     .title {
         flex: 1 100%;
