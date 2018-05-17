@@ -95,6 +95,7 @@ const showingsCtrl = {
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
 
         [...this.showingsList()].forEach(showing => {
+            console.log(showing);
             showing.addEventListener('click', event => {
                 event.preventDefault();
                 console.log(showing);
