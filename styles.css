@@ -182,6 +182,7 @@ flex-flow: row wrap;*/
 
      .showing-wrapper {
 display:flex;
+flex-flow:row wrap;
      }
 
     .title {
