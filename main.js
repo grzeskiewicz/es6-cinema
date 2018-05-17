@@ -126,8 +126,6 @@ const showingsCtrl = {
                     }
 
                 });
-                view.toggle(showing.querySelector('.showing-details'));
-                view.toggle(showing.querySelector('.poster'));
                 this.showingsDiv().classList.add('blur');
                 showingsService.selectById(event.currentTarget.dataset.showingId);
                 //const seatsDiv = document.getElementById('seats');
