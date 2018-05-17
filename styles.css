@@ -182,11 +182,12 @@ flex-flow: row wrap;*/
     .showing {
         display: flex;
         flex-flow:row wrap;
-        justify-content: space-evenly;
+
     }
     .showing-wrapper {
         display: flex;
         flex-direction: row;
+         justify-content: space-evenly;
     }
 
     .title {
