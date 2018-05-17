@@ -186,8 +186,9 @@ flex-flow: row wrap;*/
     }
     .showing-wrapper {
         display: flex;
+        flex:1 100%;
         flex-direction: row;
-         justify-content: space-evenly;
+
     }
 
     .title {
