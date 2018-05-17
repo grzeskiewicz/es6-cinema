@@ -74,6 +74,7 @@ a:active {
 
 
 
+
 /*
 .blur {
     -webkit-filter: blur(6px);
@@ -174,7 +175,7 @@ flex-flow: row wrap;*/
     }
     #showings {
 
-        flex:0 30%;
+        flex: 0 30%;
         order: 1;
     }
 
@@ -182,12 +183,17 @@ flex-flow: row wrap;*/
         /*flex: 1 100%;*/
     }
     .title {
-        padding:5px 0;
+        padding: 5px 0;
     }
+
+    .showing-details-visible {
+        display: block;
+    }
+
     #details {
         align-items: flex-start;
         max-height: 100vh;
-        flex:0 30%;
+        flex: 0 30%;
         order: 2;
     }
 
