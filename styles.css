@@ -216,4 +216,9 @@ flex-flow: row wrap;*/
   opacity: 0;
   height:0;
 }
+
+.visuallyvisible {
+    opacity:1;
+    height:auto;
+}
 }

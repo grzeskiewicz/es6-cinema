@@ -67,11 +67,12 @@ const view = {
         document.getElementById(output).innerHTML = html;
     },
     show(element) {
-        element.style.display = 'flex';
+        element.classList.remove('visuallyhidden').add('visuallyvisible');
+        //element.style.display = 'flex';
     },
     hide(element) {
        // element.style.display = 'none';
-        element.classList.add('visuallyhidden');
+        element.classList.remove('visuallyvisible').add('visuallyhidden');
     },
     toggle(element) {
         element.style.display = element.style.display === 'none' ? 'flex' : 'none';
