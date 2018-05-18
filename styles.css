@@ -78,6 +78,7 @@ a:active {
 
 
 
+
 /*
 .blur {
     -webkit-filter: blur(6px);
@@ -183,26 +184,27 @@ flex-flow: row wrap;*/
     .showing {
         display: flex;
         flex-flow: row wrap;
-        transition:all 4s;
+        transition: all 4s;
     }
     .showing-wrapper {
         display: flex;
         flex: 1 100%;
         flex-direction: row;
-              -webkit-transition: width 2s, height 2s;
-    transition: width 2s, height 2s;
+        -webkit-transition: width 2s, height 2s;
+        transition: width 2s, height 2s;
     }
 
-.fadein, .fadeout {
-    opacity: 0;
-    -moz-transition: opacity 0.4s ease-in-out;
-    -o-transition: opacity 0.4s ease-in-out;
-    -webkit-transition: opacity 0.4s ease-in-out;
-    transition: opacity 0.4s ease-in-out;
-}
-.fadein {
-    opacity: 1;
-}
+    .fadein,
+    .fadeout {
+        opacity: 0;
+        -moz-transition: opacity 0.4s ease-in-out;
+        -o-transition: opacity 0.4s ease-in-out;
+        -webkit-transition: opacity 0.4s ease-in-out;
+        transition: opacity 0.4s ease-in-out;
+    }
+    .fadein {
+        opacity: 1;
+    }
     .title {
         flex: 1 100%;
         padding: 5px 0;
@@ -219,5 +221,11 @@ flex-flow: row wrap;*/
     #seats {
         flex-flow: column wrap;
         align-items: center;
+    }
+
+
+    .hidden {
+        display: none;
+        opacity: 0;
     }
 }
