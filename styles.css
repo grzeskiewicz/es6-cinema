@@ -190,6 +190,7 @@ flex-flow: row wrap;*/
         display: flex;
         flex: 1 100%;
         flex-direction: row;
+
     }
 
     .title {
@@ -213,5 +214,6 @@ flex-flow: row wrap;*/
 
 .visuallyhidden {
   opacity: 0;
+  height:0;
 }
 }

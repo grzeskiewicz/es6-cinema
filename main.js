@@ -70,7 +70,7 @@ const view = {
         element.style.display = 'flex';
     },
     hide(element) {
-        //element.style.display = 'none';
+       // element.style.display = 'none';
         element.classList.add('visuallyhidden');
     },
     toggle(element) {
