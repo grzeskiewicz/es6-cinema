@@ -188,6 +188,8 @@ flex-flow: row wrap;*/
         display: flex;
         flex: 1 100%;
         flex-direction: row;
+              -webkit-transition: width 2s, height 2s;
+    transition: width 2s, height 2s;
     }
     .active {
         -webkit-transition: width 2s, height 2s;
