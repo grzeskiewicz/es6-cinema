@@ -115,6 +115,7 @@ const showingsCtrl = {
                 console.log(showingDetails);
                 const poster = showing.querySelector('.poster');
                 showingDetails.style.display = 'block';
+                showingDetails.classList.add('fadein');
                 poster.style.display = 'block';
                 [...this.showingsList()].forEach(showingObj => {
                     if (showingObj.classList.contains('active') && showingObj !== showing) {

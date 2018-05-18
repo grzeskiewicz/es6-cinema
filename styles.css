@@ -191,10 +191,17 @@ flex-flow: row wrap;*/
               -webkit-transition: width 2s, height 2s;
     transition: width 2s, height 2s;
     }
-    .active {
-        -webkit-transition: width 2s, height 2s;
-    transition: width 2s, height 2s;
-    }
+    
+.fadein, .fadeout {
+    opacity: 0;
+    -moz-transition: opacity 0.4s ease-in-out;
+    -o-transition: opacity 0.4s ease-in-out;
+    -webkit-transition: opacity 0.4s ease-in-out;
+    transition: opacity 0.4s ease-in-out;
+}
+.fadein {
+    opacity: 1;
+}
     .title {
         flex: 1 100%;
         padding: 5px 0;
