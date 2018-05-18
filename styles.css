@@ -183,6 +183,7 @@ flex-flow: row wrap;*/
     .showing {
         display: flex;
         flex-flow: row wrap;
+        transition:all 4s;
     }
     .showing-wrapper {
         display: flex;
@@ -191,7 +192,7 @@ flex-flow: row wrap;*/
               -webkit-transition: width 2s, height 2s;
     transition: width 2s, height 2s;
     }
-    
+
 .fadein, .fadeout {
     opacity: 0;
     -moz-transition: opacity 0.4s ease-in-out;
