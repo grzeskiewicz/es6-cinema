@@ -40,7 +40,7 @@ const showingsService = Object.create(listService);
 // MAIN PART =======================================================================================================================================================
 
 
-const showingstest;
+let showingstest;
 
 
 fetch(request(API_URL + 'showings', 'GET'))
