@@ -40,8 +40,6 @@ const showingsService = Object.create(listService);
 // MAIN PART =======================================================================================================================================================
 
 
-let showingstest;
-
 
 fetch(request(API_URL + 'showings', 'GET'))
     .then(res => res.json())
@@ -53,7 +51,7 @@ fetch(request(API_URL + 'showings', 'GET'))
         showingsCtrl.list(showings);
         seatsCtrl.toggleListener();
         showingsService.add(showings);
-showingstest=showingsService.list();
+        console.log(showings);
     });
 
 
