@@ -43,16 +43,6 @@ renderCalendar(calendar);
 renderWeek(calendar);
 authServices.loadUserCredentials();
 
-fetch(request(API_URL + 'showings', 'GET'))
-    .then(res => res.json())
-    .then(showings => {
-        
-
-
-    });
-
-
-
 const view = {
     renderContent(source, context, output) {
         let sourceElem = document.getElementById(source).innerHTML;
