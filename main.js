@@ -111,7 +111,7 @@ fetch(request(`${API_URL}showingsbydate/${pickedDate}`, 'GET'))
     list(showings) {
         const calDiv=document.querySelector('#calendar');
         
-        console.log(calDiv.querySelectorAll('table td'));
+        console.log(calDiv.querySelectorAll('tbody td'));
         this.dateDisplay(showings);
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
 
