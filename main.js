@@ -77,6 +77,7 @@ export const showingsCtrl = {
         for (const showing of showings) {
             showing.date = this.dateParser(showing.date);
         }
+        console.log(showings);
     },
     calendarShowings(pickedDate) {
         const datex = moment(pickedDate).format('YYYY-MM-DD');
