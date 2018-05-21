@@ -39,11 +39,10 @@ export function renderCalendar(calendar) {
 
             // mount table cell
             tr.appendChild(td);
-            td.addEventListener('click', function() {
-                const pickedDate = new Date(this.dataset.date);
-                // console.log(pickedDate);
-                showingsCtrl.calendarShowings(pickedDate);
-            });
+            /*  td.addEventListener('click', function() {
+                  const pickedDate = new Date(this.dataset.date);
+                  // console.log(pickedDate)
+              });*/
         }
         // mount table row
         tbody.appendChild(tr);
