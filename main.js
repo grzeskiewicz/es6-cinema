@@ -106,8 +106,7 @@ const showingsCtrl = {
             renderCalendar(createCalendar(yearNow, ++selectedMonth));
         });
 
-    });
-
+ 
 
 },
 list(showings) {
