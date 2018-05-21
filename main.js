@@ -1,6 +1,6 @@
 import { authServices } from './services.js';
 import { API_URL, request } from './apiconnection.js';
-import { renderWeek, renderCalendar, calendar } from './calendar.js';
+import { renderWeek, renderCalendar, calendar, monthNow, yearNow } from './calendar.js';
 
 Handlebars.registerHelper('for', function(from, to, block) {
     var accum = '';
@@ -65,11 +65,11 @@ const view = {
         document.getElementById(output).innerHTML = html;
     },
     show(element) {
-       // element.classList.remove('visuallyhidden').add('visuallyvisible');
+        // element.classList.remove('visuallyhidden').add('visuallyvisible');
         element.style.display = 'flex';
     },
     hide(element) {
-       element.style.display = 'none';
+        element.style.display = 'none';
         //element.classList.remove('visuallyvisible').add('visuallyhidden');
     },
     toggle(element) {
@@ -93,71 +93,72 @@ const showingsCtrl = {
         }
     },
     calendarShowings(pickedDate) {
-        console.log(pickedDate);
-fetch(request(`${API_URL}showingsbydate/${pickedDate}`, 'GET'))
-    .then(res => res.json())
-    .then(showings => {
-        console.log(showings);
-       /* authServices.loadUserCredentials();
-        const customerInfo = document.querySelector('#customer-info');
-        view.hide(customerInfo);
-        loginCtrl.getInfo();*
-        showingsCtrl.list(showings);
-        seatsCtrl.toggleListener();
-        showingsService.add(showings);*/
+        //listeners for >> and <<
+        const previous = document.querySelector('#previous');
+        const next = document.querySelector('#next');
+        
+        previous.addEventListener('click', function() {
+            calendarDiv.innerHTML = '';
+            renderCalendar(createCalendar(yearNow, --selectedMonth));
+        });
+        next.addEventListener('click', function() {
+            calendarDiv.innerHTML = '';
+            renderCalendar(createCalendar(yearNow, ++selectedMonth));
+        });
+
     });
 
 
-    },
-    list(showings) {
-        this.dateDisplay(showings);
-        view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
+},
+list(showings) {
+    this.dateDisplay(showings);
+    view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
 
-        [...this.showingsList()].forEach(showing => {
-            view.hide(showing.querySelector('.showing-details'));
-            view.hide(showing.querySelector('.poster'));
-            showing.addEventListener('click', event => {
-                event.preventDefault();
-                const detailsDiv = this.details();
-                view.show(detailsDiv);
-                detailsDiv.querySelector('#close').addEventListener('click', function() {
-                    detailsDiv.classList.remove('activeshow');
-                    showingsCtrl.showingsDiv().classList.remove('blur');
-                    view.hide(detailsDiv);
-                });
+    [...this.showingsList()].forEach(showing => {
+        view.hide(showing.querySelector('.showing-details'));
+        view.hide(showing.querySelector('.poster'));
+        showing.addEventListener('click', event => {
+            event.preventDefault();
+            const detailsDiv = this.details();
+            view.show(detailsDiv);
+            detailsDiv.querySelector('#close').addEventListener('click', function() {
+                detailsDiv.classList.remove('activeshow');
+                showingsCtrl.showingsDiv().classList.remove('blur');
+                view.hide(detailsDiv);
+            });
 
-                detailsDiv.classList.add('activeshow');
-                showing.classList.add('active');
-                const showingDetails = showing.querySelector('.showing-details');
-                console.log(showingDetails);
-                const poster = showing.querySelector('.poster');
-                showingDetails.style.display = 'block';
-                poster.style.display = 'block';
-                [...this.showingsList()].forEach(showingObj => {
-                    if (showingObj.classList.contains('active') && showingObj !== showing) {
-                        showingObj.classList.remove('active');
-                    }
-                    const showingObjDetails = showingObj.querySelector('.showing-details');
-                    const showingObjPoster = showingObj.querySelector('.poster');
-                    if (showingObjDetails.style.display === 'block' && showingObjDetails !== showingDetails) {
-                        showingObjDetails.style.display = 'none';
-                        showingObjPoster.style.display = 'none';
-                    }
+            detailsDiv.classList.add('activeshow');
+            showing.classList.add('active');
+            const showingDetails = showing.querySelector('.showing-details');
+            console.log(showingDetails);
+            const poster = showing.querySelector('.poster');
+            showingDetails.style.display = 'block';
+            poster.style.display = 'block';
+            [...this.showingsList()].forEach(showingObj => {
+                if (showingObj.classList.contains('active') && showingObj !== showing) {
+                    showingObj.classList.remove('active');
+                }
+                const showingObjDetails = showingObj.querySelector('.showing-details');
+                const showingObjPoster = showingObj.querySelector('.poster');
+                if (showingObjDetails.style.display === 'block' && showingObjDetails !== showingDetails) {
+                    showingObjDetails.style.display = 'none';
+                    showingObjPoster.style.display = 'none';
+                }
 
-                });
-                this.showingsDiv().classList.add('blur');
-                showingsService.selectById(event.currentTarget.dataset.showingId);
-                view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
-                seatsCtrl.disableListener();
-                seatsCtrl.selectedSeats = [];
-                document.getElementById("order").innerHTML = "";
-                seatsCtrl.toggleListener();
-                orderCtrl.orderListener();
-                const nextBtn = document.getElementById("nextBtn");
-                view.hide(nextBtn);
-            }, false);
-        });
-    }
+            });
+            this.showingsDiv().classList.add('blur');
+            showingsService.selectById(event.currentTarget.dataset.showingId);
+            view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
+            seatsCtrl.disableListener();
+            seatsCtrl.selectedSeats = [];
+            document.getElementById("order").innerHTML = "";
+            seatsCtrl.toggleListener();
+            orderCtrl.orderListener();
+            const nextBtn = document.getElementById("nextBtn");
+            view.hide(nextBtn);
+        }, false);
+    });
+}
 
 }
 

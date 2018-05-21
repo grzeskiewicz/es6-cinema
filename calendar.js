@@ -5,9 +5,9 @@ const MONTH_NAMES = 'January February March April May June July August September
 const calendarDiv = document.querySelector('#calendar');
 const weekDiv = document.querySelector('#week');
 
-let yearNow = new Date().getFullYear();
+export let yearNow = new Date().getFullYear();
 const monthNow = new Date().getMonth();
-let selectedMonth = new Date().getMonth();
+export let selectedMonth = new Date().getMonth();
 const today = new Date();
 
 
@@ -41,7 +41,7 @@ export function renderCalendar(calendar) {
             tr.appendChild(td);
             td.addEventListener('click', function() {
                 const pickedDate = new Date(this.dataset.date);
-               // console.log(pickedDate);
+                // console.log(pickedDate);
                 showingsCtrl.calendarShowings(pickedDate);
             });
         }
@@ -58,30 +58,15 @@ export function renderCalendar(calendar) {
     // mount thead & tbody
     table.appendChild(thead);
     table.appendChild(tbody);
-
+selectedMonth <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
     // mount month name to container
     calendarDiv.appendChild(p);
     // mount table to container
     calendarDiv.appendChild(table);
 
-    //listeners for >> and <<
-    const previous = document.querySelector('#previous');
-    const next = document.querySelector('#next');
-    selectedMonth <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
-    previous.addEventListener('click', previousMonth);
-    next.addEventListener('click', nextMonth);
+
 }
 
-
-function previousMonth() {
-    calendarDiv.innerHTML = '';
-    renderCalendar(createCalendar(yearNow, --selectedMonth));
-}
-
-function nextMonth() {
-    calendarDiv.innerHTML = '';
-    renderCalendar(createCalendar(yearNow, ++selectedMonth));
-}
 
 
 export function renderWeek(calendar) {
