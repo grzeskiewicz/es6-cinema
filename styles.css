@@ -231,7 +231,7 @@ flex-flow: row wrap;*/
   margin:1rem;
 }
 #calendar {
-    display: inline-block;
+    display: flex-inline;
     margin: 1rem;
     text-align: center;
     line-height: 2;

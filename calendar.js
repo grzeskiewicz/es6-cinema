@@ -13,9 +13,6 @@ const today = new Date();
 
 export const calendar = createCalendar(yearNow, selectedMonth);
 
-//renderCalendar(calendar);
-//renderWeek(calendar);
-
 export function renderCalendar(calendar) {
     const p = document.createElement('p');
     const table = document.createElement('table');
