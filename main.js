@@ -94,6 +94,7 @@ export const showingsCtrl = {
     },
     calendarShowings(pickedDate) {
         const datex=moment(pickedDate).format('YYYY-DD-MM');
+        console.log(datex);
 fetch(request(API_URL+ "showingsbydate/" + datex, 'GET'))
     .then(res => res.json())
     .then(showings => {
