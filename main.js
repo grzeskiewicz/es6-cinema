@@ -39,21 +39,20 @@ const showingsService = Object.create(listService);
 
 
 // MAIN PART =======================================================================================================================================================
-
-
+authServices.loadUserCredentials();
+const customerInfo = document.querySelector('#customer-info');
+view.hide(customerInfo);
+loginCtrl.getInfo();
+renderCalendar(calendar);
+renderWeek(calendar);
 
 fetch(request(API_URL + 'showings', 'GET'))
     .then(res => res.json())
     .then(showings => {
-        authServices.loadUserCredentials();
-        const customerInfo = document.querySelector('#customer-info');
-        view.hide(customerInfo);
-        loginCtrl.getInfo();
         showingsCtrl.list(showings);
         seatsCtrl.toggleListener();
         showingsService.add(showings);
-        renderCalendar(calendar);
-        renderWeek(calendar);
+
     });
 
 
@@ -66,11 +65,11 @@ const view = {
         document.getElementById(output).innerHTML = html;
     },
     show(element) {
-       // element.classList.remove('visuallyhidden').add('visuallyvisible');
+        // element.classList.remove('visuallyhidden').add('visuallyvisible');
         element.style.display = 'flex';
     },
     hide(element) {
-       element.style.display = 'none';
+        element.style.display = 'none';
         //element.classList.remove('visuallyvisible').add('visuallyhidden');
     },
     toggle(element) {
