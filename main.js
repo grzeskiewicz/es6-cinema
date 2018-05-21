@@ -1,5 +1,6 @@
 import { authServices } from './services.js';
 import { API_URL, request } from './apiconnection.js';
+import { renderWeek, renderCalendar, calendar } from './calendar.js';
 
 Handlebars.registerHelper('for', function(from, to, block) {
     var accum = '';
@@ -51,7 +52,8 @@ fetch(request(API_URL + 'showings', 'GET'))
         showingsCtrl.list(showings);
         seatsCtrl.toggleListener();
         showingsService.add(showings);
-        console.log(showings);
+        renderCalendar(calendar);
+        renderWeek(calendar);
     });
 
 

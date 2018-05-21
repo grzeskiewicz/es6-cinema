@@ -11,12 +11,12 @@ let selectedMonth = new Date().getMonth();
 const today = new Date();
 
 
-const calendar = createCalendar(yearNow, selectedMonth);
+export const calendar = createCalendar(yearNow, selectedMonth);
 
-renderCalendar(calendar);
-renderWeek(calendar);
+//renderCalendar(calendar);
+//renderWeek(calendar);
 
-function renderCalendar(calendar) {
+export function renderCalendar(calendar) {
     const p = document.createElement('p');
     const table = document.createElement('table');
     const thead = document.createElement('thead');
@@ -86,7 +86,7 @@ function nextMonth() {
 }
 
 
-function renderWeek(calendar) {
+export function renderWeek(calendar) {
     const p = document.createElement('p');
     const table = document.createElement('table');
     const thead = document.createElement('thead');
