@@ -111,9 +111,10 @@ export function renderWeek(calendar) {
 
             // mount table cell
             tr.appendChild(td);
-            td.addEventListener('click', function() {
+               td.addEventListener('click', function() {
                 const pickedDate = new Date(this.dataset.date);
-                console.log(pickedDate.toString());
+                 console.log(pickedDate.toString());
+                 showingsCtrl.calendarShowings(pickedDate);
             });
         }
         // mount table row
