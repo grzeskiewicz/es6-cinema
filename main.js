@@ -1,6 +1,6 @@
 import { authServices } from './services.js';
 import { API_URL, request } from './apiconnection.js';
-import { renderWeek, renderCalendar, calendar, selectedMonth, yearNow } from './calendar.js';
+import { renderWeek, renderCalendar, calendar } from './calendar.js';
 
 Handlebars.registerHelper('for', function(from, to, block) {
     var accum = '';
@@ -65,11 +65,11 @@ const view = {
         document.getElementById(output).innerHTML = html;
     },
     show(element) {
-        // element.classList.remove('visuallyhidden').add('visuallyvisible');
+       // element.classList.remove('visuallyhidden').add('visuallyvisible');
         element.style.display = 'flex';
     },
     hide(element) {
-        element.style.display = 'none';
+       element.style.display = 'none';
         //element.classList.remove('visuallyvisible').add('visuallyhidden');
     },
     toggle(element) {
@@ -93,19 +93,18 @@ const showingsCtrl = {
         }
     },
     calendarShowings(pickedDate) {
-        //listeners for >> and <<
-        const previous = document.querySelector('#previous');
-        const next = document.querySelector('#next');
-        selectedMonth <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
-        previous.addEventListener('click', function() {
-            calendarDiv.innerHTML = '';
-            renderCalendar(createCalendar(yearNow, --selectedMonth));
-        });
-        next.addEventListener('click', function() {
-            calendarDiv.innerHTML = '';
-            renderCalendar(createCalendar(yearNow, ++selectedMonth));
-        });
-
+fetch(request(`${API_URL}showingsbydate/${pickedDate}`, 'GET'))
+    .then(res => res.json())
+    .then(showings => {
+        console.log(showings);
+       /* authServices.loadUserCredentials();
+        const customerInfo = document.querySelector('#customer-info');
+        view.hide(customerInfo);
+        loginCtrl.getInfo();*
+        showingsCtrl.list(showings);
+        seatsCtrl.toggleListener();
+        showingsService.add(showings);*/
+    });
 
 
     },
