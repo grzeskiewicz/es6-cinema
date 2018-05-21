@@ -222,3 +222,61 @@ flex-flow: row wrap;*/
     height:auto;
 }
 }
+
+
+
+/* CALENDAR CSS */
+
+#week {
+  margin:1rem;
+}
+#calendar {
+    display: inline-block;
+    margin: 1rem;
+    text-align: center;
+    line-height: 2;
+}
+
+#calendar p {
+    font-weight: 300;
+}
+
+.today {
+background-color: orange;
+}
+
+table {
+    vertical-align: top;
+    border-collapse: collapse;
+}
+
+tbody tr:hover {
+    background-color: #fff;
+}
+
+td {
+    text-align: center;
+    line-height: 1.75rem;
+    width: 1.75rem;
+}
+
+thead td {
+    color: #999;
+    font-size: .75rem;
+    text-transform: uppercase;
+}
+
+tbody td {
+    font-size: .875rem;
+}
+
+tbody td:hover {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+}
+
+td.before,
+td.after {
+    color: #999;
+}
