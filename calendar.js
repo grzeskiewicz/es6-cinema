@@ -58,7 +58,7 @@ export function renderCalendar(calendar) {
     // mount thead & tbody
     table.appendChild(thead);
     table.appendChild(tbody);
-selectedMonth <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
+
     // mount month name to container
     calendarDiv.appendChild(p);
     // mount table to container
