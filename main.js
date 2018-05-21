@@ -53,7 +53,6 @@ fetch(request(API_URL + 'showings', 'GET'))
         showingsCtrl.list(showings);
         seatsCtrl.toggleListener();
         showingsService.add(showings);
-
     });
 
 
@@ -93,6 +92,23 @@ const showingsCtrl = {
             showing.date = this.dateParser(showing.date);
         }
     },
+    calendarShowings(pickedDate) {
+        console.log(pickedDate);
+fetch(request(`${API_URL}showingsbydate/${pickedDate}`, 'GET'))
+    .then(res => res.json())
+    .then(showings => {
+        console.log(showings);
+       /* authServices.loadUserCredentials();
+        const customerInfo = document.querySelector('#customer-info');
+        view.hide(customerInfo);
+        loginCtrl.getInfo();*
+        showingsCtrl.list(showings);
+        seatsCtrl.toggleListener();
+        showingsService.add(showings);*/
+    });
+
+
+    },
     list(showings) {
         this.dateDisplay(showings);
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
@@ -116,9 +132,6 @@ const showingsCtrl = {
                 console.log(showingDetails);
                 const poster = showing.querySelector('.poster');
                 showingDetails.style.display = 'block';
-                showingDetails.classList.add('fadein');
-                showing.querySelector('.showing-wrapper').classList.add('fadein');
-                showing.classList.add('fadein');
                 poster.style.display = 'block';
                 [...this.showingsList()].forEach(showingObj => {
                     if (showingObj.classList.contains('active') && showingObj !== showing) {
@@ -134,8 +147,6 @@ const showingsCtrl = {
                 });
                 this.showingsDiv().classList.add('blur');
                 showingsService.selectById(event.currentTarget.dataset.showingId);
-                //const seatsDiv = document.getElementById('seats');
-                //view.hide(seatsDiv);
                 view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
                 seatsCtrl.disableListener();
                 seatsCtrl.selectedSeats = [];
@@ -162,13 +173,11 @@ const seatsCtrl = {
                 if (event.target.classList.contains('selected')) {
                     this.selectedSeats.push(event.target.firstChild.data);
                     view.show(nextBtn);
-                    //console.log(this.selectedSeats);
                 } else {
                     let seatToRemoveIndex = this.selectedSeats.findIndex(element => element === event.target.firstChild.data);
                     this.selectedSeats.splice(seatToRemoveIndex, 1);
 
                     if (this.selectedSeats.length == 0) { view.hide(nextBtn); }
-                    //console.log(this.selectedSeats);
                 }
             });
         })

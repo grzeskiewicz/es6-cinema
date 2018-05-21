@@ -41,7 +41,8 @@ export function renderCalendar(calendar) {
             tr.appendChild(td);
             td.addEventListener('click', function() {
                 const pickedDate = new Date(this.dataset.date);
-                console.log(pickedDate);
+               // console.log(pickedDate);
+                showingsCtrl.calendarShowings(pickedDate);
             });
         }
         // mount table row
