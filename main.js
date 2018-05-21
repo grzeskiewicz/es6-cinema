@@ -100,7 +100,7 @@ export const showingsCtrl = {
                 showingsService.add(showings);
             });
         const customerInfo = document.querySelector('#customer-info');
-        view.hide(customerInfo);
+        //view.hide(customerInfo);
         loginCtrl.getInfo();
 
     },
