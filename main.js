@@ -77,7 +77,7 @@ const view = {
     }
 }
 
-const showingsCtrl = {
+export const showingsCtrl = {
     showingsDiv() { return document.querySelector('#showings'); },
     showingsList() { return document.querySelectorAll('.showing'); },
     details() { return document.querySelector('#details'); },
@@ -92,7 +92,7 @@ const showingsCtrl = {
             showing.date = this.dateParser(showing.date);
         }
     },
-    export calendarShowings(pickedDate) {
+    calendarShowings(pickedDate) {
 fetch(request(`${API_URL}showingsbydate/${pickedDate}`, 'GET'))
     .then(res => res.json())
     .then(showings => {
