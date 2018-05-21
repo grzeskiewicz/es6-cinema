@@ -50,9 +50,7 @@ fetch(request(API_URL + 'showings', 'GET'))
         const customerInfo = document.querySelector('#customer-info');
         view.hide(customerInfo);
         loginCtrl.getInfo();
-        showingsCtrl.list(showings);
-        seatsCtrl.toggleListener();
-        showingsService.add(showings);
+
     });
 
 
@@ -65,11 +63,11 @@ const view = {
         document.getElementById(output).innerHTML = html;
     },
     show(element) {
-       // element.classList.remove('visuallyhidden').add('visuallyvisible');
+        // element.classList.remove('visuallyhidden').add('visuallyvisible');
         element.style.display = 'flex';
     },
     hide(element) {
-       element.style.display = 'none';
+        element.style.display = 'none';
         //element.classList.remove('visuallyvisible').add('visuallyhidden');
     },
     toggle(element) {
@@ -93,26 +91,22 @@ export const showingsCtrl = {
         }
     },
     calendarShowings(pickedDate) {
-        const datex=moment(pickedDate).format('YYYY-MM-DD');
+        const datex = moment(pickedDate).format('YYYY-MM-DD');
         console.log(datex);
-fetch(request(API_URL+ "showingsbydate/" + datex, 'GET'))
-    .then(res => res.json())
-    .then(showings => {
-        console.log(showings);
-       /* authServices.loadUserCredentials();
-        const customerInfo = document.querySelector('#customer-info');
-        view.hide(customerInfo);
-        loginCtrl.getInfo();*
-        showingsCtrl.list(showings);
-        seatsCtrl.toggleListener();
-        showingsService.add(showings);*/
-    });
+        fetch(request(API_URL + "showingsbydate/" + datex, 'GET'))
+            .then(res => res.json())
+            .then(showings => {
+                console.log(showings);
+                showingsCtrl.list(showings);
+                seatsCtrl.toggleListener();
+                showingsService.add(showings);
+            });
 
 
     },
     list(showings) {
-        const calDiv=document.querySelector('#calendar');
-        
+        const calDiv = document.querySelector('#calendar');
+
         console.log(calDiv.querySelectorAll('tbody td'));
         this.dateDisplay(showings);
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
