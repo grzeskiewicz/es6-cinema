@@ -1,5 +1,5 @@
 'use strict';
-
+import { showingsCtrl.calendarShowings } from './main.js';
 const MONTH_NAMES = 'January February March April May June July August September October November December'.split(' ');
 
 const calendarDiv = document.querySelector('#calendar');

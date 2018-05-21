@@ -92,7 +92,7 @@ const showingsCtrl = {
             showing.date = this.dateParser(showing.date);
         }
     },
-    calendarShowings(pickedDate) {
+    export calendarShowings(pickedDate) {
 fetch(request(`${API_URL}showingsbydate/${pickedDate}`, 'GET'))
     .then(res => res.json())
     .then(showings => {
