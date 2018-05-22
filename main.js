@@ -83,6 +83,7 @@ export const showingsCtrl = {
         sList = sList.sort((a, b) => {
             return moment(a.date) - moment(b.date);
         });
+        console.log(sList);
         for (const x of sList) {
             console.log(x);
             x.date = this.dateParser(x.date);
