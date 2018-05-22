@@ -99,6 +99,7 @@ export const showingsCtrl = {
                 
             }
         }
+        console.log(result);
         showingsCtrl.list(result);
         seatsCtrl.toggleListener();
 
