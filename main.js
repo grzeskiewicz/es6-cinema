@@ -98,8 +98,8 @@ export const showingsCtrl = {
     
          const result = [];
          for (const showing of showings) {
-             console.log(showing);
-             if (showing.date) {}
+             console.log(showing.date);
+             if (showing.date.includes) {}
          }
 
 
