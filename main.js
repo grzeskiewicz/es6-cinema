@@ -91,7 +91,7 @@ export const showingsCtrl = {
     calendarShowings(pickedDate) {
         const datex = moment(pickedDate).format('YYYY-MM-DD');
         let showings = showingsService.list()[0];
-        console.log(datex);
+        console.log(showings);
         let result = [];
         for (const showing of showings) {
             if (showing.date.includes(datex)) {
@@ -103,7 +103,6 @@ export const showingsCtrl = {
 
     },
     list(showings) {
-        console.log(showings);
         this.dateDisplay(showings);
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
 
