@@ -79,12 +79,11 @@ export const showingsCtrl = {
     dateParser(stringdate) {
         return moment(stringdate).format("DD.MM.YYYY, HH:mm");
     },
-    dateDisplay(showings) {
-        console.log(showings);
-        showings = showings.sort((a, b) => {
+    dateDisplay(sList) {
+        sList = sList.sort((a, b) => {
             return moment(a.date) - moment(b.date);
         });
-        for (const showing of showings) {
+        for (const showing of sList) {
             showing.date = this.dateParser(showing.date);
         }
         //console.log(showings);
@@ -95,20 +94,18 @@ export const showingsCtrl = {
         let result = [];
         for (const showingElem of showingsd) {
             if (showingElem.date.includes(datex)) {
-                console.log('kur');
                 result.push(showingElem);
             } else {
                 
             }
         }
-        console.log(showings);
         showingsCtrl.list(result);
         seatsCtrl.toggleListener();
 
     },
     list(showings) {
         console.log(showings);
-        //this.dateDisplay(showings);
+        this.dateDisplay(showings);
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
 
         [...this.showingsList()].forEach(showing => {
