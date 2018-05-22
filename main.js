@@ -90,9 +90,9 @@ export const showingsCtrl = {
     },
     calendarShowings(pickedDate) {
         const datex = moment(pickedDate).format('YYYY-MM-DD');
-        let showings = showingsService.list()[0];
+        let showingsd = showingsService.list()[0];
         let result = [];
-        for (const showing of showings) {
+        for (const showing of showingsd) {
             console.log(typeof showing.date, typeof datex);
             if (showing.date.includes(datex)) {
                 console.log('kur');
