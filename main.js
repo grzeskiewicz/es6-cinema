@@ -84,7 +84,7 @@ export const showingsCtrl = {
             return moment(a.date) - moment(b.date);
         });
         for (const x of sList) {
-            x.date = this.dateParser(showing.date);
+            x.date = this.dateParser(x.date);
         }
         //console.log(showings);
     },
