@@ -101,7 +101,7 @@ export const showingsCtrl = {
                 console.log(showing.date,datex);
             }
         }
-        console.log(result);
+        console.log(showings);
         showingsCtrl.list(result);
         seatsCtrl.toggleListener();
 
