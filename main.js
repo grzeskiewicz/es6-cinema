@@ -96,7 +96,7 @@ export const showingsCtrl = {
            // console.log(showing);
             if (showing.date.includes(datex)) {
                 result.push(showing);
-                console.log(result);
+                console.log(showing.date, datex);
             }
         }
         showingsCtrl.list(result);
