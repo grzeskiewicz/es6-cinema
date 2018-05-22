@@ -80,6 +80,7 @@ export const showingsCtrl = {
         return moment(stringdate).format("DD.MM.YYYY, HH:mm");
     },
     dateDisplay(sList) {
+        console.log(sList);
         sList = sList.sort((a, b) => {
             return moment(a.date) - moment(b.date);
         });
