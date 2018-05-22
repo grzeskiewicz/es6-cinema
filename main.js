@@ -93,10 +93,10 @@ export const showingsCtrl = {
         let showings = showingsService.list()[0];
         let result = [];
         for (const showing of showings) {
-           // console.log(showing);
+            console.log(showing.date, datex);
             if (showing.date.includes(datex)) {
                 result.push(showing);
-                console.log(showing.date, datex);
+                
             }
         }
         showingsCtrl.list(result);
