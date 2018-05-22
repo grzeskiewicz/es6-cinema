@@ -41,7 +41,20 @@ const showingsService = Object.create(listService);
 // MAIN PART =======================================================================================================================================================
 renderCalendar(calendar);
 renderWeek(calendar);
-authServices.loadUserCredentials();
+
+fetch(request(API_URL + "showings", 'GET'))
+    .then(res => res.json())
+    .then(showings => {
+        authServices.loadUserCredentials();
+        const customerInfo = document.querySelector('#customer-info');
+        view.hide(customerInfo);
+        loginCtrl.getInfo();
+
+        console.log(showings);
+        showingsCtrl.list(showings);
+        seatsCtrl.toggleListener();
+        showingsService.add(showings);
+    });
 
 const view = {
     renderContent(source, context, output) {
@@ -82,17 +95,8 @@ export const showingsCtrl = {
     calendarShowings(pickedDate) {
         const datex = moment(pickedDate).format('YYYY-MM-DD');
         console.log(datex);
-        fetch(request(API_URL + "showingsbydate/" + datex, 'GET'))
-            .then(res => res.json())
-            .then(showings => {
-                console.log(showings);
-                showingsCtrl.list(showings);
-                seatsCtrl.toggleListener();
-                showingsService.add(showings);
-            });
-        const customerInfo = document.querySelector('#customer-info');
-        //view.hide(customerInfo);
-        loginCtrl.getInfo();
+
+
 
     },
     list(showings) {
