@@ -95,8 +95,8 @@ export const showingsCtrl = {
         for (const showing of showings) {
             console.log(typeof showing.date, typeof datex);
             if (showing.date.includes(datex)) {
+                console.log('kur');
                 result.push(showing);
-                
             }
         }
         console.log(result);
