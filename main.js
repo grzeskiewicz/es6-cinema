@@ -45,11 +45,11 @@ renderWeek(calendar);
 fetch(request(API_URL + "showings", 'GET'))
     .then(res => res.json())
     .then(showings => {
+        showingsService.add(showings);
         authServices.loadUserCredentials();
         const customerInfo = document.querySelector('#customer-info');
         view.hide(customerInfo);
         loginCtrl.getInfo();
-        showingsService.add(showings);
     });
 
 const view = {
@@ -86,12 +86,12 @@ export const showingsCtrl = {
         for (const showing of showings) {
             showing.date = this.dateParser(showing.date);
         }
-        console.log(showings);
+        //console.log(showings);
     },
     calendarShowings(pickedDate) {
         const datex = moment(pickedDate).format('YYYY-MM-DD');
         const showings = showingsService.list()[0];
-        console.log(showings);
+       // console.log(showings);
         const result = [];
         for (const showing of showings) {
             if (showing.date.includes(datex)) {
@@ -103,6 +103,7 @@ export const showingsCtrl = {
 
     },
     list(showings) {
+        console.log(showings);
         this.dateDisplay(showings);
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
 
