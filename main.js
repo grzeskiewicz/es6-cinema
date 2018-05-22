@@ -39,13 +39,12 @@ const showingsService = Object.create(listService);
 
 
 // MAIN PART =======================================================================================================================================================
-
+renderCalendar(calendar);
+renderWeek(calendar);
 
 fetch(request(API_URL + "showings", 'GET'))
     .then(res => res.json())
     .then(showings => {
-        renderCalendar(calendar);
-        renderWeek(calendar);
         authServices.loadUserCredentials();
         const customerInfo = document.querySelector('#customer-info');
         view.hide(customerInfo);
