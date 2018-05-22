@@ -49,10 +49,6 @@ fetch(request(API_URL + "showings", 'GET'))
         const customerInfo = document.querySelector('#customer-info');
         view.hide(customerInfo);
         loginCtrl.getInfo();
-
-        console.log(showings);
-        showingsCtrl.list(showings);
-        seatsCtrl.toggleListener();
         showingsService.add(showings);
     });
 
@@ -77,34 +73,36 @@ const view = {
 }
 
 export const showingsCtrl = {
-        showingsDiv() { return document.querySelector('#showings'); },
-        showingsList() { return document.querySelectorAll('.showing'); },
-        details() { return document.querySelector('#details'); },
-        dateParser(stringdate) {
-            return moment(stringdate).format("DD.MM.YYYY, HH:mm");
-        },
-        dateDisplay(showings) {
-            showings = showings.sort((a, b) => {
-                return moment(a.date) - moment(b.date);
-            });
-            for (const showing of showings) {
-                showing.date = this.dateParser(showing.date);
-            }
-            console.log(showings);
-        },
-        calendarShowings(pickedDate) {
-            const datex = moment(pickedDate).format('YYYY-MM-DD');
-            const showings = showingsService.list()[0];
-    
-         const result = [];
-         console.log(datex);
-         for (const showing of showings) {
-             
-             if (showing.date.includes(datex)) {
-                console.log(showing);
-             }
-         }
+    showingsDiv() { return document.querySelector('#showings'); },
+    showingsList() { return document.querySelectorAll('.showing'); },
+    details() { return document.querySelector('#details'); },
+    dateParser(stringdate) {
+        return moment(stringdate).format("DD.MM.YYYY, HH:mm");
+    },
+    dateDisplay(showings) {
+        showings = showings.sort((a, b) => {
+            return moment(a.date) - moment(b.date);
+        });
+        for (const showing of showings) {
+            showing.date = this.dateParser(showing.date);
+        }
+        console.log(showings);
+    },
+    calendarShowings(pickedDate) {
+        const datex = moment(pickedDate).format('YYYY-MM-DD');
+        const showings = showingsService.list()[0];
 
+        const result = [];
+        console.log(datex);
+        for (const showing of showings) {
+
+            if (showing.date.includes(datex)) {
+                result.push(showing);
+            }
+
+        }
+        showingsCtrl.list(result);
+        seatsCtrl.toggleListener();
 
     },
     list(showings) {
