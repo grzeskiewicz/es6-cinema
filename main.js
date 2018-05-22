@@ -94,7 +94,7 @@ export const showingsCtrl = {
     },
     calendarShowings(pickedDate) {
         const datex = moment(pickedDate).format('YYYY-MM-DD');
-        console.log(datex);
+        console.log(showingsService.list());
 
 
 
