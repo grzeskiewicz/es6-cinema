@@ -108,7 +108,7 @@ export const showingsCtrl = {
     },
     list(showings) {
         console.log(showings);
-        this.dateDisplay(showings);
+        //this.dateDisplay(showings);
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
 
         [...this.showingsList()].forEach(showing => {
