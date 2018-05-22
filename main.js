@@ -97,6 +97,8 @@ export const showingsCtrl = {
             if (showing.date.includes(datex)) {
                 console.log('kur');
                 result.push(showing);
+            } else {
+                console.log(showing.date,datex);
             }
         }
         console.log(result);
