@@ -99,8 +99,10 @@ export const showingsCtrl = {
          const result = [];
          console.log(datex);
          for (const showing of showings) {
-             console.log(showing.date);
-             //if (showing.date.includes) {}
+             
+             if (showing.date.includes(datex)) {
+                console.log(showing);
+             }
          }
 
 
