@@ -77,25 +77,29 @@ const view = {
 }
 
 export const showingsCtrl = {
-    showingsDiv() { return document.querySelector('#showings'); },
-    showingsList() { return document.querySelectorAll('.showing'); },
-    details() { return document.querySelector('#details'); },
-    dateParser(stringdate) {
-        return moment(stringdate).format("DD.MM.YYYY, HH:mm");
-    },
-    dateDisplay(showings) {
-        showings = showings.sort((a, b) => {
-            return moment(a.date) - moment(b.date);
-        });
+        showingsDiv() { return document.querySelector('#showings'); },
+        showingsList() { return document.querySelectorAll('.showing'); },
+        details() { return document.querySelector('#details'); },
+        dateParser(stringdate) {
+            return moment(stringdate).format("DD.MM.YYYY, HH:mm");
+        },
+        dateDisplay(showings) {
+            showings = showings.sort((a, b) => {
+                return moment(a.date) - moment(b.date);
+            });
+            for (const showing of showings) {
+                showing.date = this.dateParser(showing.date);
+            }
+            console.log(showings);
+        },
+        calendarShowings(pickedDate) {
+            const datex = moment(pickedDate).format('YYYY-MM-DD');
+            const showings = showingsService.list());
+console.log(showings);
+        const result = [];
         for (const showing of showings) {
-            showing.date = this.dateParser(showing.date);
+            if (showing.date) {}
         }
-        console.log(showings);
-    },
-    calendarShowings(pickedDate) {
-        const datex = moment(pickedDate).format('YYYY-MM-DD');
-        console.log(showingsService.list());
-
 
 
     },
@@ -103,7 +107,7 @@ export const showingsCtrl = {
         const calDiv = document.querySelector('#calendar');
 
         console.log(calDiv.querySelectorAll('tbody td'));
-        this.dateDisplay(showings);
+        //this.dateDisplay(showings);
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
 
         [...this.showingsList()].forEach(showing => {
