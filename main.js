@@ -83,18 +83,17 @@ export const showingsCtrl = {
         sList = sList.sort((a, b) => {
             return moment(a.date) - moment(b.date);
         });
-        console.log(sList);
         for (const x of sList) {
-            x['date'] = showingsCtrl.dateParser(x['date']);
+            //x['date'] = showingsCtrl.dateParser(x['date']);
         }
-        console.log(sList);
-        console.log(showings);
+ 
     },
     calendarShowings(pickedDate) {
         const datex = moment(pickedDate).format('DD.MM.YYYY');
         let showingsd = showingsService.list()[0];
         let result = [];
         for (const showingElem of showingsd) {
+            showingElem['date'] = showingsCtrl.dateParser(showingElem['date']);
             if (showingElem.date.includes(datex)) {
                 result.push(showingElem);
             } else {
