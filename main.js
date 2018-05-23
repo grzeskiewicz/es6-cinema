@@ -94,7 +94,8 @@ export const showingsCtrl = {
         let showingsd = showingsService.list()[0].slice(0);
         let result = [];
         for (const showingElem of showingsd) {
-            console.log(showingsService.list()[0]);
+            //console.log(showingsService.list()[0]);
+            console.log(showingsCtrl.dateParser(showingElem['date']));
             showingElem['date'] = showingsCtrl.dateParser(showingElem['date']);
             if (showingElem.date.includes(datex)) {
                 result.push(showingElem);
