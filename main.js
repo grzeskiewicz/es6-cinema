@@ -85,9 +85,10 @@ export const showingsCtrl = {
         });
         console.log(sList);
         for (const x of sList) {
-           // console.log(x);
-          //  console.log(x.date,this.dateParser(x.date));
-            x['date'] = this.dateParser(x.date);
+            x.hehe = '5';
+            console.log(x);
+
+            //x['date'] = this.dateParser(x.date);
         }
         console.log(sList);
         console.log(showings);
@@ -100,7 +101,7 @@ export const showingsCtrl = {
             if (showingElem.date.includes(datex)) {
                 result.push(showingElem);
             } else {
-                
+
             }
         }
         showingsCtrl.list(result);
