@@ -84,9 +84,19 @@ export const showingsCtrl = {
             return moment(a.date) - moment(b.date);
         });
     },
+    groupShowings(sList){
+        let lista;
+        let lisnodups = Array.from(new Set(sList.title));
+        console.log(lisnodups);
+        for (const showing of sList) {
+
+        }
+    },
     calendarShowings(pickedDate) {
+
         const parsedPickedDate = moment(pickedDate).format('YYYY-MM-DD');
         const showings = showingsService.list()[0];
+        groupShowings(showings);
         const result = [];
         for (const showingElem of showings) {
             if (showingElem.date.includes(parsedPickedDate)) {
