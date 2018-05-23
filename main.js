@@ -86,7 +86,7 @@ export const showingsCtrl = {
     },
     groupShowings(sList){
         let lista;
-        let lisnodups = Array.from(new Set(sList.title));
+        let lisnodups = Array.from(new Set(sList));
         console.log(lisnodups);
         for (const showing of sList) {
 
