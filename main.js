@@ -84,13 +84,15 @@ export const showingsCtrl = {
             return moment(a.date) - moment(b.date);
         });
     },
-    groupShowings(sList){
-        let lista;
-        let lisnodups = Array.from(new Set(sList));
-        console.log(lisnodups);
-        for (const showing of sList) {
+    groupShowings(sList) {
+        var obj = {};
 
-        }
+        for (var i = 0, len = sList.length; i < len; i++)
+            obj[sList[i]['title']] = sList[i];
+
+        sList = new Array();
+        for (var key in obj)
+            sList.push(obj[key]);
     },
     calendarShowings(pickedDate) {
 
