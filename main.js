@@ -86,9 +86,9 @@ export const showingsCtrl = {
         });
         console.log(sList);
         for (const x of sList) {
-            console.log(x);
-            console.log(x.date,this.dateParser(x.date));
-            //x.date = this.dateParser(x.date);
+           // console.log(x);
+          //  console.log(x.date,this.dateParser(x.date));
+            x['date'] = this.dateParser(x.date);
         }
         //console.log(showings);
     },
