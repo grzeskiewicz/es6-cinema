@@ -94,8 +94,14 @@ export const showingsCtrl = {
         for (var key in obj) filtered.push(obj[key].title); 
             console.log(filtered);
 
-       //obj2={};
-       //for (const show of sList)
+       obj2={};
+       for (const show of sList){
+        for (const title of filtered) {
+            if (show.title==title) obj2[title].push(show);
+        }
+       }
+
+       console.log(obj2)
     },
     calendarShowings(pickedDate) {
 
