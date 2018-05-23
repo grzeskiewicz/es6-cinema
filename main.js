@@ -99,7 +99,7 @@ export const showingsCtrl = {
            // showingElem['date'] = showingsCtrl.dateParser(showingElem['date']);
             console.log(showingElem['date']);
             if (showingElem.date.includes(datex)) {
-                showcopy=JSON.parse(JSON.stringify(showingElem));
+               let showcopy=JSON.parse(JSON.stringify(showingElem));
                 result.push(showcopy);
             } else {
 
