@@ -80,7 +80,6 @@ export const showingsCtrl = {
         return moment(stringdate).format("DD.MM.YYYY, HH:mm");
     },
     dateDisplay(sList) {
-        console.log(sList);
         sList = sList.sort((a, b) => {
             return moment(a.date) - moment(b.date);
         });
@@ -90,7 +89,8 @@ export const showingsCtrl = {
           //  console.log(x.date,this.dateParser(x.date));
             x['date'] = this.dateParser(x.date);
         }
-        //console.log(showings);
+        console.log(sList);
+        console.log(showings);
     },
     calendarShowings(pickedDate) {
         const datex = moment(pickedDate).format('YYYY-MM-DD');
@@ -108,7 +108,6 @@ export const showingsCtrl = {
 
     },
     list(showings) {
-        console.log(showings);
         this.dateDisplay(showings);
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
 
@@ -128,7 +127,6 @@ export const showingsCtrl = {
                 detailsDiv.classList.add('activeshow');
                 showing.classList.add('active');
                 const showingDetails = showing.querySelector('.showing-details');
-                console.log(showingDetails);
                 const poster = showing.querySelector('.poster');
                 showingDetails.style.display = 'block';
                 poster.style.display = 'block';
@@ -239,7 +237,6 @@ const ticketCtrl = {
                     price: orderForm['price'].value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount,
                     email: email,
                 };
-                console.log(ticket);
                 fetch(request(`${API_URL}newticket`, 'POST', ticket))
                     .then(res => res.json())
                     .then(result => {
