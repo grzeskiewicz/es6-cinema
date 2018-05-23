@@ -100,6 +100,7 @@ export const showingsCtrl = {
             console.log(showingElem['date']);
             if (showingElem.date.includes(datex)) {
                let showcopy=JSON.parse(JSON.stringify(showingElem));
+               console.log(showcopy.date);
                 result.push(showcopy);
             } else {
 
