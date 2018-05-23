@@ -96,7 +96,7 @@ export const showingsCtrl = {
 
         const parsedPickedDate = moment(pickedDate).format('YYYY-MM-DD');
         const showings = showingsService.list()[0];
-        groupShowings(showings);
+        this.groupShowings(showings);
         const result = [];
         for (const showingElem of showings) {
             if (showingElem.date.includes(parsedPickedDate)) {
