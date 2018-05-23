@@ -91,7 +91,7 @@ export const showingsCtrl = {
     calendarShowings(pickedDate) {
         const datex = moment(pickedDate).format('DD.MM.YYYY');
         console.log(datex);
-        let showingsd = showingsService.list()[0];
+        let showingsd = showingsService.list()[0].slice(0);
         let result = [];
         for (const showingElem of showingsd) {
             showingElem['date'] = showingsCtrl.dateParser(showingElem['date']);
