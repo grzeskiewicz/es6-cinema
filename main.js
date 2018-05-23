@@ -90,10 +90,12 @@ export const showingsCtrl = {
         for (var i = 0, len = sList.length; i < len; i++)
             obj[sList[i]['title']] = sList[i];
 
-        sList = new Array();
-        for (var key in obj)
-            sList.push(obj[key].title);
-        console.log(sList);
+        let filtered = new Array();
+        for (var key in obj) filtered.push(obj[key].title); 
+            console.log(filtered);
+
+       //obj2={};
+       //for (const show of sList)
     },
     calendarShowings(pickedDate) {
 
