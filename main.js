@@ -79,22 +79,20 @@ export const showingsCtrl = {
     dateParser(stringdate) {
         return moment(stringdate).format("DD.MM.YYYY, HH:mm");
     },
-    dateDisplay(sList) {
+    sortShowings(sList) {
         sList = sList.sort((a, b) => {
             return moment(a.date) - moment(b.date);
         });
     },
     calendarShowings(pickedDate) {
         const datex = moment(pickedDate).format('YYYY-MM-DD');
-        const showingsd = showingsService.list()[0];
-        let result = [];
-        for (const showingElem of showingsd) {
+        const showings = showingsService.list()[0];
+        const result = [];
+        for (const showingElem of showings) {
             if (showingElem.date.includes(datex)) {
-               let showcopy=JSON.parse(JSON.stringify(showingElem));
-               showcopy.date=this.dateParser(showcopy.date);
+                let showcopy = JSON.parse(JSON.stringify(showingElem));
+                showcopy.date = this.dateParser(showcopy.date);
                 result.push(showcopy);
-            } else {
-
             }
         }
         showingsCtrl.list(result);
@@ -102,7 +100,7 @@ export const showingsCtrl = {
 
     },
     list(showings) {
-        this.dateDisplay(showings);
+        this.sortShowings(showings);
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
 
         [...this.showingsList()].forEach(showing => {
