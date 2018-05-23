@@ -88,7 +88,7 @@ export const showingsCtrl = {
             x.hehe = '5';
             console.log(x);
 
-            //x['date'] = this.dateParser(x.date);
+            x['date'] = showingsCtrl.dateParser(x.['date']);
         }
         console.log(sList);
         console.log(showings);
