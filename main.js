@@ -92,7 +92,7 @@ export const showingsCtrl = {
 
         sList = new Array();
         for (var key in obj)
-            sList.push(obj[key]);
+            sList.push(obj[key].title);
         console.log(sList);
     },
     calendarShowings(pickedDate) {
