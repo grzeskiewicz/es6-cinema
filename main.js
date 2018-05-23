@@ -96,8 +96,9 @@ export const showingsCtrl = {
         let result = [];
         for (const showingElem of showingsd) {
             //console.log(showingsService.list()[0]);
-            console.log(showingsCtrl.dateParser(showingElem['date']));
+            console.log(showingElem['date']);
             showingElem['date'] = showingsCtrl.dateParser(showingElem['date']);
+            console.log(showingElem['date']);
             if (showingElem.date.includes(datex)) {
                 result.push(showingElem);
             } else {
