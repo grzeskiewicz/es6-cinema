@@ -100,7 +100,7 @@ export const showingsCtrl = {
        for (const show of sList){
         for (const title of filtered) {
             console.log(title);
-            if (show.title==title) obj2.title.push(show);
+            if (show.title==title) obj2['title'].push(show);
         }
        }
 
