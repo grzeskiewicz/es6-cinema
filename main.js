@@ -96,6 +96,13 @@ export const showingsCtrl = {
             groupedShowingsArray.push(group[key]);
         }
         console.log(groupedShowingsArray);
+        const finallist = [];
+        for (const elem of groupedShowingsArray) {
+            for (const el of elem) {
+finallist.push(el);
+            }
+        }
+        console.log(finallist);
     },
     calendarShowings(pickedDate) {
 
