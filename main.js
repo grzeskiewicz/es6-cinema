@@ -93,7 +93,7 @@ export const showingsCtrl = {
         }
 
         let filtered = new Array();
-        for (var key in obj) { filtered.push(obj[key].title);
+        for (var key in obj) { filtered.push(obj[key].title);}
           //  console.log(key); }
         //console.log(filtered);
 
