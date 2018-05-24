@@ -97,7 +97,8 @@ export const showingsCtrl = {
        let obj2={};
        for (const show of sList){
         for (const title of filtered) {
-            if (show.title==title) obj2[title].push(show);
+            console.log(title);
+            if (show.title==title) obj2.title.push(show);
         }
        }
 
