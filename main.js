@@ -123,6 +123,7 @@ finallist.push(el);
     list(showings) {
         this.sortShowings(showings);
         this.groupShowings(showings);
+        console.log(showings);
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
 
         [...this.showingsList()].forEach(showing => {
