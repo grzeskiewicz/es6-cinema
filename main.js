@@ -98,12 +98,12 @@ export const showingsCtrl = {
 
        let obj2={};
        for (const show of sList){
-        for (const title of filtered) {
-            console.log(title);
-            if (show.title==title) obj2['title'].push(show);
+        for (var i = 0, len = filtered.length; i < len; i++) {
+            obj[filtered[i]] = show;
+            console.log(obj);
         }
        }
-
+if (show.title==title)
        console.log(obj2)
     },
     calendarShowings(pickedDate) {
