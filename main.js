@@ -85,32 +85,24 @@ export const showingsCtrl = {
         });
     },
     groupShowings(sList) {
-        var obj = {};
+        let obj = {};
 
         for (var i = 0, len = sList.length; i < len; i++) {
             obj[sList[i]['title']] = sList[i];
-            //console.log(obj);
         }
 
-        let filtered = new Array();
-        for (var key in obj) { filtered.push(obj[key].title); }
-        //  console.log(key); }
-        //console.log(filtered);
+        let filtered = [];
+        for (let key in obj) { filtered.push(obj[key].title); }
 
         let obj2 = [];
         for (const title of filtered) {
-            console.log(title);
             obj2[title] = [];
         }
         console.log(sList.length);
-        for (var j = 0, len = sList.length; j < len; j++) {
-            console.log(sList[j]);
+        for (let j = 0, len = sList.length; j < len; j++) {
             let showcopy = JSON.parse(JSON.stringify(sList[j]));
             for (var k = 0, lenx = filtered.length; k < lenx; k++) {
-                // if (obj2[filtered[i]] === undefined) { obj2[filtered[i]] = []; }
-                console.log(filtered[k]);
                 if (sList[j].title === filtered[k]) { obj2[filtered[k]].push(showcopy); }
-                //console.log(sList[j]['title'], obj2[filtered[i]]['title']);
             }
         }
          console.log(obj2)
