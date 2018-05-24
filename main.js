@@ -118,8 +118,7 @@ export const showingsCtrl = {
 
         const parsedPickedDate = moment(pickedDate).format('YYYY-MM-DD');
         const showings = showingsService.list()[0];
-        this.groupShowings(showings);
-        const result = [];
+                const result = [];
         for (const showingElem of showings) {
             if (showingElem.date.includes(parsedPickedDate)) {
                 let showcopy = JSON.parse(JSON.stringify(showingElem));
@@ -133,6 +132,7 @@ export const showingsCtrl = {
     },
     list(showings) {
         this.sortShowings(showings);
+        this.groupShowings(showings);
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
 
         [...this.showingsList()].forEach(showing => {
