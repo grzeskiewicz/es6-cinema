@@ -91,7 +91,7 @@ export const showingsCtrl = {
             group[showing['title']].push(showing);
         }
 for (let key in group) {
-    console.log(key);
+    console.log(group[key]);
 }
 console.log(group);
     },
