@@ -86,24 +86,27 @@ export const showingsCtrl = {
     },
     groupShowings(sList) {
         let obj = [];
+        for (const showing of sList) {
+            obj[showing['title']] = [];
+        }
         for (let i = 0, len = sList.length; i < len; i++) {
             obj[sList[i]['title']].push(sList[i]);
         }
         console.log(obj);
-      /*  let filtered = [];
-        for (let key in obj) { filtered.push(obj[key].title); }
+        /*  let filtered = [];
+          for (let key in obj) { filtered.push(obj[key].title); }
 
-        let obj2 = [];
-        for (const title of filtered) {
-            obj2[title] = [];
-        }
-        for (let j = 0, len = sList.length; j < len; j++) {
+          let obj2 = [];
+          for (const title of filtered) {
+              obj2[title] = [];
+          }
+          for (let j = 0, len = sList.length; j < len; j++) {
 
-            let showcopy = JSON.parse(JSON.stringify(sList[j]));
-            for (var k = 0, lenx = filtered.length; k < lenx; k++) {
-                if (sList[j].title === filtered[k]) { obj2[filtered[k]].push(showcopy); }
-            }
-        }*/
+              let showcopy = JSON.parse(JSON.stringify(sList[j]));
+              for (var k = 0, lenx = filtered.length; k < lenx; k++) {
+                  if (sList[j].title === filtered[k]) { obj2[filtered[k]].push(showcopy); }
+              }
+          }*/
         // console.log(obj2)
     },
     calendarShowings(pickedDate) {
