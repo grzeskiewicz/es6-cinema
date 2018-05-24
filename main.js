@@ -113,7 +113,7 @@ export const showingsCtrl = {
                 //console.log(sList[j]['title'], obj2[filtered[i]]['title']);
             }
         }
-        // console.log(obj2)
+         console.log(obj2)
     },
     calendarShowings(pickedDate) {
 
