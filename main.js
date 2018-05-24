@@ -105,7 +105,7 @@ export const showingsCtrl = {
         console.log(sList.length);
         for (var j = 0, len = sList.length; j < len; j++) {
             console.log(sList[j]);
-            for (var k = 0, lenx = filtered.length; i < lenx; k++) {
+            for (var k = 0, lenx = filtered.length; k < lenx; k++) {
                // if (obj2[filtered[i]] === undefined) { obj2[filtered[i]] = []; }
              
                 //if (sList[j]['title'] == filtered[i]) { obj2[filtered[i]].push(sList[j]); }
