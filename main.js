@@ -87,10 +87,10 @@ export const showingsCtrl = {
     groupShowings(sList) {
         let obj = {};
 
-        for (var i = 0, len = sList.length; i < len; i++) {
+        for (let i = 0, len = sList.length; i < len; i++) {
             obj[sList[i]['title']] = sList[i];
         }
-
+console.log(obj);
         let filtered = [];
         for (let key in obj) { filtered.push(obj[key].title); }
 
@@ -98,14 +98,14 @@ export const showingsCtrl = {
         for (const title of filtered) {
             obj2[title] = [];
         }
-        console.log(sList.length);
         for (let j = 0, len = sList.length; j < len; j++) {
+
             let showcopy = JSON.parse(JSON.stringify(sList[j]));
             for (var k = 0, lenx = filtered.length; k < lenx; k++) {
                 if (sList[j].title === filtered[k]) { obj2[filtered[k]].push(showcopy); }
             }
         }
-         console.log(obj2)
+        // console.log(obj2)
     },
     calendarShowings(pickedDate) {
 
