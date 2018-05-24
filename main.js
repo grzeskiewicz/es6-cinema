@@ -90,10 +90,12 @@ export const showingsCtrl = {
             if (group[showing['title']] === undefined) group[showing['title']] = [];
             group[showing['title']].push(showing);
         }
-for (let key in group) {
-    console.log(group[key]);
-}
-console.log(group);
+        const groupedShowingsArray = [];
+        for (let key in group) {
+            // console.log(group[key]);
+            groupedShowingsArray.push(group[key]);
+        }
+        console.log(groupedShowingsArray);
     },
     calendarShowings(pickedDate) {
 
