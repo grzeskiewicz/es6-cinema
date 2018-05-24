@@ -89,22 +89,22 @@ export const showingsCtrl = {
 
         for (var i = 0, len = sList.length; i < len; i++) {
             obj[sList[i]['title']] = sList[i];
-            console.log(obj);
+            //console.log(obj);
         }
 
         let filtered = new Array();
-        for (var key in obj) {filtered.push(obj[key].title); console.log(key);}
-            //console.log(filtered);
+        for (var key in obj) { filtered.push(obj[key].title);
+            console.log(key); }
+        //console.log(filtered);
 
-       let obj2={};
-       for (var j = 0, len = sList.length; j < len; j++) {
-        for (var i = 0, len = filtered.length; i < len; i++) {
-            obj[filtered[i]] = sList[j];
-            console.log(obj);
+        let obj2 = {};
+        for (var j = 0, len = sList.length; j < len; j++) {
+            for (var i = 0, len = filtered.length; i < len; i++) {
+                if (sList[j] == filtered[i]) { obj[filtered[i]] = sList[j]; }
+                console.log(obj);
+            }
         }
-       }
-if (show.title==title)
-       console.log(obj2)
+        console.log(obj2)
     },
     calendarShowings(pickedDate) {
 
