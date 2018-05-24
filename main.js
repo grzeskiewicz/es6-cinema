@@ -97,12 +97,12 @@ export const showingsCtrl = {
         //  console.log(key); }
         //console.log(filtered);
 
-        let obj2 = {};
+        let obj2 = [];
         for (var j = 0, len = sList.length; j < len; j++) {
             for (var i = 0, len = filtered.length; i < len; i++) {
                 if (obj2[filtered[i]] === undefined) { obj2[filtered[i]] = []; }
                 if (sList[j]['title'] == filtered[i]) { obj2[filtered[i]].push(sList[j]); }
-                console.log(sList[j]['title'], obj);
+                console.log(sList[j]['title'], obj2);
             }
         }
         console.log(obj2)
