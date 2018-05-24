@@ -100,25 +100,25 @@ export const showingsCtrl = {
         let obj2 = [];
         for (const title of filtered) {
             console.log(title);
-            obj2[title]=[];
+            obj2[title] = [];
         }
         console.log(sList.length);
         for (var j = 0, len = sList.length; j < len; j++) {
             console.log(sList[j]);
             for (var k = 0, lenx = filtered.length; k < lenx; k++) {
-               // if (obj2[filtered[i]] === undefined) { obj2[filtered[i]] = []; }
-             
-                //if (sList[j]['title'] == filtered[i]) { obj2[filtered[i]].push(sList[j]); }
+                // if (obj2[filtered[i]] === undefined) { obj2[filtered[i]] = []; }
+                let showcopy = JSON.parse(JSON.stringify(sList[j]));
+                if (sList[j].title === filtered[k]) { obj2[filtered[i]].push(showcopy); }
                 //console.log(sList[j]['title'], obj2[filtered[i]]['title']);
             }
         }
-       // console.log(obj2)
+        // console.log(obj2)
     },
     calendarShowings(pickedDate) {
 
         const parsedPickedDate = moment(pickedDate).format('YYYY-MM-DD');
         const showings = showingsService.list()[0];
-                const result = [];
+        const result = [];
         for (const showingElem of showings) {
             if (showingElem.date.includes(parsedPickedDate)) {
                 let showcopy = JSON.parse(JSON.stringify(showingElem));
