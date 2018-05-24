@@ -89,8 +89,8 @@ export const showingsCtrl = {
         for (const showing of sList) {
             obj[showing['title']] = [];
         }
-        for (let i = 0, len = sList.length; i < len; i++) {
-            obj[sList[i]['title']].push(sList[i]);
+        for (const showing of sList) {
+            obj[showing['title']].push(showing);
         }
         console.log(obj);
         /*  let filtered = [];
