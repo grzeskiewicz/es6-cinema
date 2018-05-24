@@ -87,12 +87,14 @@ export const showingsCtrl = {
     groupShowings(sList) {
         var obj = {};
 
-        for (var i = 0, len = sList.length; i < len; i++)
+        for (var i = 0, len = sList.length; i < len; i++) {
             obj[sList[i]['title']] = sList[i];
+            console.log(obj);
+        }
 
         let filtered = new Array();
-        for (var key in obj) filtered.push(obj[key].title); 
-            console.log(filtered);
+        for (var key in obj) {filtered.push(obj[key].title); console.log(key);}
+            //console.log(filtered);
 
        let obj2={};
        for (const show of sList){
