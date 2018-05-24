@@ -87,10 +87,7 @@ export const showingsCtrl = {
     groupShowings(sList) {
         const group = [];
         for (const showing of sList) {
-            
-        }
-        for (const showing of sList) {
-            group[showing['title']] = [];
+            if (group[showing['title']] === undefined) group[showing['title']] = [];
             group[showing['title']].push(showing);
         }
         console.log(group);
