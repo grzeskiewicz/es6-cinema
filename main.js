@@ -85,7 +85,7 @@ export const showingsCtrl = {
         });
     },
     groupShowings(sList) {
-        const group = {};
+        const group = [];
         for (const showing of sList) {
             if (group[showing['title']] === undefined) group[showing['title']] = [];
             group[showing['title']].push(showing);
