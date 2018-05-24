@@ -102,10 +102,10 @@ export const showingsCtrl = {
             for (var i = 0, len = filtered.length; i < len; i++) {
                 if (obj2[filtered[i]] === undefined) { obj2[filtered[i]] = []; }
                 if (sList[j]['title'] == filtered[i]) { obj2[filtered[i]].push(sList[j]); }
-               // console.log(sList[j]['title'], obj2);
+                console.log(sList[j]['title'], obj2[filtered[i]]);
             }
         }
-        console.log(obj2)
+       // console.log(obj2)
     },
     calendarShowings(pickedDate) {
 
