@@ -102,7 +102,7 @@ export const showingsCtrl = {
             console.log(title);
             obj2[title]=[];
         }
-        console.log(obj2);
+        console.log(sList.length);
         for (var j = 0, len = sList.length; j < len; j++) {
             console.log(sList[j]);
             for (var i = 0, len = filtered.length; i < len; i++) {
