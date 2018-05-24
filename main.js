@@ -85,13 +85,12 @@ export const showingsCtrl = {
         });
     },
     groupShowings(sList) {
-        let obj = {};
-
+        let obj = [];
         for (let i = 0, len = sList.length; i < len; i++) {
-            obj[sList[i]['title']] = sList[i];
+            obj[sList[i]['title']].push(sList[i]);
         }
-console.log(obj);
-        let filtered = [];
+        console.log(obj);
+      /*  let filtered = [];
         for (let key in obj) { filtered.push(obj[key].title); }
 
         let obj2 = [];
@@ -104,7 +103,7 @@ console.log(obj);
             for (var k = 0, lenx = filtered.length; k < lenx; k++) {
                 if (sList[j].title === filtered[k]) { obj2[filtered[k]].push(showcopy); }
             }
-        }
+        }*/
         // console.log(obj2)
     },
     calendarShowings(pickedDate) {
