@@ -97,9 +97,9 @@ export const showingsCtrl = {
             //console.log(filtered);
 
        let obj2={};
-       for (const show of sList){
+       for (var j = 0, len = sList.length; j < len; j++) {
         for (var i = 0, len = filtered.length; i < len; i++) {
-            obj[filtered[i]] = show;
+            obj[filtered[i]] = sList[j];
             console.log(obj);
         }
        }
