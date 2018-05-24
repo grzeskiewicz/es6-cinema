@@ -103,6 +103,7 @@ finallist.push(el);
             }
         }
         console.log(finallist);
+        return finallist;
     },
     calendarShowings(pickedDate) {
 
@@ -122,8 +123,8 @@ finallist.push(el);
     },
     list(showings) {
         this.sortShowings(showings);
-        this.groupShowings(showings);
-        console.log(showings);
+        showings=this.groupShowings(showings);
+        
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
 
         [...this.showingsList()].forEach(showing => {
