@@ -90,7 +90,8 @@ export const showingsCtrl = {
             if (group[showing['title']] === undefined) group[showing['title']] = [];
             group[showing['title']].push(showing);
         }
-        for(const gr of group) console.log(gr);
+//for(const gr of group) console.log(gr);
+console.log(group);
     },
     calendarShowings(pickedDate) {
 
