@@ -105,9 +105,10 @@ export const showingsCtrl = {
         console.log(sList.length);
         for (var j = 0, len = sList.length; j < len; j++) {
             console.log(sList[j]);
+            let showcopy = JSON.parse(JSON.stringify(sList[j]));
             for (var k = 0, lenx = filtered.length; k < lenx; k++) {
                 // if (obj2[filtered[i]] === undefined) { obj2[filtered[i]] = []; }
-                let showcopy = JSON.parse(JSON.stringify(sList[j]));
+                
                 if (sList[j].title === filtered[k]) { obj2[filtered[i]].push(showcopy); }
                 //console.log(sList[j]['title'], obj2[filtered[i]]['title']);
             }
