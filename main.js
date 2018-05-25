@@ -131,7 +131,7 @@ export const showingsCtrl = {
         // view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
         [...this.titlesList()].forEach(title => {
             title.addEventListener('click', function() {
-                console.log(title.textContent);
+                console.log(titles[1][title.textContent]);
                // console.log(titles[1][title.dataset.title]);
             });
         });
