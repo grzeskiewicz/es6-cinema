@@ -27,14 +27,14 @@ a:active {
     flex-flow: row wrap;
 }
 
-#showings {
+#showings, #showlist {
     order: 2;
     display: flex;
     flex-flow: row wrap;
     border-style: solid;
 }
 
-#showings>* {
+#showings>*, #showlist>* {
     flex: 1 100%;
     display: flex;
     background-color: red;
@@ -177,7 +177,7 @@ flex-flow: row wrap;*/
     #wrapper {
         justify-content: center;
     }
-    #showings {
+    #showings, #showlist {
         flex: 0 30%;
         order: 1;
     }
