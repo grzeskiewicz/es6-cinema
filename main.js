@@ -91,7 +91,7 @@ export const showingsCtrl = {
             if (group[showing['title']] === undefined) group[showing['title']] = [];
             group[showing['title']].push(showing);
         }
-        console.log(group);
+   
         const groupedShowingsArray = [];
         const titleList = [];
         for (let key in group) {
@@ -104,7 +104,6 @@ export const showingsCtrl = {
                 finallist.push(el);
             }
         }
-        console.log(titleList);
         //return finallist;
         return [titleList, group];
     },
@@ -134,9 +133,8 @@ export const showingsCtrl = {
                 console.log(titles[1][title.textContent]);
                 view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showList");
 
-console.log('hehexd');
                 [...showingsCtrl.showingsList()].forEach(showing => {
-console.log(showing);
+
                     view.hide(showing.querySelector('.showing-details'));
                     view.hide(showing.querySelector('.poster'));
                     showing.addEventListener('click', event => {
