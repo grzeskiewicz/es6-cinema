@@ -102,7 +102,7 @@ export const showingsCtrl = {
 finallist.push(el);
             }
         }
-        console.log(groupedShowingsArray);
+        
         return finallist;
     },
     calendarShowings(pickedDate) {
