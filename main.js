@@ -141,7 +141,7 @@ export const showingsCtrl = {
                     showing.addEventListener('click', event => {
                         console.log(this);
                         event.preventDefault();
-                        const detailsDiv = this.details();
+                        const detailsDiv = showingsCtrl.details();
                         view.show(detailsDiv);
                         detailsDiv.querySelector('#close').addEventListener('click', function() {
                             detailsDiv.classList.remove('activeshow');
