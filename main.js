@@ -127,7 +127,7 @@ finallist.push(el);
         this.sortShowings(showings);
         const titles=this.groupShowings(showings);
         console.log(titles);
-        view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "showings");
+        view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "showings");
        // view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
 
         [...this.showingsList()].forEach(showing => {
