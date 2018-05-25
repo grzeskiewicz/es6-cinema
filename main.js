@@ -106,7 +106,7 @@ export const showingsCtrl = {
         }
         console.log(titleList);
         //return finallist;
-        return [titleList, finallist];
+        return [titleList, group];
     },
     calendarShowings(pickedDate) {
 
