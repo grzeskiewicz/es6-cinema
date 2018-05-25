@@ -127,12 +127,11 @@ export const showingsCtrl = {
     list(showings) {
         this.sortShowings(showings);
         const titles = this.groupShowings(showings);
-        console.log(titles);
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "showings");
         // view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
         [...this.titlesList()].forEach(title => {
             title.addEventListener('click', function() {
-                console.log('HEHE', title);
+                console.log(titles[1]);
             });
         });
         [...this.showingsList()].forEach(showing => {
