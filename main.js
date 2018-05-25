@@ -143,11 +143,11 @@ export const showingsCtrl = {
                         event.preventDefault();
                         const detailsDiv = showingsCtrl.details();
                         view.show(detailsDiv);
-                        detailsDiv.querySelector('#close').addEventListener('click', function() {
+                       /* detailsDiv.querySelector('#close').addEventListener('click', function() {
                             detailsDiv.classList.remove('activeshow');
                             showingsCtrl.showingsDiv().classList.remove('blur');
                             view.hide(detailsDiv);
-                        });
+                        });*/
 
                         detailsDiv.classList.add('activeshow');
                         showing.classList.add('active');
