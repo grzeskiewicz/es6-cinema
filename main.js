@@ -90,12 +90,12 @@ export const showingsCtrl = {
             if (group[showing['title']] === undefined) group[showing['title']] = [];
             group[showing['title']].push(showing);
         }
+        console.log(group);
         const groupedShowingsArray = [];
         for (let key in group) {
             // console.log(group[key]);
             groupedShowingsArray.push(group[key]);
         }
-        console.log(groupedShowingsArray);
         const finallist = [];
         for (const elem of groupedShowingsArray) {
             for (const el of elem) {
