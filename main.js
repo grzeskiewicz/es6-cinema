@@ -125,7 +125,7 @@ finallist.push(el);
     },
     list(showings) {
         this.sortShowings(showings);
-        titles=this.groupShowings(showings);
+        const titles=this.groupShowings(showings);
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(titles)}}`), "showings");
        // view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
 
