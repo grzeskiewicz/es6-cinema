@@ -132,7 +132,7 @@ export const showingsCtrl = {
         [...this.titlesList()].forEach(title => {
             title.addEventListener('click', function() {
                 console.log(titles[1][title.textContent]);
-                view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist");
+                view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "details");
 
                 [...showingsCtrl.showingsList()].forEach(showing => {
 
