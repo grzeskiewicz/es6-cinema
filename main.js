@@ -58,6 +58,7 @@ const view = {
         let template = Handlebars.compile(sourceElem);
         let html = template(context);
         document.getElementById(output).innerHTML = html;
+        console.log(html);
     },
     show(element) {
         // element.classList.remove('visuallyhidden').add('visuallyvisible');
