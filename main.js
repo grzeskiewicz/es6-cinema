@@ -136,8 +136,8 @@ export const showingsCtrl = {
 
                 [...showingsCtrl.showingsList()].forEach(showing => {
 
-                    view.hide(showing.querySelector('.showing-details'));
-                    view.hide(showing.querySelector('.poster'));
+                    //view.hide(showing.querySelector('.showing-details'));
+                    //view.hide(showing.querySelector('.poster'));
                     showing.addEventListener('click', event => {
                         console.log(this);
                         event.preventDefault();
