@@ -103,7 +103,7 @@ export const showingsCtrl = {
 finallist.push(el);
             }
         }
-        
+        console.log(titleList);
         //return finallist;
         return titleList;
     },
