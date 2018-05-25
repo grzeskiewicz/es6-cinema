@@ -132,53 +132,57 @@ export const showingsCtrl = {
         [...this.titlesList()].forEach(title => {
             title.addEventListener('click', function() {
                 console.log(titles[1][title.textContent]);
-               view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showList");
+                view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showList");
+
+
+                [...this.showingsList()].forEach(showing => {
+
+                    view.hide(showing.querySelector('.showing-details'));
+                    view.hide(showing.querySelector('.poster'));
+                    showing.addEventListener('click', event => {
+                        console.log(this.dataset.title);
+                        event.preventDefault();
+                        const detailsDiv = this.details();
+                        view.show(detailsDiv);
+                        detailsDiv.querySelector('#close').addEventListener('click', function() {
+                            detailsDiv.classList.remove('activeshow');
+                            showingsCtrl.showingsDiv().classList.remove('blur');
+                            view.hide(detailsDiv);
+                        });
+
+                        detailsDiv.classList.add('activeshow');
+                        showing.classList.add('active');
+                        const showingDetails = showing.querySelector('.showing-details');
+                        const poster = showing.querySelector('.poster');
+                        showingDetails.style.display = 'block';
+                        poster.style.display = 'block';
+                        [...this.showingsList()].forEach(showingObj => {
+                            if (showingObj.classList.contains('active') && showingObj !== showing) {
+                                showingObj.classList.remove('active');
+                            }
+                            const showingObjDetails = showingObj.querySelector('.showing-details');
+                            const showingObjPoster = showingObj.querySelector('.poster');
+                            if (showingObjDetails.style.display === 'block' && showingObjDetails !== showingDetails) {
+                                showingObjDetails.style.display = 'none';
+                                showingObjPoster.style.display = 'none';
+                            }
+
+                        });
+                        this.showingsDiv().classList.add('blur');
+                        showingsService.selectById(event.currentTarget.dataset.showingId);
+                        view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
+                        seatsCtrl.disableListener();
+                        seatsCtrl.selectedSeats = [];
+                        document.getElementById("order").innerHTML = "";
+                        seatsCtrl.toggleListener();
+                        orderCtrl.orderListener();
+                        const nextBtn = document.getElementById("nextBtn");
+                        view.hide(nextBtn);
+                    }, false);
+                });
             });
         });
-        [...this.showingsList()].forEach(showing => {
-            view.hide(showing.querySelector('.showing-details'));
-            view.hide(showing.querySelector('.poster'));
-            showing.addEventListener('click', event => {
-                console.log(this.dataset.title);
-                event.preventDefault();
-                const detailsDiv = this.details();
-                view.show(detailsDiv);
-                detailsDiv.querySelector('#close').addEventListener('click', function() {
-                    detailsDiv.classList.remove('activeshow');
-                    showingsCtrl.showingsDiv().classList.remove('blur');
-                    view.hide(detailsDiv);
-                });
 
-                detailsDiv.classList.add('activeshow');
-                showing.classList.add('active');
-                const showingDetails = showing.querySelector('.showing-details');
-                const poster = showing.querySelector('.poster');
-                showingDetails.style.display = 'block';
-                poster.style.display = 'block';
-                [...this.showingsList()].forEach(showingObj => {
-                    if (showingObj.classList.contains('active') && showingObj !== showing) {
-                        showingObj.classList.remove('active');
-                    }
-                    const showingObjDetails = showingObj.querySelector('.showing-details');
-                    const showingObjPoster = showingObj.querySelector('.poster');
-                    if (showingObjDetails.style.display === 'block' && showingObjDetails !== showingDetails) {
-                        showingObjDetails.style.display = 'none';
-                        showingObjPoster.style.display = 'none';
-                    }
-
-                });
-                this.showingsDiv().classList.add('blur');
-                showingsService.selectById(event.currentTarget.dataset.showingId);
-                view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
-                seatsCtrl.disableListener();
-                seatsCtrl.selectedSeats = [];
-                document.getElementById("order").innerHTML = "";
-                seatsCtrl.toggleListener();
-                orderCtrl.orderListener();
-                const nextBtn = document.getElementById("nextBtn");
-                view.hide(nextBtn);
-            }, false);
-        });
     }
 
 }
