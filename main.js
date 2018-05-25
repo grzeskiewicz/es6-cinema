@@ -138,7 +138,7 @@ export const showingsCtrl = {
                     view.hide(showing.querySelector('.showing-details'));
                     view.hide(showing.querySelector('.poster'));
                     showing.addEventListener('click', event => {
-                        
+                        console.log(this);
                         event.preventDefault();
                         const detailsDiv = this.details();
                         view.show(detailsDiv);
