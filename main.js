@@ -134,9 +134,9 @@ export const showingsCtrl = {
                 console.log(titles[1][title.textContent]);
                 view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showList");
 
-
+console.log('hehexd');
                 [...showingsCtrl.showingsList()].forEach(showing => {
-
+console.log(showing);
                     view.hide(showing.querySelector('.showing-details'));
                     view.hide(showing.querySelector('.poster'));
                     showing.addEventListener('click', event => {
