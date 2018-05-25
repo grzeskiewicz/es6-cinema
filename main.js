@@ -75,6 +75,7 @@ const view = {
 export const showingsCtrl = {
     showingsDiv() { return document.querySelector('#showings'); },
     showingsList() { return document.querySelectorAll('.showing'); },
+    titlesList() { return document.querySelectorAll('.title'); },
     details() { return document.querySelector('#details'); },
     dateParser(stringdate) {
         return moment(stringdate).format("DD.MM.YYYY, HH:mm");
@@ -92,20 +93,20 @@ export const showingsCtrl = {
         }
         console.log(group);
         const groupedShowingsArray = [];
-        const titleList=[];
+        const titleList = [];
         for (let key in group) {
-             titleList.push(key);
+            titleList.push(key);
             groupedShowingsArray.push(group[key]);
         }
         const finallist = [];
         for (const elem of groupedShowingsArray) {
             for (const el of elem) {
-finallist.push(el);
+                finallist.push(el);
             }
         }
         console.log(titleList);
         //return finallist;
-        return [titleList,finallist];
+        return [titleList, finallist];
     },
     calendarShowings(pickedDate) {
 
@@ -125,11 +126,15 @@ finallist.push(el);
     },
     list(showings) {
         this.sortShowings(showings);
-        const titles=this.groupShowings(showings);
+        const titles = this.groupShowings(showings);
         console.log(titles);
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "showings");
-       // view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
-
+        // view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
+        [...this.titlesList()].forEach(title => {
+            title.addEventListener('click', function() {
+                console.log('HEHE', title);
+            });
+        });
         [...this.showingsList()].forEach(showing => {
             view.hide(showing.querySelector('.showing-details'));
             view.hide(showing.querySelector('.poster'));
