@@ -125,9 +125,9 @@ finallist.push(el);
     },
     list(showings) {
         this.sortShowings(showings);
-        showings=this.groupShowings(showings);
-        
-        view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
+        titles=this.groupShowings(showings);
+        view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(titles)}}`), "showings");
+       // view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
 
         [...this.showingsList()].forEach(showing => {
             view.hide(showing.querySelector('.showing-details'));
