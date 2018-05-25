@@ -105,7 +105,7 @@ finallist.push(el);
         }
         console.log(titleList);
         //return finallist;
-        return titleList;
+        return [titleList,finallist];
     },
     calendarShowings(pickedDate) {
 
@@ -126,6 +126,7 @@ finallist.push(el);
     list(showings) {
         this.sortShowings(showings);
         const titles=this.groupShowings(showings);
+        console.log(titles);
         view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(titles)}}`), "showings");
        // view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
 
