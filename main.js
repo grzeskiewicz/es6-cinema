@@ -135,7 +135,7 @@ export const showingsCtrl = {
                 view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showList");
 
 
-                [...this.showingsList()].forEach(showing => {
+                [...showingsCtrl.showingsList()].forEach(showing => {
 
                     view.hide(showing.querySelector('.showing-details'));
                     view.hide(showing.querySelector('.poster'));
