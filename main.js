@@ -92,8 +92,9 @@ export const showingsCtrl = {
         }
         console.log(group);
         const groupedShowingsArray = [];
+        const titleList=[];
         for (let key in group) {
-             console.log(key);
+             titleList.push(key);
             groupedShowingsArray.push(group[key]);
         }
         const finallist = [];
@@ -103,7 +104,8 @@ finallist.push(el);
             }
         }
         
-        return finallist;
+        //return finallist;
+        return titleList;
     },
     calendarShowings(pickedDate) {
 
