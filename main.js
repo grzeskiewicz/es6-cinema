@@ -155,7 +155,7 @@ export const showingsCtrl = {
                         const poster = showing.querySelector('.poster');
                         showingDetails.style.display = 'block';
                         poster.style.display = 'block';
-                        [...this.showingsList()].forEach(showingObj => {
+                        [...showingsCtrl.showingsList()].forEach(showingObj => {
                             if (showingObj.classList.contains('active') && showingObj !== showing) {
                                 showingObj.classList.remove('active');
                             }
@@ -167,7 +167,7 @@ export const showingsCtrl = {
                             }
 
                         });
-                        this.showingsDiv().classList.add('blur');
+                        showingsCtrl.showingsDiv().classList.add('blur');
                         showingsService.selectById(event.currentTarget.dataset.showingId);
                         view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
                         seatsCtrl.disableListener();
