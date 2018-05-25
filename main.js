@@ -93,7 +93,7 @@ export const showingsCtrl = {
         console.log(group);
         const groupedShowingsArray = [];
         for (let key in group) {
-            // console.log(group[key]);
+             console.log(key);
             groupedShowingsArray.push(group[key]);
         }
         const finallist = [];
