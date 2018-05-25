@@ -177,7 +177,7 @@ flex-flow: row wrap;*/
     #wrapper {
         justify-content: center;
     }
-    #showings, #showList {
+    #showings {
         flex: 0 30%;
         order: 1;
     }
