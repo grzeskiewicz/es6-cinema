@@ -140,7 +140,7 @@ console.log(showing);
                     view.hide(showing.querySelector('.showing-details'));
                     view.hide(showing.querySelector('.poster'));
                     showing.addEventListener('click', event => {
-                        console.log(this.dataset.title);
+                        
                         event.preventDefault();
                         const detailsDiv = this.details();
                         view.show(detailsDiv);
