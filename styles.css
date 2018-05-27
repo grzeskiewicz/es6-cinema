@@ -40,10 +40,10 @@ body {
     transform: scale(1, 1);
 }
 
-.showing p {
+/*.showing p {
     margin-top: 0;
     margin-bottom: 0;
-}
+}*/
 
 .title {
     font-weight: bold;
