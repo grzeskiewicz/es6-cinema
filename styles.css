@@ -25,7 +25,7 @@ body {
     border-style: solid;
 }
 
-#showings>* {
+#showings>*, #showlist>* {
     flex: 1 100%;
     display: flex;
     background-color: red;
