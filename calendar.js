@@ -58,7 +58,7 @@ export function renderCalendar(calendar) {
     table.appendChild(thead);
     table.appendChild(tbody);
 
-    calendarDiv.innerHTML = p +" " + table;
+    calendarDiv.innerHTML = p + table;
     // mount month name to container
     //calendarDiv.appendChild(p);
     // mount table to container
