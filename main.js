@@ -40,12 +40,13 @@ const showingsService = Object.create(listService);
 
 // MAIN PART =======================================================================================================================================================
 const calendarInit=renderCalendar(calendar);
-console.log(calnedarInit());
+
 renderWeek(calendar);
 
 fetch(request(API_URL + "showings", 'GET'))
     .then(res => res.json())
     .then(showings => {
+        console.log(calnedarInit());
         showingsService.add(showings);
         authServices.loadUserCredentials();
         const customerInfo = document.querySelector('#customer-info');
