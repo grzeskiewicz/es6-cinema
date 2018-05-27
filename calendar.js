@@ -58,11 +58,11 @@ export function renderCalendar(calendar) {
     table.appendChild(thead);
     table.appendChild(tbody);
 
-    calendarDiv.innerHTML = `${p} ${table}`;
+    calendarDiv.innerHTML = '';
     // mount month name to container
-    //calendarDiv.appendChild(p);
+    calendarDiv.appendChild(p);
     // mount table to container
-    //calendarDiv.appendChild(table);
+    calendarDiv.appendChild(table);
 
     //listeners for >> and <<
     const previous = document.querySelector('#previous');
