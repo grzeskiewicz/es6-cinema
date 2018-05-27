@@ -41,13 +41,12 @@ const showingsService = Object.create(listService);
 // MAIN PART =======================================================================================================================================================
 
 
-renderWeek(calendar);
-
 fetch(request(API_URL + "showings", 'GET'))
     .then(res => res.json())
     .then(showings => {
-        const hehe=renderCalendar(calendar);
-        console.log(hehe.querySelectorAll('td'));
+        renderWeek(calendar);
+        const calendarTable=renderCalendar(calendar);
+        console.log(calendarTable.querySelectorAll('td'));
         showingsService.add(showings);
         authServices.loadUserCredentials();
         const customerInfo = document.querySelector('#customer-info');
