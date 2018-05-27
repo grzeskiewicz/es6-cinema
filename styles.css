@@ -18,7 +18,7 @@ body {
     flex-flow: row wrap;
 }
 
-#showings, #showlist {
+#showings {
     order: 2;
     display: flex;
     flex-flow: row wrap;
