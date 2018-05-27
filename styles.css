@@ -25,7 +25,8 @@ body {
     border-style: solid;
 }
 
-#showings>*, #showlist>* {
+#showings>*,
+#showlist>* {
     flex: 1 100%;
     display: flex;
     background-color: red;
@@ -62,6 +63,7 @@ body {
     border-style: solid;
     border-color: green;
 }
+
 
 
 
@@ -168,7 +170,8 @@ flex-flow: row wrap;*/
     #wrapper {
         justify-content: center;
     }
-    #showings, #showlist {
+    #showings,
+    #showlist {
         flex: 0 30%;
         order: 1;
     }
@@ -181,7 +184,6 @@ flex-flow: row wrap;*/
         display: flex;
         flex: 1 100%;
         flex-direction: row;
-
     }
 
     .title {
@@ -203,24 +205,26 @@ flex-flow: row wrap;*/
     }
 
 
-.visuallyhidden {
-  opacity: 0;
-  height:0;
+    .visuallyhidden {
+        opacity: 0;
+        height: 0;
+    }
+
+    .visuallyvisible {
+        opacity: 1;
+        height: auto;
+    }
 }
 
-.visuallyvisible {
-    opacity:1;
-    height:auto;
-}
-}
 
 
 
 /* CALENDAR CSS */
 
 #week {
-  margin:1rem;
+    margin: 1rem;
 }
+
 #calendar {
     display: flex-inline;
     margin: 1rem;
@@ -233,7 +237,7 @@ flex-flow: row wrap;*/
 }
 
 .today {
-background-color: orange;
+    background-color: orange;
 }
 
 table {

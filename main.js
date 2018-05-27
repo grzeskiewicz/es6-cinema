@@ -39,7 +39,8 @@ const showingsService = Object.create(listService);
 
 
 // MAIN PART =======================================================================================================================================================
-renderCalendar(calendar);
+const calendarInit=renderCalendar(calendar);
+console.log(calnedarInit());
 renderWeek(calendar);
 
 fetch(request(API_URL + "showings", 'GET'))
@@ -92,20 +93,19 @@ export const showingsCtrl = {
             if (group[showing['title']] === undefined) group[showing['title']] = [];
             group[showing['title']].push(showing);
         }
-   
+
         const groupedShowingsArray = [];
         const titleList = [];
         for (let key in group) {
             titleList.push(key);
             groupedShowingsArray.push(group[key]);
         }
-        const finallist = [];
+      /*  const finallist = [];
         for (const elem of groupedShowingsArray) {
             for (const el of elem) {
                 finallist.push(el);
             }
-        }
-        //return finallist;
+        }*/
         return [titleList, group];
     },
     calendarShowings(pickedDate) {
@@ -128,10 +128,8 @@ export const showingsCtrl = {
         this.sortShowings(showings);
         const titles = this.groupShowings(showings);
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "showings");
-        // view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(showings)}}`), "showings");
         [...this.titlesList()].forEach(title => {
             title.addEventListener('click', function() {
-                console.log(titles[1][title.textContent]);
                 view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist");
 
                 [...showingsCtrl.showingsList()].forEach(showing => {
@@ -143,11 +141,11 @@ export const showingsCtrl = {
                         event.preventDefault();
                         const detailsDiv = showingsCtrl.details();
                         view.show(detailsDiv);
-                       /* detailsDiv.querySelector('#close').addEventListener('click', function() {
-                            detailsDiv.classList.remove('activeshow');
-                            showingsCtrl.showingsDiv().classList.remove('blur');
-                            view.hide(detailsDiv);
-                        });*/
+                        /* detailsDiv.querySelector('#close').addEventListener('click', function() {
+                             detailsDiv.classList.remove('activeshow');
+                             showingsCtrl.showingsDiv().classList.remove('blur');
+                             view.hide(detailsDiv);
+                         });*/
 
                         detailsDiv.classList.add('activeshow');
                         showing.classList.add('active');

@@ -41,7 +41,6 @@ export function renderCalendar(calendar) {
             tr.appendChild(td);
             td.addEventListener('click', function() {
                 const pickedDate = new Date(this.dataset.date);
-                 console.log(pickedDate.toString());
                  showingsCtrl.calendarShowings(pickedDate);
             });
         }
@@ -76,6 +75,8 @@ export function renderCalendar(calendar) {
         calendarDiv.innerHTML = '';
         renderCalendar(createCalendar(yearNow, ++selectedMonth));
     });
+
+    return table;
 }
 
 
