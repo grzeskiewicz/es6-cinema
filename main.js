@@ -46,8 +46,8 @@ renderWeek(calendar);
 fetch(request(API_URL + "showings", 'GET'))
     .then(res => res.json())
     .then(showings => {
-        renderCalendar(calendar);
-        console.log(calnedarInit());
+        const hehe=renderCalendar(calendar);
+        console.log();
         showingsService.add(showings);
         authServices.loadUserCredentials();
         const customerInfo = document.querySelector('#customer-info');
