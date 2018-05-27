@@ -47,7 +47,7 @@ fetch(request(API_URL + "showings", 'GET'))
     .then(res => res.json())
     .then(showings => {
         const hehe=renderCalendar(calendar);
-        console.log(hehe);
+        console.log(hehe.querySelectorAll('td'));
         showingsService.add(showings);
         authServices.loadUserCredentials();
         const customerInfo = document.querySelector('#customer-info');
