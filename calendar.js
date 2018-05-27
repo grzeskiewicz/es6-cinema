@@ -41,7 +41,7 @@ export function renderCalendar(calendar) {
             tr.appendChild(td);
             td.addEventListener('click', function() {
                 const pickedDate = new Date(this.dataset.date);
-                 showingsCtrl.calendarShowings(pickedDate);
+                showingsCtrl.calendarShowings(pickedDate);
             });
         }
         // mount table row
@@ -58,10 +58,11 @@ export function renderCalendar(calendar) {
     table.appendChild(thead);
     table.appendChild(tbody);
 
+    calendarDiv.innerHTML = p +" " + table;
     // mount month name to container
-    calendarDiv.appendChild(p);
+    //calendarDiv.appendChild(p);
     // mount table to container
-    calendarDiv.appendChild(table);
+    //calendarDiv.appendChild(table);
 
     //listeners for >> and <<
     const previous = document.querySelector('#previous');
@@ -112,10 +113,10 @@ export function renderWeek(calendar) {
 
             // mount table cell
             tr.appendChild(td);
-               td.addEventListener('click', function() {
+            td.addEventListener('click', function() {
                 const pickedDate = new Date(this.dataset.date);
-                 console.log(pickedDate.toString());
-                 showingsCtrl.calendarShowings(pickedDate);
+                console.log(pickedDate.toString());
+                showingsCtrl.calendarShowings(pickedDate);
             });
         }
         // mount table row
