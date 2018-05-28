@@ -2,8 +2,8 @@
 import { showingsCtrl } from './main.js';
 const MONTH_NAMES = 'January February March April May June July August September October November December'.split(' ');
 
-const calendarDiv = document.querySelector('#calendar');
-const weekDiv = document.querySelector('#week');
+export const calendarDiv = document.querySelector('#calendar');
+export const weekDiv = document.querySelector('#week');
 
 export let yearNow = new Date().getFullYear();
 export const monthNow = new Date().getMonth();
@@ -39,10 +39,6 @@ export function renderCalendar(calendar) {
 
             // mount table cell
             tr.appendChild(td);
-           /* td.addEventListener('click', function() {
-                const pickedDate = new Date(this.dataset.date);
-                showingsCtrl.calendarShowings(pickedDate);
-            });*/
         }
         // mount table row
         tbody.appendChild(tr);

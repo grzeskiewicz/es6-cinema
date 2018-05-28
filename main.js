@@ -1,6 +1,6 @@
 import { authServices } from './services.js';
 import { API_URL, request } from './apiconnection.js';
-import { renderWeek, renderCalendar, calendar, yearNow, selectedMonth, monthNow } from './calendar.js';
+import { calendarDiv, renderWeek, renderCalendar, calendar, yearNow, selectedMonth, monthNow } from './calendar.js';
 
 Handlebars.registerHelper('for', function(from, to, block) {
     var accum = '';
