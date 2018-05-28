@@ -46,7 +46,7 @@ fetch(request(API_URL + "showings", 'GET'))
     .then(showings => {
         renderWeek(calendar);
         const calendarTable=renderCalendar(calendar);
-        console.log(calendarTable.querySelectorAll('td'));
+        console.log(calendarTable.querySelectorAll('tbody td'));
         showingsService.add(showings);
         authServices.loadUserCredentials();
         const customerInfo = document.querySelector('#customer-info');
