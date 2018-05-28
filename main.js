@@ -75,6 +75,7 @@ const view = {
 
 const calendarCtrl = {
     initCalendar() {
+        let selectedMonthCopy=selectedMonth;
         renderWeek(calendar);
         const calendarTable = renderCalendar(calendar);
         const daysArray = calendarTable.querySelectorAll('tbody td');
@@ -92,11 +93,12 @@ const calendarCtrl = {
         selectedMonth <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
         previous.addEventListener('click', function() {
             calendarDiv.innerHTML = '';
-            renderCalendar(createCalendar(yearNow, --selectedMonth));
+
+            renderCalendar(createCalendar(yearNow, --selectedMonthCopy));
         });
         next.addEventListener('click', function() {
             calendarDiv.innerHTML = '';
-            renderCalendar(createCalendar(yearNow, ++selectedMonth));
+            renderCalendar(createCalendar(yearNow, ++selectedMonthCopy));
         });
     }
 }
