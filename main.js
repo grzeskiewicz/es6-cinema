@@ -46,7 +46,7 @@ fetch(request(API_URL + "showings", 'GET'))
     .then(showings => {
             renderWeek(calendar);
             const calendarTable = renderCalendar(calendar);
-            const daysArray = calendarTable.querySelectorAll('tbody td'));
+            const daysArray = calendarTable.querySelectorAll('tbody td');
         for (const day of daysArray) {
             day.addEventListener('click', function() {
                 const pickedDate = new Date(this.dataset.date);
