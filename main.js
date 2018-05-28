@@ -1,6 +1,6 @@
 import { authServices } from './services.js';
 import { API_URL, request } from './apiconnection.js';
-import { renderWeek, renderCalendar, calendar } from './calendar.js';
+import { renderWeek, renderCalendar, calendar, yearNow, selectedMonth, monthNow } from './calendar.js';
 
 Handlebars.registerHelper('for', function(from, to, block) {
     var accum = '';
@@ -44,17 +44,12 @@ const showingsService = Object.create(listService);
 fetch(request(API_URL + "showings", 'GET'))
     .then(res => res.json())
     .then(showings => {
-            renderWeek(calendar);
-            const calendarTable = renderCalendar(calendar);
-            const daysArray = calendarTable.querySelectorAll('tbody td');
-        for (const day of daysArray) {
-            day.addEventListener('click', function() {
-                const pickedDate = new Date(this.dataset.date);
-                showingsCtrl.calendarShowings(pickedDate);
-            });
-        }
-        showingsService.add(showings); authServices.loadUserCredentials();
-        const customerInfo = document.querySelector('#customer-info'); view.hide(customerInfo); loginCtrl.getInfo();
+        calendarCtrl.initCalendar();
+        showingsService.add(showings);
+        authServices.loadUserCredentials();
+        const customerInfo = document.querySelector('#customer-info');
+        view.hide(customerInfo);
+        loginCtrl.getInfo();
     });
 
 const view = {
@@ -79,7 +74,31 @@ const view = {
 }
 
 const calendarCtrl = {
+    initCalendar() {
+        renderWeek(calendar);
+        const calendarTable = renderCalendar(calendar);
+        const daysArray = calendarTable.querySelectorAll('tbody td');
+        for (const day of daysArray) {
+            day.addEventListener('click', function() {
+                const pickedDate = new Date(this.dataset.date);
+                showingsCtrl.calendarShowings(pickedDate);
+            });
+        }
 
+
+        //listeners for >> and <<
+        const previous = document.querySelector('#previous');
+        const next = document.querySelector('#next');
+        selectedMonth <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
+        previous.addEventListener('click', function() {
+            calendarDiv.innerHTML = '';
+            renderCalendar(createCalendar(yearNow, --selectedMonth));
+        });
+        next.addEventListener('click', function() {
+            calendarDiv.innerHTML = '';
+            renderCalendar(createCalendar(yearNow, ++selectedMonth));
+        });
+    }
 }
 
 

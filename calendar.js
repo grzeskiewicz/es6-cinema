@@ -6,7 +6,7 @@ const calendarDiv = document.querySelector('#calendar');
 const weekDiv = document.querySelector('#week');
 
 export let yearNow = new Date().getFullYear();
-const monthNow = new Date().getMonth();
+export const monthNow = new Date().getMonth();
 export let selectedMonth = new Date().getMonth();
 const today = new Date();
 
@@ -64,18 +64,7 @@ export function renderCalendar(calendar) {
     // mount table to container
     calendarDiv.appendChild(table);
 
-    //listeners for >> and <<
-    const previous = document.querySelector('#previous');
-    const next = document.querySelector('#next');
-    selectedMonth <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
-    previous.addEventListener('click', function() {
-        calendarDiv.innerHTML = '';
-        renderCalendar(createCalendar(yearNow, --selectedMonth));
-    });
-    next.addEventListener('click', function() {
-        calendarDiv.innerHTML = '';
-        renderCalendar(createCalendar(yearNow, ++selectedMonth));
-    });
+
 
     return table;
 }
