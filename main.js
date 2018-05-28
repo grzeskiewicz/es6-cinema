@@ -82,7 +82,7 @@ export const showingsCtrl = {
     details() { return document.querySelector('#details'); },
     dateParser(stringdate) {
         const dateFormat='DD.MM.YYYY, HH:mm';
-        return moment(stringdate,'YYYY-MM-DD').format(dateFormat);
+        return moment(stringdate,'YYYY-MM-DD hh:mm:ss A Z').format(dateFormat);
     },
     sortShowings(sList) {
         sList = sList.sort((a, b) => {
