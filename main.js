@@ -44,14 +44,17 @@ const showingsService = Object.create(listService);
 fetch(request(API_URL + "showings", 'GET'))
     .then(res => res.json())
     .then(showings => {
-        renderWeek(calendar);
-        const calendarTable=renderCalendar(calendar);
-        console.log(calendarTable.querySelectorAll('tbody td'));
-        showingsService.add(showings);
-        authServices.loadUserCredentials();
-        const customerInfo = document.querySelector('#customer-info');
-        view.hide(customerInfo);
-        loginCtrl.getInfo();
+            renderWeek(calendar);
+            const calendarTable = renderCalendar(calendar);
+            const daysArray = calendarTable.querySelectorAll('tbody td'));
+        for (const day of daysArray) {
+            day.addEventListener('click', function() {
+                const pickedDate = new Date(this.dataset.date);
+                showingsCtrl.calendarShowings(pickedDate);
+            });
+        }
+        showingsService.add(showings); authServices.loadUserCredentials();
+        const customerInfo = document.querySelector('#customer-info'); view.hide(customerInfo); loginCtrl.getInfo();
     });
 
 const view = {
@@ -75,14 +78,20 @@ const view = {
     }
 }
 
+const calendarCtrl = {
+
+}
+
+
+
 export const showingsCtrl = {
     showingsDiv() { return document.querySelector('#showings'); },
     showingsList() { return document.querySelectorAll('.showing'); },
     titlesList() { return document.querySelectorAll('.title'); },
     details() { return document.querySelector('#details'); },
     dateParser(stringdate) {
-        const dateFormat='DD.MM.YYYY, HH:mm';
-        return moment(stringdate,'YYYY-MM-DDThh:mm:ssZ').format(dateFormat);
+        const dateFormat = 'DD.MM.YYYY, HH:mm';
+        return moment(stringdate, 'YYYY-MM-DDThh:mm:ssZ').format(dateFormat);
     },
     sortShowings(sList) {
         sList = sList.sort((a, b) => {
@@ -102,12 +111,12 @@ export const showingsCtrl = {
             titleList.push(key);
             groupedShowingsArray.push(group[key]);
         }
-      /*  const finallist = [];
-        for (const elem of groupedShowingsArray) {
-            for (const el of elem) {
-                finallist.push(el);
-            }
-        }*/
+        /*  const finallist = [];
+          for (const elem of groupedShowingsArray) {
+              for (const el of elem) {
+                  finallist.push(el);
+              }
+          }*/
         return [titleList, group];
     },
     calendarShowings(pickedDate) {
