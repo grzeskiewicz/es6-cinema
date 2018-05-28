@@ -81,7 +81,8 @@ export const showingsCtrl = {
     titlesList() { return document.querySelectorAll('.title'); },
     details() { return document.querySelector('#details'); },
     dateParser(stringdate) {
-        return moment(stringdate).format("DD.MM.YYYY, HH:mm");
+        const dateFormat='DD.MM.YYYY, HH:mm';
+        return moment(stringdate).format(dateFormat);
     },
     sortShowings(sList) {
         sList = sList.sort((a, b) => {
