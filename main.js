@@ -82,6 +82,7 @@ const calendarCtrl = {
                 showingsCtrl.calendarShowings(pickedDate);
             });
         }
+        calendarCtrl.initListenersMonths();
     },
     initListenersMonths() {
         let selectedMonthCopy = selectedMonth;
