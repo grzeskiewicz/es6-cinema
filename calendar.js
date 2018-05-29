@@ -4,7 +4,7 @@ export const calendarini = {
     monthNow: new Date().getMonth(),
     selectedMonth: new Date().getMonth(),
     today: new Date(),
-    calendard: createCalendar(this.yearNow, this.selectedMonth),
+    calendard: this.createCalendar(this.yearNow, this.selectedMonth),
 
     renderCalendar(calendar) {
         const p = document.createElement('p');
