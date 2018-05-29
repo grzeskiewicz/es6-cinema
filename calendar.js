@@ -1,4 +1,9 @@
 'use strict';
+
+const MONTH_NAMES = 'January February March April May June July August September October November December'.split(' ');
+
+const calendarDiv = document.querySelector('#calendar');
+const weekDiv = document.querySelector('#week');
 export const calendarini = {
     yearNow(){ return new Date().getFullYear();},
     monthNow(){return new Date().getMonth();},
@@ -152,10 +157,6 @@ export const calendarini = {
     }
 }
 
-const MONTH_NAMES = 'January February March April May June July August September October November December'.split(' ');
-
-const calendarDiv = document.querySelector('#calendar');
-const weekDiv = document.querySelector('#week');
 
 function fixMonday(day) {
     day || (day = 7);
