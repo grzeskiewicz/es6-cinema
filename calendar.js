@@ -131,6 +131,7 @@ export function renderWeek(calendar) {
 
 
 export function createCalendar(year, month) {
+    console.log(month);
     const results = [];
 
     // find out first and last days of the month
