@@ -11,7 +11,7 @@ export let selectedMonth = new Date().getMonth();
 const today = new Date();
 
 
-export const calendar = createCalendar(yearNow, selectedMonth);
+export const calendard = createCalendar(yearNow, selectedMonth);
 
 export function renderCalendar(calendar) {
     const p = document.createElement('p');
