@@ -82,7 +82,7 @@ const calendarCtrl = {
                 showingsCtrl.calendarShowings(pickedDate);
             });
         }
-    }
+    },
     initCalendar() {
         let selectedMonthCopy = selectedMonth;
         renderWeek(calendar);
