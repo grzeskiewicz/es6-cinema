@@ -43,7 +43,7 @@ export function renderCalendar(calendar) {
         // mount table row
         tbody.appendChild(tr);
     }
-
+console.log(selectedMonth);
     // create month name
     p.innerHTML = `<span id="previous"><<</span>  ${MONTH_NAMES[selectedMonth]} <span id="next"> >> </span>`;
 
