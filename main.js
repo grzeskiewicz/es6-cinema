@@ -89,20 +89,20 @@ const calendarCtrl = {
         let calendarTable = renderCalendar(calendar);
         this.initListeners(calendarTable);
 
-    //listeners for >> and <<
-    const previous = document.querySelector('#previous');
-    const next = document.querySelector('#next');
-    selectedMonth <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
-    previous.addEventListener('click', function() {
-        calendarDiv.innerHTML = '';
-        calendarTable=renderCalendar(createCalendar(yearNow, --selectedMonth));
-        this.initListeners(calendarTable);
-    });
-    next.addEventListener('click', function() {
-        calendarDiv.innerHTML = '';
-        calendarTable=renderCalendar(createCalendar(yearNow, ++selectedMonth));
-        this.initListeners(calendarTable);
-    });
+        //listeners for >> and <<
+        const previous = document.querySelector('#previous');
+        const next = document.querySelector('#next');
+        selectedMonth <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
+        previous.addEventListener('click', function() {
+            calendarDiv.innerHTML = '';
+            calendarTable = renderCalendar(createCalendar(yearNow, --selectedMonthCopy));
+            this.initListeners(calendarTable);
+        });
+        next.addEventListener('click', function() {
+            calendarDiv.innerHTML = '';
+            calendarTable = renderCalendar(createCalendar(yearNow, ++selectedMonthCopy));
+            this.initListeners(calendarTable);
+        });
 
 
     }
