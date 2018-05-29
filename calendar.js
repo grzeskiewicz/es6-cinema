@@ -65,11 +65,11 @@ export function renderCalendar(calendar) {
     selectedMonth <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
     previous.addEventListener('click', function() {
         calendarDiv.innerHTML = '';
-        renderCalendar(createCalendar(yearNow, --selectedMonthCopy));
+        renderCalendar(createCalendar(yearNow, --selectedMonth));
     });
     next.addEventListener('click', function() {
         calendarDiv.innerHTML = '';
-        renderCalendar(createCalendar(yearNow, ++selectedMonthCopy));
+        renderCalendar(createCalendar(yearNow, ++selectedMonth));
     });
 
 
