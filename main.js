@@ -90,12 +90,12 @@ const calendarCtrl = {
         selectedMonth <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
         previous.addEventListener('click', function() {
             calendarDiv.innerHTML = '';
-            calendarTable = renderCalendar(createCalendar(yearNow, --selectedMonthCopy));
+            let calendarTable = renderCalendar(createCalendar(yearNow, --selectedMonthCopy));
             calendarCtrl.initListeners(calendarTable);
         });
         next.addEventListener('click', function() {
             calendarDiv.innerHTML = '';
-            calendarTable = renderCalendar(createCalendar(yearNow, ++selectedMonthCopy));
+            let calendarTable = renderCalendar(createCalendar(yearNow, ++selectedMonthCopy));
             calendarCtrl.initListeners(calendarTable);
         });
     },
