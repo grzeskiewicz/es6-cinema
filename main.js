@@ -1,7 +1,7 @@
 import { authServices } from './services.js';
 import { API_URL, request } from './apiconnection.js';
 //import { calendarDiv, renderWeek, renderCalendar, calendard, yearNow, selectedMonth, monthNow, createCalendar } from './calendar.js';
-import { calendarini} from './calendar.js';
+import { calendarDiv,calendarini} from './calendar.js';
 
 
 Handlebars.registerHelper('for', function(from, to, block) {

@@ -2,7 +2,7 @@
 
 const MONTH_NAMES = 'January February March April May June July August September October November December'.split(' ');
 
-const calendarDiv = document.querySelector('#calendar');
+export const calendarDiv = document.querySelector('#calendar');
 const weekDiv = document.querySelector('#week');
 export const calendarini = {
     yearNow(){ return new Date().getFullYear();},
