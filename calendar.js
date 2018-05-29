@@ -163,6 +163,7 @@ export function createCalendar(year, month) {
         // iterate to next day
         iterator.setDate(iterator.getDate() + 1);
     }
+    selectedMonth=month;
     return results;
 }
 
