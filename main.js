@@ -83,13 +83,7 @@ const calendarCtrl = {
             });
         }
     },
-    initCalendar() {
-        let selectedMonthCopy = selectedMonth;
-        renderWeek(calendar);
-        let calendarTable = renderCalendar(calendar);
-        this.initListeners(calendarTable);
-
-        //listeners for >> and <<
+    initListenersMonths() {
         const previous = document.querySelector('#previous');
         const next = document.querySelector('#next');
         selectedMonth <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
@@ -103,6 +97,15 @@ const calendarCtrl = {
             calendarTable = renderCalendar(createCalendar(yearNow, ++selectedMonthCopy));
             calendarCtrl.initListeners(calendarTable);
         });
+    },
+    initCalendar() {
+        let selectedMonthCopy = selectedMonth;
+        renderWeek(calendar);
+        let calendarTable = renderCalendar(calendar);
+        this.initListeners(calendarTable);
+this.initListenersMonths();
+        //listeners for >> and <<
+
 
 
     }
