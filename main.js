@@ -84,6 +84,7 @@ const calendarCtrl = {
         }
     },
     initListenersMonths() {
+        let selectedMonthCopy = selectedMonth;
         const previous = document.querySelector('#previous');
         const next = document.querySelector('#next');
         selectedMonth <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
@@ -99,7 +100,7 @@ const calendarCtrl = {
         });
     },
     initCalendar() {
-        let selectedMonthCopy = selectedMonth;
+        
         renderWeek(calendar);
         let calendarTable = renderCalendar(calendar);
         this.initListeners(calendarTable);
