@@ -96,12 +96,12 @@ const calendarCtrl = {
         previous.addEventListener('click', function() {
             calendarDiv.innerHTML = '';
             calendarTable = renderCalendar(createCalendar(yearNow, --selectedMonthCopy));
-            this.initListeners(calendarTable);
+            calendarCtrl.initListeners(calendarTable);
         });
         next.addEventListener('click', function() {
             calendarDiv.innerHTML = '';
             calendarTable = renderCalendar(createCalendar(yearNow, ++selectedMonthCopy));
-            this.initListeners(calendarTable);
+            calendarCtrl.initListeners(calendarTable);
         });
 
 
