@@ -1,6 +1,6 @@
 import { authServices } from './services.js';
 import { API_URL, request } from './apiconnection.js';
-import { calendarDiv, renderWeek, renderCalendar, calendar, yearNow, selectedMonth, monthNow, createCalendar } from './calendar.js';
+import { calendarDiv, renderWeek, renderCalendar, calendard, yearNow, selectedMonth, monthNow, createCalendar } from './calendar.js';
 
 Handlebars.registerHelper('for', function(from, to, block) {
     var accum = '';
@@ -103,8 +103,8 @@ const calendarCtrl = {
     },
     initCalendar() {
         
-        renderWeek(calendar);
-        let calendarTable = renderCalendar(calendar);
+        renderWeek(calendard);
+        let calendarTable = renderCalendar(calendard);
         this.initListeners(calendarTable);
 this.initListenersMonths();
         //listeners for >> and <<
