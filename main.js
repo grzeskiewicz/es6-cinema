@@ -1,6 +1,8 @@
 import { authServices } from './services.js';
 import { API_URL, request } from './apiconnection.js';
-import { calendarDiv, renderWeek, renderCalendar, calendard, yearNow, selectedMonth, monthNow, createCalendar } from './calendar.js';
+//import { calendarDiv, renderWeek, renderCalendar, calendard, yearNow, selectedMonth, monthNow, createCalendar } from './calendar.js';
+import { calendarini} from './calendar.js';
+
 
 Handlebars.registerHelper('for', function(from, to, block) {
     var accum = '';
@@ -72,7 +74,7 @@ const view = {
         element.style.display = element.style.display === 'none' ? 'flex' : 'none';
     }
 }
-let selectedMonthCopy = selectedMonth;
+let selectedMonthCopy = calendarini.selectedMonth;
 const calendarCtrl = {
     initListeners(calendarTable) {
         const daysArray = calendarTable.querySelectorAll('tbody td');
@@ -87,24 +89,24 @@ const calendarCtrl = {
         
         const previous = document.querySelector('#previous');
         const next = document.querySelector('#next');
-        selectedMonthCopy <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
+        selectedMonthCopy <= calendarini.monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
         previous.addEventListener('click', function() {
             calendarDiv.innerHTML = '';
-            let calendarTable = renderCalendar(createCalendar(yearNow, --selectedMonthCopy));
+            let calendarTable = calendarini.renderCalendar(createCalendar(yearNow, --selectedMonthCopy));
             calendarCtrl.initListeners(calendarTable);
             calendarCtrl.initListenersMonths();
         });
         next.addEventListener('click', function() {
             calendarDiv.innerHTML = '';
-            let calendarTable = renderCalendar(createCalendar(yearNow, ++selectedMonthCopy));
+            let calendarTable = calendarini.renderCalendar(createCalendar(yearNow, ++selectedMonthCopy));
             calendarCtrl.initListeners(calendarTable);
             calendarCtrl.initListenersMonths();
         });
     },
     initCalendar() {
         
-        renderWeek(calendard);
-        let calendarTable = renderCalendar(calendard);
+        calendarini.renderWeek(calendard);
+        let calendarTable = calendarini.renderCalendar(calendard);
         this.initListeners(calendarTable);
 this.initListenersMonths();
         //listeners for >> and <<

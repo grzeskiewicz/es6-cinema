@@ -1,171 +1,161 @@
 'use strict';
+export const calendarini = {
+    yearNow: new Date().getFullYear(),
+    monthNow: new Date().getMonth(),
+    selectedMonth: new Date().getMonth(),
+    today: new Date(),
+    calendard: createCalendar(this.yearNow, this.selectedMonth),
+
+    renderCalendar(calendar) {
+        const p = document.createElement('p');
+        const table = document.createElement('table');
+        const thead = document.createElement('thead');
+        const tbody = document.createElement('tbody');
+        // iterate weeks
+        for (let j = 0; j < calendar.length; j++) {
+            // create table row for every week
+            const tr = document.createElement('tr');
+            const week = calendar[j];
+            // iterate days
+            for (let k = 0; k < week.length; k++) {
+                // create table cell for every day
+                const td = document.createElement('td');
+                const day = week[k];
+                // set day of month as table cell text content
+                td.textContent = day.date.getDate();
+                td.dataset.date = day.date;
+                if (day.date.getMonth() === this.today.getMonth() && day.date.getDate() === this.today.getDate()) td.classList.add('today');
+
+                // add before/after class
+                day.before && td.classList.add('before');
+                day.after && td.classList.add('after');
+
+                // mount table cell
+                tr.appendChild(td);
+            }
+            // mount table row
+            tbody.appendChild(tr);
+        }
+        // create month name
+        p.innerHTML = `<span id="previous"><<</span>  ${MONTH_NAMES[this.selectedMonth]} <span id="next"> >> </span>`;
+
+        // create thead
+        thead.innerHTML = '<tr><td>' + 'Mo Tu We Th Fr Sa Su'.split(' ').join('</td><td>') + '</td></tr>';
+
+        // mount thead & tbody
+        table.appendChild(thead);
+        table.appendChild(tbody);
+
+        calendarDiv.innerHTML = '';
+        // mount month name to container
+        calendarDiv.appendChild(p);
+        // mount table to container
+        calendarDiv.appendChild(table);
+
+        return table;
+    },
+
+    renderWeek(calendar) {
+        const p = document.createElement('p');
+        const table = document.createElement('table');
+        const thead = document.createElement('thead');
+        const tbody = document.createElement('tbody');
+        let thisWeek = false;
+        // iterate weeks
+        for (let j = 0; j < calendar.length; j++) {
+            // create table row for every week
+            const tr = document.createElement('tr');
+            const week = calendar[j];
+
+            // iterate days
+            for (let k = 0; k < week.length; k++) {
+                // create table cell for every day
+                const td = document.createElement('td');
+                const day = week[k];
+
+                // set day of month as table cell text content
+                td.textContent = day.date.getDate();
+                td.dataset.date = day.date;
+                if (day.date.getMonth() === this.today.getMonth() && day.date.getDate() === this.today.getDate()) {
+                    thisWeek = true;
+                    td.classList.add('today');
+                }
+                // add before/after class
+                day.before && td.classList.add('before');
+                day.after && td.classList.add('after');
+
+                // mount table cell
+                tr.appendChild(td);
+                td.addEventListener('click', function() {
+                    const pickedDate = new Date(this.dataset.date);
+                    console.log(pickedDate.toString());
+                    showingsCtrl.calendarShowings(pickedDate);
+                });
+            }
+            // mount table row
+            if (thisWeek) {
+                tbody.appendChild(tr);
+                break;
+            }
+
+        }
+
+        // create month name
+        //p.innerHTML = `<span id="previous"><<</span>  ${MONTH_NAMES[selectedMonth]} <span id="next"> >> </span>`;
+
+        // create thead
+        thead.innerHTML = '<tr><td>' + 'Mo Tu We Th Fr Sa Su'.split(' ').join('</td><td>') + '</td></tr>';
+
+        // mount thead & tbody
+        table.appendChild(thead);
+        table.appendChild(tbody);
+
+        // mount table to container
+        weekDiv.appendChild(table);
+    },
+
+
+    createCalendar(year, month) {
+        const results = [];
+
+        // find out first and last days of the month
+        const firstDate = new Date(year, month, 1); //first day of the month
+        const lastDate = new Date(year, month + 1, 0); //last day of month
+        // calculate first monday and last sunday
+        const firstMonday = getFirstMonday(firstDate);
+        const lastSunday = getLastSunday(lastDate);
+
+        // iterate days starting from first monday
+        let iterator = new Date(firstMonday);
+        let i = 0;
+
+        // ..until last sunday
+        while (iterator <= lastSunday) {
+            if (i++ % 7 === 0) {
+                // start new week when monday
+                var week = [];
+                results.push(week);
+            }
+
+            // push day to week
+            week.push({
+                date: new Date(iterator),
+                before: iterator < firstDate, // add indicator if before current month
+                after: iterator > lastDate // add indicator if after current month
+            });
+
+            // iterate to next day
+            iterator.setDate(iterator.getDate() + 1);
+        }
+        this.selectedMonth = month;
+        return results;
+    }
+}
+
 const MONTH_NAMES = 'January February March April May June July August September October November December'.split(' ');
 
-export const calendarDiv = document.querySelector('#calendar');
-export const weekDiv = document.querySelector('#week');
-
-export let yearNow = new Date().getFullYear();
-export const monthNow = new Date().getMonth();
-export let selectedMonth = new Date().getMonth();
-const today = new Date();
-
-
-export const calendard = createCalendar(yearNow, selectedMonth);
-
-export function renderCalendar(calendar) {
-    const p = document.createElement('p');
-    const table = document.createElement('table');
-    const thead = document.createElement('thead');
-    const tbody = document.createElement('tbody');
-    // iterate weeks
-    for (let j = 0; j < calendar.length; j++) {
-        // create table row for every week
-        const tr = document.createElement('tr');
-        const week = calendar[j];
-        // iterate days
-        for (let k = 0; k < week.length; k++) {
-            // create table cell for every day
-            const td = document.createElement('td');
-            const day = week[k];
-            // set day of month as table cell text content
-            td.textContent = day.date.getDate();
-            td.dataset.date = day.date;
-            if (day.date.getMonth() === today.getMonth() && day.date.getDate() === today.getDate()) td.classList.add('today');
-
-            // add before/after class
-            day.before && td.classList.add('before');
-            day.after && td.classList.add('after');
-
-            // mount table cell
-            tr.appendChild(td);
-        }
-        // mount table row
-        tbody.appendChild(tr);
-    }
-console.log(selectedMonth);
-    // create month name
-    p.innerHTML = `<span id="previous"><<</span>  ${MONTH_NAMES[selectedMonth]} <span id="next"> >> </span>`;
-
-    // create thead
-    thead.innerHTML = '<tr><td>' + 'Mo Tu We Th Fr Sa Su'.split(' ').join('</td><td>') + '</td></tr>';
-
-    // mount thead & tbody
-    table.appendChild(thead);
-    table.appendChild(tbody);
-
-    calendarDiv.innerHTML = '';
-    // mount month name to container
-    calendarDiv.appendChild(p);
-    // mount table to container
-    calendarDiv.appendChild(table);
-
-
-
-    return table;
-}
-
-
-
-export function renderWeek(calendar) {
-    const p = document.createElement('p');
-    const table = document.createElement('table');
-    const thead = document.createElement('thead');
-    const tbody = document.createElement('tbody');
-    let thisWeek = false;
-    // iterate weeks
-    for (let j = 0; j < calendar.length; j++) {
-        // create table row for every week
-        const tr = document.createElement('tr');
-        const week = calendar[j];
-
-        // iterate days
-        for (let k = 0; k < week.length; k++) {
-            // create table cell for every day
-            const td = document.createElement('td');
-            const day = week[k];
-
-            // set day of month as table cell text content
-            td.textContent = day.date.getDate();
-            td.dataset.date = day.date;
-            if (day.date.getMonth() === today.getMonth() && day.date.getDate() === today.getDate()) {
-                thisWeek = true;
-                td.classList.add('today');
-            }
-            // add before/after class
-            day.before && td.classList.add('before');
-            day.after && td.classList.add('after');
-
-            // mount table cell
-            tr.appendChild(td);
-            td.addEventListener('click', function() {
-                const pickedDate = new Date(this.dataset.date);
-                console.log(pickedDate.toString());
-                showingsCtrl.calendarShowings(pickedDate);
-            });
-        }
-        // mount table row
-        if (thisWeek) {
-            tbody.appendChild(tr);
-            break;
-        }
-
-    }
-
-    // create month name
-    //p.innerHTML = `<span id="previous"><<</span>  ${MONTH_NAMES[selectedMonth]} <span id="next"> >> </span>`;
-
-    // create thead
-    thead.innerHTML = '<tr><td>' + 'Mo Tu We Th Fr Sa Su'.split(' ').join('</td><td>') + '</td></tr>';
-
-    // mount thead & tbody
-    table.appendChild(thead);
-    table.appendChild(tbody);
-
-    // mount table to container
-    weekDiv.appendChild(table);
-}
-
-
-
-
-
-
-export function createCalendar(year, month) {
-    console.log(month);
-    const results = [];
-
-    // find out first and last days of the month
-    const firstDate = new Date(year, month, 1); //first day of the month
-    const lastDate = new Date(year, month + 1, 0); //last day of month
-    // calculate first monday and last sunday
-    const firstMonday = getFirstMonday(firstDate);
-    const lastSunday = getLastSunday(lastDate);
-
-    // iterate days starting from first monday
-    let iterator = new Date(firstMonday);
-    let i = 0;
-
-    // ..until last sunday
-    while (iterator <= lastSunday) {
-        if (i++ % 7 === 0) {
-            // start new week when monday
-            var week = [];
-            results.push(week);
-        }
-
-        // push day to week
-        week.push({
-            date: new Date(iterator),
-            before: iterator < firstDate, // add indicator if before current month
-            after: iterator > lastDate // add indicator if after current month
-        });
-
-        // iterate to next day
-        iterator.setDate(iterator.getDate() + 1);
-    }
-    selectedMonth=month;
-    return results;
-}
+const calendarDiv = document.querySelector('#calendar');
+const weekDiv = document.querySelector('#week');
 
 function fixMonday(day) {
     day || (day = 7);
