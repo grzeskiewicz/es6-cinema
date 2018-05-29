@@ -106,7 +106,7 @@ const calendarCtrl = {
     initCalendar() {
         
         calendarini.renderWeek(calendarini.calendard);
-        let calendarTable = calendarini.renderCalendar(calendard);
+        let calendarTable = calendarini.renderCalendar(calendarini.calendard);
         this.initListeners(calendarTable);
 this.initListenersMonths();
         //listeners for >> and <<
