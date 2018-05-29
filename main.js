@@ -87,19 +87,7 @@ const calendarCtrl = {
         }
 
 
-        //listeners for >> and <<
-        const previous = document.querySelector('#previous');
-        const next = document.querySelector('#next');
-        selectedMonth <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
-        previous.addEventListener('click', function() {
-            calendarDiv.innerHTML = '';
 
-            renderCalendar(createCalendar(yearNow, --selectedMonthCopy));
-        });
-        next.addEventListener('click', function() {
-            calendarDiv.innerHTML = '';
-            renderCalendar(createCalendar(yearNow, ++selectedMonthCopy));
-        });
     }
 }
 
