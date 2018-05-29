@@ -1,10 +1,10 @@
 'use strict';
 export const calendarini = {
-    yearNow: new Date().getFullYear(),
-    monthNow: new Date().getMonth(),
+    yearNow(){ return new Date().getFullYear();},
+    monthNow(){return new Date().getMonth();},
     selectedMonth: new Date().getMonth(),
-    today: new Date(),
-    calendard: this.createCalendar(this.yearNow, this.selectedMonth),
+    today() {return new Date();},
+    calendard: this.createCalendar(this.yearNow(), this.selectedMonth()),
 
     renderCalendar(calendar) {
         const p = document.createElement('p');
@@ -24,7 +24,7 @@ export const calendarini = {
                 // set day of month as table cell text content
                 td.textContent = day.date.getDate();
                 td.dataset.date = day.date;
-                if (day.date.getMonth() === this.today.getMonth() && day.date.getDate() === this.today.getDate()) td.classList.add('today');
+                if (day.date.getMonth() === this.today().getMonth() && day.date.getDate() === this.today().getDate()) td.classList.add('today');
 
                 // add before/after class
                 day.before && td.classList.add('before');
@@ -76,7 +76,7 @@ export const calendarini = {
                 // set day of month as table cell text content
                 td.textContent = day.date.getDate();
                 td.dataset.date = day.date;
-                if (day.date.getMonth() === this.today.getMonth() && day.date.getDate() === this.today.getDate()) {
+                if (day.date.getMonth() === this.today().getMonth() && day.date.getDate() === this.today().getDate()) {
                     thisWeek = true;
                     td.classList.add('today');
                 }
