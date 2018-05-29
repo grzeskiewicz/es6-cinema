@@ -74,10 +74,7 @@ const view = {
 }
 
 const calendarCtrl = {
-    initCalendar() {
-        let selectedMonthCopy=selectedMonth;
-        renderWeek(calendar);
-        const calendarTable = renderCalendar(calendar);
+    initListeners(calendarTable) {
         const daysArray = calendarTable.querySelectorAll('tbody td');
         for (const day of daysArray) {
             day.addEventListener('click', function() {
@@ -85,7 +82,27 @@ const calendarCtrl = {
                 showingsCtrl.calendarShowings(pickedDate);
             });
         }
+    }
+    initCalendar() {
+        let selectedMonthCopy = selectedMonth;
+        renderWeek(calendar);
+        let calendarTable = renderCalendar(calendar);
+        this.initListeners(calendarTable);
 
+    //listeners for >> and <<
+    const previous = document.querySelector('#previous');
+    const next = document.querySelector('#next');
+    selectedMonth <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
+    previous.addEventListener('click', function() {
+        calendarDiv.innerHTML = '';
+        calendarTable=renderCalendar(createCalendar(yearNow, --selectedMonth));
+        this.initListeners(calendarTable);
+    });
+    next.addEventListener('click', function() {
+        calendarDiv.innerHTML = '';
+        calendarTable=renderCalendar(createCalendar(yearNow, ++selectedMonth));
+        this.initListeners(calendarTable);
+    });
 
 
     }
