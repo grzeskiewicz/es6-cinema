@@ -72,7 +72,7 @@ const view = {
         element.style.display = element.style.display === 'none' ? 'flex' : 'none';
     }
 }
-
+let selectedMonthCopy = selectedMonth;
 const calendarCtrl = {
     initListeners(calendarTable) {
         const daysArray = calendarTable.querySelectorAll('tbody td');
@@ -82,10 +82,9 @@ const calendarCtrl = {
                 showingsCtrl.calendarShowings(pickedDate);
             });
         }
-        calendarCtrl.initListenersMonths();
     },
     initListenersMonths() {
-        let selectedMonthCopy = selectedMonth;
+        
         const previous = document.querySelector('#previous');
         const next = document.querySelector('#next');
         selectedMonth <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
