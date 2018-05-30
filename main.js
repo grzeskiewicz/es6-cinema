@@ -80,11 +80,11 @@ const calendarCtrl = {
             day.addEventListener('click', function() {
                 const pickedDate = new Date(this.dataset.date);
                 showingsCtrl.calendarShowings(pickedDate);
+                day.classList.add('date-clicked')
             });
         }
     },
     initListenersMonths() {
-        
         const previous = document.querySelector('#previous');
         const next = document.querySelector('#next');
         selectedMonthCopy <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
@@ -102,15 +102,10 @@ const calendarCtrl = {
         });
     },
     initCalendar() {
-        
         renderWeek(calendard);
         let calendarTable = renderCalendar(calendard);
         this.initListeners(calendarTable);
-this.initListenersMonths();
-        //listeners for >> and <<
-
-
-
+        this.initListenersMonths();
     }
 }
 

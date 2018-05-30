@@ -177,6 +177,10 @@ flex-flow: row wrap;*/
     animation: spin 1s linear infinite;
 }
 
+.date-clicked {
+    background-color:grey;
+}
+
 
 /* Safari */
 

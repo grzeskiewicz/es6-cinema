@@ -4,7 +4,6 @@ const MONTH_NAMES = 'January February March April May June July August September
 
 export const calendarDiv = document.querySelector('#calendar');
 export const weekDiv = document.querySelector('#week');
-
 export let yearNow = new Date().getFullYear();
 export const monthNow = new Date().getMonth();
 export let selectedMonth = new Date().getMonth();
