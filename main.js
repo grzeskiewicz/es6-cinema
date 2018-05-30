@@ -81,6 +81,12 @@ const calendarCtrl = {
                 const pickedDate = new Date(this.dataset.date);
                 showingsCtrl.calendarShowings(pickedDate);
                 day.classList.add('date-clicked')
+                for (const day2 of daysArray) {
+                    if (day2.classList.contains('date-clicked') && day2 !== day) {
+                        day2.classList.remove('date-clicked');
+                    }
+                }
+
             });
         }
     },
