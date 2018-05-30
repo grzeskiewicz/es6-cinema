@@ -57,7 +57,8 @@ const view = {
         let sourceElem = document.getElementById(source).innerHTML;
         let template = Handlebars.compile(sourceElem);
         let html = template(context);
-        document.getElementById(output).innerHTML = html;
+        //document.getElementById(output).innerHTML = html;
+        document.getElementById(output).appendChild(html);
         //console.log(document.getElementById(output).innerHTML);
     },
     show(element) {
