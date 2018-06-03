@@ -194,9 +194,9 @@ export const showingsCtrl = {
 
                         detailsDiv.classList.add('activeshow');
                         showing.classList.add('active');
-                        const showingDetails = showing.querySelector('.showing-details');
+                       // const showingDetails = showing.querySelector('.showing-details');
                         const poster = showing.querySelector('.poster');
-                        showingDetails.style.display = 'block';
+                       // showingDetails.style.display = 'block';
                         poster.style.display = 'block';
                         [...showingsCtrl.showingsList()].forEach(showingObj => {
                             if (showingObj.classList.contains('active') && showingObj !== showing) {
@@ -204,10 +204,10 @@ export const showingsCtrl = {
                             }
                             const showingObjDetails = showingObj.querySelector('.showing-details');
                             const showingObjPoster = showingObj.querySelector('.poster');
-                            if (showingObjDetails.style.display === 'block' && showingObjDetails !== showingDetails) {
+                          /*  if (showingObjDetails.style.display === 'block' && showingObjDetails !== showingDetails) {
                                 showingObjDetails.style.display = 'none';
                                 showingObjPoster.style.display = 'none';
-                            }
+                            }*/
 
                         });
                         showingsCtrl.showingsDiv().classList.add('blur');
