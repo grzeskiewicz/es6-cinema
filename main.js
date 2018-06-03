@@ -176,7 +176,7 @@ export const showingsCtrl = {
         [...this.titlesList()].forEach(title => {
             title.addEventListener('click', function() {
                 view.renderContent("entry-template", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
-                view.renderContent("entry-template-film", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent][0])}}`), "film"); //description of the film
+                view.renderContent("entry-template-film", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent][0])}}`), "film"); //description of the film 
                 [...showingsCtrl.showingsList()].forEach(showing => {
 
                     //view.hide(showing.querySelector('.showing-details'));
@@ -186,17 +186,17 @@ export const showingsCtrl = {
                         event.preventDefault();
                         const detailsDiv = showingsCtrl.details();
                         view.show(detailsDiv);
-                         detailsDiv.querySelector('#close').addEventListener('click', function() {
+                        /* detailsDiv.querySelector('#close').addEventListener('click', function() {
                              detailsDiv.classList.remove('activeshow');
                              showingsCtrl.showingsDiv().classList.remove('blur');
                              view.hide(detailsDiv);
-                         });
+                         });*/
 
                         detailsDiv.classList.add('activeshow');
                         showing.classList.add('active');
-                       /* const showingDetails = showing.querySelector('.showing-details');
+                        const showingDetails = showing.querySelector('.showing-details');
                         const poster = showing.querySelector('.poster');
-                       // showingDetails.style.display = 'block';
+                        showingDetails.style.display = 'block';
                         poster.style.display = 'block';
                         [...showingsCtrl.showingsList()].forEach(showingObj => {
                             if (showingObj.classList.contains('active') && showingObj !== showing) {
@@ -208,7 +208,6 @@ export const showingsCtrl = {
                                 showingObjDetails.style.display = 'none';
                                 showingObjPoster.style.display = 'none';
                             }
-                            */
 
                         });
                         showingsCtrl.showingsDiv().classList.add('blur');
