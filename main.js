@@ -186,11 +186,11 @@ export const showingsCtrl = {
                         event.preventDefault();
                         const detailsDiv = showingsCtrl.details();
                         view.show(detailsDiv);
-                        /* detailsDiv.querySelector('#close').addEventListener('click', function() {
+                         detailsDiv.querySelector('#close').addEventListener('click', function() {
                              detailsDiv.classList.remove('activeshow');
                              showingsCtrl.showingsDiv().classList.remove('blur');
                              view.hide(detailsDiv);
-                         });*/
+                         });
 
                         detailsDiv.classList.add('activeshow');
                         showing.classList.add('active');
@@ -204,10 +204,11 @@ export const showingsCtrl = {
                             }
                             const showingObjDetails = showingObj.querySelector('.showing-details');
                             const showingObjPoster = showingObj.querySelector('.poster');
-                          /*  if (showingObjDetails.style.display === 'block' && showingObjDetails !== showingDetails) {
+                            if (showingObjDetails.style.display === 'block' && showingObjDetails !== showingDetails) {
                                 showingObjDetails.style.display = 'none';
                                 showingObjPoster.style.display = 'none';
-                            }*/
+                            }
+                            */
 
                         });
                         showingsCtrl.showingsDiv().classList.add('blur');
