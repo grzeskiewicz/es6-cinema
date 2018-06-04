@@ -194,11 +194,11 @@ export const showingsCtrl = {
 
                         detailsDiv.classList.add('activeshow');
                         showing.classList.add('active');
-                        const showingDetails = showing.querySelector('.showing-details');
-                        const poster = showing.querySelector('.poster');
-                        showingDetails.style.display = 'block';
-                        poster.style.display = 'block';
-                        [...showingsCtrl.showingsList()].forEach(showingObj => {
+                        //const showingDetails = showing.querySelector('.showing-details');
+                        //const poster = showing.querySelector('.poster');
+                        //showingDetails.style.display = 'block';
+                        //poster.style.display = 'block';
+                        /*[...showingsCtrl.showingsList()].forEach(showingObj => {
                             if (showingObj.classList.contains('active') && showingObj !== showing) {
                                 showingObj.classList.remove('active');
                             }
@@ -209,7 +209,7 @@ export const showingsCtrl = {
                                 showingObjPoster.style.display = 'none';
                             }
 
-                        });
+                        });*/
                         showingsCtrl.showingsDiv().classList.add('blur');
                         showingsService.selectById(event.currentTarget.dataset.showingId);
                         view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
