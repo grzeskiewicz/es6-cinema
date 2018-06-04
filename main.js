@@ -124,7 +124,7 @@ export const showingsCtrl = {
     titlesList() { return document.querySelectorAll('.title'); },
     details() { return document.querySelector('#details'); },
     dateParser(stringdate) {
-        const dateFormat = 'DD.MM.YYYY, HH:mm';
+        const dateFormat = 'HH:mm';
         return moment(stringdate, 'YYYY-MM-DDThh:mm:ssZ').format(dateFormat);
     },
     sortShowings(sList) {
