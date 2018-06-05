@@ -79,10 +79,8 @@ const calendarCtrl = {
         const daysArray = calendarTable.querySelectorAll('tbody td');
         for (const day of daysArray) {
             day.addEventListener('click', function() {
-                const showlist=document.querySelector('#showlist');
-                const details=document.querySelector('#details');
-                view.hide(showlist);
-                view.hide(details);
+                const showingsWrapper=document.querySelector('#showings-wrapper');
+                view.hide(showingsWrapper);
                 const pickedDate = new Date(this.dataset.date);
                 showingsCtrl.calendarShowings(pickedDate);
                 day.classList.add('date-clicked')
@@ -181,8 +179,8 @@ export const showingsCtrl = {
             title.addEventListener('click', function() {
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(titles[1][title.textContent][0])}`), "film"); //description of the film 
-                const showlist=document.querySelector('#showlist');
-                view.show(showlist);
+                const showingsWrapper=document.querySelector('#showings-wrapper');
+                view.show(showingsWrapper);
                 [...showingsCtrl.showingsList()].forEach(showing => {
 
                     //view.hide(showing.querySelector('.showing-details'));
