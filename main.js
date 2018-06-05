@@ -49,6 +49,7 @@ fetch(request(API_URL + "showings", 'GET'))
         authServices.loadUserCredentials();
         const customerInfo = document.querySelector('#customer-info');
         view.hide(customerInfo);
+        view.hide(showingsWrapper);
         loginCtrl.getInfo();
     });
 
@@ -80,7 +81,6 @@ const calendarCtrl = {
         for (const day of daysArray) {
             day.addEventListener('click', function() {
                 const showingsWrapper=document.querySelector('#showings-wrapper');
-                view.hide(showingsWrapper);
                 const pickedDate = new Date(this.dataset.date);
                 showingsCtrl.calendarShowings(pickedDate);
                 day.classList.add('date-clicked')
@@ -167,6 +167,7 @@ export const showingsCtrl = {
                 result.push(showcopy);
             }
         }
+        console.log(result);
         showingsCtrl.list(result);
         seatsCtrl.toggleListener();
 
