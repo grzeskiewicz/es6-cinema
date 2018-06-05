@@ -179,6 +179,8 @@ export const showingsCtrl = {
             title.addEventListener('click', function() {
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(titles[1][title.textContent][0])}`), "film"); //description of the film 
+                const showlist=document.querySelector('#showlist');
+                view.show(showlist);
                 [...showingsCtrl.showingsList()].forEach(showing => {
 
                     //view.hide(showing.querySelector('.showing-details'));
