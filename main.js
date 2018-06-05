@@ -83,7 +83,9 @@ const calendarCtrl = {
             day.addEventListener('click', function() {
                 const showingsWrapper=document.querySelector('#showings-wrapper');
                 const pickedDate = new Date(this.dataset.date);
-                if (showingsCtrl.calendarShowings(pickedDate)) {
+                const showings=showingsCtrl.calendarShowings(pickedDate);
+console.log(showings);
+                if (showings) {
                     view.show(showingsWrapper);
                 } else {
                     view.hide(showingsWrapper);
