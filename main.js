@@ -79,6 +79,8 @@ const calendarCtrl = {
         const daysArray = calendarTable.querySelectorAll('tbody td');
         for (const day of daysArray) {
             day.addEventListener('click', function() {
+                const showlist=document.querySelector('#showlist');
+                view.hide(showlist);
                 const pickedDate = new Date(this.dataset.date);
                 showingsCtrl.calendarShowings(pickedDate);
                 day.classList.add('date-clicked')
