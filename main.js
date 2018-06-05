@@ -85,6 +85,8 @@ const calendarCtrl = {
                 const pickedDate = new Date(this.dataset.date);
                 if (showingsCtrl.calendarShowings(pickedDate)) {
                     view.show(showingsWrapper);
+                } else {
+                    view.hide(showingsWrapper);
                 }
                 day.classList.add('date-clicked')
                 for (const day2 of daysArray) {
