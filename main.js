@@ -193,7 +193,7 @@ export const showingsCtrl = {
                         console.log(this);
                         event.preventDefault();
                         const detailsDiv = showingsCtrl.details();
-                        view.show(detailsDiv);
+                        //view.show(detailsDiv);
                         /* detailsDiv.querySelector('#close').addEventListener('click', function() {
                              detailsDiv.classList.remove('activeshow');
                              showingsCtrl.showingsDiv().classList.remove('blur');
