@@ -48,6 +48,7 @@ fetch(request(API_URL + "showings", 'GET'))
         showingsService.add(showings);
         authServices.loadUserCredentials();
         const customerInfo = document.querySelector('#customer-info');
+        const showingsWrapper=document.querySelector('#showings-wrapper');
         view.hide(customerInfo);
         view.hide(showingsWrapper);
         loginCtrl.getInfo();
