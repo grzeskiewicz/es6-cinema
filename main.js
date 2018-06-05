@@ -85,7 +85,7 @@ const calendarCtrl = {
                 const pickedDate = new Date(this.dataset.date);
                 const showings=showingsCtrl.calendarShowings(pickedDate);
 console.log(showings);
-                if (showings) {
+                if (showings.length>0) {
                     view.show(showingsWrapper);
                 } else {
                     view.hide(showingsWrapper);
