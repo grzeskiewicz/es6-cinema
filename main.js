@@ -83,7 +83,9 @@ const calendarCtrl = {
             day.addEventListener('click', function() {
                 const showingsWrapper=document.querySelector('#showings-wrapper');
                 const pickedDate = new Date(this.dataset.date);
-                showingsCtrl.calendarShowings(pickedDate);
+                if (showingsCtrl.calendarShowings(pickedDate)) {
+                    view.show(showingsWrapper);
+                }
                 day.classList.add('date-clicked')
                 for (const day2 of daysArray) {
                     if (day2.classList.contains('date-clicked') && day2 !== day) {
@@ -168,9 +170,9 @@ export const showingsCtrl = {
                 result.push(showcopy);
             }
         }
-        console.log(result);
         showingsCtrl.list(result);
         seatsCtrl.toggleListener();
+        return result;
 
     },
     list(showings) {
