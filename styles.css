@@ -19,13 +19,13 @@ body {
     justify-content: center;
 }
 
-#showings {
+#film-titles {
     display: flex;
     flex-flow: row wrap;
     border-style: solid;
 }
 
-#showings>*,
+#film-titles>*,
 #showlist>* {
     flex: 1 100%;
     display: flex;
@@ -207,7 +207,7 @@ flex-flow: row wrap;*/
     #wrapper {
         justify-content: center;
     }
-    #showings,
+    #film-titles,
     #showlist {
         flex: 0 30%;
         order: 1;

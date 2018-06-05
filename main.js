@@ -172,7 +172,7 @@ export const showingsCtrl = {
     list(showings) {
         this.sortShowings(showings);
         const titles = this.groupShowings(showings);
-        view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "showings");
+        view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "film-titles");
         [...this.titlesList()].forEach(title => {
             title.addEventListener('click', function() {
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
