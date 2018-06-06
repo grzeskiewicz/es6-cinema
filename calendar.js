@@ -14,6 +14,7 @@ export const calendard = createCalendar(yearNow, selectedMonth);
 
 export function renderCalendar(calendar) {
     const p = document.createElement('p');
+    const p2 = document.createElement('p');
     const table = document.createElement('table');
     const thead = document.createElement('thead');
     const tbody = document.createElement('tbody');
@@ -58,7 +59,8 @@ export function renderCalendar(calendar) {
     calendarDiv.appendChild(p);
     // mount table to container
     calendarDiv.appendChild(table);
-
+    p2.innerHTML = '▼';
+    calendarDiv.appendChild(p2);
 
 
     return table;
@@ -162,7 +164,7 @@ export function createCalendar(year, month) {
         // iterate to next day
         iterator.setDate(iterator.getDate() + 1);
     }
-    selectedMonth=month;
+    selectedMonth = month;
     return results;
 }
 
