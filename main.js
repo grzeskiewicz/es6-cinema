@@ -84,6 +84,8 @@ const calendarCtrl = {
         for (const day of daysArray) {
             day.addEventListener('click', function() {
 const showlist=document.querySelector('#showlist');
+const details=document.querySelector('#details');
+details.innerHTML='';
                 const showingsWrapper = document.querySelector('#showings-wrapper');
                 const pickedDate = new Date(this.dataset.date);
                 view.hide(showlist);
