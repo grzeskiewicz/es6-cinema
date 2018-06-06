@@ -213,6 +213,7 @@ export const showingsCtrl = {
                              showingsCtrl.showingsDiv().classList.remove('blur');
                              view.hide(detailsDiv);
                          });*/
+                         view.show(detailsDiv);
 
                         detailsDiv.classList.add('activeshow');
                         showing.classList.add('active');
