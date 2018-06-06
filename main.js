@@ -48,7 +48,9 @@ fetch(request(API_URL + "showings", 'GET'))
         showingsService.add(showings);
         authServices.loadUserCredentials();
         const customerInfo = document.querySelector('#customer-info');
-        const showingsWrapper=document.querySelector('#showings-wrapper');
+        const showingsWrapper = document.querySelector('#showings-wrapper');
+
+
         view.hide(customerInfo);
         view.hide(showingsWrapper);
         loginCtrl.getInfo();
@@ -81,11 +83,14 @@ const calendarCtrl = {
         const daysArray = calendarTable.querySelectorAll('tbody td');
         for (const day of daysArray) {
             day.addEventListener('click', function() {
-                const showingsWrapper=document.querySelector('#showings-wrapper');
+const showlist=document.querySelector('#showlist');
+                const showingsWrapper = document.querySelector('#showings-wrapper');
                 const pickedDate = new Date(this.dataset.date);
-                const showings=showingsCtrl.calendarShowings(pickedDate);
-console.log(showings);
-                if (showings.length>0) {
+                view.hide(showlist);
+                const showings = showingsCtrl.calendarShowings(pickedDate);
+                view.show(showlist);
+                console.log(showings);
+                if (showings.length > 0) {
                     view.show(showingsWrapper);
                 } else {
                     view.hide(showingsWrapper);
@@ -187,7 +192,7 @@ export const showingsCtrl = {
             title.addEventListener('click', function() {
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(titles[1][title.textContent][0])}`), "film"); //description of the film 
-                const showingsWrapper=document.querySelector('#showings-wrapper');
+                const showingsWrapper = document.querySelector('#showings-wrapper');
                 view.show(showingsWrapper);
                 [...showingsCtrl.showingsList()].forEach(showing => {
 
@@ -222,7 +227,7 @@ export const showingsCtrl = {
                             }
 
                         });*/
-                       // showingsCtrl.showingsDiv().classList.add('blur');
+                        // showingsCtrl.showingsDiv().classList.add('blur');
                         showingsService.selectById(event.currentTarget.dataset.showingId);
                         view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
                         seatsCtrl.disableListener();
