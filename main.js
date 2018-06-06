@@ -88,6 +88,7 @@ const showlist=document.querySelector('#showlist');
                 const pickedDate = new Date(this.dataset.date);
                 view.hide(showlist);
                 const showings = showingsCtrl.calendarShowings(pickedDate);
+                showlist.innerHTML='';
                 view.show(showlist);
                 console.log(showings);
                 if (showings.length > 0) {
