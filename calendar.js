@@ -59,7 +59,7 @@ export function renderCalendar(calendar) {
     calendarDiv.appendChild(p);
     // mount table to container
     calendarDiv.appendChild(table);
-    p2.innerHTML = '▼';
+    p2.textContent = '▼';
     calendarDiv.appendChild(p2);
 
 
