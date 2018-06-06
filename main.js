@@ -85,10 +85,11 @@ const calendarCtrl = {
             day.addEventListener('click', function() {
                 const showlist = document.querySelector('#showlist');
                 const seats = document.querySelector('#seats');
-                
+                const details = document.querySelector('#details');
                 const showingsWrapper = document.querySelector('#showings-wrapper');
                 const pickedDate = new Date(this.dataset.date);
                 view.hide(showlist);
+                view.hide(details);
                 const showings = showingsCtrl.calendarShowings(pickedDate);
                 showlist.innerHTML = '';
                 seats.innerHTML = '';
