@@ -91,7 +91,7 @@ const calendarCtrl = {
                 view.hide(showlist);
                 const showings = showingsCtrl.calendarShowings(pickedDate);
                 showlist.innerHTML = '';
-                details.innerHTML = '';
+               // details.innerHTML = '';
                 view.show(showlist);
                 console.log(showings);
                 if (showings.length > 0) {
