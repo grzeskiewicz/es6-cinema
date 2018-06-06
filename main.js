@@ -83,14 +83,15 @@ const calendarCtrl = {
         const daysArray = calendarTable.querySelectorAll('tbody td');
         for (const day of daysArray) {
             day.addEventListener('click', function() {
-const showlist=document.querySelector('#showlist');
-const details=document.querySelector('#details');
-details.innerHTML='';
+                const showlist = document.querySelector('#showlist');
+                const details = document.querySelector('#details');
+                
                 const showingsWrapper = document.querySelector('#showings-wrapper');
                 const pickedDate = new Date(this.dataset.date);
                 view.hide(showlist);
                 const showings = showingsCtrl.calendarShowings(pickedDate);
-                showlist.innerHTML='';
+                showlist.innerHTML = '';
+                details.innerHTML = '';
                 view.show(showlist);
                 console.log(showings);
                 if (showings.length > 0) {
