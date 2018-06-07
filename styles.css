@@ -26,6 +26,7 @@ body {
 }
 
 #roll {
+    text-decoration-style: none;
     position:absolute;
     top:0;
     right:1rem;
