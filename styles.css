@@ -34,6 +34,7 @@ body {
 
 #roll:hover{
     color:red;
+    cursor: pointer;
 }
 
 #film-titles {
