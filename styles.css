@@ -24,6 +24,12 @@ body {
     position:fixed;
 }
 
+#roll {
+    position:absolute;
+    top:0;
+    right:0;
+}
+
 #film-titles {
     display: flex;
     flex-flow: row wrap;
