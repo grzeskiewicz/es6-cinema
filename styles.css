@@ -19,6 +19,11 @@ body {
     justify-content: center;
 }
 
+
+#cal-wrapper{
+    position:fixed;
+}
+
 #film-titles {
     display: flex;
     flex-flow: row wrap;
