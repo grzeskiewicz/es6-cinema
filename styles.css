@@ -31,6 +31,10 @@ body {
     right:1rem;
 }
 
+#roll:hover{
+    color:red;
+}
+
 #film-titles {
     display: flex;
     flex-flow: row wrap;
