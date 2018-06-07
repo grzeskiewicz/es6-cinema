@@ -109,6 +109,11 @@ const calendarCtrl = {
 
             });
         }
+const roll=document.querySelector('#roll');
+roll.addEventListener('click', function() {
+alert('O kurwa');
+});
+
     },
     initListenersMonths() {
         const previous = document.querySelector('#previous');
