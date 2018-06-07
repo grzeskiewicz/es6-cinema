@@ -135,7 +135,7 @@ cal.style.visibility=cal.style.visibility=== 'hidden' ? 'visible' : 'hidden';
         });
     },
     initCalendar() {
-        renderWeek(calendard);
+        //renderWeek(calendard);
         let calendarTable = renderCalendar(calendard);
         this.initListeners(calendarTable);
         this.initListenersMonths();
