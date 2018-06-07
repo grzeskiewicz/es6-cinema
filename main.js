@@ -113,7 +113,8 @@ const calendarCtrl = {
 const roll=document.querySelector('#roll');
 console.log(roll);
 roll.addEventListener('click', function() {
-console.log('heheszki');
+const cal=document.querySelector('#calendar');
+cal.style.visibility='hidden';
 });
     },
     initListenersMonths() {
