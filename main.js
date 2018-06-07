@@ -111,6 +111,7 @@ const calendarCtrl = {
         }
 
 const roll=document.querySelector('#roll');
+console.log(roll);
 roll.addEventListener('click', function() {
 alert('O kurwa');
 });
