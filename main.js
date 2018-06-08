@@ -67,7 +67,7 @@ const view = {
     },
     show(element) {
         // element.classList.remove('visuallyhidden').add('visuallyvisible');
-        element.style.display = 'block'
+        element.style.display = ''
     },
     hide(element) {
         element.style.display = 'none';
