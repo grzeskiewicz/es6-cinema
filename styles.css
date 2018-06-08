@@ -51,7 +51,7 @@ body {
 }
 
 #times-list {
-    flex:1 100%;
+   align-items:center;
 }
 .showing {
     border-style: solid;
