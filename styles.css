@@ -50,6 +50,11 @@ body {
     transition: width 2s, height 2s;*/
 }
 
+#showing-wrapper{
+    display:flex;
+}
+
+
 #times-list {
    align-items:center;
    justify-content: center;
