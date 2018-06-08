@@ -86,7 +86,7 @@ const calendarCtrl = {
         const daysArray = calendarTable.querySelectorAll('tbody td');
         for (const day of daysArray) {
             day.addEventListener('click', function() {
-                renderWeek(calendard, day.dataset.date);
+
                 const showlist = document.querySelector('#showlist');
                 const seats = document.querySelector('#seats');
                 const details = document.querySelector('#details');
@@ -109,6 +109,9 @@ const calendarCtrl = {
                         day2.classList.remove('date-clicked');
                     }
                 }
+
+                                const weekTable=renderWeek(calendard, day.dataset.date);
+                calendarCtrl.initListeners(weekTable);
 
             });
         }
