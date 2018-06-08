@@ -110,7 +110,7 @@ const calendarCtrl = {
                         day2.classList.remove('date-clicked');
                     }
                 }
-                this.initListeners(calendarTable);
+                this.initListeners(weekTable);
 
             });
         }
