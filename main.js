@@ -115,6 +115,7 @@ console.log(roll);
 roll.addEventListener('click', function() {
 const cal=document.querySelector('#calendar');
 cal.style.visibility=cal.style.visibility=== 'hidden' ? 'visible' : 'hidden';
+this.innerHTML= this.innerHTML=== '▼' ? '▲' : '▼';
 });
     },
     initListenersMonths() {
