@@ -56,7 +56,7 @@ body {
 }
 .showing {
     border-style: solid;
-    border-color:yellow;
+    border-color:gray;
 }
 .showing:hover {
     transform: scale(1, 1);
