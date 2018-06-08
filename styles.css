@@ -49,6 +49,10 @@ body {
     /*-webkit-transition: width 2s, height 2s;
     transition: width 2s, height 2s;*/
 }
+
+#times-list {
+    flex:1 100%;
+}
 .showing {
     border-style: solid;
     border-color:yellow;
