@@ -52,6 +52,7 @@ body {
 
 #times-list {
    align-items:center;
+   justify-content: center;
 }
 .showing {
     border-style: solid;
