@@ -83,6 +83,7 @@ const calendarCtrl = {
         const daysArray = calendarTable.querySelectorAll('tbody td');
         for (const day of daysArray) {
             day.addEventListener('click', function() {
+                renderWeek(calendard,dayClicked);
                 const showlist = document.querySelector('#showlist');
                 const seats = document.querySelector('#seats');
                 const details = document.querySelector('#details');
@@ -94,7 +95,6 @@ const calendarCtrl = {
                 showlist.innerHTML = '';
                 seats.innerHTML = '';
                 view.show(showlist);
-                console.log(showings);
                 if (showings.length > 0) {
                     view.show(showingsWrapper);
                 } else {

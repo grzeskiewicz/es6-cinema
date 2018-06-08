@@ -69,7 +69,7 @@ export function renderCalendar(calendar) {
 
 
 
-export function renderWeek(calendar) {
+export function renderWeek(calendar,dayClicked) {
     const p = document.createElement('p');
     const table = document.createElement('table');
     const thead = document.createElement('thead');
@@ -90,7 +90,7 @@ export function renderWeek(calendar) {
             // set day of month as table cell text content
             td.textContent = day.date.getDate();
             td.dataset.date = day.date;
-            if (day.date.getMonth() === today.getMonth() && day.date.getDate() === today.getDate()) {
+            if (day.date.getMonth() === today.getMonth() && day.date.getDate() === dayClicked.getDate()) {
                 thisWeek = true;
                 td.classList.add('today');
             }
