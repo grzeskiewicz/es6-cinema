@@ -114,7 +114,8 @@ const roll=document.querySelector('#roll');
 console.log(roll);
 roll.addEventListener('click', function() {
 const cal=document.querySelector('#calendar');
-cal.style.visibility=cal.style.visibility=== 'hidden' ? 'visible' : 'hidden';
+//cal.style.visibility=cal.style.visibility=== 'hidden' ? 'visible' : 'hidden';
+view.toggle(cal);
 this.innerHTML= this.innerHTML=== '▼' ? '▲' : '▼';
 });
     },
