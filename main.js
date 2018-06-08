@@ -83,8 +83,8 @@ const calendarCtrl = {
         const daysArray = calendarTable.querySelectorAll('tbody td');
         for (const day of daysArray) {
             day.addEventListener('click', function() {
-                console.log(day);
-               // renderWeek(calendard,dayClicked);
+                console.log();
+                renderWeek(calendard,day.dataset.date);
                 const showlist = document.querySelector('#showlist');
                 const seats = document.querySelector('#seats');
                 const details = document.querySelector('#details');

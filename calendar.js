@@ -75,6 +75,7 @@ export function renderWeek(calendar,dayClicked) {
     const thead = document.createElement('thead');
     const tbody = document.createElement('tbody');
     let thisWeek = false;
+    dayClicked=new Date(dayClicked);
     // iterate weeks
     for (let j = 0; j < calendar.length; j++) {
         // create table row for every week
