@@ -126,8 +126,7 @@ export function renderWeek(calendar,dayClicked) {
     table.appendChild(tbody);
 
     // mount table to container
-    console.log(table.innerHTML);
-    weekDiv.innerHTML=table.innerHTML.split(' ');
+    weekDiv.appendChild(table);
 }
 
 
