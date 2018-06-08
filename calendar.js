@@ -126,7 +126,7 @@ export function renderWeek(calendar,dayClicked) {
     table.appendChild(tbody);
 
     // mount table to container
-    weekDiv.innerHTML=table.toString();
+    weekDiv.replaceChild(table);
 }
 
 
