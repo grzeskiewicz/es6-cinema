@@ -52,6 +52,7 @@ body {
 
 #showing-wrapper{
     display:flex;
+    flex-wrap: nowrap;
 }
 
 
