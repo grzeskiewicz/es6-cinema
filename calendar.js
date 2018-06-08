@@ -59,9 +59,9 @@ export function renderCalendar(calendar) {
     calendarDiv.appendChild(p);
     // mount table to container
     calendarDiv.appendChild(table);
-    p2.textContent = '▼';
-    p2.id="roll";
-    calendarDiv.appendChild(p2);
+   // p2.textContent = '▼';
+   // p2.id="roll";
+   // calendarDiv.appendChild(p2);
 
 
     return table;
