@@ -38,9 +38,7 @@ body {
     flex-flow: row wrap;
     border-style: solid;
 }
-#showlist {
-    display:flex;
-}
+
 #film-titles>*,
 #showlist>* {
     flex: 1 100%;
