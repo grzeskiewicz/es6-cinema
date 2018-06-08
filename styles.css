@@ -49,7 +49,10 @@ body {
     /*-webkit-transition: width 2s, height 2s;
     transition: width 2s, height 2s;*/
 }
-
+.showing {
+    border-style: solid;
+    border-color:yellow;
+}
 .showing:hover {
     transform: scale(1, 1);
 }
