@@ -69,6 +69,9 @@ const view = {
         // element.classList.remove('visuallyhidden').add('visuallyvisible');
         element.style.display = ''
     },
+    showFlex(element) {
+        element.style.display = 'flex';
+    },
     hide(element) {
         element.style.display = 'none';
         //element.classList.remove('visuallyvisible').add('visuallyhidden');
@@ -83,7 +86,7 @@ const calendarCtrl = {
         const daysArray = calendarTable.querySelectorAll('tbody td');
         for (const day of daysArray) {
             day.addEventListener('click', function() {
-                renderWeek(calendard,day.dataset.date);
+                renderWeek(calendard, day.dataset.date);
                 const showlist = document.querySelector('#showlist');
                 const seats = document.querySelector('#seats');
                 const details = document.querySelector('#details');
@@ -110,14 +113,14 @@ const calendarCtrl = {
             });
         }
 
-const roll=document.querySelector('#roll');
-console.log(roll);
-roll.addEventListener('click', function() {
-const cal=document.querySelector('#calendar');
-//cal.style.visibility=cal.style.visibility=== 'hidden' ? 'visible' : 'hidden';
-view.toggle(cal);
-this.innerHTML= this.innerHTML=== '▼' ? '▲' : '▼';
-});
+        const roll = document.querySelector('#roll');
+        console.log(roll);
+        roll.addEventListener('click', function() {
+            const cal = document.querySelector('#calendar');
+            //cal.style.visibility=cal.style.visibility=== 'hidden' ? 'visible' : 'hidden';
+            view.toggle(cal);
+            this.innerHTML = this.innerHTML === '▼' ? '▲' : '▼';
+        });
     },
     initListenersMonths() {
         const previous = document.querySelector('#previous');
@@ -222,7 +225,7 @@ export const showingsCtrl = {
                              showingsCtrl.showingsDiv().classList.remove('blur');
                              view.hide(detailsDiv);
                          });*/
-                         view.show(detailsDiv);
+                        view.showFlex(detailsDiv);
 
                         detailsDiv.classList.add('activeshow');
                         showing.classList.add('active');
@@ -290,7 +293,7 @@ const seatsCtrl = {
                     document.getElementById(Number(seat)).disabled = true;
                     //set button to disabled
                 }
-                view.show(this.seatsDiv);
+                view.showFlex(this.seatsDiv);
             });
     }
 }
