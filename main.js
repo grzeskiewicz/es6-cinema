@@ -67,14 +67,14 @@ const view = {
     },
     show(element) {
         // element.classList.remove('visuallyhidden').add('visuallyvisible');
-        element.style.display = 'block';
+        element.style.display = 'flex'
     },
     hide(element) {
         element.style.display = 'none';
         //element.classList.remove('visuallyvisible').add('visuallyhidden');
     },
     toggle(element) {
-        element.style.display = element.style.display === 'none' ? 'flex' : 'none';
+        element.style.display = element.style.display === 'none' ? 'block' : 'none';
     }
 }
 let selectedMonthCopy = selectedMonth;
