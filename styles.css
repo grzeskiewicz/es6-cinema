@@ -167,6 +167,7 @@ flex-flow: row wrap;*/
 
 .seat {
     font-size:10px;
+    margin:0;
 }
 .selected {
     background: red;
