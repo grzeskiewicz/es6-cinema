@@ -165,7 +165,9 @@ flex-flow: row wrap;*/
     flex-flow: row wrap;
 }
 
-
+.seat {
+    font-size:10px;
+}
 .selected {
     background: red;
 }

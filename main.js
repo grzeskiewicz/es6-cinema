@@ -83,6 +83,14 @@ const view = {
 let selectedMonthCopy = selectedMonth;
 const calendarCtrl = {
     initListeners(calendarTable) {
+        const roll = document.querySelector('#roll');
+        console.log(roll);
+        roll.addEventListener('click', function() {
+            const cal = document.querySelector('#calendar');
+            //cal.style.visibility=cal.style.visibility=== 'hidden' ? 'visible' : 'hidden';
+            view.toggle(cal);
+            this.innerHTML = this.innerHTML === '▼' ? '▲' : '▼';
+        });
         const daysArray = calendarTable.querySelectorAll('tbody td');
         for (const day of daysArray) {
             day.addEventListener('click', function() {
@@ -110,20 +118,13 @@ const calendarCtrl = {
                     }
                 }
 
-                                const weekTable=renderWeek(calendard, day.dataset.date);
+                const weekTable = renderWeek(calendard, day.dataset.date);
                 calendarCtrl.initListeners(weekTable);
 
             });
         }
 
-        const roll = document.querySelector('#roll');
-        console.log(roll);
-        roll.addEventListener('click', function() {
-            const cal = document.querySelector('#calendar');
-            //cal.style.visibility=cal.style.visibility=== 'hidden' ? 'visible' : 'hidden';
-            view.toggle(cal);
-            this.innerHTML = this.innerHTML === '▼' ? '▲' : '▼';
-        });
+
     },
     initListenersMonths() {
         const previous = document.querySelector('#previous');
@@ -213,7 +214,7 @@ export const showingsCtrl = {
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(titles[1][title.textContent][0])}`), "film"); //description of the film 
                 const showingsWrapper = document.querySelector('#showings-wrapper');
-                const cal=document.querySelector('#calendar');
+                const cal = document.querySelector('#calendar');
                 view.hide(cal);
                 view.show(showingsWrapper);
                 [...showingsCtrl.showingsList()].forEach(showing => {
