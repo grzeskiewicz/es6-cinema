@@ -224,6 +224,13 @@ export const showingsCtrl = {
                     showing.addEventListener('click', event => {
                         console.log(this);
                         event.preventDefault();
+                        for (const showing2 of [...showingsCtrl.showingsList()]) {
+                            if (showing.classList.contains('active') && showing2 !== showing) {
+                                showing.classList.remove('active');
+                            }
+                        }
+
+
                         const detailsDiv = showingsCtrl.details();
                         //view.show(detailsDiv);
                         /* detailsDiv.querySelector('#close').addEventListener('click', function() {
