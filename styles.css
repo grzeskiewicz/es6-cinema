@@ -163,11 +163,16 @@ flex-flow: row wrap;*/
 #seats {
     display: flex;
     flex-flow: row wrap;
+    align-content:stretch;
 }
 
 .seat {
     font-size:10px;
     padding:2px;
+}
+
+.row {
+
 }
 .selected {
     background: red;
