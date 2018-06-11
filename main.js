@@ -217,6 +217,7 @@ export const showingsCtrl = {
                 const cal = document.querySelector('#calendar');
                 view.hide(cal);
                 view.show(showingsWrapper);
+                console.log([...showingsCtrl.showingsList()]);
                 [...showingsCtrl.showingsList()].forEach(showing => {
 
                     //view.hide(showing.querySelector('.showing-details'));
