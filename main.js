@@ -217,7 +217,7 @@ export const showingsCtrl = {
                 const cal = document.querySelector('#calendar');
                 view.hide(cal);
                 view.show(showingsWrapper);
-                console.log([...showingsCtrl.showingsList()]);
+
                 [...showingsCtrl.showingsList()].forEach(showing => {
 
                     //view.hide(showing.querySelector('.showing-details'));
@@ -226,8 +226,8 @@ export const showingsCtrl = {
                         console.log(this);
                         event.preventDefault();
                         for (const showing2 of [...showingsCtrl.showingsList()]) {
-                            if (showing.classList.contains('active') && showing2 !== showing) {
-                                showing.classList.remove('active');
+                            if (showing2.classList.contains('active') && showing2 !== showing) {
+                                showing2.classList.remove('active');
                             }
                         }
 
