@@ -168,7 +168,8 @@ flex-flow: row wrap;*/
 
 .seat {
     font-size:10px;
-    padding:2px;
+    width:5px;
+    height:5px;
 }
 
 .row {
