@@ -194,7 +194,6 @@ const calendarCtrl = {
         this.initListeners(calendarTable);
         this.initListenersMonths();
         const roll = document.querySelector('#roll');
-        console.log(roll);
         roll.addEventListener('click', function() {
             const cal = document.querySelector('#calendar');
             //cal.style.visibility=cal.style.visibility=== 'hidden' ? 'visible' : 'hidden';
