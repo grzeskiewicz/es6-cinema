@@ -162,14 +162,14 @@ flex-flow: row wrap;*/
 
 #seats {
     display: flex;
-    flex-flow: row wrap;
-    align-content:stretch;
+    flex-flow: row nowrap;
+
 }
 
 .seat {
     font-size:10px;
-    width:2rem;
-    height:2rem;
+    width:1.5rem;
+    height:1.5rem;
 }
 
 .row {
