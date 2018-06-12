@@ -20,13 +20,13 @@ Handlebars.registerHelper('if_eq', function(a, b, opts) {
 
 
 
- Handlebars.registerHelper('compare', function (lvalue, operator, rvalue, options) {
+Handlebars.registerHelper('compare', function(lvalue, operator, rvalue, options) {
 
     var operators, result;
 
     if (arguments.length < 3) {
         throw new Error("Handlerbars Helper 'compare' needs 2 parameters");
-    }       
+    }
 
     if (options === undefined) {
         options = rvalue;
@@ -35,16 +35,16 @@ Handlebars.registerHelper('if_eq', function(a, b, opts) {
     }
 
     operators = {
-        '==': function (l, r) { return l == r; },
-        '===': function (l, r) { return l === r; },
-        '!=': function (l, r) { return l != r; },
-        '!==': function (l, r) { return l !== r; },
-        '<': function (l, r) { return l < r; },
-        '>': function (l, r) { return l > r; },
-        '<=': function (l, r) { return l <= r; },
-        '>=': function (l, r) { return l >= r; },
-        'typeof': function (l, r) { return typeof l == r; },
-        '%': function (l, r) { return l % r == 0; } 
+        '==': function(l, r) { return l == r; },
+        '===': function(l, r) { return l === r; },
+        '!=': function(l, r) { return l != r; },
+        '!==': function(l, r) { return l !== r; },
+        '<': function(l, r) { return l < r; },
+        '>': function(l, r) { return l > r; },
+        '<=': function(l, r) { return l <= r; },
+        '>=': function(l, r) { return l >= r; },
+        'typeof': function(l, r) { return typeof l == r; },
+        '%': function(l, r) { return l % r == 0; }
     };
 
     if (!operators[operator]) {
@@ -135,14 +135,7 @@ const view = {
 let selectedMonthCopy = selectedMonth;
 const calendarCtrl = {
     initListeners(calendarTable) {
-        const roll = document.querySelector('#roll');
-        console.log(roll);
-        roll.addEventListener('click', function() {
-            const cal = document.querySelector('#calendar');
-            //cal.style.visibility=cal.style.visibility=== 'hidden' ? 'visible' : 'hidden';
-            view.toggle(cal);
-            this.innerHTML = this.innerHTML === '▼' ? '▲' : '▼';
-        });
+
         const daysArray = calendarTable.querySelectorAll('tbody td');
         for (const day of daysArray) {
             day.addEventListener('click', function() {
@@ -200,6 +193,14 @@ const calendarCtrl = {
         let calendarTable = renderCalendar(calendard);
         this.initListeners(calendarTable);
         this.initListenersMonths();
+        const roll = document.querySelector('#roll');
+        console.log(roll);
+        roll.addEventListener('click', function() {
+            const cal = document.querySelector('#calendar');
+            //cal.style.visibility=cal.style.visibility=== 'hidden' ? 'visible' : 'hidden';
+            view.toggle(cal);
+            this.innerHTML = this.innerHTML === '▼' ? '▲' : '▼';
+        });
     }
 }
 
