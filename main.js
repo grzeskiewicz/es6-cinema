@@ -313,6 +313,7 @@ export const showingsCtrl = {
                         });*/
                         // showingsCtrl.showingsDiv().classList.add('blur');
                         showingsService.selectById(event.currentTarget.dataset.showingId);
+                        console.log(event.currentTarget.dataset);
                         view.renderContent("entry-template-seats", event.currentTarget.dataset-1, "seats");
                         seatsCtrl.disableListener();
                         seatsCtrl.selectedSeats = [];
