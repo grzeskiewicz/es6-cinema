@@ -313,8 +313,8 @@ export const showingsCtrl = {
                         });*/
                         // showingsCtrl.showingsDiv().classList.add('blur');
                         showingsService.selectById(event.currentTarget.dataset.showingId);
-                        console.log(event.currentTarget.dataset);
-                        view.renderContent("entry-template-seats", event.currentTarget.dataset-1, "seats");
+                        --event.currentTarget.dataset.seats;
+                        view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
                         seatsCtrl.disableListener();
                         seatsCtrl.selectedSeats = [];
                         document.getElementById("order").innerHTML = "";
