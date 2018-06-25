@@ -314,7 +314,7 @@ export const showingsCtrl = {
                         });*/
                         // showingsCtrl.showingsDiv().classList.add('blur');
                         showingsService.selectById(event.currentTarget.dataset.showingId);
-                       const seatsTemp=event.currentTarget.dataset.seats;
+                       let seatsTemp=event.currentTarget.dataset.seats;
                        --seatsTemp;
                         view.renderContent("entry-template-seats", seatsTemp, "seats");
                         seatsCtrl.disableListener();
