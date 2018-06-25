@@ -314,9 +314,8 @@ export const showingsCtrl = {
                         });*/
                         // showingsCtrl.showingsDiv().classList.add('blur');
                         showingsService.selectById(event.currentTarget.dataset.showingId);
-                       let seatsTemp=event.currentTarget.dataset.seats;
-                       --seatsTemp;
-                        view.renderContent("entry-template-seats", seatsTemp, "seats");
+                        --event.currentTarget.dataset.seats;
+                        view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
                         seatsCtrl.disableListener();
                         seatsCtrl.selectedSeats = [];
                         document.getElementById("order").innerHTML = "";
