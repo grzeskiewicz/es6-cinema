@@ -315,8 +315,10 @@ export const showingsCtrl = {
                         // showingsCtrl.showingsDiv().classList.add('blur');
                         showingsService.selectById(event.currentTarget.dataset.showingId);
                         console.log(event.currentTarget.dataset);
-                       // --event.currentTarget.dataset.seats;
+                       seatsTemp=event.currentTarget.dataset.seats;
+                       event.currentTarget.dataset.seats=seatsTemp-1;
                         view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
+                        event.currentTarget.dataset.seats=seatsTemp;
                         seatsCtrl.disableListener();
                         seatsCtrl.selectedSeats = [];
                         document.getElementById("order").innerHTML = "";
