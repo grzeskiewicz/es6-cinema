@@ -382,7 +382,7 @@ const orderCtrl = {
         const nextBtn = document.getElementById("nextBtn");
         nextBtn.addEventListener('click', event => {
             const obj = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
-            if (moment(obj.showing.date).format('DD.MM.YYYY HH:mm').isValid()) { obj.showing.date = moment(obj.showing.date).format('DD.MM.YYYY HH:mm'); }
+            if (moment(obj.showing.date).isValid()) { obj.showing.date = moment(obj.showing.date).format('DD.MM.YYYY HH:mm'); }
 
             //obj.showing.date=moment(obj.showing.date);
             view.renderContent("entry-template-order", obj, "order");
