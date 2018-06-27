@@ -382,8 +382,9 @@ const orderCtrl = {
         const nextBtn = document.getElementById("nextBtn");
         nextBtn.addEventListener('click', event => {
             const obj = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
-            console.log(typeof obj.showing.date);
+
             obj.showing.date=moment(obj.showing.date).format('DD.MM.YYYY HH:mm');
+            console.log(typeof obj.showing.date);
             view.renderContent("entry-template-order", obj, "order");
             view.renderContent("entry-template-login", obj, "login");
             view.renderContent("entry-template-register", obj, "register");
