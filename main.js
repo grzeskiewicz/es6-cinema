@@ -382,9 +382,9 @@ const orderCtrl = {
         const nextBtn = document.getElementById("nextBtn");
         nextBtn.addEventListener('click', event => {
             const obj = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
-
-            //obj.showing.date=moment(obj.showing.date).format('DD.MM.YYYY HH:mm');
-            obj.showing.date=moment(obj.showing.date);
+if (moment(obj.showing.date,'YYYY-MM-DDThh:mm:ss')) { console.log('HEHESZKENS');}
+            obj.showing.date=moment(obj.showing.date).format('DD.MM.YYYY HH:mm');
+            //obj.showing.date=moment(obj.showing.date);
             view.renderContent("entry-template-order", obj, "order");
             view.renderContent("entry-template-login", obj, "login");
             view.renderContent("entry-template-register", obj, "register");
