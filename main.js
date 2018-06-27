@@ -315,10 +315,10 @@ export const showingsCtrl = {
                         // showingsCtrl.showingsDiv().classList.add('blur');
                         showingsService.selectById(event.currentTarget.dataset.showingId);
                         console.log(event.currentTarget.dataset);
-                       let seatsTemp=event.currentTarget.dataset.seats;
-                       event.currentTarget.dataset.seats=seatsTemp-1;
+                        let seatsTemp = event.currentTarget.dataset.seats;
+                        event.currentTarget.dataset.seats = seatsTemp - 1;
                         view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
-                        event.currentTarget.dataset.seats=seatsTemp;
+                        event.currentTarget.dataset.seats = seatsTemp;
                         seatsCtrl.disableListener();
                         seatsCtrl.selectedSeats = [];
                         document.getElementById("order").innerHTML = "";
@@ -382,8 +382,8 @@ const orderCtrl = {
         const nextBtn = document.getElementById("nextBtn");
         nextBtn.addEventListener('click', event => {
             const obj = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
-if (moment(obj.showing.date,'YYYY-MM-DDThh:mm:ss')) { console.log('HEHESZKENS');}
-            obj.showing.date=moment(obj.showing.date).format('DD.MM.YYYY HH:mm');
+            if (moment(obj.showing.date).format('DD.MM.YYYY HH:mm').isValid()) { obj.showing.date = moment(obj.showing.date).format('DD.MM.YYYY HH:mm'); }
+
             //obj.showing.date=moment(obj.showing.date);
             view.renderContent("entry-template-order", obj, "order");
             view.renderContent("entry-template-login", obj, "login");
