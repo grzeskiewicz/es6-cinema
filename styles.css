@@ -85,6 +85,8 @@ body {
     background-color: green;
     border-style: dotted;
     flex-basis: 30%;
+    width:300px;
+   height:100%;
 }
 
 .active {
