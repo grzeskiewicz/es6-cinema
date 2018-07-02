@@ -55,7 +55,10 @@ body {
     flex-wrap: nowrap;
     align-content:stretch;
 }
-
+#film{
+    display:flex;
+    align-content:stretch;
+}
 
 #times-list {
    align-items:center;
