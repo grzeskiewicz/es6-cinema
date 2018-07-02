@@ -50,7 +50,7 @@ body {
     transition: width 2s, height 2s;*/
 }
 
-#showing-wrapper{
+#film{
     display:flex;
     flex-wrap: nowrap;
     align-content:stretch;
