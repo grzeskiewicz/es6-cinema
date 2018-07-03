@@ -277,7 +277,7 @@ export const showingsCtrl = {
                     //view.hide(showing.querySelector('.showing-details'));
                     //view.hide(showing.querySelector('.poster'));
                     showing.addEventListener('click', event => {
-                        console.log(this);
+                       // console.log(this);
                         event.preventDefault();
                         for (const showing2 of [...showingsCtrl.showingsList()]) {
                             if (showing2.classList.contains('active') && showing2 !== showing) {
@@ -315,7 +315,7 @@ export const showingsCtrl = {
                         });*/
                         // showingsCtrl.showingsDiv().classList.add('blur');
                         showingsService.selectById(event.currentTarget.dataset.showingId);
-                        console.log(event.currentTarget.dataset);
+                       // console.log(event.currentTarget.dataset);
                         let seatsTemp = event.currentTarget.dataset.seats;
                         event.currentTarget.dataset.seats = seatsTemp - 1;
                         view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
