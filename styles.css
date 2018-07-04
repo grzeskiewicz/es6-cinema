@@ -89,8 +89,8 @@ body {
     background-color: green;
     border-style: dotted;
     flex-basis: 30%;
-    width:10vw
-    height:30vw;
+    max-width:10vw
+    max-height:30vw;
    
 }
 
