@@ -43,9 +43,9 @@ body {
 #showlist>* {
     flex: 1 100%;
     display: flex;
-    background-color: red;
+    background-color: orange;
     border-style: solid;
-    border-color: blue;
+    border-color: gray;
     /*-webkit-transition: width 2s, height 2s;
     transition: width 2s, height 2s;*/
 }
