@@ -65,6 +65,7 @@ body {
 }
 .showing {
     border-color:gray;
+    margin:1rem;
 }
 
 .showing p{
