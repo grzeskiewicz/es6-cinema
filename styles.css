@@ -65,6 +65,8 @@ body {
 
 
 #times-list {
+    display:flex;
+    
     margin-top: 1rem;
     border-top: 1px solid black;
     align-items: center;
