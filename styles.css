@@ -53,11 +53,13 @@ body {
     display:flex;
     flex-wrap: nowrap;
     align-content:stretch;
-    border-bottom: 1px solid black;
+
 }
 
 
 #times-list {
+    margin-top:1rem;
+    border-top: 1px solid black;
    align-items:center;
    justify-content: center;
 }
