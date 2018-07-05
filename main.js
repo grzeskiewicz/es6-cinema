@@ -272,7 +272,7 @@ export const showingsCtrl = {
                 view.hide(cal);
                 view.show(showingsWrapper);
 
-                        for (const title2 of [...this.titlesList()]) {
+                        for (const title2 of [...showingsCtrl.titlesList()]) {
                             if (title2.classList.contains('active') && title2!== title) {
                                 title2.classList.remove('active');
                                // title2.classList.add('normal');
