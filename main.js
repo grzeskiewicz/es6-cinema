@@ -297,7 +297,9 @@ title.classList.add('active');
                         view.showFlex(detailsDiv);
 
                         detailsDiv.classList.add('activeshow');
+                         showing.querySelector('p').classList.remove('normal');
                         showing.querySelector('p').classList.add('active');
+
                         //const showingDetails = showing.querySelector('.showing-details');
                         //const poster = showing.querySelector('.poster');
                         //showingDetails.style.display = 'block';
