@@ -238,7 +238,7 @@ flex-flow: row wrap;*/
     background-color:grey;
 }
 .active {
-    border-color: green;
+    border: 1px solid green;
 }
 
 
