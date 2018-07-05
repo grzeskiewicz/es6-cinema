@@ -280,7 +280,7 @@ title.classList.add('active');
                        // console.log(this);
                         event.preventDefault();
                         for (const showing2 of [...showingsCtrl.showingsList()]) {
-                            console.log(showing);
+                            console.log(showing.querySelector('p'));
                             if (showing2.classList.contains('active') && showing2 !== showing) {
                                 showing2.classList.remove('active');
                             }
