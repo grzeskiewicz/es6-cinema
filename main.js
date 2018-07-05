@@ -280,9 +280,9 @@ title.classList.add('active');
                        // console.log(this);
                         event.preventDefault();
                         for (const showing2 of [...showingsCtrl.showingsList()]) {
-                            console.log(showing.querySelector('p'));
-                            if (showing2.classList.contains('active') && showing2 !== showing) {
-                                showing2.classList.remove('active');
+                           // showing.querySelector('p')
+                            if (showing2.querySelector('p').classList.contains('active') && showing2 !== showing) {
+                                showing2.querySelector('p').classList.remove('active');
                             }
                         }
 
@@ -297,7 +297,7 @@ title.classList.add('active');
                         view.showFlex(detailsDiv);
 
                         detailsDiv.classList.add('activeshow');
-                        showing.classList.add('active');
+                        showing.querySelector('p').classList.add('active');
                         //const showingDetails = showing.querySelector('.showing-details');
                         //const poster = showing.querySelector('.poster');
                         //showingDetails.style.display = 'block';
