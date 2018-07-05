@@ -54,9 +54,13 @@ body {
     flex-wrap: nowrap;
     align-content:stretch;
 }
-#film{
-    display:flex;
-    align-content:stretch;
+#film::after {
+  content: "";
+  display: block;
+  height: .1875rem;
+  width: 50vw;
+  margin: 1.5rem auto;
+  background-color: #d2ba87;;
 }
 
 #times-list {
