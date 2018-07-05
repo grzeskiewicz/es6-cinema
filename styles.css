@@ -55,7 +55,7 @@ body {
     align-content:stretch;
 }
 #film::after {
-
+display:flex;
   content:"";
   background-color: #000;
   height: 1px;
