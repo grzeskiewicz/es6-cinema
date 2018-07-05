@@ -53,15 +53,9 @@ body {
     display:flex;
     flex-wrap: nowrap;
     align-content:stretch;
+    border-bottom: 1px solid black;
 }
-#film::after {
-display:flex;
-  content:"";
-  background-color: #000;
-  height: 1px;
-  width: 80vw;
-  margin: .5rem auto;
-}
+
 
 #times-list {
    align-items:center;
