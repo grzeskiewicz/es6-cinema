@@ -66,6 +66,11 @@ body {
 .showing {
     border-color:gray;
 }
+
+.showing p{
+    border: 1px solid gray;
+    border-radius: 5px;
+}
 .showing:hover {
     transform: scale(1, 1);
 }
