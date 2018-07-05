@@ -110,10 +110,6 @@ width: 100%;
    
 }
 
-.active {
-    border-style: solid;
-    border-color: green;
-}
 
 
 
@@ -240,6 +236,10 @@ flex-flow: row wrap;*/
 
 .date-clicked {
     background-color:grey;
+}
+.active {
+    border-color: green;
+    color:orange;
 }
 
 
