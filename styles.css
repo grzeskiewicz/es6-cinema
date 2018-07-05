@@ -38,6 +38,7 @@ body {
     display: flex;
     flex-flow: row wrap;
 margin-top:1rem;
+flex-basis:50%;
 }
 
 #film-titles>*,
@@ -51,7 +52,7 @@ margin-top:1rem;
 
 .title {
      border-bottom: 1px solid gray;
-     margin:1.125rem;
+     margin-bottom:0.5rem;
 }
 
 #film{
@@ -78,7 +79,7 @@ margin-top:1rem;
 .showing p{
     border: 1px solid gray;
     border-radius: 5px;
-    padding:0 4px;
+    padding:2px 5px;
 }
 .showing:hover {
     transform: scale(1, 1);
@@ -86,7 +87,7 @@ margin-top:1rem;
 
 .showing-details p {
     font-family: 'Oxygen', sans-serif;
-    font-size:0.8rem;
+    font-size:1rem;
     margin-top: 0;
     margin-bottom: 0;
 }
