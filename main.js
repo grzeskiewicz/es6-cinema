@@ -271,7 +271,14 @@ export const showingsCtrl = {
                 const cal = document.querySelector('#calendar');
                 view.hide(cal);
                 view.show(showingsWrapper);
-title.classList.add('active');
+
+                        for (const title2 of [...this.titlesList()]) {
+                            if (title2.classList.contains('active') && title2!== title) {
+                                title2.classList.remove('active');
+                               // title2.classList.add('normal');
+                            }
+                        }
+                        title.classList.add('active');
                 [...showingsCtrl.showingsList()].forEach(showing => {
 
                     //view.hide(showing.querySelector('.showing-details'));
