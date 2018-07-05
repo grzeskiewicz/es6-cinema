@@ -74,6 +74,7 @@ body {
 
 .showing-details p {
     font-family: 'Roboto', sans-serif;
+    font-size:0.8rem;
     margin-top: 0;
     margin-bottom: 0;
 }
