@@ -283,6 +283,7 @@ title.classList.add('active');
                            // showing.querySelector('p')
                             if (showing2.querySelector('p').classList.contains('active') && showing2.querySelector('p') !== showing.querySelector('p')) {
                                 showing2.querySelector('p').classList.remove('active');
+                                showing2.querySelector('p').classList.add('normal');
                             }
                         }
 
