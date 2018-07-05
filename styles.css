@@ -4,6 +4,7 @@
 
 body {
     background-color: white;
+
 }
 
 
@@ -72,6 +73,7 @@ body {
 }
 
 .showing-details p {
+    font-family: 'Roboto', sans-serif;
     margin-top: 0;
     margin-bottom: 0;
 }
