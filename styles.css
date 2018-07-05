@@ -37,14 +37,13 @@ body {
 #film-titles {
     display: flex;
     flex-flow: row wrap;
-    border-style: solid;
+
 }
 
 #film-titles>*,
 #showlist>* {
     flex: 1 100%;
     display: flex;
-    border-style: solid;
     border-color: gray;
     /*-webkit-transition: width 2s, height 2s;
     transition: width 2s, height 2s;*/
@@ -65,7 +64,6 @@ body {
    justify-content: center;
 }
 .showing {
-    border-style: solid;
     border-color:gray;
 }
 .showing:hover {
@@ -80,7 +78,6 @@ body {
 }
 
 .title {
-    font-weight: bold;
     font-family: 'Gentium Book Basic', serif;
 }
 
