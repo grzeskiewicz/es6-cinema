@@ -396,6 +396,6 @@ td.after {
     color: #999;
 }
 
-#next, #previous:hover{
+#next:hover, #previous:hover{
     background-color: orange;
 }
