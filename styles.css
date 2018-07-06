@@ -395,3 +395,7 @@ td.before,
 td.after {
     color: #999;
 }
+
+#next, #previous:hover{
+    background-color: orange;
+}
