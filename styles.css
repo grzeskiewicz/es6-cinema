@@ -40,7 +40,7 @@ p{
 #film-titles {
     display: flex;
     flex-flow: row wrap;
-    margin-top: 1rem;
+   
     flex-basis: 50%;
 }
 
@@ -55,7 +55,7 @@ p{
 
 .title {
     border-bottom: 1px solid gray;
-    margin-bottom: 0.7rem;
+  
 }
 
 #film {
