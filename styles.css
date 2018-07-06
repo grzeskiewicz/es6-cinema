@@ -6,6 +6,10 @@ body {
     background-color: white;
 }
 
+p{
+    cursor: default;
+}
+
 
 #customerinfo {
     position: fixed;
