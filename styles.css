@@ -72,6 +72,7 @@ p{
 #times-list {
     display:flex;
     flex-wrap:wrap;
+    flex-direction: row-reverse;
     margin-top: 1rem;
     border-top: 1px solid black;
     align-items: center;
