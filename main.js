@@ -138,35 +138,37 @@ const calendarCtrl = {
 
         const daysArray = calendarTable.querySelectorAll('tbody td');
         for (const day of daysArray) {
-            day.addEventListener('click', function() {
+            if (!day.classList.contains('not-selectable')) {
+                day.addEventListener('click', function() {
 
-                const showlist = document.querySelector('#showlist');
-                const seats = document.querySelector('#seats');
-                const details = document.querySelector('#details');
-                const showingsWrapper = document.querySelector('#showings-wrapper');
-                const pickedDate = new Date(this.dataset.date);
-                view.hide(showlist);
-                view.hide(details);
-                const showings = showingsCtrl.calendarShowings(pickedDate);
-                showlist.innerHTML = '';
-                seats.innerHTML = '';
-                view.show(showlist);
-                if (showings.length > 0) {
-                    view.show(showingsWrapper);
-                } else {
-                    view.hide(showingsWrapper);
-                }
-                day.classList.add('date-clicked')
-                for (const day2 of daysArray) {
-                    if (day2.classList.contains('date-clicked') && day2 !== day) {
-                        day2.classList.remove('date-clicked');
+                    const showlist = document.querySelector('#showlist');
+                    const seats = document.querySelector('#seats');
+                    const details = document.querySelector('#details');
+                    const showingsWrapper = document.querySelector('#showings-wrapper');
+                    const pickedDate = new Date(this.dataset.date);
+                    view.hide(showlist);
+                    view.hide(details);
+                    const showings = showingsCtrl.calendarShowings(pickedDate);
+                    showlist.innerHTML = '';
+                    seats.innerHTML = '';
+                    view.show(showlist);
+                    if (showings.length > 0) {
+                        view.show(showingsWrapper);
+                    } else {
+                        view.hide(showingsWrapper);
                     }
-                }
+                    day.classList.add('date-clicked')
+                    for (const day2 of daysArray) {
+                        if (day2.classList.contains('date-clicked') && day2 !== day) {
+                            day2.classList.remove('date-clicked');
+                        }
+                    }
 
-                const weekTable = renderWeek(calendard, day.dataset.date);
-                calendarCtrl.initListeners(weekTable);
+                    const weekTable = renderWeek(calendard, day.dataset.date);
+                    calendarCtrl.initListeners(weekTable);
 
-            });
+                });
+            }
         }
 
 
@@ -272,22 +274,22 @@ export const showingsCtrl = {
                 view.hide(cal);
                 view.show(showingsWrapper);
 
-                        for (const title2 of [...showingsCtrl.titlesList()]) {
-                            if (title2.classList.contains('active') && title2!== title) {
-                                title2.classList.remove('active');
-                               // title2.classList.add('normal');
-                            }
-                        }
-                        title.classList.add('active');
+                for (const title2 of [...showingsCtrl.titlesList()]) {
+                    if (title2.classList.contains('active') && title2 !== title) {
+                        title2.classList.remove('active');
+                        // title2.classList.add('normal');
+                    }
+                }
+                title.classList.add('active');
                 [...showingsCtrl.showingsList()].forEach(showing => {
 
                     //view.hide(showing.querySelector('.showing-details'));
                     //view.hide(showing.querySelector('.poster'));
                     showing.addEventListener('click', event => {
-                       // console.log(this);
+                        // console.log(this);
                         event.preventDefault();
                         for (const showing2 of [...showingsCtrl.showingsList()]) {
-                           // showing.querySelector('p')
+                            // showing.querySelector('p')
                             if (showing2.querySelector('p').classList.contains('active') && showing2.querySelector('p') !== showing.querySelector('p')) {
                                 showing2.querySelector('p').classList.remove('active');
                                 showing2.querySelector('p').classList.add('normal');
@@ -305,7 +307,7 @@ export const showingsCtrl = {
                         view.showFlex(detailsDiv);
 
                         detailsDiv.classList.add('activeshow');
-                         showing.querySelector('p').classList.remove('normal');
+                        showing.querySelector('p').classList.remove('normal');
                         showing.querySelector('p').classList.add('active');
 
                         //const showingDetails = showing.querySelector('.showing-details');
@@ -326,7 +328,7 @@ export const showingsCtrl = {
                         });*/
                         // showingsCtrl.showingsDiv().classList.add('blur');
                         showingsService.selectById(event.currentTarget.dataset.showingId);
-                       // console.log(event.currentTarget.dataset);
+                        // console.log(event.currentTarget.dataset);
                         let seatsTemp = event.currentTarget.dataset.seats;
                         event.currentTarget.dataset.seats = seatsTemp - 1;
                         view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
