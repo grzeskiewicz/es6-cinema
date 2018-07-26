@@ -400,3 +400,7 @@ td.after {
 #next:hover, #previous:hover{
     background-color: orange;
 }
+
+.not-selectable:hover{
+    cursor:not-allowed;
+}
