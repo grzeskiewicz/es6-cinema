@@ -1,7 +1,7 @@
 import { authServices } from './services.js';
 import { API_URL, request } from './apiconnection.js';
 import { calendarDiv, renderWeek, renderCalendar, calendard, yearNow, selectedMonth, monthNow, createCalendar } from './calendar.js';
-
+ const IMAGE_URL = 'https://cinema-node-bucket.s3.amazonaws.com/';
 Handlebars.registerHelper('for', function(from, to, block) {
     var accum = '';
     for (var i = from; i <= to; i++)
@@ -267,6 +267,7 @@ export const showingsCtrl = {
             title.addEventListener('click', function() {
                 view.hide(showingsCtrl.details());
                 console.log(titles[1][title.textContent][0]);
+                titles[1][title.textContent][0].imageurl=IMAGE_URL+titles[1][title.textContent][0].imageurl;
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(titles[1][title.textContent][0])}`), "film"); //description of the film 
                 const showingsWrapper = document.querySelector('#showings-wrapper');
