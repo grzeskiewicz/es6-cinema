@@ -147,7 +147,7 @@ const calendarCtrl = {
                     const showingsWrapper = document.querySelector('#showings-wrapper');
                     const pickedDate = new Date(this.dataset.date);
                     view.hide(showlist);
-                    view.hide(details);
+                    //view.hide(details);
                     const showings = showingsCtrl.calendarShowings(pickedDate);
                     showlist.innerHTML = '';
                    // seats.innerHTML = '';
