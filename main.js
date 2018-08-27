@@ -93,20 +93,29 @@ const showingsService = Object.create(listService);
 // MAIN PART =======================================================================================================================================================
 
 
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<INIT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 fetch(request(API_URL + "showings", 'GET'))
     .then(res => res.json())
     .then(showings => {
+        const showingsWrapper = document.querySelector('#showings-wrapper');
+        view.hide(showingsWrapper);
         calendarCtrl.initCalendar();
         showingsService.add(showings);
         authServices.loadUserCredentials();
         const customerInfo = document.querySelector('#customer-info');
-        const showingsWrapper = document.querySelector('#showings-wrapper');
+
 
 
         view.hide(customerInfo);
-        view.hide(showingsWrapper);
+
         loginCtrl.getInfo();
     });
+
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<INIT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+
 
 const view = {
     renderContent(source, context, output) {
@@ -147,10 +156,9 @@ const calendarCtrl = {
                     const showingsWrapper = document.querySelector('#showings-wrapper');
                     const pickedDate = new Date(this.dataset.date);
                     view.hide(showlist);
-                    //view.hide(details);
                     const showings = showingsCtrl.calendarShowings(pickedDate);
                     showlist.innerHTML = '';
-                   // seats.innerHTML = '';
+                    // seats.innerHTML = '';
                     view.show(showlist);
                     if (showings.length > 0) {
                         view.show(showingsWrapper);
