@@ -148,7 +148,6 @@ const calendarCtrl = {
                     const pickedDate = new Date(this.dataset.date);
                     view.hide(showlist);
                     view.hide(details);
-                    view.hide(seats);
                     const showings = showingsCtrl.calendarShowings(pickedDate);
                     showlist.innerHTML = '';
                     seats.innerHTML = '';
