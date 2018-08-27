@@ -187,7 +187,7 @@ flex-flow: row wrap;*/
     justify-content: center;
     align-items: center;
 }
-/*
+
 #seats::before{
   display: block;
   content:"";
@@ -195,12 +195,12 @@ flex-flow: row wrap;*/
   height: 1px;
   width: 12.515625rem;
   margin: .5rem auto;
-} */
+} 
 
-/*#seats {
+#seats {
     display: flex;
     flex-flow: row wrap;
-}*/
+}
 
 
 
