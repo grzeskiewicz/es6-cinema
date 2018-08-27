@@ -147,7 +147,6 @@ p{
     flex: 1 100%;
     flex-flow: row wrap;
     border-style: solid;
-    border-color: purple;
 }
 
 #details>* {
