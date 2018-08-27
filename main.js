@@ -150,7 +150,7 @@ const calendarCtrl = {
                     view.hide(details);
                     const showings = showingsCtrl.calendarShowings(pickedDate);
                     showlist.innerHTML = '';
-                    seats.innerHTML = '';
+                   // seats.innerHTML = '';
                     view.show(showlist);
                     if (showings.length > 0) {
                         view.show(showingsWrapper);
