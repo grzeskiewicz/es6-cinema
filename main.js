@@ -315,7 +315,7 @@ export const showingsCtrl = {
                              view.hide(detailsDiv);
                          });*/
                         view.showFlex(detailsDiv);
-
+console.log(detailsDiv);
                         detailsDiv.classList.add('activeshow');
                         showing.querySelector('p').classList.remove('normal');
                         showing.querySelector('p').classList.add('active');
