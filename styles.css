@@ -146,7 +146,6 @@ p{
     display: none;
     flex: 1 100%;
     flex-flow: row wrap;
-    border-style: solid;
 }
 
 #details>* {
