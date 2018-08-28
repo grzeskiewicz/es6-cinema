@@ -88,20 +88,17 @@ const calendarCtrl = {
         for (const day of daysArray) {
             if (!day.classList.contains('not-selectable')) {
                 day.addEventListener('click', function() {
-                    const showlist = document.querySelector('#showlist');
                     const seats = document.querySelector('#seats');
-                    const details = document.querySelector('#details');
-                    const showingsWrapper = document.querySelector('#showings-wrapper');
                     const pickedDate = new Date(this.dataset.date);
-                    view.hide(showlist);
-                    view.hide(details);
+                    view.hide(showingsCtrl.showList);
+                    view.hide(showingsCtrl.details);
                     const showings = showingsCtrl.calendarShowings(pickedDate);
-                    showlist.innerHTML = '';
-                    view.show(showlist);
+                    showingsCtrl.showList.innerHTML = '';
+                    view.show(showingsCtrl.showList);
                     if (showings.length > 0) {
-                        view.show(showingsWrapper);
+                        view.show(showingsCtrl.showingsWrapper);
                     } else {
-                        view.hide(showingsWrapper);
+                        view.hide(showingsCtrl.showingsWrapper);
                     }
                     day.classList.add('date-clicked')
                     for (const day2 of daysArray) {
@@ -156,8 +153,9 @@ export const showingsCtrl = {
     showingsDiv: document.querySelector('#showings'),
     showingsWrapper: document.querySelector('#showings-wrapper'),
     details : document.querySelector('#details'),
-    showingsList() { return document.querySelectorAll('.showing'); },
-    titlesList() { return document.querySelectorAll('.title'); },
+    showList: document.querySelector('#showlist'),
+    showingsList() { return document.querySelectorAll('.showing'); }, //function because of handlebars
+    titlesList() { return document.querySelectorAll('.title'); }, //function because of handlebars
 
     dateParser(stringdate) {
         const dateFormat = 'HH:mm';
@@ -218,10 +216,9 @@ export const showingsCtrl = {
                 titles[1][title.textContent][0].imageurl = IMAGE_URL + titles[1][title.textContent][0].imageurl;
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(titles[1][title.textContent][0])}`), "film"); //description of the film 
-                const showingsWrapper = document.querySelector('#showings-wrapper');
                 const cal = document.querySelector('#calendar');
                 view.hide(cal);
-                view.show(showingsWrapper);
+                view.show(showingsCtrl.showingsWrapper); //this?
 
                 for (const title2 of [...showingsCtrl.titlesList()]) {
                     if (title2.classList.contains('active') && title2 !== title) {
@@ -246,15 +243,14 @@ export const showingsCtrl = {
                         }
 
 
-                        const detailsDiv = showingsCtrl.details;
-                        //view.show(detailsDiv);
+                      
                         /* detailsDiv.querySelector('#close').addEventListener('click', function() {
                              detailsDiv.classList.remove('activeshow');
                              showingsCtrl.showingsDiv().classList.remove('blur');
                              view.hide(detailsDiv);
                          });*/
-                        view.showFlex(detailsDiv);
-                        detailsDiv.classList.add('activeshow');
+                        view.showFlex(showingsCtrl.details);
+                        showingsCtrl.details.classList.add('activeshow');
                         showing.querySelector('p').classList.remove('normal');
                         showing.querySelector('p').classList.add('active');
 
@@ -298,8 +294,8 @@ export const showingsCtrl = {
 }
 
 const seatsCtrl = {
-    seats: document.getElementsByClassName("seat"),
-    seatsDiv: document.getElementById('seats'),
+    seats: document.querySelectorAll('.seat'),
+    seatsDiv: document.querySelector('#seats'),
     selectedSeats: [],
     toggleListener() {
         [...this.seats].forEach(seat => {
@@ -370,7 +366,7 @@ const ticketCtrl = {
         loginCtrl.getInfo().then(email => {
             if (email === undefined) {
                 document.getElementById("order-status").innerHTML = "Please login to order tickets!";
-                view.hide(document.querySelector('#seats'));
+                view.hide(orderCtrl.seatsDiv);
 
             } else {
                 const ticket = {
@@ -382,11 +378,10 @@ const ticketCtrl = {
                 fetch(request(`${API_URL}newticket`, 'POST', ticket))
                     .then(res => res.json())
                     .then(result => {
-                        const seatsDiv = document.getElementById('seats');
                         //view.hide(orderForm);
-                        document.querySelector('#details').classList.add('ordered');
+                        showingsCtrl.details.classList.add('ordered');
                         orderForm.innerHTML = result.msg;
-                        view.hide(seatsDiv);
+                        view.hide(orderCtrl.seatsDiv);
                        // console.log(result);
                     }).catch(error => Promise.reject(new Error(error)));
             }
@@ -451,7 +446,6 @@ const loginCtrl = {
     login(event) {
         event.preventDefault();
         const loginForm = document.forms['login-form'];
-        //console.log(loginForm);
         const loginStatus = document.querySelector('#login-status');
         let user = {
             email: loginForm.email.value,
