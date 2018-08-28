@@ -158,7 +158,7 @@ const calendarCtrl = {
                     view.hide(showlist);
                     view.hide(details);
                     const showings = showingsCtrl.calendarShowings(pickedDate);
-                    console.log("TUTAJ",showings);
+                    //console.log("TUTAJ",showings);
                     showlist.innerHTML = '';
                     // seats.innerHTML = '';
                     view.show(showlist);
@@ -259,6 +259,7 @@ const showings = showingsService.list()[0];
 //        console.log("TUTAJ 2",showings);
         const result = [];
         for (const showingElem of showings) {
+            console.log(showingElem.date,parsedPickedDate);
             if (showingElem.date.includes(parsedPickedDate)) {
                 let showcopy = JSON.parse(JSON.stringify(showingElem));
                 showcopy.date = this.dateParser(showcopy.date);
