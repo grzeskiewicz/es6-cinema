@@ -199,12 +199,10 @@ export const showingsCtrl = {
         const result = [];
 
         for (const showingElem of showings) {
-            console.log(showingElem, parsedPickedDate);
             if (showingElem.date.includes(parsedPickedDate)) {
                 let showcopy = JSON.parse(JSON.stringify(showingElem));
                 showcopy.date = this.dateParser(showcopy.date);
                 result.push(showcopy);
-                console.log(showcopy);
             }
         }
         showingsCtrl.list(result);
@@ -259,7 +257,6 @@ export const showingsCtrl = {
                              view.hide(detailsDiv);
                          });*/
                         view.showFlex(detailsDiv);
-                        console.log(detailsDiv);
                         detailsDiv.classList.add('activeshow');
                         showing.querySelector('p').classList.remove('normal');
                         showing.querySelector('p').classList.add('active');
@@ -393,7 +390,7 @@ const ticketCtrl = {
                         document.querySelector('#details').classList.add('ordered');
                         orderForm.innerHTML = result.msg;
                         view.hide(seatsDiv);
-                        console.log(result);
+                       // console.log(result);
                     }).catch(error => Promise.reject(new Error(error)));
             }
         });
