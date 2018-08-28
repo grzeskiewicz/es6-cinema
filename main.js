@@ -224,7 +224,7 @@ export const showingsCtrl = {
     details() { return document.querySelector('#details'); },
     dateParser(stringdate) {
         const dateFormat = 'HH:mm';
-        return moment(stringdate, 'YYYY-MM-DDThh:mm:ssZ').format(dateFormat);
+        return moment(stringdate).format(dateFormat);
     },
     sortShowings(sList) {
         sList = sList.sort((a, b) => {
@@ -254,7 +254,7 @@ export const showingsCtrl = {
     },
     calendarShowings(pickedDate) {
 
-        const parsedPickedDate = moment(pickedDate).format('YYYY-MM-DD');
+        const parsedPickedDate = moment(pickedDate).format('DD-MM-YYYY');
         const showings = showingsService.list()[0];
         const result = [];
 
@@ -411,7 +411,7 @@ const orderCtrl = {
         const nextBtn = document.getElementById("nextBtn");
         nextBtn.addEventListener('click', event => {
             const obj = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
-            if (moment(obj.showing.date).isValid()) { obj.showing.date = moment(obj.showing.date).format('DD.MM.YYYY HH:mm'); }
+            if (moment(obj.showing.date).isValid()) { obj.showing.date = moment(obj.showing.date).format('DD-MM-YYYY HH:mm'); }
 
             //obj.showing.date=moment(obj.showing.date);
             view.renderContent("entry-template-order", obj, "order");
