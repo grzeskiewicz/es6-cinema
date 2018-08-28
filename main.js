@@ -259,7 +259,7 @@ const showings = showingsService.list()[0];
 //        console.log("TUTAJ 2",showings);
         const result = [];
         for (const showingElem of showings) {
-            console.log(showingElem.date,parsedPickedDate);
+            console.log(showingElem,parsedPickedDate);
             if (showingElem.date.includes(parsedPickedDate)) {
                 let showcopy = JSON.parse(JSON.stringify(showingElem));
                 showcopy.date = this.dateParser(showcopy.date);
