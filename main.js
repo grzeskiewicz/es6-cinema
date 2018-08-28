@@ -255,9 +255,9 @@ export const showingsCtrl = {
     calendarShowings(pickedDate) {
 
         const parsedPickedDate = moment(pickedDate).format('YYYY-MM-DD');
-const showings = showingsService.list()[0];
-//        console.log("TUTAJ 2",showings);
-        const result = [];
+const showings = showingsService.list()[0//        console.log("TUTAJ 2",showings);
+        const result = [];];
+
         for (const showingElem of showings) {
             console.log(showingElem,parsedPickedDate);
             if (showingElem.date.includes(parsedPickedDate)) {
