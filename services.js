@@ -56,17 +56,6 @@ export const authServices = {
                     return result;
                 } else { return result; }
             }).catch(error => Promise.reject(new Error(error)));
-        /*return $q(function(resolve, reject) {
-            $http.post(`${{API_URL}}/login`, user).then(function(result) {
-                if (result.data.success) {
-                    storeUserCredentials(result.data.token);
-                    console.log(result.data.token);
-                    resolve(result.data.msg);
-                } else {
-                    reject(result.data);
-                }
-            });
-        });*/
     },
 
     logout() {

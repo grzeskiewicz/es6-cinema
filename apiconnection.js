@@ -1,8 +1,4 @@
-//export const API_URL = 'https://cinemadb.000webhostapp.com/hehe/index.php/'; PHP server
-//export const API_URL='https://cinemanode.azurewebsites.net/';
-//export const API_URL='http://cinemanode-cinemanode.193b.starter-ca-central-1.openshiftapps.com/';
 export const API_URL='https://cinema-node.herokuapp.com/';
-//const API_URL = 'https://api.myjson.com/bins/w7wup';
 
 export const headers = new Headers({
     'Accept': 'application/json',

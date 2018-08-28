@@ -2,64 +2,7 @@ import { authServices } from './services.js';
 import { API_URL, request } from './apiconnection.js';
 import { calendarDiv, renderWeek, renderCalendar, calendard, yearNow, selectedMonth, monthNow, createCalendar } from './calendar.js';
 const IMAGE_URL = 'https://cinema-node-bucket.s3.amazonaws.com/';
-Handlebars.registerHelper('for', function(from, to, block) {
-    var accum = '';
-    for (var i = from; i <= to; i++)
-        accum += block.fn(i);
-    return accum;
-});
 
-
-Handlebars.registerHelper('if_eq', function(a, b, opts) {
-    if (a == b) {
-        return opts.fn(this);
-    } else {
-        return opts.inverse(this);
-    }
-});
-
-
-
-Handlebars.registerHelper('compare', function(lvalue, operator, rvalue, options) {
-
-    var operators, result;
-
-    if (arguments.length < 3) {
-        throw new Error("Handlerbars Helper 'compare' needs 2 parameters");
-    }
-
-    if (options === undefined) {
-        options = rvalue;
-        rvalue = operator;
-        operator = "===";
-    }
-
-    operators = {
-        '==': function(l, r) { return l == r; },
-        '===': function(l, r) { return l === r; },
-        '!=': function(l, r) { return l != r; },
-        '!==': function(l, r) { return l !== r; },
-        '<': function(l, r) { return l < r; },
-        '>': function(l, r) { return l > r; },
-        '<=': function(l, r) { return l <= r; },
-        '>=': function(l, r) { return l >= r; },
-        'typeof': function(l, r) { return typeof l == r; },
-        '%': function(l, r) { return l % r == 0; }
-    };
-
-    if (!operators[operator]) {
-        throw new Error("Handlerbars Helper 'compare' doesn't know the operator " + operator);
-    }
-
-    result = operators[operator](lvalue, rvalue);
-
-    if (result) {
-        return options.fn(this);
-    } else {
-        return options.inverse(this);
-    }
-
-});
 
 
 const listService = { //same object like picedSeats, maybe Object.create(pattern)?
@@ -267,7 +210,6 @@ export const showingsCtrl = {
                 console.log(showcopy);
             }
         }
-        // console.log("TUTAJ 3",result);
         showingsCtrl.list(result);
         seatsCtrl.toggleListener();
         return result;
@@ -484,7 +426,6 @@ const registerCtrl = {
                 } else {
                     registerStatus.innerHTML = res.msg;
                     registerStatus.classList.add('error');
-                    //  console.log(res.msg);
                 }
 
             });
@@ -513,11 +454,9 @@ const loginCtrl = {
                     return result.msg;
                 } else {
                     // console.log("Error getInfo:");
-                    // console.log(result);
                 }
             });
     },
-    // register() { $state.go('register'); },
     login(event) {
         event.preventDefault();
         const loginForm = document.forms['login-form'];
@@ -532,20 +471,12 @@ const loginCtrl = {
                 if (res.success) {
                     loginStatus.classList.add('success');
                     loginStatus.innerHTML = res.msg;
-                    //console.log(this);
                     loginCtrl.getInfo();
 
                 } else {
                     loginStatus.classList.add('error');
                     loginStatus.innerHTML = res.msg;
-                    //console.log(res);
                 }
-                // $rootScope.noshowlogin=true;
-                //$scope.getInfo();
-
-                // $scope.error=true;
-                //$scope.errorMsg=errMsg.msg;
-                // if (errMsg.wrongpassword==true) {$scope.errorpassword=true;}
             });
     },
     destrySession() { authServies.logout(); },
@@ -560,10 +491,6 @@ const loginCtrl = {
         authServices.logout();
         view.show(loginDiv);
         view.show(registerDiv);
-        //$rootScope.noshowlogin=false;
-        //$state.go('login');
-        //$rootScope.memberinfo2=undefined;
-        //$scope.memberinfo=undefined;
     }
 
 }
