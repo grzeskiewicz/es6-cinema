@@ -47,7 +47,7 @@ fetch(request(API_URL + "showings", 'GET'))
         calendarCtrl.initCalendar();
   
         authServices.loadUserCredentials();
-        oginCtrl.getInfo();
+        loginCtrl.getInfo();
 
         const customerInfo = document.querySelector('#customer-info');
         view.hide(customerInfo);
