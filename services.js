@@ -14,7 +14,6 @@ export const authServices = {
     },
 
     storeUserCredentials(token) {
-        console.log("HEHE JESTEM TU");
         window.localStorage.setItem(this.LOCAL_TOKEN_KEY, token);
         this.useCredentials(token);
     },
@@ -22,8 +21,6 @@ export const authServices = {
     useCredentials(token) {
         this.isAuthenticated = true;
         this.authToken = token;
-       // console.log(token);
-       // console.log(this.authToken);
         headers.append('Authorization', this.authToken);
         // Set the token as header for your requests!
         //$http.defaults.headers.common.Authorization = authToken;

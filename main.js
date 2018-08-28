@@ -17,15 +17,14 @@ const listService = { //same object like picedSeats, maybe Object.create(pattern
 
     },
     selectById(id) {
-
-        this.selectedElem = this.elemArray[0].find(element => Number(element.id) === Number(id));
-        // console.log(this.selectedElem);
+        this.selectedElem = this.first().find(element => Number(element.id) === Number(id));
     },
     list() { return this.elemArray; },
     first() { return this.elemArray[0] },
     remove() { this.elemArray = []; },
     getSelected() { return this.selectedElem }
 }
+
 const showingsService = Object.create(listService);
 
 
@@ -43,16 +42,17 @@ fetch(request(API_URL + "showings", 'GET'))
     .then(showings => {
         const showingsWrapper = document.querySelector('#showings-wrapper');
         view.hide(showingsWrapper);
-        calendarCtrl.initCalendar();
         showingsService.add(showings);
+
+        calendarCtrl.initCalendar();
+  
         authServices.loadUserCredentials();
+        oginCtrl.getInfo();
+
         const customerInfo = document.querySelector('#customer-info');
-
-
-
         view.hide(customerInfo);
 
-        loginCtrl.getInfo();
+        l
     });
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<INIT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -66,8 +66,6 @@ const view = {
         let template = Handlebars.compile(sourceElem);
         let html = template(context);
         document.getElementById(output).innerHTML = html;
-        //document.getElementById(output).appendChild(html);
-        //console.log(document.getElementById(output).innerHTML);
     },
     show(element) {
         // element.classList.remove('visuallyhidden').add('visuallyvisible');
@@ -84,6 +82,8 @@ const view = {
         element.style.display = element.style.display === 'none' ? 'block' : 'none';
     }
 }
+
+
 let selectedMonthCopy = selectedMonth;
 const calendarCtrl = {
     initListeners(calendarTable) {
@@ -101,9 +101,7 @@ const calendarCtrl = {
                     view.hide(showlist);
                     view.hide(details);
                     const showings = showingsCtrl.calendarShowings(pickedDate);
-                    //console.log("TUTAJ",showings);
                     showlist.innerHTML = '';
-                    // seats.innerHTML = '';
                     view.show(showlist);
                     if (showings.length > 0) {
                         view.show(showingsWrapper);
@@ -144,7 +142,6 @@ const calendarCtrl = {
         });
     },
     initCalendar() {
-        //renderWeek(calendard);
         let calendarTable = renderCalendar(calendard);
         this.initListeners(calendarTable);
         this.initListenersMonths();
