@@ -263,6 +263,7 @@ export const showingsCtrl = {
                 let showcopy = JSON.parse(JSON.stringify(showingElem));
                 showcopy.date = this.dateParser(showcopy.date);
                 result.push(showcopy);
+                console.log(showcopy);
             }
         }
         console.log("TUTAJ 3",result);
