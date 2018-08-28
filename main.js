@@ -39,7 +39,7 @@ fetch(request(API_URL + "showings", 'GET'))
     .then(res => res.json())
     .then(showings => {
  
-        view.hide(showingsCtrl.showingsWrapper());
+        view.hide(showingsCtrl.showingsWrapper);
         showingsService.add(showings);
 
         calendarCtrl.initCalendar();
@@ -154,7 +154,7 @@ const calendarCtrl = {
 
 export const showingsCtrl = {
     showingsDiv() { return document.querySelector('#showings'); },
-    showingsWrapper() {return document.querySelector('#showings-wrapper'); },
+    showingsWrapper: document.querySelector('#showings-wrapper'),
     showingsList() { return document.querySelectorAll('.showing'); },
     titlesList() { return document.querySelectorAll('.title'); },
     details() { return document.querySelector('#details'); },
