@@ -158,6 +158,7 @@ const calendarCtrl = {
                     view.hide(showlist);
                     view.hide(details);
                     const showings = showingsCtrl.calendarShowings(pickedDate);
+                    console.log("TUTAJ",showings);
                     showlist.innerHTML = '';
                     // seats.innerHTML = '';
                     view.show(showlist);
