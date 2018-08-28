@@ -30,8 +30,6 @@ const showingsService = Object.create(listService);
 
 
 
-
-
 // MAIN PART =======================================================================================================================================================
 
 
@@ -40,8 +38,8 @@ const showingsService = Object.create(listService);
 fetch(request(API_URL + "showings", 'GET'))
     .then(res => res.json())
     .then(showings => {
-        const showingsWrapper = document.querySelector('#showings-wrapper');
-        view.hide(showingsWrapper);
+ 
+        view.hide(showingsCtrl.showingsWrapper());
         showingsService.add(showings);
 
         calendarCtrl.initCalendar();
@@ -156,6 +154,7 @@ const calendarCtrl = {
 
 export const showingsCtrl = {
     showingsDiv() { return document.querySelector('#showings'); },
+    showingsWrapper() {return document.querySelector('#showings-wrapper'); },
     showingsList() { return document.querySelectorAll('.showing'); },
     titlesList() { return document.querySelectorAll('.title'); },
     details() { return document.querySelector('#details'); },
