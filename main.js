@@ -51,8 +51,6 @@ fetch(request(API_URL + "showings", 'GET'))
 
         const customerInfo = document.querySelector('#customer-info');
         view.hide(customerInfo);
-
-        l
     });
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<INIT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -92,7 +90,6 @@ const calendarCtrl = {
         for (const day of daysArray) {
             if (!day.classList.contains('not-selectable')) {
                 day.addEventListener('click', function() {
-
                     const showlist = document.querySelector('#showlist');
                     const seats = document.querySelector('#seats');
                     const details = document.querySelector('#details');
