@@ -256,6 +256,7 @@ export const showingsCtrl = {
 
         const parsedPickedDate = moment(pickedDate).format('YYYY-MM-DD');
         const showings = showingsService.list()[0];
+        console.log("TUTAJ 2",showings);
         const result = [];
         for (const showingElem of showings) {
             if (showingElem.date.includes(parsedPickedDate)) {
@@ -264,6 +265,7 @@ export const showingsCtrl = {
                 result.push(showcopy);
             }
         }
+        console.log("TUTAJ 3",result);
         showingsCtrl.list(result);
         seatsCtrl.toggleListener();
         return result;
