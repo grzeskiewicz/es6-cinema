@@ -153,11 +153,12 @@ const calendarCtrl = {
 
 
 export const showingsCtrl = {
-    showingsDiv() { return document.querySelector('#showings'); },
+    showingsDiv: document.querySelector('#showings'),
     showingsWrapper: document.querySelector('#showings-wrapper'),
+    details : document.querySelector('#details'),
     showingsList() { return document.querySelectorAll('.showing'); },
     titlesList() { return document.querySelectorAll('.title'); },
-    details() { return document.querySelector('#details'); },
+
     dateParser(stringdate) {
         const dateFormat = 'HH:mm';
         return moment(stringdate).format(dateFormat);
@@ -212,7 +213,7 @@ export const showingsCtrl = {
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "film-titles");
         [...this.titlesList()].forEach(title => {
             title.addEventListener('click', function() {
-                view.hide(showingsCtrl.details());
+                view.hide(showingsCtrl.details);
                 console.log(titles[1][title.textContent][0]);
                 titles[1][title.textContent][0].imageurl = IMAGE_URL + titles[1][title.textContent][0].imageurl;
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
@@ -245,7 +246,7 @@ export const showingsCtrl = {
                         }
 
 
-                        const detailsDiv = showingsCtrl.details();
+                        const detailsDiv = showingsCtrl.details;
                         //view.show(detailsDiv);
                         /* detailsDiv.querySelector('#close').addEventListener('click', function() {
                              detailsDiv.classList.remove('activeshow');
