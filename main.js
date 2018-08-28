@@ -255,11 +255,11 @@ export const showingsCtrl = {
     calendarShowings(pickedDate) {
 
         const parsedPickedDate = moment(pickedDate).format('YYYY-MM-DD');
-const showings = showingsService.list()[0//        console.log("TUTAJ 2",showings);
-        const result = [];];
+        const showings = showingsService.list()[0];
+        const result = [];
 
         for (const showingElem of showings) {
-            console.log(showingElem,parsedPickedDate);
+            console.log(showingElem, parsedPickedDate);
             if (showingElem.date.includes(parsedPickedDate)) {
                 let showcopy = JSON.parse(JSON.stringify(showingElem));
                 showcopy.date = this.dateParser(showcopy.date);
@@ -267,7 +267,7 @@ const showings = showingsService.list()[0//        console.log("TUTAJ 2",showing
                 console.log(showcopy);
             }
         }
-       // console.log("TUTAJ 3",result);
+        // console.log("TUTAJ 3",result);
         showingsCtrl.list(result);
         seatsCtrl.toggleListener();
         return result;
@@ -320,7 +320,7 @@ const showings = showingsService.list()[0//        console.log("TUTAJ 2",showing
                              view.hide(detailsDiv);
                          });*/
                         view.showFlex(detailsDiv);
-console.log(detailsDiv);
+                        console.log(detailsDiv);
                         detailsDiv.classList.add('activeshow');
                         showing.querySelector('p').classList.remove('normal');
                         showing.querySelector('p').classList.add('active');
