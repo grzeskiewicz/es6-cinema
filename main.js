@@ -154,7 +154,7 @@ export const showingsCtrl = {
     detailsDiv : document.querySelector('#details'),
     showList: document.querySelector('#showlist'),
     showingsList: document.getElementsByClassName('showing'), //function because of handlebars
-    titlesList() { return document.querySelectorAll('.title'); }, //function because of handlebars
+    titlesList: document.getElementsByClassName('title'), //function because of handlebars
 
     dateParser(stringdate) {
         const dateFormat = 'HH:mm';
@@ -208,10 +208,10 @@ export const showingsCtrl = {
         this.sortShowings(showings);
         const titles = this.groupShowings(showings);
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "film-titles");
-        [...this.titlesList()].forEach(title => {
+        [...this.titlesList].forEach(title => {
             title.addEventListener('click', function() {
                 view.hide(showingsCtrl.detailsDiv);
-                console.log(titles[1][title.textContent][0]);
+              //  console.log(titles[1][title.textContent][0]);
                 titles[1][title.textContent][0].imageurl = IMAGE_URL + titles[1][title.textContent][0].imageurl;
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(titles[1][title.textContent][0])}`), "film"); //description of the film 
@@ -219,7 +219,7 @@ export const showingsCtrl = {
                 view.hide(cal);
                 view.show(showingsCtrl.showingsWrapper); //this?
 
-                for (const title2 of [...showingsCtrl.titlesList()]) {
+                for (const title2 of [...showingsCtrl.titlesList]) {
                     if (title2.classList.contains('active') && title2 !== title) {
                         title2.classList.remove('active');
                         // title2.classList.add('normal');
@@ -329,7 +329,7 @@ const seatsCtrl = {
 
 
 const orderCtrl = {
-    orderDiv() { return document.querySelector('#order'); },
+    orderDiv: document.querySelector('#order'),
     pricing() {
         const price = document.forms['order-form'].price.value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount;
         const priceTotal = price * seatsCtrl.selectedSeats.length;
