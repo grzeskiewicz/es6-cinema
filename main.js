@@ -344,13 +344,16 @@ const orderCtrl = {
             if (moment(obj.showing.date).isValid()) { obj.showing.date = moment(obj.showing.date).format('YYYY-MM-DD HH:mm'); }
 
             //obj.showing.date=moment(obj.showing.date);
-            view.renderContent("entry-template-order", obj, "order");
-            view.renderContent("entry-template-login", obj, "login");
-            view.renderContent("entry-template-register", obj, "register");
-            registerCtrl.registerForm().addEventListener('submit', registerCtrl.signup, true);
+            view.renderContent("entry-template-order", obj, "order"); //only valid usage of renderContent
+            view.renderContent("entry-template-login", obj, "login"); // can I delete? and make hidden divs?
+            view.renderContent("entry-template-register", obj, "register"); //can I delete? and make hidden divs?
+
+            registerCtrl.registerForm().addEventListener('submit', registerCtrl.signup, false);
             loginCtrl.loginForm().addEventListener('submit', loginCtrl.login, false);
+
             const orderForm = document.forms['order-form'];
             document.querySelector('#total-price').innerHTML = `Total price to pay: ${this.pricing()}`;
+
             orderForm['price'].addEventListener('change', orderCtrl.pricing);
             orderForm.addEventListener('submit', ticketCtrl.order, false);
         });
@@ -381,7 +384,6 @@ const ticketCtrl = {
                         showingsCtrl.detailsDiv.classList.add('ordered');
                         orderForm.innerHTML = result.msg;
                         view.hide(seatsCtrl.seatsDiv);
-                        // console.log(result);
                     }).catch(error => Promise.reject(new Error(error)));
             }
         });
@@ -395,7 +397,7 @@ const registerCtrl = {
     signup(event) {
         event.preventDefault();
         const registerStatus = document.querySelector('#register-status');
-        let user = {
+        const user = {
             email: this.registerForm().email.value,
             password: this.registerForm().password.value,
             name: this.registerForm().name.value,
@@ -432,7 +434,6 @@ const loginCtrl = {
             .then(res => res.json())
             .then(result => {
                 if (result.success) {
-                    console.log(that, this);
                     this.customerInfoEmail.innerHTML = result.msg;
                     view.hide(this.loginDiv);
                     view.hide(this.registerDiv);
@@ -446,7 +447,7 @@ const loginCtrl = {
     login(event) {
         event.preventDefault();
         const loginStatus = document.querySelector('#login-status');
-        let user = {
+        const user = {
             email: this.loginForm().email.value,
             password: this.loginForm().password.value
         };
@@ -466,9 +467,9 @@ const loginCtrl = {
     destrySession() { authServies.logout(); },
 
     logout() {
+        authServices.logout();
         this.customerInfoEmail.innerHTML = "";
         view.hide(this.customerInfo);
-        authServices.logout();
         view.show(this.loginDiv);
         view.show(this.registerDiv);
     }
