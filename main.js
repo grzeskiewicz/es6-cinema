@@ -212,7 +212,7 @@ export const showingsCtrl = {
         const titles = this.groupShowings(showings);
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "film-titles");
         [...this.titlesList].forEach(title => {
-            titles[1][title.textContent][0].imageurl = IMAGE_URL + titles[1][title.textContent][0].imageurl;
+            titles[1][title.textContent][0].imageurl = IMAGE_URL + titles[1][title.textContent][0].imageurl; //setting poster's url
             title.addEventListener('click', function() {
                 view.hide(showingsCtrl.detailsDiv);
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
@@ -221,29 +221,25 @@ export const showingsCtrl = {
                 view.hide(cal);
                 view.show(showingsCtrl.showingsWrapper); //this?
 
-                for (const title2 of [...showingsCtrl.titlesList]) {
+                for (const title2 of [...showingsCtrl.titlesList]) { //only one title marked as active at a time
                     if (title2.classList.contains('active') && title2 !== title) {
                         title2.classList.remove('active');
                         // title2.classList.add('normal');
                     }
                 }
                 title.classList.add('active');
-                [...showingsCtrl.showingsList].forEach(showing => {
 
-                    //view.hide(showing.querySelector('.showing-details'));
-                    //view.hide(showing.querySelector('.poster'));
-                    showing.addEventListener('click', event => {
-                        // console.log(this);
+                [...showingsCtrl.showingsList].forEach(showing => {
+                    showing.addEventListener('click', event => { 
                         event.preventDefault();
-                        for (const showing2 of [...showingsCtrl.showingsList]) {
-                            // showing.querySelector('p')
+                        for (const showing2 of [...showingsCtrl.showingsList]) { //only one time of showings selected at a time
                             if (showing2.querySelector('p').classList.contains('active') && showing2.querySelector('p') !== showing.querySelector('p')) {
                                 showing2.querySelector('p').classList.remove('active');
                                 showing2.querySelector('p').classList.add('normal');
                             }
                         }
-
-
+                        showing.querySelector('p').classList.remove('normal');
+                        showing.querySelector('p').classList.add('active');
 
                         /* detailsDiv.querySelector('#close').addEventListener('click', function() {
                              detailsDiv.classList.remove('activeshow');
@@ -252,8 +248,7 @@ export const showingsCtrl = {
                          });*/
                         view.showFlex(showingsCtrl.detailsDiv);
                         showingsCtrl.detailsDiv.classList.add('activeshow');
-                        showing.querySelector('p').classList.remove('normal');
-                        showing.querySelector('p').classList.add('active');
+
 
                         //const showingDetails = showing.querySelector('.showing-details');
                         //const poster = showing.querySelector('.poster');
