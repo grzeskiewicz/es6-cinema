@@ -1,6 +1,6 @@
 import { authServices } from './services.js';
 import { API_URL, request } from './apiconnection.js';
-import { calendarDiv, renderWeek, renderCalendar, calendard, yearNow, selectedMonth, monthNow, createCalendar } from './calendar.js';
+import { calendarDiv, renderWeek, renderCalendar, calendarObj, yearNow, selectedMonth, monthNow, createCalendar } from './calendar.js';
 const IMAGE_URL = 'https://cinema-node-bucket.s3.amazonaws.com/';
 
 
@@ -106,7 +106,7 @@ const calendarCtrl = {
                         }
                     }
 
-                    const weekTable = renderWeek(calendard, day.dataset.date);
+                    const weekTable = renderWeek(calendarObj, day.dataset.date);
                     calendarCtrl.initListeners(weekTable);
 
                 });
@@ -133,7 +133,7 @@ const calendarCtrl = {
         });
     },
     initCalendar() {
-        let calendarTable = renderCalendar(calendard);
+        let calendarTable = renderCalendar(calendarObj);
         this.initListeners(calendarTable);
         this.initListenersMonths();
         const roll = document.querySelector('#roll');
@@ -212,8 +212,6 @@ export const showingsCtrl = {
             titles[1][title.textContent][0].imageurl = IMAGE_URL + titles[1][title.textContent][0].imageurl;
             title.addEventListener('click', function() {
                 view.hide(showingsCtrl.detailsDiv);
-                //  console.log(titles[1][title.textContent][0]);
-                
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(titles[1][title.textContent][0])}`), "film"); //description of the film 
                 const cal = document.querySelector('#calendar');

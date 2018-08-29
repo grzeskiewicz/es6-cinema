@@ -10,7 +10,7 @@ export let selectedMonth = new Date().getMonth();
 const today = new Date();
 
 
-export const calendard = createCalendar(yearNow, selectedMonth);
+export const calendarObj = createCalendar(yearNow, selectedMonth);
 
 export function renderCalendar(calendar) {
     const p = document.createElement('p');
