@@ -38,12 +38,12 @@ const showingsService = Object.create(listService);
 fetch(request(API_URL + "showings", 'GET'))
     .then(res => res.json())
     .then(showings => {
- 
+
         view.hide(showingsCtrl.showingsWrapper);
         showingsService.add(showings);
 
         calendarCtrl.initCalendar();
-  
+
         authServices.loadUserCredentials();
         loginCtrl.getInfo();
 
@@ -151,7 +151,7 @@ const calendarCtrl = {
 export const showingsCtrl = {
     showingsDiv: document.querySelector('#showings'),
     showingsWrapper: document.querySelector('#showings-wrapper'),
-    detailsDiv : document.querySelector('#details'),
+    detailsDiv: document.querySelector('#details'),
     showList: document.querySelector('#showlist'),
     showingsList: document.getElementsByClassName('showing'), //function because of handlebars
     titlesList: document.getElementsByClassName('title'), //function because of handlebars
@@ -211,7 +211,7 @@ export const showingsCtrl = {
         [...this.titlesList].forEach(title => {
             title.addEventListener('click', function() {
                 view.hide(showingsCtrl.detailsDiv);
-              //  console.log(titles[1][title.textContent][0]);
+                //  console.log(titles[1][title.textContent][0]);
                 titles[1][title.textContent][0].imageurl = IMAGE_URL + titles[1][title.textContent][0].imageurl;
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(titles[1][title.textContent][0])}`), "film"); //description of the film 
@@ -242,7 +242,7 @@ export const showingsCtrl = {
                         }
 
 
-                      
+
                         /* detailsDiv.querySelector('#close').addEventListener('click', function() {
                              detailsDiv.classList.remove('activeshow');
                              showingsCtrl.showingsDiv().classList.remove('blur');
@@ -345,10 +345,8 @@ const orderCtrl = {
             view.renderContent("entry-template-order", obj, "order");
             view.renderContent("entry-template-login", obj, "login");
             view.renderContent("entry-template-register", obj, "register");
-            const registerForm = document.forms['register-form'];
-            registerForm.addEventListener('submit', registerCtrl.signup, false);
-            const loginForm = document.forms['login-form'];
-            loginForm.addEventListener('submit', loginCtrl.login, false);
+            registerCtrl.registerForm.addEventListener('submit', registerCtrl.signup, false);
+            loginCtrl.loginForm.addEventListener('submit', loginCtrl.login, false);
             const orderForm = document.forms['order-form'];
             this.pricing();
             orderForm['price'].addEventListener('change', orderCtrl.pricing);
@@ -381,7 +379,7 @@ const ticketCtrl = {
                         showingsCtrl.detailsDiv.classList.add('ordered');
                         orderForm.innerHTML = result.msg;
                         view.hide(seatsCtrl.seatsDiv);
-                       // console.log(result);
+                        // console.log(result);
                     }).catch(error => Promise.reject(new Error(error)));
             }
         });
@@ -391,23 +389,23 @@ const ticketCtrl = {
 }
 
 const registerCtrl = {
+    registerForm: document.forms['register-form'],
     signup(event) {
         event.preventDefault();
-        const registerForm = document.forms['register-form'];
         const registerStatus = document.querySelector('#register-status');
         let user = {
-            email: registerForm.email.value,
-            password: registerForm.password.value,
-            name: registerForm.name.value,
-            surename: registerForm.surename.value,
-            telephone: registerForm.telephone.value
+            email: this.registerForm.email.value,
+            password: this.registerForm.password.value,
+            name: this.registerForm.name.value,
+            surename: this.registerForm.surename.value,
+            telephone: this.registerForm.telephone.value
         };
         authServices.register(user)
             .then(res => {
                 if (res.success) {
                     registerStatus.innerHTML = res.msg;
                     registerStatus.classList.add('success');
-                    view.hide(registerForm);
+                    view.hide(this.registerForm);
                 } else {
                     registerStatus.innerHTML = res.msg;
                     registerStatus.classList.add('error');
@@ -419,28 +417,24 @@ const registerCtrl = {
 
 
 const loginCtrl = {
-loginDiv: document.querySelector('#login'),
-registerDiv: document.querySelector('#register'),
-customerInfoEmail:document.querySelector('#customer-info-email'),
-customerInfo: document.querySelector('#customer-info'),
+    loginDiv: document.querySelector('#login'),
+    registerDiv: document.querySelector('#register'),
+    customerInfoEmail: document.querySelector('#customer-info-email'),
+    customerInfo: document.querySelector('#customer-info'),
+    loginForm: document.forms['login-form'],
     getInfo() {
-        const that=this;
-        const loginDiv = document.querySelector('#login');
-        const registerDiv = document.querySelector('#register');
-        const customerInfoEmail = document.querySelector('#customer-info-email');
-        const customerInfo = document.querySelector('#customer-info');
+        const that = this;
         const logoutButton = document.querySelector('#logout');
         logoutButton.addEventListener('click', loginCtrl.logout, false);
         return fetch(request(`${API_URL}memberinfo`, 'GET'))
             .then(res => res.json())
             .then(result => {
                 if (result.success) {
-                    console.log(that,this);
-                    customerInfoEmail.innerHTML = result.msg;
-                    view.hide(loginDiv);
-                    view.hide(registerDiv);
-                    view.show(customerInfo);
-                    //console.log("FETCH: " + result.msg);
+                    console.log(that, this);
+                    this.customerInfoEmail.innerHTML = result.msg;
+                    view.hide(this.loginDiv);
+                    view.hide(this.registerDiv);
+                    view.show(this.customerInfo);
                     return result.msg;
                 } else {
                     // console.log("Error getInfo:");
@@ -449,11 +443,10 @@ customerInfo: document.querySelector('#customer-info'),
     },
     login(event) {
         event.preventDefault();
-        const loginForm = document.forms['login-form'];
         const loginStatus = document.querySelector('#login-status');
         let user = {
-            email: loginForm.email.value,
-            password: loginForm.password.value
+            email: this.loginForm.email.value,
+            password: this.loginForm.password.value
         };
         authServices.login(user)
             .then(res => {
@@ -471,15 +464,11 @@ customerInfo: document.querySelector('#customer-info'),
     destrySession() { authServies.logout(); },
 
     logout() {
-        const loginDiv = document.querySelector('#login');
-        const registerDiv = document.querySelector('#register');
-        const customerInfo = document.querySelector('#customer-info');
-        const customerInfoEmail = document.querySelector('#customer-info-email');
-        customerInfoEmail.innerHTML = "";
-        view.hide(customerInfo);
+        this.customerInfoEmail.innerHTML = "";
+        view.hide(this.customerInfo);
         authServices.logout();
-        view.show(loginDiv);
-        view.show(registerDiv);
+        view.show(this.loginDiv);
+        view.show(this.registerDiv);
     }
 
 }
