@@ -300,6 +300,7 @@ const seatsCtrl = {
     toggleListener() {
         [...this.seats].forEach(seat => {
             seat.addEventListener('click', event => {
+                alert("LAWL");
                 const nextBtn = document.getElementById("nextBtn");
                 event.target.classList.toggle('selected');
                 if (event.target.classList.contains('selected')) {
@@ -424,8 +425,8 @@ loginDiv: document.querySelector('#login'),
 registerDiv: document.querySelector('#register'),
 customerInfoEmail:document.querySelector('#customer-info-email'),
 customerInfo: document.querySelector('#customer-info'),
-thaht: this,
     getInfo() {
+        const that=this;
         const loginDiv = document.querySelector('#login');
         const registerDiv = document.querySelector('#register');
         const customerInfoEmail = document.querySelector('#customer-info-email');
