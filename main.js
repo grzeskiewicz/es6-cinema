@@ -346,7 +346,7 @@ const orderCtrl = {
             view.renderContent("entry-template-login", obj, "login");
             view.renderContent("entry-template-register", obj, "register");
             console.log(registerCtrl);
-            registerCtrl.registerForm.addEventListener('submit', registerCtrl.signup, false);
+            registerCtrl.registerForm().addEventListener('submit', registerCtrl.signup, true);
             loginCtrl.loginForm.addEventListener('submit', loginCtrl.login, false);
             const orderForm = document.forms['order-form'];
             this.pricing();
@@ -390,23 +390,23 @@ const ticketCtrl = {
 }
 
 const registerCtrl = {
-    registerForm: document.getElementById('register-form'),
+    registerForm() => document.getElementById('register-form'),
     signup(event) {
         event.preventDefault();
         const registerStatus = document.querySelector('#register-status');
         let user = {
-            email: this.registerForm.email.value,
-            password: this.registerForm.password.value,
-            name: this.registerForm.name.value,
-            surename: this.registerForm.surename.value,
-            telephone: this.registerForm.telephone.value
+            email: this.registerForm().email.value,
+            password: this.registerForm().password.value,
+            name: this.registerForm().name.value,
+            surename: this.registerForm().surename.value,
+            telephone: this.registerForm().telephone.value
         };
         authServices.register(user)
             .then(res => {
                 if (res.success) {
                     registerStatus.innerHTML = res.msg;
                     registerStatus.classList.add('success');
-                    view.hide(this.registerForm);
+                    view.hide(this.registerForm());
                 } else {
                     registerStatus.innerHTML = res.msg;
                     registerStatus.classList.add('error');
