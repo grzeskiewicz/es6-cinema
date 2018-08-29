@@ -390,7 +390,7 @@ const ticketCtrl = {
 }
 
 const registerCtrl = {
-    registerForm() => document.getElementById('register-form'),
+    registerForm(() => document.getElementById('register-form')),
     signup(event) {
         event.preventDefault();
         const registerStatus = document.querySelector('#register-status');
