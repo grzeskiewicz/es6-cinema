@@ -88,10 +88,9 @@ const calendarCtrl = {
         for (const day of daysArray) {
             if (!day.classList.contains('not-selectable')) {
                 day.addEventListener('click', function() {
-                    const seats = document.querySelector('#seats');
                     const pickedDate = new Date(this.dataset.date);
                     view.hide(showingsCtrl.showList);
-                    view.hide(showingsCtrl.details);
+                    view.hide(showingsCtrl.detailsDiv);
                     const showings = showingsCtrl.calendarShowings(pickedDate);
                     showingsCtrl.showList.innerHTML = '';
                     view.show(showingsCtrl.showList);
@@ -152,7 +151,7 @@ const calendarCtrl = {
 export const showingsCtrl = {
     showingsDiv: document.querySelector('#showings'),
     showingsWrapper: document.querySelector('#showings-wrapper'),
-    details : document.querySelector('#details'),
+    detailsDiv : document.querySelector('#details'),
     showList: document.querySelector('#showlist'),
     showingsList() { return document.querySelectorAll('.showing'); }, //function because of handlebars
     titlesList() { return document.querySelectorAll('.title'); }, //function because of handlebars
@@ -211,7 +210,7 @@ export const showingsCtrl = {
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "film-titles");
         [...this.titlesList()].forEach(title => {
             title.addEventListener('click', function() {
-                view.hide(showingsCtrl.details);
+                view.hide(showingsCtrl.detailsDiv);
                 console.log(titles[1][title.textContent][0]);
                 titles[1][title.textContent][0].imageurl = IMAGE_URL + titles[1][title.textContent][0].imageurl;
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
@@ -249,8 +248,8 @@ export const showingsCtrl = {
                              showingsCtrl.showingsDiv().classList.remove('blur');
                              view.hide(detailsDiv);
                          });*/
-                        view.showFlex(showingsCtrl.details);
-                        showingsCtrl.details.classList.add('activeshow');
+                        view.showFlex(showingsCtrl.detailsDiv);
+                        showingsCtrl.detailsDiv.classList.add('activeshow');
                         showing.querySelector('p').classList.remove('normal');
                         showing.querySelector('p').classList.add('active');
 
@@ -298,10 +297,8 @@ const seatsCtrl = {
     seatsDiv: document.querySelector('#seats'),
     selectedSeats: [],
     toggleListener() {
-        console.log("Hłe hłę", seatsCtrl.seats);
         [...this.seats].forEach(seat => {
             seat.addEventListener('click', event => {
-                alert("LAWL");
                 const nextBtn = document.getElementById("nextBtn");
                 event.target.classList.toggle('selected');
                 if (event.target.classList.contains('selected')) {
@@ -381,7 +378,7 @@ const ticketCtrl = {
                     .then(res => res.json())
                     .then(result => {
                         //view.hide(orderForm);
-                        showingsCtrl.details.classList.add('ordered');
+                        showingsCtrl.detailsDiv.classList.add('ordered');
                         orderForm.innerHTML = result.msg;
                         view.hide(orderCtrl.seatsDiv);
                        // console.log(result);
