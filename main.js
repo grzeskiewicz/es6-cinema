@@ -345,6 +345,7 @@ const orderCtrl = {
             view.renderContent("entry-template-order", obj, "order");
             view.renderContent("entry-template-login", obj, "login");
             view.renderContent("entry-template-register", obj, "register");
+            console.log(registerCtrl);
             registerCtrl.registerForm.addEventListener('submit', registerCtrl.signup, false);
             loginCtrl.loginForm.addEventListener('submit', loginCtrl.login, false);
             const orderForm = document.forms['order-form'];
