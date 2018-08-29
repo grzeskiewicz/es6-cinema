@@ -294,11 +294,11 @@ export const showingsCtrl = {
 }
 
 const seatsCtrl = {
-    seats: document.querySelectorAll('.seat'),
+    seats: document.getElementsByClassName('seat'),
     seatsDiv: document.querySelector('#seats'),
     selectedSeats: [],
     toggleListener() {
-        console.log("Hłe hłę", this.seats);
+        console.log("Hłe hłę", seatsCtrl.seats);
         [...this.seats].forEach(seat => {
             seat.addEventListener('click', event => {
                 alert("LAWL");
