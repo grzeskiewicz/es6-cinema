@@ -420,7 +420,11 @@ const registerCtrl = {
 
 
 const loginCtrl = {
-
+loginDiv: document.querySelector('#login'),
+registerDiv: document.querySelector('#register'),
+customerInfoEmail:document.querySelector('#customer-info-email'),
+customerInfo: document.querySelector('#customer-info'),
+thaht: this,
     getInfo() {
         const loginDiv = document.querySelector('#login');
         const registerDiv = document.querySelector('#register');
@@ -432,6 +436,7 @@ const loginCtrl = {
             .then(res => res.json())
             .then(result => {
                 if (result.success) {
+                    console.log(that,this);
                     customerInfoEmail.innerHTML = result.msg;
                     view.hide(loginDiv);
                     view.hide(registerDiv);
