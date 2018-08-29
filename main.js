@@ -167,16 +167,17 @@ export const showingsCtrl = {
     },
     groupShowings(sList) {
         const group = [];
-        for (const showing of sList) {
+       // const groupedShowingsArray = [];
+        const titleList = [];
+
+        for (const showing of sList) { //putting showings by the titles' names
             if (group[showing['title']] === undefined) group[showing['title']] = [];
             group[showing['title']].push(showing);
         }
 
-        const groupedShowingsArray = [];
-        const titleList = [];
-        for (let key in group) {
+        for (let key in group) {  //
             titleList.push(key);
-            groupedShowingsArray.push(group[key]);
+            //groupedShowingsArray.push(group[key]);
         }
         /*  const finallist = [];
           for (const elem of groupedShowingsArray) {
@@ -184,6 +185,7 @@ export const showingsCtrl = {
                   finallist.push(el);
               }
           }*/
+          console.log(titleList,group);
         return [titleList, group];
     },
     calendarShowings(pickedDate) {
@@ -389,7 +391,7 @@ const ticketCtrl = {
 }
 
 const registerCtrl = {
-    registerForm() { return document.getElementById('register-form');},
+    registerForm() { return document.getElementById('register-form'); },
     signup(event) {
         event.preventDefault();
         const registerStatus = document.querySelector('#register-status');
@@ -421,7 +423,7 @@ const loginCtrl = {
     registerDiv: document.querySelector('#register'),
     customerInfoEmail: document.querySelector('#customer-info-email'),
     customerInfo: document.querySelector('#customer-info'),
-    loginForm() {return document.forms['login-form'];},
+    loginForm() { return document.forms['login-form']; },
     getInfo() {
         const that = this;
         const logoutButton = document.querySelector('#logout');
