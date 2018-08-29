@@ -153,7 +153,7 @@ export const showingsCtrl = {
     showingsWrapper: document.querySelector('#showings-wrapper'),
     detailsDiv : document.querySelector('#details'),
     showList: document.querySelector('#showlist'),
-    showingsList() { return document.querySelectorAll('.showing'); }, //function because of handlebars
+    showingsList: document.getElementsByClassName('showing'), //function because of handlebars
     titlesList() { return document.querySelectorAll('.title'); }, //function because of handlebars
 
     dateParser(stringdate) {
@@ -226,14 +226,14 @@ export const showingsCtrl = {
                     }
                 }
                 title.classList.add('active');
-                [...showingsCtrl.showingsList()].forEach(showing => {
+                [...showingsCtrl.showingsList].forEach(showing => {
 
                     //view.hide(showing.querySelector('.showing-details'));
                     //view.hide(showing.querySelector('.poster'));
                     showing.addEventListener('click', event => {
                         // console.log(this);
                         event.preventDefault();
-                        for (const showing2 of [...showingsCtrl.showingsList()]) {
+                        for (const showing2 of [...showingsCtrl.showingsList]) {
                             // showing.querySelector('p')
                             if (showing2.querySelector('p').classList.contains('active') && showing2.querySelector('p') !== showing.querySelector('p')) {
                                 showing2.querySelector('p').classList.remove('active');
