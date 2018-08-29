@@ -365,7 +365,7 @@ const ticketCtrl = {
         loginCtrl.getInfo().then(email => {
             if (email === undefined) {
                 document.getElementById("order-status").innerHTML = "Please login to order tickets!";
-                view.hide(orderCtrl.seatsDiv);
+                view.hide(seatsCtrl.seatsDiv);
 
             } else {
                 const ticket = {
@@ -380,7 +380,7 @@ const ticketCtrl = {
                         //view.hide(orderForm);
                         showingsCtrl.detailsDiv.classList.add('ordered');
                         orderForm.innerHTML = result.msg;
-                        view.hide(orderCtrl.seatsDiv);
+                        view.hide(seatsCtrl.seatsDiv);
                        // console.log(result);
                     }).catch(error => Promise.reject(new Error(error)));
             }
