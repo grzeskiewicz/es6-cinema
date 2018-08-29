@@ -347,7 +347,7 @@ const orderCtrl = {
             view.renderContent("entry-template-register", obj, "register");
             console.log(registerCtrl.registerForm());
             registerCtrl.registerForm().addEventListener('submit', registerCtrl.signup, true);
-            loginCtrl.loginForm.addEventListener('submit', loginCtrl.login, false);
+            loginCtrl.loginForm().addEventListener('submit', loginCtrl.login, false);
             const orderForm = document.forms['order-form'];
             this.pricing();
             orderForm['price'].addEventListener('change', orderCtrl.pricing);
@@ -422,7 +422,7 @@ const loginCtrl = {
     registerDiv: document.querySelector('#register'),
     customerInfoEmail: document.querySelector('#customer-info-email'),
     customerInfo: document.querySelector('#customer-info'),
-    loginForm: document.forms['login-form'],
+    loginForm() {return document.forms['login-form'];},
     getInfo() {
         const that = this;
         const logoutButton = document.querySelector('#logout');
@@ -446,8 +446,8 @@ const loginCtrl = {
         event.preventDefault();
         const loginStatus = document.querySelector('#login-status');
         let user = {
-            email: this.loginForm.email.value,
-            password: this.loginForm.password.value
+            email: this.loginForm().email.value,
+            password: this.loginForm().password.value
         };
         authServices.login(user)
             .then(res => {
