@@ -167,7 +167,7 @@ export const showingsCtrl = {
     },
     groupShowings(sList) {
         const group = [];
-       // const groupedShowingsArray = [];
+        // const groupedShowingsArray = [];
         const titleList = [];
 
         for (const showing of sList) { //putting showings by the titles' names
@@ -175,7 +175,7 @@ export const showingsCtrl = {
             group[showing['title']].push(showing);
         }
 
-        for (let key in group) {  //
+        for (let key in group) { //making list of film titles
             titleList.push(key);
             //groupedShowingsArray.push(group[key]);
         }
@@ -185,8 +185,8 @@ export const showingsCtrl = {
                   finallist.push(el);
               }
           }*/
-          console.log(titleList,group);
-        return [titleList, group];
+        console.log(titleList, group);
+        return [titleList, group]; //ready list of titles and showings grouped by titles
     },
     calendarShowings(pickedDate) {
 
@@ -194,7 +194,7 @@ export const showingsCtrl = {
         const showings = showingsService.list()[0];
         const result = [];
 
-        for (const showingElem of showings) {
+        for (const showingElem of showings) { //selecting showings from picked date and adding to array
             if (showingElem.date.includes(parsedPickedDate)) {
                 let showcopy = JSON.parse(JSON.stringify(showingElem));
                 showcopy.date = this.dateParser(showcopy.date);
@@ -203,6 +203,7 @@ export const showingsCtrl = {
         }
         showingsCtrl.list(result);
         seatsCtrl.toggleListener();
+        console.log(result);
         return result;
 
     },
@@ -334,7 +335,7 @@ const orderCtrl = {
     pricing() {
         const price = document.forms['order-form'].price.value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount;
         const priceTotal = price * seatsCtrl.selectedSeats.length;
-        document.querySelector('#total-price').innerHTML = `Total price to pay: ${priceTotal}`;
+        return priceTotal;
     },
     orderListener() {
         const nextBtn = document.getElementById("nextBtn");
@@ -346,11 +347,10 @@ const orderCtrl = {
             view.renderContent("entry-template-order", obj, "order");
             view.renderContent("entry-template-login", obj, "login");
             view.renderContent("entry-template-register", obj, "register");
-            console.log(registerCtrl.registerForm());
             registerCtrl.registerForm().addEventListener('submit', registerCtrl.signup, true);
             loginCtrl.loginForm().addEventListener('submit', loginCtrl.login, false);
             const orderForm = document.forms['order-form'];
-            this.pricing();
+            document.querySelector('#total-price').innerHTML = `Total price to pay: ${this.pricing()}`;
             orderForm['price'].addEventListener('change', orderCtrl.pricing);
             orderForm.addEventListener('submit', ticketCtrl.order, false);
         });
