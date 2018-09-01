@@ -394,11 +394,11 @@ const registerCtrl = {
         const registerStatus = document.querySelector('#register-status');
         console.log(this);
         const user = {
-            email: this.registerForm().email.value,
-            password: this.registerForm().password.value,
-            name: this.registerForm().name.value,
-            surename: this.registerForm().surename.value,
-            telephone: this.registerForm().telephone.value
+            email: this.email.value,
+            password: this.password.value,
+            name: this.name.value,
+            surename: this.surename.value,
+            telephone: this.telephone.value
         };
         authServices.register(user)
             .then(res => {
