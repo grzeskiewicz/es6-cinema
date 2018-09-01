@@ -405,7 +405,7 @@ const registerCtrl = {
                 if (res.success) {
                     registerStatus.innerHTML = res.msg;
                     registerStatus.classList.add('success');
-                    view.hide(this.registerForm());
+                    view.hide(this);
                 } else {
                     registerStatus.innerHTML = res.msg;
                     registerStatus.classList.add('error');
