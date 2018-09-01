@@ -444,8 +444,8 @@ const loginCtrl = {
         event.preventDefault();
         const loginStatus = document.querySelector('#login-status');
         const user = {
-            email: this.loginForm().email.value,
-            password: this.loginForm().password.value
+            email: this.email.value,
+            password: this.password.value
         };
         authServices.login(user)
             .then(res => {
