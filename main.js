@@ -418,7 +418,7 @@ const registerCtrl = {
 const loginCtrl = {
     loginDiv: document.querySelector('#login'),
     registerDiv: document.querySelector('#register'),
-    customerInfoEmail: document.querySelector('#customer-info-email'),
+    customerInfoEmail() {return document.querySelector('#customer-info-email');} ,
     customerInfo: document.querySelector('#customer-info'),
     loginForm() { return document.forms['login-form']; },
     getInfo() {
@@ -429,7 +429,7 @@ const loginCtrl = {
             .then(res => res.json())
             .then(result => {
                 if (result.success) {
-                    this.customerInfoEmail.innerHTML = result.msg;
+                    this.customerInfoEmail().innerHTML = result.msg;
                     view.hide(this.loginDiv);
                     view.hide(this.registerDiv);
                     view.show(this.customerInfo);
@@ -463,7 +463,7 @@ const loginCtrl = {
 
     logout() {
         authServices.logout();
-        this.customerInfoEmail.innerHTML = "";
+        this.customerInfoEmail().innerHTML = "";
         view.hide(this.customerInfo);
         view.show(this.loginDiv);
         view.show(this.registerDiv);
