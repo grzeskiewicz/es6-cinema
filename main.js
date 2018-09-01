@@ -392,6 +392,7 @@ const registerCtrl = {
     signup(event) {
         event.preventDefault();
         const registerStatus = document.querySelector('#register-status');
+        console.log(this);
         const user = {
             email: this.registerForm().email.value,
             password: this.registerForm().password.value,
