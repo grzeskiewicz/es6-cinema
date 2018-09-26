@@ -94,7 +94,7 @@ export function renderWeek(calendar,dayClicked) {
             td.dataset.date = day.date;
             if (day.date.getMonth() === today.getMonth() && day.date.getDate() === dayClicked.getDate()) {
                 thisWeek = true;
-                td.classList.add('today');
+                td.classList.add('date-clicked');
             }
             // add before/after class
             day.before && td.classList.add('before');
