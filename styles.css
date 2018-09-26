@@ -250,7 +250,7 @@ flex-flow: row wrap;*/
 }
 
 .date-clicked {
-    background-color: grey;
+    background-color: orange;
 }
 
 .active {
@@ -355,7 +355,7 @@ flex-flow: row wrap;*/
 }
 
 .today {
-    background-color: orange;
+    background-color: blue;
 }
 
 table {
