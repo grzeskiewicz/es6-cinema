@@ -336,7 +336,7 @@ const orderCtrl = {
         const nextBtn = document.getElementById("nextBtn");
         const backBtn= document.getElementById("backBtn");
         const seatsOnly=  document.getElementById("seats-only");
-        view.hide(backBtn);
+        //view.hide(backBtn);
         nextBtn.addEventListener('click', event => {
             view.hide(nextBtn);
             view.hide(seatsOnly);
