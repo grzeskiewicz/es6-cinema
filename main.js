@@ -335,9 +335,11 @@ const orderCtrl = {
     orderListener() {
         const nextBtn = document.getElementById("nextBtn");
         const backBtn= document.getElementById("backBtn");
+        const seatsOnly=  document.getElementById("seats-only");
         view.hide(backBtn);
         nextBtn.addEventListener('click', event => {
             view.hide(nextBtn);
+            view.hide(seatsOnly);
             view.show(backBtn);
             const obj = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
             if (moment(obj.showing.date).isValid()) { obj.showing.date = moment(obj.showing.date).format('YYYY-MM-DD HH:mm'); }
