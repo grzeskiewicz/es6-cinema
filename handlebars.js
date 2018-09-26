@@ -1,4 +1,4 @@
-/**!
+﻿/**!
 
  @license
  handlebars v4.0.12
