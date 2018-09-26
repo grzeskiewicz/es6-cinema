@@ -106,8 +106,8 @@ const calendarCtrl = {
                         }
                     }
 
-                    const weekTable = renderWeek(calendarObj, day.dataset.date);
-                    calendarCtrl.initListeners(weekTable);
+                  //  const weekTable = renderWeek(calendarObj, day.dataset.date);
+                 //   calendarCtrl.initListeners(weekTable);
 
                 });
             }
