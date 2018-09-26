@@ -336,7 +336,7 @@ const orderCtrl = {
         const nextBtn = document.getElementById("nextBtn");
         const backBtn= document.getElementById("backBtn");
         nextBtn.addEventListener('click', event => {
-            view.hide(this);
+            view.hide(nextBtn);
             view.show(backBtn);
             const obj = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
             if (moment(obj.showing.date).isValid()) { obj.showing.date = moment(obj.showing.date).format('YYYY-MM-DD HH:mm'); }
