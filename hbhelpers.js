@@ -1,4 +1,4 @@
-Handlebars.registerHelper('for', function(from, to, block) {
+﻿Handlebars.registerHelper('for', function(from, to, block) {
     var accum = '';
     for (var i = from; i <= to; i++)
         accum += block.fn(i);
