@@ -92,6 +92,7 @@ export function renderWeek(calendar,dayClicked) {
             // set day of month as table cell text content
             td.textContent = day.date.getDate();
             td.dataset.date = day.date;
+            if (day.date.getMonth() === today.getMonth() && day.date.getDate() === today.getDate()) td.classList.add('today');
             if (day.date.getMonth() === today.getMonth() && day.date.getDate() === dayClicked.getDate()) {
                 thisWeek = true;
                 td.classList.add('date-clicked');
