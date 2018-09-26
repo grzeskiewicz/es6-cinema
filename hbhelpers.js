@@ -1,3 +1,4 @@
+import { Handlebars } from './handlebars.min.js';
 Handlebars.registerHelper('for', function(from, to, block) {
     var accum = '';
     for (var i = from; i <= to; i++)
