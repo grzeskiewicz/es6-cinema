@@ -335,6 +335,7 @@ const orderCtrl = {
     orderListener() {
         const nextBtn = document.getElementById("nextBtn");
         const backBtn= document.getElementById("backBtn");
+        view.hide(backBtn);
         nextBtn.addEventListener('click', event => {
             view.hide(nextBtn);
             view.show(backBtn);
