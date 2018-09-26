@@ -358,6 +358,10 @@ const orderCtrl = {
             orderForm['price'].addEventListener('change', this.pricing);
             orderForm.addEventListener('submit', ticketCtrl.order, false);
         });
+
+        backBtn.addEventListener('click', e => {
+            view.show(seatsOnly);
+        });
     }
 }
 
