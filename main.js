@@ -486,7 +486,7 @@ const loginCtrl = {
         view.hide(loginCtrl.customerInfo);
         view.show(loginCtrl.loginDiv);
         view.show(loginCtrl.registerDiv);
-        console.log(loginCtrl.loginDiv);
+       loginCtrl.loginDiv.form.reset();
     }
 
 }
