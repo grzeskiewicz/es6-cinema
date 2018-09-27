@@ -220,6 +220,8 @@ export const showingsCtrl = {
                 const cal = document.querySelector('#calendar');
                // view.hide(cal);
                cal.style.visibility='collapse';
+               document.querySelector('#roll').innerHTML='Show calendar ▼';
+
                 view.show(showingsCtrl.showingsWrapper); //this?
 
                 for (const title2 of [...showingsCtrl.titlesList]) { //only one title marked as active at a time
