@@ -106,8 +106,8 @@ const calendarCtrl = {
                         }
                     }
 
-                  //  const weekTable = renderWeek(calendarObj, day.dataset.date);
-                 //   calendarCtrl.initListeners(weekTable);
+                    //  const weekTable = renderWeek(calendarObj, day.dataset.date);
+                    //   calendarCtrl.initListeners(weekTable);
 
                 });
             }
@@ -230,7 +230,7 @@ export const showingsCtrl = {
                 title.classList.add('active');
 
                 [...showingsCtrl.showingsList].forEach(showing => {
-                    showing.addEventListener('click', event => { 
+                    showing.addEventListener('click', event => {
                         event.preventDefault();
                         for (const showing2 of [...showingsCtrl.showingsList]) { //only one time of showings selected at a time
                             if (showing2.querySelector('p').classList.contains('active') && showing2.querySelector('p') !== showing.querySelector('p')) {
@@ -310,6 +310,11 @@ const seatsCtrl = {
             });
         })
     },
+    resetSeats() {
+        [...this.seats].forEach(seat => {
+            console.log(seat.classList);
+        });
+    },
     disableListener() {
         fetch(request(`${API_URL}seatstaken/${showingsService.getSelected().id}`, 'GET'))
             .then(res => res.json())
@@ -334,8 +339,8 @@ const orderCtrl = {
     },
     orderListener() {
         const nextBtn = document.getElementById("nextBtn");
-        const backBtn= document.getElementById("backBtn");
-        const seatsOnly=  document.getElementById("seats-only");
+        const backBtn = document.getElementById("backBtn");
+        const seatsOnly = document.getElementById("seats-only");
         view.hide(backBtn);
         nextBtn.addEventListener('click', event => {
             view.hide(nextBtn);
@@ -429,7 +434,7 @@ const registerCtrl = {
 const loginCtrl = {
     loginDiv: document.querySelector('#login'),
     registerDiv: document.querySelector('#register'),
-    customerInfoEmail() {return document.querySelector('#customer-info-email');} ,
+    customerInfoEmail() { return document.querySelector('#customer-info-email'); },
     customerInfo: document.querySelector('#customer-info'),
     loginForm() { return document.forms['login-form']; },
     getInfo() {
