@@ -480,12 +480,12 @@ const loginCtrl = {
     },
     destrySession() { authServies.logout(); },
 
-    logout() {
+    logout() { // this?
         authServices.logout();
         loginCtrl.customerInfoEmail().innerHTML = "";
         view.hide(loginCtrl.customerInfo);
-        view.show(this.loginDiv);
-        view.show(this.registerDiv);
+        view.show(loginCtrl.loginDiv);
+        view.show(loginCtrl.registerDiv);
     }
 
 }
