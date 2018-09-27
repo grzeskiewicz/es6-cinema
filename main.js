@@ -219,7 +219,7 @@ export const showingsCtrl = {
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(titles[1][title.textContent][0])}`), "film"); //description of the film 
                 const cal = document.querySelector('#calendar');
                // view.hide(cal);
-               cal.visibility='collapse';
+               cal.style.visibility='collapse';
                 view.show(showingsCtrl.showingsWrapper); //this?
 
                 for (const title2 of [...showingsCtrl.titlesList]) { //only one title marked as active at a time
