@@ -365,6 +365,7 @@ const orderCtrl = {
         });
 
         backBtn.addEventListener('click', e => {
+            seatsCtrl.resetSeats();
             view.show(seatsOnly);
         });
     }
