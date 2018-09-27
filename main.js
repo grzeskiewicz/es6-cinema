@@ -218,7 +218,8 @@ export const showingsCtrl = {
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(titles[1][title.textContent][0])}`), "film"); //description of the film 
                 const cal = document.querySelector('#calendar');
-                view.hide(cal);
+               // view.hide(cal);
+               cal.visibility='hidden';
                 view.show(showingsCtrl.showingsWrapper); //this?
 
                 for (const title2 of [...showingsCtrl.titlesList]) { //only one title marked as active at a time
@@ -487,6 +488,7 @@ const loginCtrl = {
         view.show(loginCtrl.loginDiv);
         view.show(loginCtrl.registerDiv);
         loginCtrl.loginDiv.querySelector('#login-form').reset();
+
        // loginCtrl.registerDiv.querySelector('#register-form').reset();
     }
 
