@@ -482,7 +482,8 @@ const loginCtrl = {
 
     logout() {
         authServices.logout();
-        this.customerInfoEmail().innerHTML = "";
+        console.log(this.customerInfoEmail());
+        //this.customerInfoEmail().innerHTML = "";
         view.hide(this.customerInfo);
         view.show(this.loginDiv);
         view.show(this.registerDiv);
