@@ -312,7 +312,7 @@ const seatsCtrl = {
     },
     resetSeats() {
         [...this.seats].forEach(seat => {
-            console.log(seat.classList);
+            seat.classList.remove('selected');
         });
     },
     disableListener() {
