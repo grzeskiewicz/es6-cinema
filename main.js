@@ -139,7 +139,7 @@ const calendarCtrl = {
         const roll = document.querySelector('#roll');
         roll.addEventListener('click', function() {
             const cal = document.querySelector('#calendar');
-            cal.style.visibility=cal.style.visibility=== 'hidden' ? 'visible' : 'hidden';
+            cal.style.visibility=cal.style.visibility=== 'collapse' ? 'visible' : 'collapse';
            // view.toggle(cal);
             this.innerHTML = this.innerHTML === '▼' ? '▲' : '▼';
         });
