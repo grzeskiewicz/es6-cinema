@@ -141,7 +141,7 @@ const calendarCtrl = {
             const cal = document.querySelector('#calendar');
             cal.style.visibility=cal.style.visibility=== 'collapse' ? 'visible' : 'collapse';
            // view.toggle(cal);
-            this.innerHTML = this.innerHTML === '▲'  ? 'calendar ▼' : '▲';
+            this.innerHTML = this.innerHTML === '▲'  ? 'Show calendar ▼' : '▲';
         });
     }
 }
