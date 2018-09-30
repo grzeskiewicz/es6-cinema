@@ -279,7 +279,7 @@ export const showingsCtrl = {
                         const nextBtn = document.getElementById("nextBtn");
                         view.hide(nextBtn);
                         console.log(showingsCtrl.goBackToTitlesBtn());
-                        showingsCtrl.goBackToTitlesBtn().addEventListener('click', goBackToTitles);
+                        showingsCtrl.goBackToTitlesBtn().addEventListener('click', showingsCtrl.goBackToTitles);
 
                     }, false);
                 });
