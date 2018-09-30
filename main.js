@@ -156,7 +156,7 @@ export const showingsCtrl = {
     showingsList: document.getElementsByClassName('showing'), //function because of handlebars
     titlesList: document.getElementsByClassName('title'), //function because of handlebars
     filmTitles: document.querySelector('#film-titles'),
-    goBackToTitlesBtn: document.querySelector('#backToTitles'),
+    goBackToTitlesBtn: document.querySelector('#backTitles'),
     dateParser(stringdate) {
         const dateFormat = 'HH:mm';
         return moment(stringdate).format(dateFormat);
@@ -279,6 +279,8 @@ export const showingsCtrl = {
                         orderCtrl.orderListener();
                         const nextBtn = document.getElementById("nextBtn");
                         view.hide(nextBtn);
+                        console.log()
+
                     }, false);
                 });
             });
