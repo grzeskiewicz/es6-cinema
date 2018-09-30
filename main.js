@@ -91,7 +91,7 @@ const calendarCtrl = {
                     const pickedDate = new Date(this.dataset.date);
                     view.hide(showingsCtrl.showList);
                     view.hide(showingsCtrl.detailsDiv);
-                    const showings = showingsCtrl.calendarShowings(pickedDate);
+                    const showings = showingsCtrl.calendarShowings(pickedDate); //FIRST STEP 
                     showingsCtrl.showList.innerHTML = '';
                     view.show(showingsCtrl.showList);
                     if (showings.length > 0) {
@@ -139,9 +139,9 @@ const calendarCtrl = {
         const roll = document.querySelector('#roll');
         roll.addEventListener('click', function() {
             const cal = document.querySelector('#calendar');
-            cal.style.visibility=cal.style.visibility=== 'collapse' ? 'visible' : 'collapse';
-           // view.toggle(cal);
-            this.innerHTML = this.innerHTML === '▲'  ? 'Show calendar ▼' : '▲';
+            cal.style.visibility = cal.style.visibility === 'collapse' ? 'visible' : 'collapse';
+            // view.toggle(cal);
+            this.innerHTML = this.innerHTML === '▲' ? 'Show calendar ▼' : '▲';
         });
     }
 }
@@ -155,7 +155,7 @@ export const showingsCtrl = {
     showList: document.querySelector('#showlist'),
     showingsList: document.getElementsByClassName('showing'), //function because of handlebars
     titlesList: document.getElementsByClassName('title'), //function because of handlebars
-filmTitles: document.querySelector('#film-titles'),
+    filmTitles: document.querySelector('#film-titles'),
     dateParser(stringdate) {
         const dateFormat = 'HH:mm';
         return moment(stringdate).format(dateFormat);
@@ -207,35 +207,39 @@ filmTitles: document.querySelector('#film-titles'),
         return result;
 
     },
+    goBackToTitles() {
+        view.showFlex(showingsCtrl.showList);
+        view.view.showFlex(showingsCtrl.filmTitles);
+    },
     list(showings) {
         this.sortShowings(showings);
         const titles = this.groupShowings(showings);
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "film-titles");
         [...this.titlesList].forEach(title => {
-            if(titles[1][title.textContent][0].imageurl.length===0) {
-            titles[1][title.textContent][0].imageurl = IMAGE_URL + titles[1][title.textContent][0].imageurl;
-            }  //setting poster's url
-            title.addEventListener('click', function() {
+            if (titles[1][title.textContent][0].imageurl.length === 0) {
+                titles[1][title.textContent][0].imageurl = IMAGE_URL + titles[1][title.textContent][0].imageurl;
+            } //setting poster's url
+            title.addEventListener('click', function() { //SECOND STEP
                 view.hide(showingsCtrl.detailsDiv);
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(titles[1][title.textContent][0])}`), "film"); //description of the film 
                 const cal = document.querySelector('#calendar');
-               // view.hide(cal);
-               cal.style.visibility='collapse';
-               document.querySelector('#roll').innerHTML='Show calendar ▼';
+                cal.style.visibility = 'collapse';
+                document.querySelector('#roll').innerHTML = 'Show calendar ▼';
 
                 view.show(showingsCtrl.showingsWrapper); //this?
 
                 for (const title2 of [...showingsCtrl.titlesList]) { //only one title marked as active at a time
                     if (title2.classList.contains('active') && title2 !== title) {
                         title2.classList.remove('active');
-                        // title2.classList.add('normal');
                     }
                 }
                 title.classList.add('active');
 
+
+
                 [...showingsCtrl.showingsList].forEach(showing => {
-                    showing.addEventListener('click', event => {
+                    showing.addEventListener('click', event => { //THIRD STEP
                         event.preventDefault();
                         for (const showing2 of [...showingsCtrl.showingsList]) { //only one time of showings selected at a time
                             if (showing2.querySelector('p').classList.contains('active') && showing2.querySelector('p') !== showing.querySelector('p')) {
@@ -246,36 +250,15 @@ filmTitles: document.querySelector('#film-titles'),
                         showing.querySelector('p').classList.remove('normal');
                         showing.querySelector('p').classList.add('active');
 
-                        /* detailsDiv.querySelector('#close').addEventListener('click', function() {
-                             detailsDiv.classList.remove('activeshow');
-                             showingsCtrl.showingsDiv().classList.remove('blur');
-                             view.hide(detailsDiv);
-                         });*/
+
+
                         view.showFlex(showingsCtrl.detailsDiv);
                         view.hide(showingsCtrl.showList);
                         view.hide(showingsCtrl.filmTitles);
                         showingsCtrl.detailsDiv.classList.add('activeshow');
 
 
-                        //const showingDetails = showing.querySelector('.showing-details');
-                        //const poster = showing.querySelector('.poster');
-                        //showingDetails.style.display = 'block';
-                        //poster.style.display = 'block';
-                        /*[...showingsCtrl.showingsList()].forEach(showingObj => {
-                            if (showingObj.classList.contains('active') && showingObj !== showing) {
-                                showingObj.classList.remove('active');
-                            }
-                            const showingObjDetails = showingObj.querySelector('.showing-details');
-                            const showingObjPoster = showingObj.querySelector('.poster');
-                            if (showingObjDetails.style.display === 'block' && showingObjDetails !== showingDetails) {
-                                showingObjDetails.style.display = 'none';
-                                showingObjPoster.style.display = 'none';
-                            }
-
-                        });*/
-                        // showingsCtrl.showingsDiv().classList.add('blur');
                         showingsService.selectById(event.currentTarget.dataset.showingId);
-                        // console.log(event.currentTarget.dataset);
                         let seatsTemp = event.currentTarget.dataset.seats;
                         event.currentTarget.dataset.seats = seatsTemp - 1;
                         view.renderContent("entry-template-seats", event.currentTarget.dataset, "seats");
@@ -495,7 +478,7 @@ const loginCtrl = {
         view.show(loginCtrl.registerDiv);
         loginCtrl.loginDiv.querySelector('#login-form').reset();
 
-       // loginCtrl.registerDiv.querySelector('#register-form').reset();
+        // loginCtrl.registerDiv.querySelector('#register-form').reset();
     }
 
 }
