@@ -156,7 +156,7 @@ export const showingsCtrl = {
     showingsList: document.getElementsByClassName('showing'), //function because of handlebars
     titlesList: document.getElementsByClassName('title'), //function because of handlebars
     filmTitles: document.querySelector('#film-titles'),
-    goBackToTitlesBtn: document.querySelector('#backTitles'),
+    goBackToTitlesBtn() {return document.querySelector('#backTitles');},
     dateParser(stringdate) {
         const dateFormat = 'HH:mm';
         return moment(stringdate).format(dateFormat);
@@ -211,7 +211,7 @@ export const showingsCtrl = {
     goBackToTitles() {
         view.showFlex(showingsCtrl.showList);
         view.showFlex(showingsCtrl.filmTitles);
-        view.hide(goBackToTitlesBtn);
+        view.hide(goBackToTitlesBtn());
     },
     list(showings) {
         this.sortShowings(showings);
@@ -278,7 +278,7 @@ export const showingsCtrl = {
                         orderCtrl.orderListener();
                         const nextBtn = document.getElementById("nextBtn");
                         view.hide(nextBtn);
-                        console.log(showingsCtrl.goBackToTitlesBtn);
+                        console.log(showingsCtrl.goBackToTitlesBtn());
                         showingsCtrl.goBackToTitlesBtn.addEventListener('click', goBackToTitles);
 
                     }, false);
