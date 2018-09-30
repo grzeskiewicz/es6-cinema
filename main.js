@@ -156,7 +156,7 @@ export const showingsCtrl = {
     showingsList: document.getElementsByClassName('showing'), //function because of handlebars
     titlesList: document.getElementsByClassName('title'), //function because of handlebars
     filmTitles: document.querySelector('#film-titles'),
-    goBackToTitlesBtn() { return document.querySelector('#back-to-titles'); },
+    goBackToTitlesBtn() { return document.getElementById('back-to-titles'); },
     dateParser(stringdate) {
         const dateFormat = 'HH:mm';
         return moment(stringdate).format(dateFormat);
