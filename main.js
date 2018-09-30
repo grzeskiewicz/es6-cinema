@@ -265,7 +265,7 @@ export const showingsCtrl = {
 
                         const goBackTitles = document.getElementById("backTitles");
                         console.log(goBackTitles);
-                        goBackToTitlesBtn.addEventListener('click', goBackToTitles);
+                       // goBackToTitlesBtn.addEventListener('click', goBackToTitles);
 
                         showingsService.selectById(event.currentTarget.dataset.showingId);
                         let seatsTemp = event.currentTarget.dataset.seats;
