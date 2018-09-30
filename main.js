@@ -212,6 +212,7 @@ export const showingsCtrl = {
         view.showFlex(showingsCtrl.showList);
         view.showFlex(showingsCtrl.filmTitles);
         view.hide(showingsCtrl.goBackToTitlesBtn());
+        view.show(showingsCtrl.detailsDiv);
     },
     list(showings) {
         this.sortShowings(showings);
