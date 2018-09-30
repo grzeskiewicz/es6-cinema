@@ -211,7 +211,7 @@ export const showingsCtrl = {
     goBackToTitles() {
         view.showFlex(showingsCtrl.showList);
         view.showFlex(showingsCtrl.filmTitles);
-        view.hide(this.goBackToTitlesBtn());
+        view.hide(showingsCtrl.goBackToTitlesBtn());
     },
     list(showings) {
         this.sortShowings(showings);
