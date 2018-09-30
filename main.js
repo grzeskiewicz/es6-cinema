@@ -211,7 +211,7 @@ export const showingsCtrl = {
     goBackToTitles() {
         view.showFlex(showingsCtrl.showList);
         view.showFlex(showingsCtrl.filmTitles);
-        view.hide(goBackToTitlesBtn());
+        view.hide(document.querySelector('#back-to-titles'));
     },
     list(showings) {
         this.sortShowings(showings);
@@ -255,11 +255,11 @@ export const showingsCtrl = {
 
 
                         view.showFlex(showingsCtrl.detailsDiv);
-                        view.showFlex(showingsCtrl.goBackToTitlesBtn());
+                        view.showFlex(document.querySelector('#back-to-titles'));
                         view.hide(showingsCtrl.showList);
                         view.hide(showingsCtrl.filmTitles);
                         showingsCtrl.detailsDiv.classList.add('activeshow');
-                        goBackToTitlesBtn().addEventListener('click', goBackToTitles);
+                        document.querySelector('#back-to-titles').addEventListener('click', goBackToTitles);
 
                         showingsService.selectById(event.currentTarget.dataset.showingId);
                         let seatsTemp = event.currentTarget.dataset.seats;
