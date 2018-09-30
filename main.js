@@ -278,6 +278,7 @@ export const showingsCtrl = {
                         orderCtrl.orderListener();
                         const nextBtn = document.getElementById("nextBtn");
                         view.hide(nextBtn);
+                        console.log(showignsCtrl.goBackToTitlesBtn);
                         showingsCtrl.goBackToTitlesBtn.addEventListener('click', goBackToTitles);
 
                     }, false);
