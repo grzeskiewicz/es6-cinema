@@ -263,8 +263,7 @@ export const showingsCtrl = {
 
 
 
-                        const goBackTitles = document.getElementById("backTitles");
-                        console.log(goBackTitles);
+            
                        // goBackToTitlesBtn.addEventListener('click', goBackToTitles);
 
                         showingsService.selectById(event.currentTarget.dataset.showingId);
@@ -279,7 +278,7 @@ export const showingsCtrl = {
                         orderCtrl.orderListener();
                         const nextBtn = document.getElementById("nextBtn");
                         view.hide(nextBtn);
-                        console.log()
+                        console.log(goBackToTitlesBtn);
 
                     }, false);
                 });
