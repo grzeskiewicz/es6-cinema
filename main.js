@@ -255,7 +255,7 @@ export const showingsCtrl = {
 
 
                         view.showFlex(showingsCtrl.detailsDiv);
-                        view.showFlex(showingsCtrl.goBackToTitlesBtn);
+                       // view.showFlex(showingsCtrl.goBackToTitlesBtn);
                         view.hide(showingsCtrl.showList);
                         view.hide(showingsCtrl.filmTitles);
                         showingsCtrl.detailsDiv.classList.add('activeshow');
