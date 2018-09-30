@@ -259,6 +259,12 @@ export const showingsCtrl = {
                         view.hide(showingsCtrl.showList);
                         view.hide(showingsCtrl.filmTitles);
                         showingsCtrl.detailsDiv.classList.add('activeshow');
+
+
+
+
+                        const goBackTitles = document.getElementById("backTitles");
+                        console.log(goBackTitles);
                         goBackToTitlesBtn.addEventListener('click', goBackToTitles);
 
                         showingsService.selectById(event.currentTarget.dataset.showingId);
