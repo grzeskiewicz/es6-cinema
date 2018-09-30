@@ -278,7 +278,7 @@ export const showingsCtrl = {
                         orderCtrl.orderListener();
                         const nextBtn = document.getElementById("nextBtn");
                         view.hide(nextBtn);
-                        console.log(goBackToTitlesBtn);
+                        console.log(showingsCtrl.goBackToTitlesBtn);
 
                     }, false);
                 });
