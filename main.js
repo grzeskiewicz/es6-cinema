@@ -156,7 +156,7 @@ export const showingsCtrl = {
     showingsList: document.getElementsByClassName('showing'), //function because of handlebars
     titlesList: document.getElementsByClassName('title'), //function because of handlebars
     filmTitles: document.querySelector('#film-titles'),
-    goBackToTitlesBtn() { return document.getElementById('back-to-titles'); },
+    goBackToTitlesBtn: document.querySelector('#backToTitles'),
     dateParser(stringdate) {
         const dateFormat = 'HH:mm';
         return moment(stringdate).format(dateFormat);
@@ -211,7 +211,7 @@ export const showingsCtrl = {
     goBackToTitles() {
         view.showFlex(showingsCtrl.showList);
         view.showFlex(showingsCtrl.filmTitles);
-        view.hide(document.querySelector('#back-to-titles'));
+        view.hide(goBackToTitlesBtn);
     },
     list(showings) {
         this.sortShowings(showings);
@@ -255,11 +255,11 @@ export const showingsCtrl = {
 
 
                         view.showFlex(showingsCtrl.detailsDiv);
-                        view.showFlex(document.querySelector('#back-to-titles'));
+                        view.showFlex(showingsCtrl.goBackToTitlesBtn);
                         view.hide(showingsCtrl.showList);
                         view.hide(showingsCtrl.filmTitles);
                         showingsCtrl.detailsDiv.classList.add('activeshow');
-                        document.querySelector('#back-to-titles').addEventListener('click', goBackToTitles);
+                        goBackToTitlesBtn.addEventListener('click', goBackToTitles);
 
                         showingsService.selectById(event.currentTarget.dataset.showingId);
                         let seatsTemp = event.currentTarget.dataset.seats;
