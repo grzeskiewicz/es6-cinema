@@ -155,7 +155,7 @@ export const showingsCtrl = {
     showList: document.querySelector('#showlist'),
     showingsList: document.getElementsByClassName('showing'), //function because of handlebars
     titlesList: document.getElementsByClassName('title'), //function because of handlebars
-
+filmTitles: document.querySelector('#film-titles'),
     dateParser(stringdate) {
         const dateFormat = 'HH:mm';
         return moment(stringdate).format(dateFormat);
@@ -252,6 +252,8 @@ export const showingsCtrl = {
                              view.hide(detailsDiv);
                          });*/
                         view.showFlex(showingsCtrl.detailsDiv);
+                        view.hide(showingsCtrl.showList);
+                        view.hide(showingsCtrl.filmTitles);
                         showingsCtrl.detailsDiv.classList.add('activeshow');
 
 
