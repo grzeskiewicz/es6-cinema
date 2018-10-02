@@ -379,7 +379,8 @@ const ticketCtrl = {
             if (email === undefined) {
                 document.getElementById("order-status").innerHTML = "Please login to order tickets!";
                 view.hide(seatsCtrl.seatsDiv);
-                         view.renderContent("entry-template-login", {}, "login"); //only form
+                view.hide(orderCtrl.orderDiv);
+            view.renderContent("entry-template-login", {}, "login"); //only form
            view.renderContent("entry-template-register", {}, "register"); //only form
 
            registerCtrl.registerForm().addEventListener('submit', registerCtrl.signup, false);
