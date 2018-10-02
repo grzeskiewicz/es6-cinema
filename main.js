@@ -455,7 +455,7 @@ const loginCtrl = {
                     view.hide(this.loginDiv);
                     view.hide(this.registerDiv);
                     view.show(this.customerInfo);
-                    view.showFlex(orderCtrl.orderDiv);
+                    view.show(orderCtrl.orderDiv);
                     return result.msg;
                 } else {
                     // console.log("Error getInfo:");
