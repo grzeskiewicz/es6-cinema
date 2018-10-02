@@ -353,11 +353,11 @@ const orderCtrl = {
 
             //obj.showing.date=moment(obj.showing.date);
             view.renderContent("entry-template-order", obj, "order"); //only valid usage of renderContent
-            view.renderContent("entry-template-login", obj, "login"); //only form
-            view.renderContent("entry-template-register", obj, "register"); //only form
+           // view.renderContent("entry-template-login", obj, "login"); //only form
+           // view.renderContent("entry-template-register", obj, "register"); //only form
 
-            registerCtrl.registerForm().addEventListener('submit', registerCtrl.signup, false);
-            loginCtrl.loginForm().addEventListener('submit', loginCtrl.login, false);
+           // registerCtrl.registerForm().addEventListener('submit', registerCtrl.signup, false);
+           // loginCtrl.loginForm().addEventListener('submit', loginCtrl.login, false);
 
             const orderForm = document.forms['order-form'];
             document.querySelector('#total-price').innerHTML = `Total price to pay: ${this.pricing()}`;
