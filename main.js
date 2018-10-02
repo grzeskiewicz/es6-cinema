@@ -366,7 +366,7 @@ const orderCtrl = {
             seatsCtrl.resetSeats();
             view.show(seatsOnly);
             view.hide(orderCtrl.orderDiv);
-            view.hide(backSeatskBtn);
+            view.hide(backSeatsBtn);
         });
     }
 }
