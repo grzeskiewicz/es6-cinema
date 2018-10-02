@@ -365,6 +365,7 @@ const orderCtrl = {
         backSeatsBtn.addEventListener('click', e => {
             seatsCtrl.resetSeats();
             view.show(seatsOnly);
+            view.hide(orderCtrl.orderDiv);
             view.hide(bacSeatskBtn);
         });
     }
