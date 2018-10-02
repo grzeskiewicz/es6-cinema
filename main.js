@@ -209,8 +209,8 @@ export const showingsCtrl = {
 
     },
     goBackToTitles() {
-        view.showFlex(showingsCtrl.showList);
-        view.showFlex(showingsCtrl.filmTitles);
+        view.show(showingsCtrl.showList);
+        view.show(showingsCtrl.filmTitles);
         view.hide(showingsCtrl.goBackToTitlesBtn());
         view.show(showingsCtrl.detailsDiv);
     },
