@@ -348,6 +348,7 @@ const orderCtrl = {
             view.hide(nextBtn);
             view.hide(seatsOnly);
             view.show(backSeatsBtn);
+            view.show(orderCtrl.orderDiv);
             const obj = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
             if (moment(obj.showing.date).isValid()) { obj.showing.date = moment(obj.showing.date).format('YYYY-MM-DD HH:mm'); }
 
