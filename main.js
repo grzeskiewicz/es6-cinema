@@ -495,11 +495,11 @@ const loginCtrl = {
 
     logout() { // this?
         authServices.logout();
+        loginCtrl.loginDiv.querySelector('#login-form').reset();
         loginCtrl.customerInfoEmail().innerHTML = "";
         view.hide(loginCtrl.customerInfo);
         view.show(loginCtrl.loginDiv);
         view.show(loginCtrl.registerDiv);
-        loginCtrl.loginDiv.querySelector('#login-form').reset();
 
         // loginCtrl.registerDiv.querySelector('#register-form').reset();
     }
