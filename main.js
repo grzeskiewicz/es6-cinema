@@ -336,10 +336,10 @@ const seatsCtrl = {
 const orderCtrl = {
     orderDiv: document.querySelector('#order'),
     pricing() {
-
         const price = document.forms['order-form'].price.value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount;
         const priceTotal = price * seatsCtrl.selectedSeats.length;
         console.log(price, seatsCtrl.selectedSeats.length);
+        document.querySelector('#total-price').innerHTML = `Total price to pay: ${this.pricing()}`;
         return priceTotal;
     },
     orderListener() {
@@ -358,12 +358,8 @@ const orderCtrl = {
             //obj.showing.date=moment(obj.showing.date);
             view.renderContent("entry-template-order", obj, "order"); //only valid usage of renderContent
 
-
             const orderForm = document.forms['order-form'];
-            
-
             orderForm['price'].addEventListener('change', this.pricing);
-            document.querySelector('#total-price').innerHTML = `Total price to pay: ${this.pricing()}`;
             orderForm.addEventListener('submit', ticketCtrl.order, false);
         });
 
