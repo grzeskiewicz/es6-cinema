@@ -220,12 +220,12 @@ export const showingsCtrl = {
         const titles = this.groupShowings(showings);
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "film-titles");
         [...this.titlesList].forEach(title => {
-            console.log("hehe",title);
             if (titles[1][title.textContent][0].imageurl.length === 0) {
                 titles[1][title.textContent][0].imageurl = IMAGE_URL + titles[1][title.textContent][0].imageurl;
             } //setting poster's url
             title.addEventListener('click', function() { //SECOND STEP
                 view.hide(showingsCtrl.detailsDiv);
+                console.log(titles);
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(titles[1][title.textContent][0])}`), "film"); //description of the film 
                 const cal = document.querySelector('#calendar');
