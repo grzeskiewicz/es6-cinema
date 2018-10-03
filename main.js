@@ -363,6 +363,7 @@ const orderCtrl = {
             document.querySelector('#total-price').innerHTML = `Total price to pay: ${this.pricing()}`;
 
             orderForm['price'].addEventListener('change', this.pricing);
+            console.log('prajz', this.pricing());
             orderForm.addEventListener('submit', ticketCtrl.order, false);
         });
 
