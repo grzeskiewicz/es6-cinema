@@ -336,9 +336,10 @@ const seatsCtrl = {
 const orderCtrl = {
     orderDiv: document.querySelector('#order'),
     pricing() {
-        alert('hehe');
+
         const price = document.forms['order-form'].price.value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount;
         const priceTotal = price * seatsCtrl.selectedSeats.length;
+        console.log(price, seatsCtrl.selectedSeats.length);
         return priceTotal;
     },
     orderListener() {
