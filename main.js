@@ -186,7 +186,7 @@ export const showingsCtrl = {
                   finallist.push(el);
               }
           }*/
-        console.log(titleList, group);
+       // console.log(titleList, group);
         return [titleList, group]; //ready list of titles and showings grouped by titles
     },
     calendarShowings(pickedDate) {
@@ -204,7 +204,7 @@ export const showingsCtrl = {
         }
         showingsCtrl.list(result);
         seatsCtrl.toggleListener();
-        console.log(result);
+      //  console.log(result);
         return result;
 
     },
@@ -281,7 +281,7 @@ export const showingsCtrl = {
                         orderCtrl.orderListener();
                         const nextBtn = document.getElementById("nextBtn");
                         view.hide(nextBtn);
-                        console.log(showingsCtrl.goBackToTitlesBtn());
+                       // console.log(showingsCtrl.goBackToTitlesBtn());
                         showingsCtrl.goBackToTitlesBtn().addEventListener('click', showingsCtrl.goBackToTitles);
 
                     }, false);
@@ -340,7 +340,6 @@ const orderCtrl = {
     pricing() {
         const price = document.forms['order-form'].price.value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount;
         const priceTotal = price * seatsCtrl.selectedSeats.length;
-        console.log(price, seatsCtrl.selectedSeats.length);
         document.querySelector('#total-price').innerHTML = `Total price to pay: ${priceTotal}`;
         return priceTotal;
     },
@@ -418,7 +417,7 @@ const registerCtrl = {
     signup(event) {
         event.preventDefault();
         const registerStatus = document.querySelector('#register-status');
-        console.log(this);
+      
         const user = {
             email: this.email.value,
             password: this.password.value,
