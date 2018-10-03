@@ -342,6 +342,7 @@ const seatsCtrl = {
 
 const orderCtrl = {
     orderDiv: document.querySelector('#order'),
+    orderForm: document.forms['order-form'],
     pricing() {
         const price = document.forms['order-form'].price.value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount;
         const priceTotal = price * seatsCtrl.selectedSeats.length;
@@ -354,15 +355,16 @@ const orderCtrl = {
         const seatsOnly = document.getElementById("seats-only");
         view.hide(backSeatsBtn);
         nextBtn.addEventListener('click', event => {
+            const orderData = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
+            if (moment(orderData.showing.date).isValid()) { orderData.showing.date = moment(orderData.showing.date).format('YYYY-MM-DD HH:mm'); }
+
+            view.renderContent("entry-template-order", orderData, "order");
             view.hide(nextBtn);
             view.hide(seatsOnly);
+            view.hide(loginCtrl.loginStatus);
             view.show(backSeatsBtn);
             view.show(orderCtrl.orderDiv);
-            const obj = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
-            if (moment(obj.showing.date).isValid()) { obj.showing.date = moment(obj.showing.date).format('YYYY-MM-DD HH:mm'); }
 
-            //obj.showing.date=moment(obj.showing.date);
-            view.renderContent("entry-template-order", obj, "order"); //only valid usage of renderContent
 
             const orderForm = document.forms['order-form'];
             orderForm['price'].addEventListener('change', this.pricing);
@@ -386,7 +388,7 @@ const ticketCtrl = {
         event.preventDefault();
         loginCtrl.getInfo().then(email => {
             if (email === undefined) {
-                document.getElementById("order-status").innerHTML = "Please login to order tickets!";
+                view.show(loginCtrl.loginStatus());
                 view.hide(seatsCtrl.seatsDiv);
                 view.hide(orderCtrl.orderDiv);
                 view.renderContent("entry-template-login", {}, "login"); //only form
@@ -452,6 +454,7 @@ const loginCtrl = {
     customerInfoEmail() { return document.querySelector('#customer-info-email'); },
     customerInfo: document.querySelector('#customer-info'),
     loginForm() { return document.forms['login-form']; },
+    loginStatus() { return document.querySelector('#login-status'); }
     getInfo() {
         const that = this;
         const logoutButton = document.querySelector('#logout');
