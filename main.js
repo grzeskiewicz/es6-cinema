@@ -204,7 +204,6 @@ export const showingsCtrl = {
         }
         showingsCtrl.list(result);
         seatsCtrl.toggleListener();
-      //  console.log(result);
         return result;
 
     },
