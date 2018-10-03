@@ -215,10 +215,15 @@ export const showingsCtrl = {
         view.show(showingsCtrl.detailsDiv);
     },
     list(showings) {
+        const cal = document.querySelector('#calendar');
         this.sortShowings(showings);
        // console.log(showings);
         const titles = this.groupShowings(showings);
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "film-titles");
+        const backCalendarBtn=document.querySelector('#backCalendarBtn');
+        backCalendarBtn.addEventListener('click',function() {
+            view.show(cal);
+        });
         [...this.titlesList].forEach(title => {
             if (titles[1][title.textContent][0].imageurl.length === 0) {
                 titles[1][title.textContent][0].imageurl = IMAGE_URL + titles[1][title.textContent][0].imageurl;
@@ -228,9 +233,10 @@ export const showingsCtrl = {
                 console.log(titles[1][title.textContent]);
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(titles[1][title.textContent][0])}`), "film"); //description of the film 
-                const cal = document.querySelector('#calendar');
-                cal.style.visibility = 'collapse';
-                document.querySelector('#roll').innerHTML = 'Show calendar ▼';
+               
+                //cal.style.visibility = 'collapse';
+                view.hide(cal);
+               // document.querySelector('#roll').innerHTML = 'Show calendar ▼';
 
                 view.show(showingsCtrl.showingsWrapper); //this?
 
