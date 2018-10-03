@@ -178,8 +178,8 @@ export const showingsCtrl = {
         for (let key in groupedByTitle) { //making list of film titles
             titleList.push(key);
         }
-    
-        sList = {'filmTitles': titleList, 'showingsGrouped': groupedByTitle}; //ready list of titles and showings grouped by titles
+
+        return { 'filmTitles': titleList, 'showingsGrouped': groupedByTitle }; //ready list of titles and showings grouped by titles
     },
     calendarShowings(pickedDate) {
 
@@ -208,13 +208,13 @@ export const showingsCtrl = {
     list(showings) {
         const cal = document.querySelector('#calendar');
         this.sortShowings(showings); //sorting showings
-        this.groupShowings(showings);
+        showings = this.groupShowings(showings);
         console.log(showings);
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(showings.filmTitles)}}`), "film-titles");
         [...this.titlesList].forEach(title => {
             title.addEventListener('click', function() { //SECOND STEP
                 view.hide(showingsCtrl.detailsDiv);
-                
+
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(showings.showingsGrouped[title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(showings.showingsGrouped[title.textContent][0])}`), "film"); //description of the film 
 
