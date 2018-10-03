@@ -167,19 +167,19 @@ export const showingsCtrl = {
         });
     },
     groupShowings(sList) {
-        const group = [];
+        const groupedByTitle = [];
         const titleList = [];
 
         for (const showing of sList) { //putting showings by the titles' names
-            if (group[showing['title']] === undefined) group[showing['title']] = [];
-            group[showing['title']].push(showing);
+            if (groupedByTitle[showing['title']] === undefined) groupedByTitle[showing['title']] = [];
+            groupedByTitle[showing['title']].push(showing);
         }
 
-        for (let key in group) { //making list of film titles
+        for (let key in groupedByTitle) { //making list of film titles
             titleList.push(key);
         }
     
-        return [titleList, group]; //ready list of titles and showings grouped by titles
+        return {'filmTitles': titleList, 'groupedTitle': groupedByTitle}; //ready list of titles and showings grouped by titles
     },
     calendarShowings(pickedDate) {
 
@@ -208,7 +208,6 @@ export const showingsCtrl = {
     list(showings) {
         const cal = document.querySelector('#calendar');
         this.sortShowings(showings);
-        // console.log(showings);
         const titles = this.groupShowings(showings);
         console.log(titles);
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "film-titles");
