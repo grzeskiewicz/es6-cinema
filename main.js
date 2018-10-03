@@ -136,14 +136,14 @@ const calendarCtrl = {
         let calendarTable = renderCalendar(calendarObj);
         this.initListeners(calendarTable);
         this.initListenersMonths();
-        const roll = document.querySelector('#roll');
+        /*const roll = document.querySelector('#roll');
         roll.addEventListener('click', function() {
             const cal = document.querySelector('#calendar');
             cal.style.visibility = cal.style.visibility === 'collapse' ? 'visible' : 'collapse';
             // view.toggle(cal);
             this.innerHTML = this.innerHTML === '▲' ? 'Show calendar ▼' : '▲';
-        });
-    }
+        }); */
+    } 
 }
 
 
@@ -316,6 +316,7 @@ const seatsCtrl = {
         [...this.seats].forEach(seat => {
             seat.classList.remove('selected');
         });
+       this.selectedSeats=[];
     },
     disableListener() {
         fetch(request(`${API_URL}seatstaken/${showingsService.getSelected().id}`, 'GET'))
