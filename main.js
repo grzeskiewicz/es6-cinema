@@ -163,7 +163,6 @@ export const showingsCtrl = {
     },
     sortShowings(sList) {
         sList = sList.sort((a, b) => {
-            console.log(moment(a.date,"HH:mm"),moment(b.date,"HH:mm"));
             return moment(a.date,"HH:mm") - moment(b.date,"HH:mm");
         });
        
