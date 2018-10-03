@@ -208,7 +208,8 @@ export const showingsCtrl = {
     list(showings) {
         const cal = document.querySelector('#calendar');
         this.sortShowings(showings); //sorting showings
-        this.groupShowings(showings);//
+        this.groupShowings(showings);
+        console.log(showings);
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(showings.filmTitles)}}`), "film-titles");
         [...this.titlesList].forEach(title => {
             title.addEventListener('click', function() { //SECOND STEP
@@ -216,7 +217,7 @@ export const showingsCtrl = {
                 
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(showings.showingsGrouped[title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(showings.showingsGrouped[title.textContent][0])}`), "film"); //description of the film 
-                
+
                 const backCalendarBtn = document.querySelector('#backCalendarBtn');
                 backCalendarBtn.addEventListener('click', function() {
                     view.show(cal);
