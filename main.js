@@ -162,11 +162,11 @@ export const showingsCtrl = {
         return moment(stringdate).format(dateFormat);
     },
     sortShowings(sList) {
-        console.log(sList);
         sList = sList.sort((a, b) => {
+            console.log(moment(a.date),moment(b.date));
             return moment(a.date) - moment(b.date);
         });
-        console.log(sList);
+       
     },
     groupShowings(sList) {
         const groupedByTitle = [];
