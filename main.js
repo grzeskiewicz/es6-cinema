@@ -207,7 +207,7 @@ export const showingsCtrl = {
     },
     list(showings) {
         const cal = document.querySelector('#calendar');
-        this.sortShowings(showings); //sorting showings
+        //this.sortShowings(showings); //sorting showings
         showings = this.groupShowings(showings);
         console.log(showings);
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(showings.filmTitles)}}`), "film-titles");
