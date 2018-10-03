@@ -179,7 +179,7 @@ export const showingsCtrl = {
             titleList.push(key);
         }
     
-        return {'filmTitles': titleList, 'showingsGrouped': groupedByTitle}; //ready list of titles and showings grouped by titles
+        sList = {'filmTitles': titleList, 'showingsGrouped': groupedByTitle}; //ready list of titles and showings grouped by titles
     },
     calendarShowings(pickedDate) {
 
@@ -207,16 +207,16 @@ export const showingsCtrl = {
     },
     list(showings) {
         const cal = document.querySelector('#calendar');
-        this.sortShowings(showings);
-        const titles = this.groupShowings(showings);
-        console.log(titles.showingsGrouped);
-        view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "film-titles");
+        this.sortShowings(showings); //sorting showings
+        this.groupShowings(showings);//
+        view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(showings.filmTitles)}}`), "film-titles");
         [...this.titlesList].forEach(title => {
             title.addEventListener('click', function() { //SECOND STEP
                 view.hide(showingsCtrl.detailsDiv);
                 
-                view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
-                view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(titles[1][title.textContent][0])}`), "film"); //description of the film 
+                view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(showings.showingsGrouped[title.textContent])}}`), "showlist"); //list of hours of selected showing
+                view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(showings.showingsGrouped[title.textContent][0])}`), "film"); //description of the film 
+                
                 const backCalendarBtn = document.querySelector('#backCalendarBtn');
                 backCalendarBtn.addEventListener('click', function() {
                     view.show(cal);
