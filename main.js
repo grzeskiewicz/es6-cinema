@@ -361,7 +361,7 @@ const orderCtrl = {
             view.renderContent("entry-template-order", orderData, "order");
             view.hide(nextBtn);
             view.hide(seatsOnly);
-            view.hide(loginCtrl.loginStatus);
+            view.hide(loginCtrl.loginStatusOrder());
             view.show(backSeatsBtn);
             view.show(orderCtrl.orderDiv);
 
@@ -388,7 +388,7 @@ const ticketCtrl = {
         event.preventDefault();
         loginCtrl.getInfo().then(email => {
             if (email === undefined) {
-                view.show(loginCtrl.loginStatus());
+                view.show(loginCtrl.loginStatusOrder());
                 view.hide(seatsCtrl.seatsDiv);
                 view.hide(orderCtrl.orderDiv);
                 view.renderContent("entry-template-login", {}, "login"); //only form
@@ -454,7 +454,7 @@ const loginCtrl = {
     customerInfoEmail() { return document.querySelector('#customer-info-email'); },
     customerInfo: document.querySelector('#customer-info'),
     loginForm() { return document.forms['login-form']; },
-    loginStatus() { return document.querySelector('#login-status'); }
+    loginStatusOrder() { return document.querySelector('#login-status-order'); },
     getInfo() {
         const that = this;
         const logoutButton = document.querySelector('#logout');
