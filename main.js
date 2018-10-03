@@ -231,6 +231,7 @@ export const showingsCtrl = {
                 const backCalendarBtn = document.querySelector('#backCalendarBtn');
                 backCalendarBtn.addEventListener('click', function() {
                     view.show(cal);
+                    view.hide(showingsCtrl.showingsWrapper);
                 });
                 //cal.style.visibility = 'collapse';
                 view.hide(cal);
