@@ -179,7 +179,7 @@ export const showingsCtrl = {
             titleList.push(key);
         }
     
-        return {'filmTitles': titleList, 'groupedTitle': groupedByTitle}; //ready list of titles and showings grouped by titles
+        return {'filmTitles': titleList, 'showingsGrouped': groupedByTitle}; //ready list of titles and showings grouped by titles
     },
     calendarShowings(pickedDate) {
 
@@ -209,7 +209,7 @@ export const showingsCtrl = {
         const cal = document.querySelector('#calendar');
         this.sortShowings(showings);
         const titles = this.groupShowings(showings);
-        console.log(titles);
+        console.log(titles.showingsGrouped);
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "film-titles");
         [...this.titlesList].forEach(title => {
             title.addEventListener('click', function() { //SECOND STEP
