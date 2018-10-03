@@ -143,7 +143,7 @@ const calendarCtrl = {
             // view.toggle(cal);
             this.innerHTML = this.innerHTML === '▲' ? 'Show calendar ▼' : '▲';
         }); */
-    } 
+    }
 }
 
 
@@ -156,7 +156,7 @@ export const showingsCtrl = {
     showingsList: document.getElementsByClassName('showing'), //function because of handlebars
     titlesList: document.getElementsByClassName('title'), //function because of handlebars
     filmTitles: document.querySelector('#film-titles'),
-    goBackToTitlesBtn() {return document.querySelector('#backTitles');},
+    goBackToTitlesBtn() { return document.querySelector('#backTitles'); },
     dateParser(stringdate) {
         const dateFormat = 'HH:mm';
         return moment(stringdate).format(dateFormat);
@@ -186,7 +186,7 @@ export const showingsCtrl = {
                   finallist.push(el);
               }
           }*/
-       // console.log(titleList, group);
+        // console.log(titleList, group);
         return [titleList, group]; //ready list of titles and showings grouped by titles
     },
     calendarShowings(pickedDate) {
@@ -216,13 +216,9 @@ export const showingsCtrl = {
     list(showings) {
         const cal = document.querySelector('#calendar');
         this.sortShowings(showings);
-       // console.log(showings);
+        // console.log(showings);
         const titles = this.groupShowings(showings);
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "film-titles");
-        const backCalendarBtn=document.querySelector('#backCalendarBtn');
-        backCalendarBtn.addEventListener('click',function() {
-            view.show(cal);
-        });
         [...this.titlesList].forEach(title => {
             if (titles[1][title.textContent][0].imageurl.length === 0) {
                 titles[1][title.textContent][0].imageurl = IMAGE_URL + titles[1][title.textContent][0].imageurl;
@@ -232,10 +228,13 @@ export const showingsCtrl = {
                 console.log(titles[1][title.textContent]);
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(titles[1][title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(titles[1][title.textContent][0])}`), "film"); //description of the film 
-               
+                const backCalendarBtn = document.querySelector('#backCalendarBtn');
+                backCalendarBtn.addEventListener('click', function() {
+                    view.show(cal);
+                });
                 //cal.style.visibility = 'collapse';
                 view.hide(cal);
-               // document.querySelector('#roll').innerHTML = 'Show calendar ▼';
+                // document.querySelector('#roll').innerHTML = 'Show calendar ▼';
 
                 view.show(showingsCtrl.showingsWrapper); //this?
 
@@ -263,7 +262,7 @@ export const showingsCtrl = {
 
 
                         view.showFlex(showingsCtrl.detailsDiv);
-                       // view.showFlex(showingsCtrl.goBackToTitlesBtn);
+                        // view.showFlex(showingsCtrl.goBackToTitlesBtn);
                         view.hide(showingsCtrl.showList);
                         view.hide(showingsCtrl.filmTitles);
                         showingsCtrl.detailsDiv.classList.add('activeshow');
@@ -271,8 +270,8 @@ export const showingsCtrl = {
 
 
 
-            
-                       // goBackToTitlesBtn.addEventListener('click', goBackToTitles);
+
+                        // goBackToTitlesBtn.addEventListener('click', goBackToTitles);
 
                         showingsService.selectById(event.currentTarget.dataset.showingId);
                         let seatsTemp = event.currentTarget.dataset.seats;
@@ -286,7 +285,7 @@ export const showingsCtrl = {
                         orderCtrl.orderListener();
                         const nextBtn = document.getElementById("nextBtn");
                         view.hide(nextBtn);
-                       // console.log(showingsCtrl.goBackToTitlesBtn());
+                        // console.log(showingsCtrl.goBackToTitlesBtn());
                         showingsCtrl.goBackToTitlesBtn().addEventListener('click', showingsCtrl.goBackToTitles);
 
                     }, false);
@@ -323,7 +322,7 @@ const seatsCtrl = {
         [...this.seats].forEach(seat => {
             seat.classList.remove('selected');
         });
-       this.selectedSeats=[];
+        this.selectedSeats = [];
     },
     disableListener() {
         fetch(request(`${API_URL}seatstaken/${showingsService.getSelected().id}`, 'GET'))
@@ -389,11 +388,11 @@ const ticketCtrl = {
                 document.getElementById("order-status").innerHTML = "Please login to order tickets!";
                 view.hide(seatsCtrl.seatsDiv);
                 view.hide(orderCtrl.orderDiv);
-            view.renderContent("entry-template-login", {}, "login"); //only form
-           view.renderContent("entry-template-register", {}, "register"); //only form
+                view.renderContent("entry-template-login", {}, "login"); //only form
+                view.renderContent("entry-template-register", {}, "register"); //only form
 
-           registerCtrl.registerForm().addEventListener('submit', registerCtrl.signup, false);
-         loginCtrl.loginForm().addEventListener('submit', loginCtrl.login, false);
+                registerCtrl.registerForm().addEventListener('submit', registerCtrl.signup, false);
+                loginCtrl.loginForm().addEventListener('submit', loginCtrl.login, false);
 
             } else {
                 const ticket = {
@@ -422,7 +421,7 @@ const registerCtrl = {
     signup(event) {
         event.preventDefault();
         const registerStatus = document.querySelector('#register-status');
-      
+
         const user = {
             email: this.email.value,
             password: this.password.value,
