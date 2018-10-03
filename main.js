@@ -216,10 +216,11 @@ export const showingsCtrl = {
     },
     list(showings) {
         this.sortShowings(showings);
-        console.log(showings);
+       // console.log(showings);
         const titles = this.groupShowings(showings);
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "film-titles");
         [...this.titlesList].forEach(title => {
+            console.log("hehe",title);
             if (titles[1][title.textContent][0].imageurl.length === 0) {
                 titles[1][title.textContent][0].imageurl = IMAGE_URL + titles[1][title.textContent][0].imageurl;
             } //setting poster's url
