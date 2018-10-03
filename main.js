@@ -216,6 +216,7 @@ export const showingsCtrl = {
     },
     list(showings) {
         this.sortShowings(showings);
+        console.log(showings);
         const titles = this.groupShowings(showings);
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(titles[0])}}`), "film-titles");
         [...this.titlesList].forEach(title => {
