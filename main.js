@@ -35,21 +35,27 @@ const showingsService = Object.create(listService);
 
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<INIT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-fetch(request(API_URL + "showings", 'GET'))
-    .then(res => res.json())
-    .then(showings => {
+function initApp() {
+    fetch(request(API_URL + "showings", 'GET'))
+        .then(res => res.json())
+        .then(showings => {
 
-        view.hide(showingsCtrl.showingsWrapper);
-        showingsService.add(showings);
+            view.hide(showingsCtrl.showingsWrapper);
+            showingsService.add(showings);
 
-        calendarCtrl.initCalendar();
+            calendarCtrl.initCalendar();
 
-        authServices.loadUserCredentials();
-        loginCtrl.getInfo();
+            authServices.loadUserCredentials();
+            loginCtrl.getInfo();
 
-        const customerInfo = document.querySelector('#customer-info');
-        view.hide(customerInfo);
-    });
+            const customerInfo = document.querySelector('#customer-info');
+            view.hide(customerInfo);
+        });
+
+}
+
+initApp();
+
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<INIT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
@@ -163,9 +169,9 @@ export const showingsCtrl = {
     },
     sortShowings(sList) {
         sList = sList.sort((a, b) => {
-            return moment(a.date,"HH:mm") - moment(b.date,"HH:mm");
+            return moment(a.date, "HH:mm") - moment(b.date, "HH:mm");
         });
-       
+
     },
     groupShowings(sList) {
         const groupedByTitle = [];
@@ -400,6 +406,7 @@ const ticketCtrl = {
                         showingsCtrl.detailsDiv.classList.add('ordered');
                         orderForm.innerHTML = result.msg;
                         view.hide(seatsCtrl.seatsDiv);
+                        view.show(document.querySelector('#backGeneral'));
                     }).catch(error => Promise.reject(new Error(error)));
             }
         });
