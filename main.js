@@ -351,6 +351,7 @@ const orderCtrl = {
         const backSeatsBtn = document.getElementById("backSeatsBtn");
         const seatsOnly = document.getElementById("seats-only");
         view.hide(backSeatsBtn);
+        view.hide(document.querySelector('#backGeneral'));
         nextBtn.addEventListener('click', event => {
             const orderData = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
             if (moment(orderData.showing.date).isValid()) { orderData.showing.date = moment(orderData.showing.date).format('YYYY-MM-DD HH:mm'); }
