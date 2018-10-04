@@ -351,7 +351,7 @@ const orderCtrl = {
         const backSeatsBtn = document.getElementById("backSeatsBtn");
         const seatsOnly = document.getElementById("seats-only");
         view.hide(backSeatsBtn);
-        
+
         nextBtn.addEventListener('click', event => {
             const orderData = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
             if (moment(orderData.showing.date).isValid()) { orderData.showing.date = moment(orderData.showing.date).format('YYYY-MM-DD HH:mm'); }
@@ -361,12 +361,15 @@ const orderCtrl = {
             view.hide(seatsOnly);
             view.show(backSeatsBtn);
             view.show(orderCtrl.orderDiv);
-view.hide(document.querySelector('#backGeneral'));
+            view.hide(document.querySelector('#backGeneral'));
 
             const orderForm = document.forms['order-form'];
             orderForm['price'].addEventListener('change', this.pricing);
             document.querySelector('#total-price').innerHTML = `Total price to pay: ${this.pricing()}`;
             orderForm.addEventListener('submit', ticketCtrl.order, false);
+            document.querySelector('#backGeneral').addEventListener('click', function() {
+                initApp();
+            });
         });
 
         backSeatsBtn.addEventListener('click', e => {
