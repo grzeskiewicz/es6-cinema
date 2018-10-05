@@ -144,6 +144,7 @@ const calendarCtrl = {
             if (selectedMonthCopy > 10) {
                 d = new Date(d++);
             }
+            console.log(d);
             calendarDiv.innerHTML = '';
             let calendarTable = renderCalendar(createCalendar(d, ++selectedMonthCopy));
             calendarCtrl.initListeners(calendarTable);
