@@ -40,6 +40,7 @@ function initApp() {
         .then(res => res.json())
         .then(showings => {
             view.show(calendarCtrl.calendarDiv);
+            view.show();
             view.hide(showingsCtrl.showingsWrapper);
             showingsService.remove();
             showingsService.add(showings);
@@ -104,6 +105,8 @@ const calendarCtrl = {
                     view.show(showingsCtrl.showList);
                     if (showings.length > 0) {
                         view.show(showingsCtrl.showingsWrapper);
+                        view.show(showingsCtrl.detailsDiv);
+                        view.show(showingsCtrl.filmTitles);
                     } else {
                         view.hide(showingsCtrl.showingsWrapper);
                     }
