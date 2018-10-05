@@ -39,7 +39,7 @@ function initApp() {
     fetch(request(API_URL + "showings", 'GET'))
         .then(res => res.json())
         .then(showings => {
-            view.hide(document.querySelector('#nav');
+            view.hide(document.querySelector('#nav'));
             view.show(calendarCtrl.calendarDiv);
             view.show();
             view.hide(showingsCtrl.showingsWrapper);
