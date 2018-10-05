@@ -166,7 +166,7 @@ export const showingsCtrl = {
     showingsList: document.getElementsByClassName('showing'), //function because of handlebars
     titlesList: document.getElementsByClassName('title'), //function because of handlebars
     filmTitles: document.querySelector('#film-titles'),
-    backCalendarBtn: document.querySelector('#backCalendarBtn');
+    backCalendarBtn: document.querySelector('#backCalendarBtn'),
     goBackToTitlesBtn: document.querySelector('#backTitles'),
     dateParser(stringdate) {
         const dateFormat = 'HH:mm';
