@@ -166,8 +166,8 @@ export const showingsCtrl = {
     showingsList: document.getElementsByClassName('showing'), //function because of handlebars
     titlesList: document.getElementsByClassName('title'), //function because of handlebars
     filmTitles: document.querySelector('#film-titles'),
-    backCalendarBtn: document.querySelector('#backCalendarBtn'),
-    goBackToTitlesBtn: document.querySelector('#backTitles'),
+    backCalendarBtn() { return document.querySelector('#backCalendarBtn'); },
+    goBackToTitlesBtn() { return document.querySelector('#backTitles'); },
     dateParser(stringdate) {
         const dateFormat = 'HH:mm';
         return moment(stringdate).format(dateFormat);
@@ -214,7 +214,7 @@ export const showingsCtrl = {
     goBackToTitles() {
         view.show(showingsCtrl.showList);
         view.show(showingsCtrl.filmTitles);
-        view.hide(showingsCtrl.goBackToTitlesBtn);
+        view.hide(showingsCtrl.goBackToTitlesBtn());
         view.show(showingsCtrl.detailsDiv);
     },
     list(showings) {
@@ -226,17 +226,17 @@ export const showingsCtrl = {
         [...this.titlesList].forEach(title => {
             title.addEventListener('click', function() { //SECOND STEP
                 //view.hide(orderCtrl.backSeatsBtn);
-               // view.hide(showingsCtrl.detailsDiv);
-               // view.hide(showingsCtrl.goBackToTitlesBtn);
+                // view.hide(showingsCtrl.detailsDiv);
+                // view.hide(showingsCtrl.goBackToTitlesBtn);
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(showings.showingsGrouped[title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(showings.showingsGrouped[title.textContent][0])}`), "film"); //description of the film 
 
-        
-                    showingsCtrl.backCalendarBtn.addEventListener('click', function() {
-                        view.show(calendarCtrl.calendarDiv);
-                        view.hide(showingsCtrl.showingsWrapper);
-                        view.hide(showingsCtrl.backCalendarBtn);
-                    });
+
+                showingsCtrl.backCalendarBtn().addEventListener('click', function() {
+                    view.show(calendarCtrl.calendarDiv);
+                    view.hide(showingsCtrl.showingsWrapper);
+                    view.hide(showingsCtrl.backCalendarBtn());
+                });
                 view.hide(calendarCtrl.calendarDiv);
                 view.show(showingsCtrl.showingsWrapper); //this?
 
@@ -285,7 +285,7 @@ export const showingsCtrl = {
                         orderCtrl.orderListener();
                         const nextBtn = document.getElementById("nextBtn");
                         view.hide(nextBtn);
-                        showingsCtrl.goBackToTitlesBtn.addEventListener('click', showingsCtrl.goBackToTitles);
+                        showingsCtrl.goBackToTitlesBtn().addEventListener('click', showingsCtrl.goBackToTitles);
 
                     }, false);
                 });
@@ -341,7 +341,7 @@ const seatsCtrl = {
 const orderCtrl = {
     orderDiv: document.querySelector('#order'),
     orderForm: document.forms['order-form'],
-    backSeatsBtn: document.querySelector('#backSeatsBtn'),
+    backSeatsBtn(){return document.querySelector('#backSeatsBtn');},
     pricing() {
         const price = document.forms['order-form'].price.value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount;
         const priceTotal = price * seatsCtrl.selectedSeats.length;
@@ -352,7 +352,7 @@ const orderCtrl = {
         const nextBtn = document.getElementById("nextBtn");
 
         const seatsOnly = document.getElementById("seats-only");
-        view.hide(orderCtrl.backSeatsBtn);
+        view.hide(orderCtrl.backSeatsBtn());
 
         nextBtn.addEventListener('click', event => {
             const orderData = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
@@ -361,7 +361,7 @@ const orderCtrl = {
             view.renderContent("entry-template-order", orderData, "order");
             view.hide(nextBtn);
             view.hide(seatsOnly);
-            view.show(orderCtrl.backSeatsBtn);
+            view.show(orderCtrl.backSeatsBtn());
             view.show(orderCtrl.orderDiv);
             view.hide(document.querySelector('#backGeneral'));
 
@@ -374,11 +374,11 @@ const orderCtrl = {
             });
         });
 
-        orderCtrl.backSeatsBtn.addEventListener('click', e => {
+        orderCtrl.backSeatsBtn().addEventListener('click', e => {
             seatsCtrl.resetSeats();
             view.show(seatsOnly);
             view.hide(orderCtrl.orderDiv);
-            view.hide(orderCtrl.backSeatsBtn);
+            view.hide(orderCtrl.backSeatsBtn());
         });
     }
 }
