@@ -140,13 +140,10 @@ const calendarCtrl = {
         });
         next.addEventListener('click', function() {
             console.log(selectedMonthCopy);
-            let d=yearNow;
-            if (selectedMonthCopy > 10) {
-                d = new Date(d++);
-            }
-            console.log(d);
+   
+            console.log(yearNow);
             calendarDiv.innerHTML = '';
-            let calendarTable = renderCalendar(createCalendar(d, ++selectedMonthCopy));
+            let calendarTable = renderCalendar(createCalendar(yearNow, ++selectedMonthCopy));
             calendarCtrl.initListeners(calendarTable);
             calendarCtrl.initListenersMonths();
         });
