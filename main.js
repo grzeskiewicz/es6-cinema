@@ -291,7 +291,7 @@ export const showingsCtrl = {
                         orderCtrl.orderListener();
                         const nextBtn = document.getElementById("nextBtn");
                         view.hide(nextBtn);
-                        showingsCtrl.goBackToTitlesBtn().addEventListener('click', showingsCtrl.goBackToTitles);
+                        showingsCtrl.goBackToTitlesBtn.addEventListener('click', showingsCtrl.goBackToTitles);
 
                     }, false);
                 });
