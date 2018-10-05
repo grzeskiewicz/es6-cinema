@@ -39,7 +39,9 @@ function initApp() {
     fetch(request(API_URL + "showings", 'GET'))
         .then(res => res.json())
         .then(showings => {
+            view.hide(document.querySelector('#nav');
             view.show(calendarCtrl.calendarDiv);
+            view.show();
             view.hide(showingsCtrl.showingsWrapper);
             showingsService.remove();
             showingsService.add(showings);
@@ -106,6 +108,7 @@ const calendarCtrl = {
                         view.show(showingsCtrl.showingsWrapper);
                         view.show(showingsCtrl.detailsDiv);
                         view.show(showingsCtrl.filmTitles);
+                        view.show(document.querySelector('#nav'));
                     } else {
                         view.hide(showingsCtrl.showingsWrapper);
                     }
