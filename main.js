@@ -40,7 +40,6 @@ function initApp() {
         .then(res => res.json())
         .then(showings => {
             view.show(calendarCtrl.calendarDiv);
-            view.show();
             view.hide(showingsCtrl.showingsWrapper);
             showingsService.remove();
             showingsService.add(showings);
