@@ -108,7 +108,7 @@ const calendarCtrl = {
                         view.show(showingsCtrl.showingsWrapper);
                         view.show(showingsCtrl.detailsDiv);
                         view.show(showingsCtrl.filmTitles);
-                        view.show(document.querySelector('#nav'));
+
                     } else {
                         view.hide(showingsCtrl.showingsWrapper);
                     }
@@ -227,6 +227,8 @@ export const showingsCtrl = {
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(showings.filmTitles)}}`), "film-titles");
         [...this.titlesList].forEach(title => {
             title.addEventListener('click', function() { //SECOND STEP
+                view.show(document.querySelector('#nav'));
+                view.hide(orderCtrl.backSeatsBtn);
                 view.hide(showingsCtrl.detailsDiv);
                 view.hide(showingsCtrl.goBackToTitlesBtn);
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(showings.showingsGrouped[title.textContent])}}`), "showlist"); //list of hours of selected showing
