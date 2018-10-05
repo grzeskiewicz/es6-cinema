@@ -142,7 +142,7 @@ const calendarCtrl = {
             console.log(selectedMonthCopy);
             let d=yearNow;
             if (selectedMonthCopy > 10) {
-                d = new Date(yearNow++);
+                d = new Date(d++);
             }
             calendarDiv.innerHTML = '';
             let calendarTable = renderCalendar(createCalendar(d, ++selectedMonthCopy));
