@@ -218,7 +218,7 @@ export const showingsCtrl = {
         view.show(showingsCtrl.detailsDiv);
     },
     list(showings) {
-
+view.hide(showingsCtrl.backCalendarBtn());
         this.sortShowings(showings); //sorting showings
         showings = this.groupShowings(showings);
         console.log(showings);
