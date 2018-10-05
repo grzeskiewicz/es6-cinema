@@ -254,6 +254,7 @@ export const showingsCtrl = {
                 [...showingsCtrl.showingsList].forEach(showing => {
                     showing.addEventListener('click', event => { //THIRD STEP
                         event.preventDefault();
+
                         for (const showing2 of [...showingsCtrl.showingsList]) { //only one time of showings selected at a time
                             if (showing2.querySelector('p').classList.contains('active') && showing2.querySelector('p') !== showing.querySelector('p')) {
                                 showing2.querySelector('p').classList.remove('active');
@@ -264,7 +265,7 @@ export const showingsCtrl = {
                         showing.querySelector('p').classList.add('active');
 
 
-
+                        view.show(showingsCtrl.backCalendarBtn());
                         view.showFlex(showingsCtrl.detailsDiv);
                         view.hide(showingsCtrl.showList);
                         view.hide(showingsCtrl.filmTitles);
