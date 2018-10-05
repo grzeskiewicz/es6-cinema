@@ -139,9 +139,12 @@ const calendarCtrl = {
         });
         next.addEventListener('click', function() {
             console.log(selectedMonthCopy);
-            if (selectedMonthCopy>10) yearNow++;
+            let d=yearNow;
+            if (selectedMonthCopy > 10) {
+                d = new Date(year++);
+            }
             calendarDiv.innerHTML = '';
-            let calendarTable = renderCalendar(createCalendar(yearNow, ++selectedMonthCopy));
+            let calendarTable = renderCalendar(createCalendar(d, ++selectedMonthCopy));
             calendarCtrl.initListeners(calendarTable);
             calendarCtrl.initListenersMonths();
         });
@@ -269,7 +272,7 @@ export const showingsCtrl = {
                         showing.querySelector('p').classList.add('active');
 
 
-                        
+
                         view.showFlex(showingsCtrl.detailsDiv);
                         view.hide(showingsCtrl.showList);
                         view.hide(showingsCtrl.filmTitles);
