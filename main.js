@@ -87,6 +87,7 @@ initApp();
 
 
 let selectedMonthCopy = selectedMonth;
+console.log(selectedMonthCopy);
 const calendarCtrl = {
     calendarDiv: document.querySelector('#calendar'),
     initListeners(calendarTable) {
