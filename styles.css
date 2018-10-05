@@ -26,7 +26,7 @@ p {
 #nav {
     display:flex;
     flex-flow:row nowrap;
-    font-size:8px;
+    font-size:0.7rem;
 }
 #nav div {
     flex-basis:30%;
