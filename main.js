@@ -39,7 +39,7 @@ function initApp() {
     fetch(request(API_URL + "showings", 'GET'))
         .then(res => res.json())
         .then(showings => {
-
+            view.show(calendarCtrl.calendarDiv);
             view.hide(showingsCtrl.showingsWrapper);
             showingsService.add(showings);
 
@@ -88,6 +88,7 @@ const view = {
 
 let selectedMonthCopy = selectedMonth;
 const calendarCtrl = {
+    calendarDiv: document.querySelector('#calendar'),
     initListeners(calendarTable) {
 
         const daysArray = calendarTable.querySelectorAll('tbody td');
@@ -213,7 +214,7 @@ export const showingsCtrl = {
         view.show(showingsCtrl.detailsDiv);
     },
     list(showings) {
-        const cal = document.querySelector('#calendar');
+
         this.sortShowings(showings); //sorting showings
         showings = this.groupShowings(showings);
         console.log(showings);
@@ -227,11 +228,11 @@ export const showingsCtrl = {
 
                 const backCalendarBtn = document.querySelector('#backCalendarBtn');
                 backCalendarBtn.addEventListener('click', function() {
-                    view.show(cal);
+                    view.show(calendarCtrl.calendarDiv);
                     view.hide(showingsCtrl.showingsWrapper);
                 });
                 //cal.style.visibility = 'collapse';
-                view.hide(cal);
+                view.hide(calendarCtrl.calendarDiv);
                 // document.querySelector('#roll').innerHTML = 'Show calendar ▼';
 
                 view.show(showingsCtrl.showingsWrapper); //this?
