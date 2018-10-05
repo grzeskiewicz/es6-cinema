@@ -505,7 +505,7 @@ const loginCtrl = {
 
     logout() { // this?
         authServices.logout();
-        loginCtrl.loginDiv.querySelector('#login-form').reset();
+        loginCtrl.loginForm().reset();
         loginCtrl.customerInfoEmail().innerHTML = "";
         view.hide(loginCtrl.customerInfo);
         view.show(loginCtrl.loginDiv);
