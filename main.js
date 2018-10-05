@@ -31,7 +31,28 @@ const showingsService = Object.create(listService);
 
 
 // MAIN PART =======================================================================================================================================================
-
+const view = {
+    renderContent(source, context, output) {
+        let sourceElem = document.getElementById(source).innerHTML;
+        let template = Handlebars.compile(sourceElem);
+        let html = template(context);
+        document.getElementById(output).innerHTML = html;
+    },
+    show(element) {
+        // element.classList.remove('visuallyhidden').add('visuallyvisible');
+        element.style.display = ''
+    },
+    showFlex(element) {
+        element.style.display = 'flex';
+    },
+    hide(element) {
+        element.style.display = 'none';
+        //element.classList.remove('visuallyvisible').add('visuallyhidden');
+    },
+    toggle(element) {
+        element.style.display = element.style.display === 'none' ? 'block' : 'none';
+    }
+}
 
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<INIT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -65,28 +86,7 @@ initApp();
 
 
 
-const view = {
-    renderContent(source, context, output) {
-        let sourceElem = document.getElementById(source).innerHTML;
-        let template = Handlebars.compile(sourceElem);
-        let html = template(context);
-        document.getElementById(output).innerHTML = html;
-    },
-    show(element) {
-        // element.classList.remove('visuallyhidden').add('visuallyvisible');
-        element.style.display = ''
-    },
-    showFlex(element) {
-        element.style.display = 'flex';
-    },
-    hide(element) {
-        element.style.display = 'none';
-        //element.classList.remove('visuallyvisible').add('visuallyhidden');
-    },
-    toggle(element) {
-        element.style.display = element.style.display === 'none' ? 'block' : 'none';
-    }
-}
+
 
 
 let selectedMonthCopy = selectedMonth;
