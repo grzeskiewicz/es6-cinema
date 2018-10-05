@@ -36,10 +36,11 @@ const showingsService = Object.create(listService);
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<INIT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 function initApp() {
+    view.hide(document.querySelector('#nav'));
     fetch(request(API_URL + "showings", 'GET'))
         .then(res => res.json())
         .then(showings => {
-            view.hide(document.querySelector('#nav'));
+            
             view.show(calendarCtrl.calendarDiv);
             view.hide(showingsCtrl.showingsWrapper);
             showingsService.remove();
