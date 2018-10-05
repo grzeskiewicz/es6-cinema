@@ -341,7 +341,7 @@ const seatsCtrl = {
 const orderCtrl = {
     orderDiv: document.querySelector('#order'),
     orderForm: document.forms['order-form'],
-    backSeatsBtn(){return document.querySelector('#backSeatsBtn');},
+    backSeatsBtn() { return document.querySelector('#backSeatsBtn'); },
     pricing() {
         const price = document.forms['order-form'].price.value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount;
         const priceTotal = price * seatsCtrl.selectedSeats.length;
@@ -352,13 +352,19 @@ const orderCtrl = {
         const nextBtn = document.getElementById("nextBtn");
 
         const seatsOnly = document.getElementById("seats-only");
-        
+
 
         nextBtn.addEventListener('click', event => {
             const orderData = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
             if (moment(orderData.showing.date).isValid()) { orderData.showing.date = moment(orderData.showing.date).format('YYYY-MM-DD HH:mm'); }
 
             view.renderContent("entry-template-order", orderData, "order");
+            orderCtrl.backSeatsBtn().addEventListener('click', e => {
+                seatsCtrl.resetSeats();
+                view.show(seatsOnly);
+                view.hide(orderCtrl.orderDiv);
+                view.hide(orderCtrl.backSeatsBtn());
+            });
             view.hide(nextBtn);
             view.hide(seatsOnly);
             view.show(orderCtrl.backSeatsBtn());
@@ -374,12 +380,7 @@ const orderCtrl = {
             });
         });
 
-        orderCtrl.backSeatsBtn().addEventListener('click', e => {
-            seatsCtrl.resetSeats();
-            view.show(seatsOnly);
-            view.hide(orderCtrl.orderDiv);
-            view.hide(orderCtrl.backSeatsBtn());
-        });
+
     }
 }
 
