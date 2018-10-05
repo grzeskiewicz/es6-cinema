@@ -41,6 +41,7 @@ function initApp() {
         .then(showings => {
             view.show(calendarCtrl.calendarDiv);
             view.hide(showingsCtrl.showingsWrapper);
+            showingsService.remove();
             showingsService.add(showings);
 
             calendarCtrl.initCalendar();
