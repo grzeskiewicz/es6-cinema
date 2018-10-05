@@ -413,7 +413,7 @@ const ticketCtrl = {
                         showingsCtrl.detailsDiv.classList.add('ordered');
                         orderForm.innerHTML = result.msg;
                         view.hide(seatsCtrl.seatsDiv);
-                        view.hide(orderlCtrl.backSeatsBtn());
+                        view.hide(orderCtrl.backSeatsBtn());
                         view.show(document.querySelector('#backGeneral'));
                     }).catch(error => Promise.reject(new Error(error)));
             }
