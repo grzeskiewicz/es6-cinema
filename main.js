@@ -90,7 +90,7 @@ let selectedMonthCopy = selectedMonth;
 const calendarCtrl = {
     calendarDiv: document.querySelector('#calendar'),
     initListeners(calendarTable) {
-view.hide(showingsCtrl.backCalendarBtn());
+
         const daysArray = calendarTable.querySelectorAll('tbody td');
         for (const day of daysArray) {
             if (!day.classList.contains('not-selectable')) {
@@ -98,7 +98,7 @@ view.hide(showingsCtrl.backCalendarBtn());
                     const pickedDate = new Date(this.dataset.date);
                     view.hide(showingsCtrl.showList);
                     view.hide(showingsCtrl.detailsDiv);
-                    
+
                     const showings = showingsCtrl.calendarShowings(pickedDate); //FIRST STEP 
                     showingsCtrl.showList.innerHTML = '';
                     view.show(showingsCtrl.showList);
@@ -224,6 +224,7 @@ export const showingsCtrl = {
         showings = this.groupShowings(showings);
         console.log(showings);
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(showings.filmTitles)}}`), "film-titles");
+        view.hide(showingsCtrl.backCalendarBtn());
         [...this.titlesList].forEach(title => {
             title.addEventListener('click', function() { //SECOND STEP
                 //view.hide(orderCtrl.backSeatsBtn);
