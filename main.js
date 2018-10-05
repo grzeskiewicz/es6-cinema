@@ -142,7 +142,8 @@ const calendarCtrl = {
             console.log(selectedMonthCopy);
    
             let d=Number(yearNow);
-            console.log(d++);
+            d++;
+            console.log(d);
             calendarDiv.innerHTML = '';
             let calendarTable = renderCalendar(createCalendar(yearNow, ++selectedMonthCopy));
             calendarCtrl.initListeners(calendarTable);
