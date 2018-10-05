@@ -227,6 +227,7 @@ export const showingsCtrl = {
         view.hide(showingsCtrl.backCalendarBtn());
         [...this.titlesList].forEach(title => {
             title.addEventListener('click', function() { //SECOND STEP
+                view.show(showingsCtrl.backCalendarBtn());
                 //view.hide(orderCtrl.backSeatsBtn);
                 // view.hide(showingsCtrl.detailsDiv);
                 // view.hide(showingsCtrl.goBackToTitlesBtn);
@@ -265,7 +266,7 @@ export const showingsCtrl = {
                         showing.querySelector('p').classList.add('active');
 
 
-                        view.show(showingsCtrl.backCalendarBtn());
+                        
                         view.showFlex(showingsCtrl.detailsDiv);
                         view.hide(showingsCtrl.showList);
                         view.hide(showingsCtrl.filmTitles);
