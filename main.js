@@ -352,7 +352,7 @@ const orderCtrl = {
         const nextBtn = document.getElementById("nextBtn");
 
         const seatsOnly = document.getElementById("seats-only");
-        view.hide(orderCtrl.backSeatsBtn());
+        
 
         nextBtn.addEventListener('click', event => {
             const orderData = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
