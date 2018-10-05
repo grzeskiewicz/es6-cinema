@@ -41,7 +41,6 @@ function initApp() {
         .then(showings => {
             view.hide(document.querySelector('#nav'));
             view.show(calendarCtrl.calendarDiv);
-            view.show();
             view.hide(showingsCtrl.showingsWrapper);
             showingsService.remove();
             showingsService.add(showings);
