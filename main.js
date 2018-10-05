@@ -141,7 +141,8 @@ const calendarCtrl = {
         next.addEventListener('click', function() {
             console.log(selectedMonthCopy);
    
-            console.log((Number(yearNow))++);
+            let d=Number(yearNow);
+            console.log(d);
             calendarDiv.innerHTML = '';
             let calendarTable = renderCalendar(createCalendar(yearNow, ++selectedMonthCopy));
             calendarCtrl.initListeners(calendarTable);
