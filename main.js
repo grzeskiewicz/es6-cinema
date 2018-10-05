@@ -144,7 +144,7 @@ const calendarCtrl = {
             console.log(selectedMonthCopy);
             console.log(d);
             calendarDiv.innerHTML = '';
-            let calendarTable = renderCalendar(createCalendar(d, ++selectedMonthCopy));
+            let calendarTable = renderCalendar(createCalendar(d, selectedMonthCopy++));
             calendarCtrl.initListeners(calendarTable);
             calendarCtrl.initListenersMonths();
         });
