@@ -39,7 +39,6 @@ const view = {
         document.getElementById(output).innerHTML = html;
     },
     show(element) {
-        // element.classList.remove('visuallyhidden').add('visuallyvisible');
         element.style.display = ''
     },
     showFlex(element) {
@@ -47,7 +46,6 @@ const view = {
     },
     hide(element) {
         element.style.display = 'none';
-        //element.classList.remove('visuallyvisible').add('visuallyhidden');
     },
     toggle(element) {
         element.style.display = element.style.display === 'none' ? 'block' : 'none';
@@ -57,7 +55,6 @@ const view = {
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<INIT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 function initApp() {
-    view.hide(document.querySelector('#nav'));
     fetch(request(API_URL + "showings", 'GET'))
         .then(res => res.json())
         .then(showings => {
@@ -169,6 +166,7 @@ export const showingsCtrl = {
     showingsList: document.getElementsByClassName('showing'), //function because of handlebars
     titlesList: document.getElementsByClassName('title'), //function because of handlebars
     filmTitles: document.querySelector('#film-titles'),
+    backCalendarBtn: document.querySelector('#backCalendarBtn');
     goBackToTitlesBtn: document.querySelector('#backTitles'),
     dateParser(stringdate) {
         const dateFormat = 'HH:mm';
@@ -227,23 +225,19 @@ export const showingsCtrl = {
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(showings.filmTitles)}}`), "film-titles");
         [...this.titlesList].forEach(title => {
             title.addEventListener('click', function() { //SECOND STEP
-                view.show(document.querySelector('#nav'));
-                view.hide(orderCtrl.backSeatsBtn);
-                view.hide(showingsCtrl.detailsDiv);
-                view.hide(showingsCtrl.goBackToTitlesBtn);
+                //view.hide(orderCtrl.backSeatsBtn);
+               // view.hide(showingsCtrl.detailsDiv);
+               // view.hide(showingsCtrl.goBackToTitlesBtn);
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(showings.showingsGrouped[title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(showings.showingsGrouped[title.textContent][0])}`), "film"); //description of the film 
 
-                const backCalendarBtn = document.querySelector('#backCalendarBtn');
-                backCalendarBtn.addEventListener('click', function() {
-                    view.show(calendarCtrl.calendarDiv);
-                    view.hide(showingsCtrl.showingsWrapper);
-                    view.hide(backCalendarBtn);
-                });
-                //cal.style.visibility = 'collapse';
+        
+                    showingsCtrl.backCalendarBtn.addEventListener('click', function() {
+                        view.show(calendarCtrl.calendarDiv);
+                        view.hide(showingsCtrl.showingsWrapper);
+                        view.hide(showingsCtrl.backCalendarBtn);
+                    });
                 view.hide(calendarCtrl.calendarDiv);
-                // document.querySelector('#roll').innerHTML = 'Show calendar ▼';
-
                 view.show(showingsCtrl.showingsWrapper); //this?
 
                 for (const title2 of [...showingsCtrl.titlesList]) { //only one title marked as active at a time
