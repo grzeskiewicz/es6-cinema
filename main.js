@@ -128,10 +128,11 @@ const calendarCtrl = {
 
     },
     initListenersMonths() {
+        let d=Number(yearNow);
         const previous = document.querySelector('#previous');
         const next = document.querySelector('#next');
         selectedMonthCopy <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
-        selectedMonthCopy >= 12 ? next.style.display = 'none' : next.style.display = 'inline';
+        selectedMonthCopy >= 10 ? next.style.display = 'none' : next.style.display = 'inline';
         previous.addEventListener('click', function() {
             calendarDiv.innerHTML = '';
             let calendarTable = renderCalendar(createCalendar(yearNow, --selectedMonthCopy));
@@ -140,12 +141,9 @@ const calendarCtrl = {
         });
         next.addEventListener('click', function() {
             console.log(selectedMonthCopy);
-   
-            let d=Number(yearNow);
-            d++;
             console.log(d);
             calendarDiv.innerHTML = '';
-            let calendarTable = renderCalendar(createCalendar(yearNow, ++selectedMonthCopy));
+            let calendarTable = renderCalendar(createCalendar(d, ++selectedMonthCopy));
             calendarCtrl.initListeners(calendarTable);
             calendarCtrl.initListenersMonths();
         });
