@@ -133,7 +133,8 @@ const calendarCtrl = {
         const next = document.querySelector('#next');
         selectedMonthCopy <= monthNow && d < yearNow ? previous.style.display = 'none' : previous.style.display = 'inline';
         selectedMonthCopy > 12 ? next.style.display = 'none' : next.style.display = 'inline';
-        if (selectedMonthCopy >=12 ) {selectedMonthCopy=0;d++}
+        if (selectedMonthCopy >=12 ) {selectedMonthCopy=0;d++;}
+        if (selectedMonthCopy <= 0) {selectedMonthCopy=11;d--;}
         previous.addEventListener('click', function() {
             calendarDiv.innerHTML = '';
             let calendarTable = renderCalendar(createCalendar(yearNow, --selectedMonthCopy));
