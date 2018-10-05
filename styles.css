@@ -23,6 +23,10 @@ p {
     justify-content: center;
 }
 
+#nav {
+    display:flex;
+    flex-flow:row nowrap;
+}
 
 
 #roll {
