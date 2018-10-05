@@ -30,6 +30,8 @@ p {
 }
 #nav div {
     flex-basis:30%;
+    background: lightgreen;
+    margin:1px;
 }
 
 #roll {
