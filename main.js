@@ -139,7 +139,7 @@ const calendarCtrl = {
         });
         next.addEventListener('click', function() {
             console.log(selectedMonthCopy);
-            if (selectedMonthCopy>12) yearNow++;
+            if (selectedMonthCopy>11) yearNow++;
             calendarDiv.innerHTML = '';
             let calendarTable = renderCalendar(createCalendar(yearNow, ++selectedMonthCopy));
             calendarCtrl.initListeners(calendarTable);
