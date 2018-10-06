@@ -16,11 +16,12 @@ p {
     position: fixed;
     top: 0;
     right: 100px;
+    height:5vh;
     font-size: 0.8rem;
 }
 
 #wrapper {
-    height:100vh;
+    height:95vh;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
