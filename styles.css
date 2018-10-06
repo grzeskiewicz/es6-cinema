@@ -342,14 +342,8 @@ flex-flow: row wrap;*/
     margin: 1rem;
 }
 
-#cal-wrapper{
-    display:flex;
-    align-items:center;
-}
 
 #calendar {
-    display: flex-inline;
-    margin: 1rem;
     text-align: center;
     line-height: 2;
 }
