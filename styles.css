@@ -4,7 +4,7 @@
 
 body {
     background-color: white;
-    
+
 }
 
 p {
@@ -16,15 +16,15 @@ p {
     position: fixed;
     top: 0;
     right: 100px;
-    height:5vh;
+    height: 5vh;
     font-size: 0.8rem;
 }
 
 #wrapper {
-    height:95vh;
+    height: 95vh;
     display: flex;
     flex-flow: column nowrap;
-  
+    align-items: center;
 }
 
 
