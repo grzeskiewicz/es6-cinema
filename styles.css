@@ -15,7 +15,7 @@ p {
     position: fixed;
     top: 0;
     right: 100px;
-    font-size:0.8rem;
+    font-size: 0.8rem;
 }
 
 #wrapper {
@@ -56,6 +56,8 @@ p {
 .title {
     border-bottom: 1px solid gray;
     margin: 0 0.5rem;
+    font-family: 'Gentium Book Basic', serif;
+    font-size: 1.4rem;
 }
 
 #film {
@@ -100,10 +102,6 @@ p {
     margin-bottom: 0;
 }
 
-.title {
-    font-family: 'Gentium Book Basic', serif;
-    font-size: 1.4rem;
-}
 
 .showing-details {
     flex-basis: 70%;
@@ -267,6 +265,7 @@ flex-flow: row wrap;*/
     0% {
         -webkit-transform: rotate(0deg);
     }
+
     100% {
         -webkit-transform: rotate(360deg);
     }
@@ -276,6 +275,7 @@ flex-flow: row wrap;*/
     0% {
         transform: rotate(0deg);
     }
+
     100% {
         transform: rotate(360deg);
     }
