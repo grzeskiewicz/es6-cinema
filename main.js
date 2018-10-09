@@ -136,6 +136,7 @@ const calendarCtrl = {
         (selectedMonthCopy > monthNow + 2 || calendarCtrl.d>yearNow) ? next.style.display = 'none' : next.style.display = 'inline';
         previous.addEventListener('click', function() {
             calendarDiv.innerHTML = '';
+            if(calendarCtrl.d > yearNow) {calendarCtrl.d--; selectedMonthCopy=12;}
             let calendarTable = renderCalendar(createCalendar(yearNow, --selectedMonthCopy));
             calendarCtrl.initListeners(calendarTable);
             calendarCtrl.initListenersMonths();
