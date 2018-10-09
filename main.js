@@ -141,7 +141,7 @@ const calendarCtrl = {
         });
         next.addEventListener('click', function() {
             calendarDiv.innerHTML = '';
-            if (selectedMonthCopy >=11) d++;
+            if (selectedMonthCopy >=11) {d++;selectedMonthCopy=0;}
             console.log(d,selectedMonthCopy);
             let calendarTable = renderCalendar(createCalendar(d, ++selectedMonthCopy));
             calendarCtrl.initListeners(calendarTable);
