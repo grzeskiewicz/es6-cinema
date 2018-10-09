@@ -134,7 +134,8 @@ const calendarCtrl = {
         selectedMonthCopy <= monthNow ? previous.style.display = 'none' : previous.style.display = 'inline';
         selectedMonthCopy > monthNow + 2 ? next.style.display = 'none' : next.style.display = 'inline';
         selectedMonthCopy >= 12 ? next.style.display = 'none' : next.style.display = 'inline';
-        //if (selectedMonthCopy >=12 ) {selectedMonthCopy=0;d++}
+        if (selectedMonthCopy >=12 ) {selectedMonthCopy=0;d++}
+        d>yearNow ? next.style.display='none' : next.display='inline'; 
         // if (selectedMonthCopy <= 0) {selectedMonthCopy=11;d--}
         previous.addEventListener('click', function() {
             calendarDiv.innerHTML = '';
