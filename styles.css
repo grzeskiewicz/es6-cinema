@@ -255,7 +255,7 @@ p {
     }
 
     .showing-details{
-        flex-basis:40%;
+        flex-basis:80%;
     }
 
     #showings-wrapper{
