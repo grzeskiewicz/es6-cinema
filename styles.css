@@ -258,6 +258,10 @@ p {
         flex-basis:40%;
     }
 
+    #showings-wrapper{
+        flex-basis:50%;
+    }
+
     .poster {
         flex-basis: 20%;
     }
