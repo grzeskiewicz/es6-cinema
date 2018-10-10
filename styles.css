@@ -98,7 +98,7 @@ p {
 }
 
 .poster {
-    flex-basis: 30%;
+    flex-basis: 40%;
     width: 100%;
     height: auto;
 }
@@ -241,14 +241,8 @@ p {
 
 
 @media only screen and (min-width: 768px) {
-    #showings-wrapper {
-
-    }
-    #film-titles {
-
-    }
-    .title{
-        flex-basis:50%;
+    .poster {
+        flex-basis: 20%;
     }
 }
 
