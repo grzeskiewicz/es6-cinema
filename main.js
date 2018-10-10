@@ -510,7 +510,7 @@ const loginCtrl = {
         view.hide(loginCtrl.customerInfo);
         //view.show(loginCtrl.loginDiv);
         //view.show(loginCtrl.registerDiv);
-        view.hide(orderCtrl.orderDiv);
+        //view.hide(orderCtrl.orderDiv);
         initApp();
         //view.show(calendarCtrl.calendarDiv);
         // loginCtrl.registerDiv.querySelector('#register-form').reset();
