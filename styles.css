@@ -250,7 +250,7 @@ p {
     #film-titles>*,
     #showlist>* {
         display: flex;
-        flex-basis:50%;
+        flex-basis:70%;
         border-color: gray;
     }
 
