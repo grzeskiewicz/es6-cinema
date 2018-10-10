@@ -33,9 +33,9 @@ const showingsService = Object.create(listService);
 // MAIN PART =======================================================================================================================================================
 const view = {
     renderContent(source, context, output) {
-        let sourceElem = document.getElementById(source).innerHTML;
-        let template = Handlebars.compile(sourceElem);
-        let html = template(context);
+        const sourceElem = document.getElementById(source).innerHTML;
+        const template = Handlebars.compile(sourceElem);
+        const html = template(context);
         document.getElementById(output).innerHTML = html;
     },
     show(element) {
@@ -58,7 +58,6 @@ function initApp() {
     fetch(request(API_URL + "showings", 'GET'))
         .then(res => res.json())
         .then(showings => {
-
             view.show(calendarCtrl.calendarDiv);
             view.hide(showingsCtrl.showingsWrapper);
             showingsService.remove();
@@ -68,7 +67,6 @@ function initApp() {
 
             authServices.loadUserCredentials();
             loginCtrl.getInfo();
-
             const customerInfo = document.querySelector('#customer-info');
             view.hide(customerInfo);
         });
@@ -83,14 +81,11 @@ initApp();
 
 
 
-
-
-
 let selectedMonthCopy = selectedMonth;
 console.log(selectedMonthCopy);
 const calendarCtrl = {
     calendarDiv: document.querySelector('#calendar'),
-    d : Number(yearNow),
+    d: Number(yearNow),
     initListeners(calendarTable) {
 
         const daysArray = calendarTable.querySelectorAll('tbody td');
@@ -108,7 +103,6 @@ const calendarCtrl = {
                         view.show(showingsCtrl.showingsWrapper);
                         view.show(showingsCtrl.detailsDiv);
                         view.show(showingsCtrl.filmTitles);
-
                     } else {
                         view.hide(showingsCtrl.showingsWrapper);
                     }
@@ -118,10 +112,6 @@ const calendarCtrl = {
                             day2.classList.remove('date-clicked');
                         }
                     }
-
-                    //  const weekTable = renderWeek(calendarObj, day.dataset.date);
-                    //   calendarCtrl.initListeners(weekTable);
-
                 });
             }
         }
@@ -129,22 +119,23 @@ const calendarCtrl = {
 
     },
     initListenersMonths() {
-        
+
         const previous = document.querySelector('#previous');
         const next = document.querySelector('#next');
-        selectedMonthCopy <= monthNow && calendarCtrl.d==yearNow ? previous.style.display = 'none' : previous.style.display = 'inline';
-        (selectedMonthCopy > monthNow + 2 || calendarCtrl.d>yearNow) ? next.style.display = 'none' : next.style.display = 'inline';
+        selectedMonthCopy <= monthNow && calendarCtrl.d == yearNow ? previous.style.display = 'none' : previous.style.display = 'inline';
+        (selectedMonthCopy > monthNow + 2 || calendarCtrl.d > yearNow) ? next.style.display = 'none': next.style.display = 'inline';
         previous.addEventListener('click', function() {
             calendarDiv.innerHTML = '';
-            if(calendarCtrl.d > yearNow) {calendarCtrl.d--; selectedMonthCopy=12;}
+            if (calendarCtrl.d > yearNow) { calendarCtrl.d--;
+                selectedMonthCopy = 12; }
             let calendarTable = renderCalendar(createCalendar(yearNow, --selectedMonthCopy));
             calendarCtrl.initListeners(calendarTable);
             calendarCtrl.initListenersMonths();
         });
         next.addEventListener('click', function() {
             calendarDiv.innerHTML = '';
-            if (selectedMonthCopy >=11) {calendarCtrl.d++;selectedMonthCopy=-1;}
-            console.log(calendarCtrl.d,selectedMonthCopy);
+            if (selectedMonthCopy >= 11) { calendarCtrl.d++;
+                selectedMonthCopy = -1; }
             let calendarTable = renderCalendar(createCalendar(calendarCtrl.d, ++selectedMonthCopy));
             calendarCtrl.initListeners(calendarTable);
             calendarCtrl.initListenersMonths();
@@ -195,7 +186,6 @@ export const showingsCtrl = {
         return { 'filmTitles': titleList, 'showingsGrouped': groupedByTitle }; //ready list of titles and showings grouped by titles
     },
     calendarShowings(pickedDate) {
-
         const parsedPickedDate = moment(pickedDate).format('YYYY-MM-DD');
         const showings = showingsService.list()[0];
         const result = [];
@@ -228,9 +218,7 @@ export const showingsCtrl = {
         [...this.titlesList].forEach(title => {
             title.addEventListener('click', function() { //SECOND STEP
                 view.show(showingsCtrl.backCalendarBtn());
-                //view.hide(orderCtrl.backSeatsBtn);
-                // view.hide(showingsCtrl.detailsDiv);
-                // view.hide(showingsCtrl.goBackToTitlesBtn);
+
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(showings.showingsGrouped[title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(showings.showingsGrouped[title.textContent][0])}`), "film"); //description of the film 
 
@@ -249,8 +237,6 @@ export const showingsCtrl = {
                     }
                 }
                 title.classList.add('active');
-
-
 
                 [...showingsCtrl.showingsList].forEach(showing => {
                     showing.addEventListener('click', event => { //THIRD STEP
@@ -315,8 +301,7 @@ const seatsCtrl = {
                 } else {
                     let seatToRemoveIndex = this.selectedSeats.findIndex(element => element === event.target.firstChild.data);
                     this.selectedSeats.splice(seatToRemoveIndex, 1);
-
-                    if (this.selectedSeats.length == 0) { view.hide(nextBtn); }
+                    if (this.selectedSeats.length == 0) view.hide(nextBtn);
                 }
             });
         })
@@ -413,7 +398,6 @@ const ticketCtrl = {
                 fetch(request(`${API_URL}newticket`, 'POST', ticket))
                     .then(res => res.json())
                     .then(result => {
-                        //view.hide(orderForm);
                         showingsCtrl.detailsDiv.classList.add('ordered');
                         orderForm.innerHTML = result.msg;
                         view.hide(seatsCtrl.seatsDiv);
@@ -451,7 +435,6 @@ const registerCtrl = {
                     registerStatus.innerHTML = res.msg;
                     registerStatus.classList.add('error');
                 }
-
             });
     }
 }
@@ -506,15 +489,9 @@ const loginCtrl = {
 
     logout() { // this?
         authServices.logout();
-        //loginCtrl.loginForm().reset();
         loginCtrl.customerInfoEmail().innerHTML = "";
         view.hide(loginCtrl.customerInfo);
-        //view.show(loginCtrl.loginDiv);
-        //view.show(loginCtrl.registerDiv);
-        //view.hide(orderCtrl.orderDiv);
         initApp();
-        //view.show(calendarCtrl.calendarDiv);
-        // loginCtrl.registerDiv.querySelector('#register-form').reset();
     }
 
 }
