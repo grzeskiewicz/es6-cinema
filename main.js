@@ -508,8 +508,8 @@ const loginCtrl = {
         //loginCtrl.loginForm().reset();
         loginCtrl.customerInfoEmail().innerHTML = "";
         view.hide(loginCtrl.customerInfo);
-        view.show(loginCtrl.loginDiv);
-        view.show(loginCtrl.registerDiv);
+        //view.show(loginCtrl.loginDiv);
+        //view.show(loginCtrl.registerDiv);
         view.hide(orderCtrl.orderDiv);
         initApp();
         //view.show(calendarCtrl.calendarDiv);
