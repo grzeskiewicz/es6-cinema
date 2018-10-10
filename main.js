@@ -418,6 +418,7 @@ const ticketCtrl = {
                         orderForm.innerHTML = result.msg;
                         view.hide(seatsCtrl.seatsDiv);
                         view.hide(orderCtrl.backSeatsBtn());
+                        view.show(orderCtrl.orderDiv);
                         view.show(document.querySelector('#backGeneral'));
                     }).catch(error => Promise.reject(new Error(error)));
             }
