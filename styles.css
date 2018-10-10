@@ -254,6 +254,10 @@ p {
         border-color: gray;
     }
 
+    #showing-details{
+        flex-basis:40%;
+    }
+
     .poster {
         flex-basis: 20%;
     }
