@@ -254,7 +254,7 @@ p {
         border-color: gray;
     }
 
-    #showing-details{
+    .showing-details{
         flex-basis:40%;
     }
 
