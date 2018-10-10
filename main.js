@@ -511,7 +511,7 @@ const loginCtrl = {
         view.show(loginCtrl.loginDiv);
         view.show(loginCtrl.registerDiv);
         view.hide(orderCtrl.orderDiv);
-        view.show(calendarCtrl.calendarDiv);
+        //view.show(calendarCtrl.calendarDiv);
         // loginCtrl.registerDiv.querySelector('#register-form').reset();
     }
 
