@@ -31,7 +31,6 @@ p {
 #film-titles {
     display: flex;
     flex-flow: row wrap;
-
     flex-basis: 50%;
 }
 
@@ -106,25 +105,6 @@ p {
 
 
 
-
-
-
-
-
-
-
-
-
-
-/*
-.blur {
-    -webkit-filter: blur(6px);
-    -moz-filter: blur(6px);
-    -ms-filter: blur(6px);
-    -o-filter: blur(6px);
-    filter: blur(6px);
-}*/
-
 .activeshow {
     background: rgba(255, 255, 255, 0.9);
 }
@@ -141,12 +121,7 @@ p {
     justify-content: center;
 }
 
-#order {
-    /*display:flex;
-flex-flow: row wrap;*/
-}
 
-#order-form {}
 
 #order>* {
     display: flex;
@@ -155,11 +130,7 @@ flex-flow: row wrap;*/
     justify-content: center;
 }
 
-#close {
-    position: absolute;
-    top: 5px;
-    right: 10px;
-}
+
 
 #selected-showing p {
     margin-top: 0;
@@ -188,15 +159,12 @@ flex-flow: row wrap;*/
 }
 
 
-
 .seat {
     padding: 0;
     font-size: 10px;
     width: 1.2rem;
     height: 1.8rem;
 }
-
-.row {}
 
 .selected {
     background: red;
@@ -237,9 +205,7 @@ flex-flow: row wrap;*/
     animation: spin 1s linear infinite;
 }
 
-.date-clicked {
-    background-color: orange;
-}
+
 
 .active {
     border: 3px solid green;
@@ -273,58 +239,18 @@ flex-flow: row wrap;*/
 }
 
 
-/*
+
 @media only screen and (min-width: 768px) {
-    #wrapper {
-        justify-content: center;
-    }
-    #film-titles,
-    #showlist {
-        flex: 0 30%;
-        order: 1;
-    }
-    .showing {
-        display: flex;
-        flex-flow: row wrap;
-        transition: all 4s;
-    }
-    .showing-wrapper {
-        display: flex;
-        flex: 1 100%;
-        flex-direction: row;
-    }
+    #showings-wrapper {
 
-    .title {
-        flex: 1 100%;
-        padding: 5px 0;
     }
+    #film-titles {
 
-    #details {
-        align-items: flex-start;
-        max-height: 100vh;
-        flex: 0 30%;
-        order: 2;
     }
-
-
-    #seats {
-        flex-flow: column wrap;
-        align-items: center;
-    }
-
-
-    .visuallyhidden {
-        opacity: 0;
-        height: 0;
-    }
-
-    .visuallyvisible {
-        opacity: 1;
-        height: auto;
+    .title{
+        flex-basis:50%;
     }
 }
-
-*/
 
 
 /* CALENDAR CSS */
@@ -390,4 +316,8 @@ td.after {
 
 .not-selectable:hover {
     cursor: not-allowed;
+}
+
+.date-clicked {
+    background-color: orange;
 }
