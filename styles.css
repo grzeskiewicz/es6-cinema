@@ -259,7 +259,7 @@ p {
     }
 
     #showings-wrapper{
-        flex-basis:50%;
+        flex-basis:auto;
     }
 
     .poster {
