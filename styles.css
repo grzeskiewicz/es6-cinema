@@ -259,11 +259,11 @@ p {
     }
 
     #showings-wrapper{
-        flex-basis:50%;
+        flex-basis:80%;
     }
 
     .poster {
-        flex-basis: 20%;
+        flex-basis: 30%;
     }
 
 }
