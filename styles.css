@@ -256,7 +256,7 @@ p {
     }
 
     .poster {
-        flex-basis: auto;
+        flex-basis: 30%;
     }
 
 }
