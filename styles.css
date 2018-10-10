@@ -248,7 +248,7 @@ p {
     }
 
     .showing-details{
-        flex-basis:80%;
+        flex-basis:auto;
     }
 
     #showings-wrapper{
@@ -256,7 +256,7 @@ p {
     }
 
     .poster {
-        flex-basis: 20%;
+        flex-basis: auto;
     }
 
 }
