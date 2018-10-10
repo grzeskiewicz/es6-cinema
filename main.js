@@ -154,13 +154,6 @@ const calendarCtrl = {
         let calendarTable = renderCalendar(calendarObj);
         this.initListeners(calendarTable);
         this.initListenersMonths();
-        /*const roll = document.querySelector('#roll');
-        roll.addEventListener('click', function() {
-            const cal = document.querySelector('#calendar');
-            cal.style.visibility = cal.style.visibility === 'collapse' ? 'visible' : 'collapse';
-            // view.toggle(cal);
-            this.innerHTML = this.innerHTML === '▲' ? 'Show calendar ▼' : '▲';
-        }); */
     }
 }
 
@@ -518,7 +511,7 @@ const loginCtrl = {
         view.show(loginCtrl.loginDiv);
         view.show(loginCtrl.registerDiv);
         view.hide(orderCtrl.orderDiv);
-
+        view.show(calendarCtrl.calendarDiv);
         // loginCtrl.registerDiv.querySelector('#register-form').reset();
     }
 
