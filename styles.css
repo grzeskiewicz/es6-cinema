@@ -2,10 +2,6 @@
     box-sizing: border-box;
 }
 
-body {
-    background-color: white;
-
-}
 
 p {
     cursor: default;
@@ -210,28 +206,28 @@ p {
     }
 
     .poster img {
-        width:12vw;
-        height:auto;
+        width: 12vw;
+        height: auto;
     }
 
     .seat {
-    padding: 0;
-    font-size: 1rem;
-    width: 2rem;
-    height: 2.6rem;
-}
+        padding: 0;
+        font-size: 1rem;
+        width: 2rem;
+        height: 2.6rem;
+    }
 
-#nextBtn{
-    width:4rem;
-    height:2rem;
-    font-size:1rem;
-}
+    #nextBtn {
+        width: 4rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
 
 
-.showing-details p {
-    font-size: 1.25rem;
+    .showing-details p {
+        font-size: 1.25rem;
 
-}
+    }
 }
 
 
