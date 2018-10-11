@@ -252,7 +252,7 @@ p {
     }
 
     #showings-wrapper {
-        flex-basis: auto;
+        flex-basis: 80%;
     }
 
     .poster {
