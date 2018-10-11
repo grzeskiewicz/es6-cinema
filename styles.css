@@ -49,10 +49,11 @@ p {
     font-size: 1.4rem;
 }
 
+
 #film {
-    display: flex;
+/*    display: flex;
     flex-wrap: nowrap;
-    align-content: stretch;
+    align-content: stretch;*/
     margin-top: 1rem;
     border-top: 1px solid black;
     padding-top: 0.5rem;
