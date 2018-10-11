@@ -264,7 +264,7 @@ p {
 
     .poster img {
         width:12vw;
-        height:25vh;
+        height:auto;
     }
 
 }
