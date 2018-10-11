@@ -256,8 +256,7 @@ p {
     }
 
     .poster {
-        display:flex;
-        max-width: 100%;
+flex-basis:20%;
 
     }
 
