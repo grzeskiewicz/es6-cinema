@@ -269,7 +269,8 @@ p {
 
 #nextBtn{
     width:4rem;
-    height:auto;
+    height:2rem;
+    font-size:1rem;
 }
 
 }
