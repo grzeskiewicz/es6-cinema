@@ -28,10 +28,7 @@ p {
 }
 
 
-#film-titles {
-    display: flex;
-    flex-flow: row wrap;
-}
+
 
 #film-titles>*,
 #showlist>* {
@@ -244,11 +241,7 @@ p {
 
 
 @media only screen and (min-width: 768px) {
-    #film-titles {
-        display: flex;
-        flex-flow: column nowrap;
 
-    }
 
 
     .poster {
