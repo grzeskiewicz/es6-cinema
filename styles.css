@@ -163,13 +163,13 @@ p {
 
 
 
-/*#login form>*,
+#login form>*,
 #register form>* {
     display: flex;
     flex-direction: column;
     border-style: solid;
     margin: auto;
-}*/
+}
 
 
 
