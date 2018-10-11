@@ -250,13 +250,6 @@ p {
 
     }
 
-    .showing-details {
-        flex-basis: auto;
-    }
-
-    #showings-wrapper {
-        flex-basis: 80vw;
-    }
 
     .poster {
         flex-basis: 20%;
