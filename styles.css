@@ -255,7 +255,7 @@ p {
     }
 
     #showings-wrapper {
-        flex-basis: 80%;
+        flex-basis: 80vw;
     }
 
     .poster {
