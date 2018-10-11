@@ -32,7 +32,6 @@ p {
 
 #film-titles>*,
 #showlist>* {
-    flex: 1 100%;
     display: flex;
     border-color: gray;
     /*-webkit-transition: width 2s, height 2s;
@@ -48,9 +47,6 @@ p {
 
 
 #film {
-/*    display: flex;
-    flex-wrap: nowrap;
-    align-content: stretch;*/
     margin-top: 1rem;
     border-top: 1px solid black;
     padding-top: 0.5rem;
@@ -58,7 +54,6 @@ p {
 
 
 #times-list {
-    display: flex;
     margin-top: 1rem;
     border-top: 1px solid black;
     justify-content: center;
@@ -168,13 +163,13 @@ p {
 
 
 
-#login form>*,
+/*#login form>*,
 #register form>* {
     display: flex;
     flex-direction: column;
     border-style: solid;
     margin: auto;
-}
+}*/
 
 
 
