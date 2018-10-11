@@ -82,13 +82,6 @@ p {
 }
 
 
-.showing-details {
-    flex-basis: 70%;
-}
-
-.poster {
-    flex-basis: 40%;
-}
 
 .poster img {
     width: 100%;
