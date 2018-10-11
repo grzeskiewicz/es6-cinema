@@ -101,8 +101,8 @@ p {
     flex-basis: 40%;
 }
 
-.poster img{
-        width: 100%;
+.poster img {
+    width: 100%;
     height: auto;
 }
 
@@ -259,11 +259,10 @@ p {
     }
 
     .poster {
-flex-basis:20%;
+        flex-basis: 20%;
     }
-    .poster img {
 
-    }
+    .poster img {}
 
 }
 
