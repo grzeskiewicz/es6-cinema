@@ -244,21 +244,21 @@ p {
     #film-titles {
         display: flex;
         flex-flow: column nowrap;
-       
+
     }
 
-    .showing-details{
-        flex-basis:auto;
+    .showing-details {
+        flex-basis: auto;
     }
 
-    #showings-wrapper{
-        flex-basis:auto;
+    #showings-wrapper {
+        flex-basis: auto;
     }
 
     .poster {
         flex-basis: 30%;
-            width: 100%;
-    height: auto;
+        max-width: 100%;
+        height: auto;
     }
 
 }
