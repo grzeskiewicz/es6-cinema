@@ -41,6 +41,7 @@ p {
     font-size: 1.4rem;
 }
 
+/* FILM DESCRIPTION */
 
 #film {
     margin-top: 1rem;
@@ -61,6 +62,7 @@ p {
     height: auto;
 }
 
+/* HOURS OF SHOWINGS */
 
 #times-list {
     margin-top: 1rem;
