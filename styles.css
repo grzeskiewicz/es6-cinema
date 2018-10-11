@@ -262,7 +262,10 @@ p {
         flex-basis: 20%;
     }
 
-    .poster img {}
+    .poster img {
+        width:6vw;
+        height:10vw;
+    }
 
 }
 
