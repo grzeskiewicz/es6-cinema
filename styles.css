@@ -48,6 +48,19 @@ p {
     padding-top: 0.5rem;
 }
 
+.film-details p {
+    font-family: 'Oxygen', sans-serif;
+    font-size: 1rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+
+.poster img {
+    width: 100%;
+    height: auto;
+}
+
 
 #times-list {
     margin-top: 1rem;
@@ -68,20 +81,6 @@ p {
 
 .showing:hover {
     transform: scale(1, 1);
-}
-
-.showing-details p {
-    font-family: 'Oxygen', sans-serif;
-    font-size: 1rem;
-    margin-top: 0;
-    margin-bottom: 0;
-}
-
-
-
-.poster img {
-    width: 100%;
-    height: auto;
 }
 
 
@@ -224,7 +223,7 @@ p {
     }
 
 
-    .showing-details p {
+    .film-details p {
         font-size: 1.25rem;
 
     }
