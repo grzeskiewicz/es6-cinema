@@ -31,7 +31,6 @@ p {
 #film-titles {
     display: flex;
     flex-flow: row wrap;
-    flex-basis: 50%;
 }
 
 #film-titles>*,
