@@ -267,6 +267,11 @@ p {
     height: 2.6rem;
 }
 
+#nextBtn{
+    width:4rem;
+    height:auto;
+}
+
 }
 
 
