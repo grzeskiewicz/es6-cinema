@@ -260,6 +260,13 @@ p {
         height:auto;
     }
 
+    .seat {
+    padding: 0;
+    font-size: 1rem;
+    width: 2rem;
+    height: 2.6rem;
+}
+
 }
 
 
