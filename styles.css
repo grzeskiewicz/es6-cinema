@@ -233,7 +233,7 @@ td {
     line-height: 1.75rem;
     padding:10px;
     width: 1.75rem;
-    border-bottom:1px solid grey;
+    border:0.5px solid grey;
 }
 
 thead td {
