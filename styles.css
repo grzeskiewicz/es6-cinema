@@ -242,6 +242,12 @@ p {
         font-size: 1.25rem;
 
     }
+
+    td {
+        width:3rem;
+        height:3rem;
+        
+    }
 }
 
 
