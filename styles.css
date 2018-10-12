@@ -263,6 +263,10 @@ td.after {
     background-color: orange;
 }
 
+.not-selectable{
+    background-color:lightgrey;
+}
+
 .not-selectable:hover {
     cursor: not-allowed;
 }
