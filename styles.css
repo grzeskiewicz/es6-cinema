@@ -56,8 +56,8 @@ p {
     margin-bottom: 0;
 }
 
-.poster{
-    flex-basis:40%;
+.poster {
+    flex-basis: 40%;
 }
 
 .poster img {
@@ -202,10 +202,13 @@ p {
 
 
 @media only screen and (min-width: 768px) {
+    #showings-wrapper {
+        display: flex;
+    }
 
-#showings-wrapper>*{
-   flex: 0 0 50vw; 
-}
+    #showings-wrapper>* {
+        flex: 0 0 50vw;
+    }
 
 
     .poster {
