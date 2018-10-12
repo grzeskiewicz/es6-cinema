@@ -235,7 +235,9 @@ p {
         font-size: 1rem;
     }
 
-
+#film {
+    justify-content: space-between;
+}
     .film-details p {
         font-size: 1.25rem;
 
