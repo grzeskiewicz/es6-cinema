@@ -233,7 +233,7 @@ td {
     line-height: 1.75rem;
     padding:10px;
     width: 1.75rem;
-    border:0.5px solid grey;
+    
 }
 
 thead td {
@@ -244,6 +244,7 @@ thead td {
 
 tbody td {
     font-size: .875rem;
+    border:0.5px solid grey;
 }
 
 tbody td:hover {
