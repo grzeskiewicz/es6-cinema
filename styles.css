@@ -56,6 +56,9 @@ p {
     margin-bottom: 0;
 }
 
+.poster{
+    flex-basis:40%;
+}
 
 .poster img {
     width: 100%;
