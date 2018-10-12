@@ -232,7 +232,7 @@ td {
     text-align: center;
     line-height: 1.75rem;
     width: 1.75rem;
-    border:1px grey;
+    border-bottom:1px grey;
 }
 
 thead td {
