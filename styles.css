@@ -204,7 +204,7 @@ p {
 @media only screen and (min-width: 768px) {
     #showings-wrapper {
         display: flex;
-        flex-flow:row nowrap;
+        flex-flow:row wrap;
     }
 
     #showings-wrapper>* {
