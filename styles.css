@@ -225,7 +225,7 @@ table {
 }
 
 tbody tr:hover {
-    border:3px solid #fff;
+    background-color: #fff;
 }
 
 td {
@@ -248,7 +248,7 @@ tbody td {
 }
 
 tbody td:hover {
-    background-color: #333;
+    border:3px solid #333;
     color: #fff;
     cursor: pointer;
 }
