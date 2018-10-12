@@ -249,7 +249,7 @@ tbody td {
 
 tbody td:hover {
     border:3px solid #333;
-    color: #fff;
+    
     cursor: pointer;
 }
 
