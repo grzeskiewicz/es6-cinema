@@ -203,6 +203,9 @@ p {
 
 @media only screen and (min-width: 768px) {
 
+#showings-wrapper{
+   flex: 0 0 50vw; 
+}
 
 
     .poster {
