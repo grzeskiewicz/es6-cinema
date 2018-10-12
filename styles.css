@@ -248,8 +248,8 @@ tbody td {
 }
 
 tbody td:hover {
-    border:3px solid #333;
-    
+    border:5px solid #333;
+    transform: scale(1, 2);
     cursor: pointer;
 }
 
