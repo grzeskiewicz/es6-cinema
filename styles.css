@@ -230,10 +230,10 @@ tbody tr:hover {
 
 td {
     text-align: center;
-    
-    padding:20px;
-    
-    
+
+    padding: 20px;
+
+
 }
 
 thead td {
@@ -244,7 +244,7 @@ thead td {
 
 tbody td {
     font-size: .875rem;
-    border:0.5px solid grey;
+    border: 0.5px solid grey;
 }
 
 tbody td:hover {
@@ -278,7 +278,7 @@ td.after {
 @media only screen and (min-width: 768px) {
     #showings-wrapper {
         display: flex;
-        flex-flow:row wrap;
+        flex-flow: row wrap;
         justify-content: center;
     }
 
@@ -309,16 +309,17 @@ td.after {
         font-size: 1rem;
     }
 
-#film {
-    justify-content: space-between;
-}
+    #film {
+        justify-content: space-between;
+    }
+
     .film-details p {
         font-size: 1.25rem;
 
     }
 
     td {
-   width:2.5rem;
+        width: 2.5rem;
 
     }
 }
@@ -346,7 +347,3 @@ td.after {
         transform: rotate(360deg);
     }
 }
-
-
-
-
