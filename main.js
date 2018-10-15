@@ -362,6 +362,9 @@ const orderCtrl = {
                 view.hide(orderCtrl.backSeatsBtn());
                 view.hide(loginCtrl.customerInfo);
             });
+            loginCtrl.getInfo().then(email => {
+                if (email===undefined) view.hide(loginCtrl.customerInfo);
+            });
             view.hide(nextBtn);
             view.hide(seatsOnly);
             view.show(orderCtrl.backSeatsBtn());
