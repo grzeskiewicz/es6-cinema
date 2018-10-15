@@ -360,6 +360,7 @@ const orderCtrl = {
                 view.show(seatsOnly);
                 view.hide(orderCtrl.orderDiv);
                 view.hide(orderCtrl.backSeatsBtn());
+                view.hide(loginCtrl.customerInfo);
             });
             view.hide(nextBtn);
             view.hide(seatsOnly);
