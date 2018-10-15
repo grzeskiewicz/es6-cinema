@@ -55,6 +55,10 @@ const view = {
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<INIT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 function initApp() {
+    authServices.loadUserCredentials();
+    loginCtrl.getInfo();
+    const customerInfo = document.querySelector('#customer-info');
+    view.hide(customerInfo);
     fetch(request(API_URL + "showings", 'GET'))
         .then(res => res.json())
         .then(showings => {
@@ -65,10 +69,7 @@ function initApp() {
 
             calendarCtrl.initCalendar();
 
-            authServices.loadUserCredentials();
-            loginCtrl.getInfo();
-            const customerInfo = document.querySelector('#customer-info');
-            view.hide(customerInfo);
+
         });
 
 }
@@ -126,16 +127,20 @@ const calendarCtrl = {
         (selectedMonthCopy > monthNow + 2 || calendarCtrl.d > yearNow) ? next.style.display = 'none': next.style.display = 'inline';
         previous.addEventListener('click', function() {
             calendarDiv.innerHTML = '';
-            if (calendarCtrl.d > yearNow) { calendarCtrl.d--;
-                selectedMonthCopy = 12; }
+            if (calendarCtrl.d > yearNow) {
+                calendarCtrl.d--;
+                selectedMonthCopy = 12;
+            }
             let calendarTable = renderCalendar(createCalendar(yearNow, --selectedMonthCopy));
             calendarCtrl.initListeners(calendarTable);
             calendarCtrl.initListenersMonths();
         });
         next.addEventListener('click', function() {
             calendarDiv.innerHTML = '';
-            if (selectedMonthCopy >= 11) { calendarCtrl.d++;
-                selectedMonthCopy = -1; }
+            if (selectedMonthCopy >= 11) {
+                calendarCtrl.d++;
+                selectedMonthCopy = -1;
+            }
             let calendarTable = renderCalendar(createCalendar(calendarCtrl.d, ++selectedMonthCopy));
             calendarCtrl.initListeners(calendarTable);
             calendarCtrl.initListenersMonths();
