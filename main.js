@@ -61,6 +61,7 @@ function initApp() {
             authServices.loadUserCredentials();
             loginCtrl.getInfo();
             const customerInfo = document.querySelector('#customer-info');
+            console.log(customerInfo);
             view.hide(customerInfo);
 
             view.show(calendarCtrl.calendarDiv);
@@ -463,7 +464,7 @@ const loginCtrl = {
                     this.customerInfoEmail().innerHTML = result.msg;
                     view.hide(this.loginDiv);
                     view.hide(this.registerDiv);
-                    view.show(this.customerInfo);
+                    //view.show(this.customerInfo);
                     view.show(orderCtrl.orderDiv);
                     return result.msg;
                 } else {
