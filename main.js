@@ -389,9 +389,9 @@ const ticketCtrl = {
             if (email === undefined) {
                 view.hide(seatsCtrl.seatsDiv);
                 view.hide(orderCtrl.orderDiv);
+                view.show(loginCtrl.customerInfo);
                 view.renderContent("entry-template-login", {}, "login"); //only form
                 view.renderContent("entry-template-register", {}, "register"); //only form
-
                 registerCtrl.registerForm().addEventListener('submit', registerCtrl.signup, false);
                 loginCtrl.loginForm().addEventListener('submit', loginCtrl.login, false);
 
