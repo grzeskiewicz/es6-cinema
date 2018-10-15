@@ -55,13 +55,14 @@ const view = {
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<INIT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 function initApp() {
-    authServices.loadUserCredentials();
-    loginCtrl.getInfo();
-    const customerInfo = document.querySelector('#customer-info');
-    view.hide(customerInfo);
     fetch(request(API_URL + "showings", 'GET'))
         .then(res => res.json())
         .then(showings => {
+            authServices.loadUserCredentials();
+            loginCtrl.getInfo();
+            const customerInfo = document.querySelector('#customer-info');
+            view.hide(customerInfo);
+
             view.show(calendarCtrl.calendarDiv);
             view.hide(showingsCtrl.showingsWrapper);
             showingsService.remove();
