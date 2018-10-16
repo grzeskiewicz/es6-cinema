@@ -472,6 +472,7 @@ const loginCtrl = {
                     view.hide(this.registerDiv);
                     //view.show(this.customerInfo);
                     view.show(orderCtrl.orderDiv);
+                    console.log(result.msg);
                     return result.msg;
                 } else {
                     // console.log("Error getInfo:");
