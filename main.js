@@ -394,12 +394,13 @@ const ticketCtrl = {
         loginCtrl.getInfo().then(email => {
             console.log(email);
             if (email === undefined) {
-                console.log('CIOTO');
                 view.hide(seatsCtrl.seatsDiv);
                 view.hide(orderCtrl.orderDiv);
                 
                 view.renderContent("entry-template-login", {}, "login"); //only form
                 view.renderContent("entry-template-register", {}, "register"); //only form
+                view.show(loginCtrl.loginDiv);
+                view.show(loginCtrl.registerDiv);
                 registerCtrl.registerForm().addEventListener('submit', registerCtrl.signup, false);
                 loginCtrl.loginForm().addEventListener('submit', loginCtrl.login, false);
 
