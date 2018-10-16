@@ -358,6 +358,7 @@ const orderCtrl = {
             orderCtrl.backSeatsBtn().addEventListener('click', e => {
                 seatsCtrl.resetSeats();
                 view.show(seatsOnly);
+                view.show(seatsCtrl.seatsDiv);
                 view.hide(orderCtrl.orderDiv);
                 view.hide(orderCtrl.backSeatsBtn());
                 view.hide(loginCtrl.customerInfo);
