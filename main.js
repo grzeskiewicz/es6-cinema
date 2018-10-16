@@ -370,8 +370,9 @@ const orderCtrl = {
             view.show(orderCtrl.backSeatsBtn());
             view.show(orderCtrl.orderDiv);
             view.hide(document.querySelector('#backGeneral'));
-            view.show(loginCtrl.customerInfo);
+            
             authServices.loadUserCredentials();
+            view.show(loginCtrl.customerInfo);
             const orderForm = document.forms['order-form'];
             orderForm['price'].addEventListener('change', this.pricing);
             document.querySelector('#total-price').innerHTML = `Total price to pay: ${this.pricing()}`;
