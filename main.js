@@ -58,8 +58,8 @@ function initApp() {
     fetch(request(API_URL + "showings", 'GET'))
         .then(res => res.json())
         .then(showings => {
-            authServices.loadUserCredentials();
-            loginCtrl.getInfo();
+            //authServices.loadUserCredentials();
+            //loginCtrl.getInfo();
             const customerInfo = document.querySelector('#customer-info');
             console.log(customerInfo);
             view.hide(customerInfo);
@@ -371,6 +371,7 @@ const orderCtrl = {
             view.show(orderCtrl.orderDiv);
             view.hide(document.querySelector('#backGeneral'));
             view.show(loginCtrl.customerInfo);
+            authServices.loadUserCredentials();
             const orderForm = document.forms['order-form'];
             orderForm['price'].addEventListener('change', this.pricing);
             document.querySelector('#total-price').innerHTML = `Total price to pay: ${this.pricing()}`;
@@ -393,7 +394,7 @@ const ticketCtrl = {
             if (email === undefined) {
                 view.hide(seatsCtrl.seatsDiv);
                 view.hide(orderCtrl.orderDiv);
-                view.show(loginCtrl.customerInfo);
+                
                 view.renderContent("entry-template-login", {}, "login"); //only form
                 view.renderContent("entry-template-register", {}, "register"); //only form
                 registerCtrl.registerForm().addEventListener('submit', registerCtrl.signup, false);
