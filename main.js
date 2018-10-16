@@ -392,6 +392,7 @@ const ticketCtrl = {
         const orderForm = this;
         event.preventDefault();
         loginCtrl.getInfo().then(email => {
+            console.log(email);
             if (email === undefined) {
                 view.hide(seatsCtrl.seatsDiv);
                 view.hide(orderCtrl.orderDiv);
