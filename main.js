@@ -394,6 +394,7 @@ const ticketCtrl = {
         loginCtrl.getInfo().then(email => {
             console.log(email);
             if (email === undefined) {
+                console.log('CIOTO');
                 view.hide(seatsCtrl.seatsDiv);
                 view.hide(orderCtrl.orderDiv);
                 
