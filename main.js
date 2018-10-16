@@ -495,6 +495,7 @@ const loginCtrl = {
                     loginStatus.classList.add('success');
                     loginStatus.innerHTML = res.msg;
                     loginCtrl.getInfo();
+                    view.show(loginCtrl.customerInfo);
 
                 } else {
                     loginStatus.classList.add('error');
