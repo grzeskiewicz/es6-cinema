@@ -55,7 +55,6 @@ const view = {
 
 //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<INIT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 function initApp() {
-socket.emit('chat message','hehehehehxd');
     fetch(request(API_URL + "showings", 'GET'))
         .then(res => res.json())
         .then(showings => {
@@ -413,9 +412,11 @@ const ticketCtrl = {
                     price: orderForm['price'].value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount,
                     email: email,
                 };
+
                 fetch(request(`${API_URL}newticket`, 'POST', ticket))
                     .then(res => res.json())
                     .then(result => {
+                        socket.emit('ticketordered',ticket);
                         showingsCtrl.detailsDiv.classList.add('ordered');
                         orderForm.innerHTML = result.msg;
                         view.hide(seatsCtrl.seatsDiv);
