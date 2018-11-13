@@ -292,7 +292,9 @@ export const showingsCtrl = {
     }
 
 }
-
+socket.on('seatstakennow', (msg => {
+    console.log(msg);
+}));
 const seatsCtrl = {
     seats: document.getElementsByClassName('seat'),
     seatsDiv: document.querySelector('#seats'),
@@ -364,14 +366,14 @@ const orderCtrl = {
                 view.hide(loginCtrl.customerInfo);
             });
             loginCtrl.getInfo().then(email => {
-                if (email===undefined) view.hide(loginCtrl.customerInfo);
+                if (email === undefined) view.hide(loginCtrl.customerInfo);
             });
             view.hide(nextBtn);
             view.hide(seatsOnly);
             view.show(orderCtrl.backSeatsBtn());
             view.show(orderCtrl.orderDiv);
             view.hide(document.querySelector('#backGeneral'));
-            
+
             authServices.loadUserCredentials();
             view.show(loginCtrl.customerInfo);
             const orderForm = document.forms['order-form'];
@@ -397,7 +399,7 @@ const ticketCtrl = {
             if (email === undefined) {
                 view.hide(seatsCtrl.seatsDiv);
                 view.hide(orderCtrl.orderDiv);
-                
+
                 view.renderContent("entry-template-login", {}, "login"); //only form
                 view.renderContent("entry-template-register", {}, "register"); //only form
                 view.show(loginCtrl.loginDiv);
@@ -416,7 +418,7 @@ const ticketCtrl = {
                 fetch(request(`${API_URL}newticket`, 'POST', ticket))
                     .then(res => res.json())
                     .then(result => {
-                        socket.emit('ticketordered',ticket);
+                        socket.emit('ticketordered', ticket);
                         showingsCtrl.detailsDiv.classList.add('ordered');
                         orderForm.innerHTML = result.msg;
                         view.hide(seatsCtrl.seatsDiv);
