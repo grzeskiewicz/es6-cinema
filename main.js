@@ -2,7 +2,7 @@ import { authServices } from './services.js';
 import { API_URL, request } from './apiconnection.js';
 import { calendarDiv, renderWeek, renderCalendar, calendarObj, yearNow, selectedMonth, monthNow, createCalendar } from './calendar.js';
 const IMAGE_URL = 'https://cinema-node-bucket.s3.amazonaws.com/';
-const socket = io('https://cinema-node.herokuapp.com:42577');
+const socket = io('https://cinema-node.herokuapp.com');
 console.log(socket);
 
 const listService = { //same object like picedSeats, maybe Object.create(pattern)?
