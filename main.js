@@ -293,7 +293,8 @@ export const showingsCtrl = {
 
 }
 socket.on('seatstakennow', (msg => {
-    console.log(msg);
+    console.log(showingsService.getSelected().id, msg.showing);
+    //seatsCtrl.disableListener();
 }));
 const seatsCtrl = {
     seats: document.getElementsByClassName('seat'),
