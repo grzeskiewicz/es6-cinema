@@ -118,12 +118,12 @@ const calendarCtrl = {
             if (!day.classList.contains('not-selectable')) {
                 day.addEventListener('click', function () {
                     const pickedDate = new Date(this.dataset.date);
-                    view.hide(showingsCtrl.showList);
+                    view.hide(showingsCtrl.showingDetails);
                     view.hide(showingsCtrl.detailsDiv);
 
                     const showings = showingsCtrl.calendarShowings(pickedDate); //FIRST STEP 
-                    showingsCtrl.showList.innerHTML = '';
-                    view.show(showingsCtrl.showList);
+                    showingsCtrl.showingDetails.innerHTML = '';
+                    view.show(showingsCtrl.showingDetails);
                     if (showings.length > 0) {
                         view.show(showingsCtrl.showingsWrapper);
                         view.show(showingsCtrl.detailsDiv);
@@ -183,7 +183,7 @@ export const showingsCtrl = {
     showingsDiv: document.querySelector('#showings'),
     showingsWrapper: document.querySelector('#showings-wrapper'),
     detailsDiv: document.querySelector('#details'),
-    showList: document.querySelector('#showlist'),
+    showingDetails: document.querySelector('#showing-details'),
     showingsList: document.getElementsByClassName('showing'), //function because of handlebars
     titlesList: document.getElementsByClassName('title'), //function because of handlebars
     filmTitles: document.querySelector('#film-titles'),
@@ -239,7 +239,7 @@ export const showingsCtrl = {
 
     },
     goBackToTitles() {
-        view.show(showingsCtrl.showList);
+        view.show(showingsCtrl.showingDetails);
         view.show(showingsCtrl.filmTitles);
         view.hide(showingsCtrl.goBackToTitlesBtn());
         view.show(showingsCtrl.detailsDiv);
@@ -255,7 +255,7 @@ export const showingsCtrl = {
             title.addEventListener('click', function () { //SECOND STEP
                 view.show(showingsCtrl.backCalendarBtn());
 
-                view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(showings.showingsGrouped[title.textContent])}}`), "showlist"); //list of hours of selected showing
+                view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(showings.showingsGrouped[title.textContent])}}`), "showing-details"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(showings.showingsGrouped[title.textContent][0])}`), "film"); //description of the film 
 
 
@@ -290,7 +290,7 @@ export const showingsCtrl = {
 
 
                         view.showFlex(showingsCtrl.detailsDiv);
-                        view.hide(showingsCtrl.showList);
+                        view.hide(showingsCtrl.showingDetails);
                         view.hide(showingsCtrl.filmTitles);
                         showingsCtrl.detailsDiv.classList.add('activeshow');
 
