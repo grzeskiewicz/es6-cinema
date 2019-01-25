@@ -1,6 +1,20 @@
-import { authServices } from './services.js';
-import { API_URL, request } from './apiconnection.js';
-import { calendarDiv, renderWeek, renderCalendar, calendarObj, yearNow, selectedMonth, monthNow, createCalendar } from './calendar.js';
+import {
+    authServices
+} from './services.js';
+import {
+    API_URL,
+    request
+} from './apiconnection.js';
+import {
+    calendarDiv,
+    renderWeek,
+    renderCalendar,
+    calendarObj,
+    yearNow,
+    selectedMonth,
+    monthNow,
+    createCalendar
+} from './calendar.js';
 const IMAGE_URL = 'https://cinema-node-bucket.s3.amazonaws.com/';
 const socket = io('https://cinema-node.herokuapp.com');
 
@@ -19,10 +33,18 @@ const listService = { //same object like picedSeats, maybe Object.create(pattern
     selectById(id) {
         this.selectedElem = this.first().find(element => Number(element.id) === Number(id));
     },
-    list() { return this.elemArray; },
-    first() { return this.elemArray[0] },
-    remove() { this.elemArray = []; },
-    getSelected() { return this.selectedElem }
+    list() {
+        return this.elemArray;
+    },
+    first() {
+        return this.elemArray[0]
+    },
+    remove() {
+        this.elemArray = [];
+    },
+    getSelected() {
+        return this.selectedElem
+    }
 }
 
 const showingsService = Object.create(listService);
@@ -53,17 +75,17 @@ const view = {
 }
 
 
-//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<INIT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< INIT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 function initApp() {
     fetch(request(API_URL + "showings", 'GET'))
         .then(res => res.json())
         .then(showings => {
             //authServices.loadUserCredentials();
             //loginCtrl.getInfo();
-            const customerInfo = document.querySelector('#customer-info');
-            console.log(customerInfo);
-            view.hide(customerInfo);
 
+            const customerInfo = document.querySelector('#customer-info');
+
+            view.hide(customerInfo);
             view.show(calendarCtrl.calendarDiv);
             view.hide(showingsCtrl.showingsWrapper);
             showingsService.remove();
@@ -79,7 +101,7 @@ function initApp() {
 initApp();
 
 
-//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<INIT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< INIT >>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
 
 
@@ -94,7 +116,7 @@ const calendarCtrl = {
         const daysArray = calendarTable.querySelectorAll('tbody td');
         for (const day of daysArray) {
             if (!day.classList.contains('not-selectable')) {
-                day.addEventListener('click', function() {
+                day.addEventListener('click', function () {
                     const pickedDate = new Date(this.dataset.date);
                     view.hide(showingsCtrl.showList);
                     view.hide(showingsCtrl.detailsDiv);
@@ -127,7 +149,7 @@ const calendarCtrl = {
         const next = document.querySelector('#next');
         selectedMonthCopy <= monthNow && calendarCtrl.d == yearNow ? previous.style.display = 'none' : previous.style.display = 'inline';
         (selectedMonthCopy > monthNow + 2 || calendarCtrl.d > yearNow) ? next.style.display = 'none': next.style.display = 'inline';
-        previous.addEventListener('click', function() {
+        previous.addEventListener('click', function () {
             calendarDiv.innerHTML = '';
             if (calendarCtrl.d > yearNow) {
                 calendarCtrl.d--;
@@ -137,7 +159,7 @@ const calendarCtrl = {
             calendarCtrl.initListeners(calendarTable);
             calendarCtrl.initListenersMonths();
         });
-        next.addEventListener('click', function() {
+        next.addEventListener('click', function () {
             calendarDiv.innerHTML = '';
             if (selectedMonthCopy >= 11) {
                 calendarCtrl.d++;
@@ -165,8 +187,12 @@ export const showingsCtrl = {
     showingsList: document.getElementsByClassName('showing'), //function because of handlebars
     titlesList: document.getElementsByClassName('title'), //function because of handlebars
     filmTitles: document.querySelector('#film-titles'),
-    backCalendarBtn() { return document.querySelector('#backCalendarBtn'); },
-    goBackToTitlesBtn() { return document.querySelector('#backTitles'); },
+    backCalendarBtn() {
+        return document.querySelector('#backCalendarBtn');
+    },
+    goBackToTitlesBtn() {
+        return document.querySelector('#backTitles');
+    },
     dateParser(stringdate) {
         const dateFormat = 'HH:mm';
         return moment(stringdate).format(dateFormat);
@@ -190,7 +216,10 @@ export const showingsCtrl = {
             titleList.push(key);
         }
 
-        return { 'filmTitles': titleList, 'showingsGrouped': groupedByTitle }; //ready list of titles and showings grouped by titles
+        return {
+            'filmTitles': titleList,
+            'showingsGrouped': groupedByTitle
+        }; //ready list of titles and showings grouped by titles
     },
     calendarShowings(pickedDate) {
         const parsedPickedDate = moment(pickedDate).format('YYYY-MM-DD');
@@ -223,14 +252,14 @@ export const showingsCtrl = {
         view.renderContent("entry-template-titles", JSON.parse(`{ "showings": ${JSON.stringify(showings.filmTitles)}}`), "film-titles");
         view.hide(showingsCtrl.backCalendarBtn());
         [...this.titlesList].forEach(title => {
-            title.addEventListener('click', function() { //SECOND STEP
+            title.addEventListener('click', function () { //SECOND STEP
                 view.show(showingsCtrl.backCalendarBtn());
 
                 view.renderContent("entry-template-times", JSON.parse(`{ "showings": ${JSON.stringify(showings.showingsGrouped[title.textContent])}}`), "showlist"); //list of hours of selected showing
                 view.renderContent("entry-template-film", JSON.parse(`${JSON.stringify(showings.showingsGrouped[title.textContent][0])}`), "film"); //description of the film 
 
 
-                showingsCtrl.backCalendarBtn().addEventListener('click', function() {
+                showingsCtrl.backCalendarBtn().addEventListener('click', function () {
                     view.show(calendarCtrl.calendarDiv);
                     view.hide(showingsCtrl.showingsWrapper);
                     view.hide(showingsCtrl.backCalendarBtn());
@@ -339,7 +368,9 @@ const seatsCtrl = {
 const orderCtrl = {
     orderDiv: document.querySelector('#order'),
     orderForm: document.forms['order-form'],
-    backSeatsBtn() { return document.querySelector('#backSeatsBtn'); },
+    backSeatsBtn() {
+        return document.querySelector('#backSeatsBtn');
+    },
     pricing() {
         const price = document.forms['order-form'].price.value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount;
         const priceTotal = price * seatsCtrl.selectedSeats.length;
@@ -353,8 +384,13 @@ const orderCtrl = {
 
 
         nextBtn.addEventListener('click', event => {
-            const orderData = { showing: showingsService.getSelected(), seatsSelected: seatsCtrl.selectedSeats };
-            if (moment(orderData.showing.date).isValid()) { orderData.showing.date = moment(orderData.showing.date).format('YYYY-MM-DD HH:mm'); }
+            const orderData = {
+                showing: showingsService.getSelected(),
+                seatsSelected: seatsCtrl.selectedSeats
+            };
+            if (moment(orderData.showing.date).isValid()) {
+                orderData.showing.date = moment(orderData.showing.date).format('YYYY-MM-DD HH:mm');
+            }
 
             view.renderContent("entry-template-order", orderData, "order");
             orderCtrl.backSeatsBtn().addEventListener('click', e => {
@@ -380,7 +416,7 @@ const orderCtrl = {
             orderForm['price'].addEventListener('change', this.pricing);
             document.querySelector('#total-price').innerHTML = `Total price to pay: ${this.pricing()}`;
             orderForm.addEventListener('submit', ticketCtrl.order, false);
-            document.querySelector('#backGeneral').addEventListener('click', function() {
+            document.querySelector('#backGeneral').addEventListener('click', function () {
                 initApp();
             });
         });
@@ -434,7 +470,9 @@ const ticketCtrl = {
 }
 
 const registerCtrl = {
-    registerForm() { return document.getElementById('register-form'); },
+    registerForm() {
+        return document.getElementById('register-form');
+    },
     signup(event) {
         event.preventDefault();
         const registerStatus = document.querySelector('#register-status');
@@ -464,9 +502,13 @@ const registerCtrl = {
 const loginCtrl = {
     loginDiv: document.querySelector('#login'),
     registerDiv: document.querySelector('#register'),
-    customerInfoEmail() { return document.querySelector('#customer-info-email'); },
+    customerInfoEmail() {
+        return document.querySelector('#customer-info-email');
+    },
     customerInfo: document.querySelector('#customer-info'),
-    loginForm() { return document.forms['login-form']; },
+    loginForm() {
+        return document.forms['login-form'];
+    },
     getInfo() {
         const that = this;
         const logoutButton = document.querySelector('#logout');
@@ -508,7 +550,9 @@ const loginCtrl = {
                 }
             });
     },
-    destrySession() { authServies.logout(); },
+    destrySession() {
+        authServies.logout();
+    },
 
     logout() { // this?
         authServices.logout();
