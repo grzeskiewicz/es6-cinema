@@ -160,7 +160,7 @@ td.after {
 
 
 #film-titles>*,
-#showlist>* {
+#showing-details>* {
     display: flex;
     border-color: gray;
     /*-webkit-transition: width 2s, height 2s;
