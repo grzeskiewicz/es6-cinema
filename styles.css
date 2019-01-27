@@ -159,13 +159,13 @@ td.after {
 
 
 
-
+/*
 #showing-details>* {
     display: flex;
     border-color: gray;
     /*-webkit-transition: width 2s, height 2s;
-    transition: width 2s, height 2s;*/
-}
+    transition: width 2s, height 2s;
+}*/
 
 #film-titles {
     
