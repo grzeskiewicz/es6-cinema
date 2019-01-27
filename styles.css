@@ -34,7 +34,7 @@ p {
 
 .active {
     border: 3px solid green;
-    border-radius: 5px;
+    border-radius: 1px;
     padding: 3px 6px;
 }
 
@@ -159,7 +159,7 @@ td.after {
 
 
 
-#film-titles>*,
+
 #showing-details>* {
     display: flex;
     border-color: gray;
@@ -167,8 +167,11 @@ td.after {
     transition: width 2s, height 2s;*/
 }
 
-.title {
-    border-bottom: 1px solid gray;
+#film-titles {
+    
+}
+
+.title {    
     margin: 0 0.5rem;
     font-family: 'Gentium Book Basic', serif;
     font-size: 1.4rem;
