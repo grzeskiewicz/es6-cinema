@@ -150,33 +150,26 @@ td.after {
 }
 
 #wrapper {
-  display:flex;
-  flex-flow:row wrap;
+    display: flex;
+    flex-flow: row wrap;
 }
 
-#wrapper > * {
+#wrapper>* {
     flex: 1 100%;
-    display:flex;
-    flex-flow:row wrap;
+    display: flex;
+    flex-flow: row wrap;
     justify-content: center;
 }
 
 
-
-
-/*
 #showing-details>* {
-    display: flex;
-    border-color: gray;
-    /*-webkit-transition: width 2s, height 2s;
-    transition: width 2s, height 2s;
-}*/
+    flex:1 100%;
 
-#film-titles {
-    
 }
 
-.title {    
+#film-titles {}
+
+.title {
     margin: 0 0.5rem;
     font-family: 'Gentium Book Basic', serif;
     font-size: 1.4rem;
@@ -243,6 +236,7 @@ td.after {
     flex: 1 100%;
     flex-flow: row wrap;
 }
+
 /*
 #details > * {
     flex: 1 100%;
@@ -281,9 +275,7 @@ td.after {
     margin: .5rem auto;
 }
 
-#seats {
-
-}
+#seats {}
 
 
 .seat {
