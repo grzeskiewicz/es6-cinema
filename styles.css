@@ -228,6 +228,8 @@ td.after {
     background: rgba(255, 255, 255, 0.9);
 }
 
+
+/*
 #details {
     display: none;
     flex: 1 100%;
@@ -248,7 +250,7 @@ td.after {
     align-items: center;
     justify-content: center;
 }
-
+*/
 
 
 #selected-showing p {
