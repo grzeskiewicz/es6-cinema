@@ -167,7 +167,14 @@ td.after {
 
 }
 
-#film-titles {}
+#film-titles {
+    display:flex;
+    flex-flow:row wrap;
+}
+
+#film-titles > * {
+    
+}
 
 .title {
     margin: 0 0.5rem;
