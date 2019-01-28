@@ -152,11 +152,13 @@ td.after {
 #wrapper {
   display:flex;
   flex-flow:row wrap;
-  justify-content: center;
 }
 
 #wrapper > * {
     flex: 1 100%;
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center;
 }
 
 
