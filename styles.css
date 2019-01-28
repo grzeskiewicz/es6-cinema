@@ -155,7 +155,7 @@ td.after {
   justify-content: center;
 }
 
-#wrapper div {
+#wrapper > * {
     flex: 1 100%;
 }
 
