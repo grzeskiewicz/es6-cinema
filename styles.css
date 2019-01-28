@@ -173,7 +173,7 @@ td.after {
 }
 
 #film-titles > * {
-    
+    flex:1 100%;
 }
 
 .title {
