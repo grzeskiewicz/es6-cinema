@@ -150,10 +150,7 @@ td.after {
 }
 
 #wrapper {
-    height: 95vh;
-    display: flex;
-    flex-flow: column nowrap;
-    align-items: center;
+  
 }
 
 
