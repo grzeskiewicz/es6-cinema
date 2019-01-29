@@ -289,8 +289,14 @@ td.after {
     margin: .5rem auto;
 } */
 
-#seats {}
+#seats {
+    display:flex;
+    flex-flow:row wrap;
+}
 
+#seats > * {
+    flex:1 100%;
+}
 
 .seat {
     padding: 0;
