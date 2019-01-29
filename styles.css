@@ -262,7 +262,11 @@ td.after {
 
 #seats  > * {
     flex:1 100%;
-    justify-content:center;
+}
+
+#next-div {
+    display:flex;
+    justify-content: center;
 }
 
 /*
