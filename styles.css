@@ -161,11 +161,12 @@ td.after {
     justify-content: center;
 }
 
-
 #showings-wrapper>* {
     flex: 1 100%;
-
 }
+
+/* ================================================================ */
+
 
 #film-titles {
     display: flex;
@@ -212,12 +213,13 @@ td.after {
     height: auto;
 }
 
-/* HOURS OF SHOWINGS */
+/* HOURS OF SHOWINGS: TIMES-LIST */
 
 #times-list {
+    display:flex;
+    flex-flow:row wrap;
     margin-top: 1rem;
     border-top: 1px solid black;
-    justify-content: center;
 }
 
 .showing {
@@ -227,12 +229,11 @@ td.after {
 
 .showing .normal {
     border: 1px solid gray;
-    border-radius: 5px;
     padding: 2px 5px;
 }
 
 .showing:hover {
-    transform: scale(1, 1);
+    transform: scale(1, 2);
 }
 
 
