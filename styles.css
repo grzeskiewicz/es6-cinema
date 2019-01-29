@@ -250,13 +250,13 @@ td.after {
     flex-flow: row wrap;
 }
 
-/*
+
 #details > * {
     flex: 1 100%;
-    align-items: center;
     justify-content: center;
 }
 
+/*
 
 
 #order>* {
