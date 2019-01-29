@@ -293,6 +293,10 @@ td.after {
     flex:1 100%;
 }
 
+.row {
+    flex:1 100%;
+}
+
 
 .seat {
     padding: 0;
