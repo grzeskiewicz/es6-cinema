@@ -262,7 +262,6 @@ td.after {
 
 #seats  > * {
     flex:1 100%;
-    display:flex;
     justify-content:center;
 }
 
