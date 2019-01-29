@@ -289,7 +289,9 @@ td.after {
     margin: .5rem auto;
 } */
 
-#seats {}
+#seats  > * {
+    flex:1 100%;
+}
 
 
 .seat {
