@@ -264,7 +264,7 @@ td.after {
     flex:1 100%;
 }
 
-#next-div, #seats-only {
+#next-div {
     display:flex;
     justify-content: center; 
 }
