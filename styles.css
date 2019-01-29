@@ -264,6 +264,11 @@ td.after {
     flex:1 100%;
 }
 
+#seats-only {
+    display:flex;
+    flex-flow:column wrap;
+    justify-content: center;
+}
 #next-div {
     display:flex;
     justify-content: center; 
