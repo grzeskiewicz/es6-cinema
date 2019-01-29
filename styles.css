@@ -289,10 +289,11 @@ td.after {
     margin: .5rem auto;
 } */
 
+/*
 #seats {
     display:flex;
     flex-flow:row wrap;
-}
+} */
 
 #seats > * {
     flex:1 100%;
