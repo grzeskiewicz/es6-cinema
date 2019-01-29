@@ -279,6 +279,7 @@ td.after {
     align-items: center;
 }
 
+/*
 #seats::before {
     display: block;
     content: "";
@@ -286,7 +287,7 @@ td.after {
     height: 1px;
     width: 12.515625rem;
     margin: .5rem auto;
-}
+} */
 
 #seats {}
 
