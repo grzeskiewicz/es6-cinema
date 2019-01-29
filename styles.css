@@ -280,14 +280,6 @@ td.after {
 }
 
 /*
-#seats::before {
-    display: block;
-    content: "";
-    background-color: #fff;
-    height: 1px;
-    width: 12.515625rem;
-    margin: .5rem auto;
-} */
 
 #seats  > * {
     flex:1 100%;
@@ -297,7 +289,7 @@ td.after {
     flex:1 100%;
 }
 
-
+*/
 .seat {
     padding: 0;
     font-size: 10px;
