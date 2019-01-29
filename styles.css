@@ -163,18 +163,18 @@ td.after {
 
 
 #showings-wrapper>* {
-    flex:1 100%;
+    flex: 1 100%;
 
 }
 
 #film-titles {
-    display:flex;
-    flex-flow:row wrap;
+    display: flex;
+    flex-flow: row wrap;
 }
 
-#film-titles > * {
-    flex:1 100%;
-    display:flex;
+#film-titles>* {
+    flex: 1 100%;
+    display: flex;
     justify-content: center;
 }
 
@@ -187,6 +187,8 @@ td.after {
 /* FILM DESCRIPTION */
 
 #film {
+    display: flex;
+    flex-flow: row nowrap;
     margin-top: 1rem;
     border-top: 1px solid black;
     padding-top: 0.5rem;
@@ -199,10 +201,10 @@ td.after {
     margin-bottom: 0;
 }
 
-/*
+
 .poster {
     flex-basis: 40%;
-}*/
+}
 
 .poster img {
     width: 100%;
