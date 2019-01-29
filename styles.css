@@ -256,6 +256,14 @@ td.after {
     justify-content: center;
 }
 
+#seats {
+    flex-flow:row wrap;
+}
+
+#seats  > * {
+    flex:1 100%;
+}
+
 /*
 
 
