@@ -322,7 +322,7 @@ td.after {
     align-items: center;
 }
 
-#order form > * {
+#order form {
     display:flex;
     flex-flow:column wrap;
     justify-content: center;
