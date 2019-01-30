@@ -308,6 +308,16 @@ td.after {
 }
 */
 
+#order form {
+    display:flex;
+    flex-flow:row wrap;
+    justify-content: center;
+}
+
+#order form > * {
+    flex:1 100%;
+}
+
 
 #selected-showing p {
     margin-top: 0;
