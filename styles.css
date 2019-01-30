@@ -328,6 +328,12 @@ td.after {
     justify-content: center;
 }
 
+#order form > * {
+    display:flex;
+    justify-content: center;
+    flex:1 50%;
+}
+
 
 
 #login form>*,
