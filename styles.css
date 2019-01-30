@@ -308,15 +308,7 @@ td.after {
 }
 */
 
-#order form {
-    display:flex;
-    flex-flow:row wrap;
-    justify-content: center;
-}
 
-#order form > * {
-    
-}
 
 
 #selected-showing p {
@@ -333,7 +325,7 @@ td.after {
 
 
 
-
+#order form > *,
 #login form>*,
 #register form>* {
     display: flex;
