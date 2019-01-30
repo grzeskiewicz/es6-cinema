@@ -322,10 +322,14 @@ td.after {
     align-items: center;
 }
 
+#order form > * {
+    display:flex;
+    flex-flow:column wrap;
+    justify-content: center;
+}
 
 
 
-#order form > *,
 #login form>*,
 #register form>* {
     display: flex;
