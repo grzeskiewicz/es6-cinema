@@ -325,13 +325,11 @@ td.after {
 #order form {
     display:flex;
     flex-flow:column wrap;
-    justify-content: center;
 }
 
 #order form > * {
     display:flex;
     justify-content: center;
-    flex:1 50%;
 }
 
 
