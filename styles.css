@@ -287,12 +287,15 @@ td.after {
 /* ================ ORDER ================= */
 #order {
 display:flex;
-flex-flow:row wrap;
-justify-content: center;
 }
 
 #order>* {
 flex:1 100%;
+}
+
+#order div{
+    display:flex;
+    justify-content: center;
 }
 
 /*
