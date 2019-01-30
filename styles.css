@@ -285,6 +285,7 @@ td.after {
 
 
 /* ================ ORDER ================= */
+/*
 #order {
     display: flex;
 }
@@ -294,7 +295,7 @@ td.after {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-}
+} */
 
 /*
 
