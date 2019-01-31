@@ -252,13 +252,13 @@ td.after {
 
 
 #details>* {
-    flex: 1 100%;
     justify-content: center;
 }
 
 /*=============== SEATS ==========*/
 
 #seats {
+    flex:1 100%;
     flex-flow: row wrap;
 }
 
