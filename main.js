@@ -450,7 +450,7 @@ const ticketCtrl = {
                     price: orderForm['price'].value === "normal" ? showingsService.getSelected().normal : showingsService.getSelected().discount,
                     email: email,
                 };
-
+console.log(ticket);
                 fetch(request(`${API_URL}newticket`, 'POST', ticket))
                     .then(res => res.json())
                     .then(result => {
